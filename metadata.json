@@ -1,0 +1,6 @@
+{
+  "name": "Our Trip Africa – Authentic African Safaris & Holidays",
+  "description": "Premier Tanzania, Kenya, Uganda wildlife safaris, Mount Kilimanjaro treks, and Zanzibar beach holidays with Our Trip Africa based in Arusha, Tanzania.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

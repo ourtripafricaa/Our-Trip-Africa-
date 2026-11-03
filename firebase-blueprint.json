@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "Image": {
+      "title": "Image",
+      "description": "Metadata for an uploaded image",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "caption": { "type": "string" },
+        "category": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "uploadedBy": { "type": "string" }
+      },
+      "required": ["id", "url", "category", "createdAt"]
+    },
+    "User": {
+      "title": "User",
+      "description": "User profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "role": { "type": "string", "enum": ["admin", "user"] }
+      },
+      "required": ["id", "email", "role"]
+    }
+  },
+  "firestore": {
+    "/images/{imageId}": {
+      "schema": { "$ref": "Image" },
+      "description": "Image metadata collection"
+    },
+    "/admins/{userId}": {
+      "schema": { "$ref": "User" },
+      "description": "Authorized admin users"
+    }
+  }
+}
