@@ -1,3 +1,9 @@
+import heroImage from '../assets/images/hero_african_safari_1793678271283.jpg';
+import lionImage from '../assets/images/wildlife_lion_pride_1793678272340.jpg';
+import kilimanjaroImage from '../assets/images/kilimanjaro_snow_peak_1793678274223.jpg';
+import uaeDubaiImage from '../assets/images/uae_dubai_desert_safari_1793680109841.jpg';
+import uaeAbuDhabiImage from '../assets/images/uae_abu_dhabi_grand_mosque_1793680109642.jpg';
+
 /**
  * Our Trip Africa – Core Data Store
  * Company Details, Verified Safari Packages, Blog Articles, Team, FAQs, and Media Assets
@@ -112,13 +118,13 @@ Whether you are dreaming of a wildlife safari in the Serengeti, an adventure in 
 };
 
 export const LOCAL_IMAGES = {
-  hero: '/assets/images/hero_african_safari_1793678271283.jpg',
-  lion: '/assets/images/wildlife_lion_pride_1793678272340.jpg',
+  hero: heroImage,
+  lion: lionImage,
   zanzibar: '/assets/aistudio/Screenshot_20260929_194629_Gallery_51f1a0f7.jpg',
-  kilimanjaro: '/assets/images/kilimanjaro_snow_peak_1793678274223.jpg',
+  kilimanjaro: kilimanjaroImage,
   gorilla: '/assets/aistudio/1793450997914_ae622466.jpg',
-  uaeDubai: '/assets/images/uae_dubai_desert_safari_1793680109841.jpg',
-  uaeAbuDhabi: '/assets/images/uae_abu_dhabi_grand_mosque_1793680109642.jpg',
+  uaeDubai: uaeDubaiImage,
+  uaeAbuDhabi: uaeAbuDhabiImage,
   maranguHiking: '/assets/aistudio/1776627302280_aeeffdfe.jpg',
   machameHiking: '/assets/aistudio/20261024_122515_aa5135aa.png',
   safari5Day: '/assets/aistudio/1788252043526_202ccf55.jpg',
