@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { auth } from '../lib/firebase';
 
 export function AdminLogin({
@@ -25,7 +25,7 @@ export function AdminLogin({
       );
 
       if (result.user.email?.toLowerCase() !== 'ourtripafricaa@gmail.com') {
-        await auth.signOut();
+        await signOut(auth);
         setError('Huna ruhusa ya kuingia kwenye Admin Dashboard.');
         return;
       }
