@@ -6,7 +6,7 @@ import { auth, db, storage } from '../lib/firebase';
 
 const tabs = ['Overview', 'Packages', 'Bookings', 'Blog', 'Images'];
 
-export default function AdminDashboard() {
+export function AdminDashboard() {
   const [tab, setTab] = useState('Overview');
   const [packages, setPackages] = useState<any[]>([]);
   const [bookings, setBookings] = useState<any[]>([]);
