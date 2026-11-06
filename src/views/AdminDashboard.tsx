@@ -1,10 +1,23 @@
 import React,{useState,useEffect} from 'react';
-import {collection,onSnapshot,addDoc,setDoc,doc,deleteDoc} from 'firebase/firestore';
-import {ref,uploadBytes,getDownloadURL} from 'firebase/storage';
-import {signOut} from 'firebase/auth';
-import {auth,db,storage} from '../lib/firebase';
-import {SAFARI_PACKAGES,COMPANY_DETAILS,BLOG_POSTS} from '../data/safariData';
 
+import {
+ collection,
+ onSnapshot,
+ addDoc,
+ setDoc,
+ doc,
+ deleteDoc
+} from 'firebase/firestore';
+
+import {signOut} from 'firebase/auth';
+
+import {auth,db} from '../lib/firebase';
+
+import {
+ SAFARI_PACKAGES,
+ COMPANY_DETAILS,
+ BLOG_POSTS
+} from '../data/safariData';
 export function AdminDashboard(){
  const green='#046A38';
  const [tab,T]=useState('Overview');
@@ -45,6 +58,29 @@ export function AdminDashboard(){
  </label>;
 
  const upload=async(list:any[],folder:string)=>{
+ const urls:string[]=[];
+
+ for(const file of list){
+  const type=file.type.startsWith('video/')?'video':
+   folder==='attachments'?'raw':'image';
+
+  const data=new FormData();
+  data.append('file',file);
+  data.append('upload_preset','ourtripafrica_upload');
+  data.append('folder',folder);
+
+  const response=await fetch(
+   `https://api.cloudinary.com/v1_1/mbigrxjw/${type}/upload`,
+   {method:'POST',body:data}
+  );
+
+  const result=await response.json();
+  if(!response.ok) throw new Error(result.error?.message||'Upload failed');
+
+  urls.push(result.secure_url);
+ }
+ return urls;
+};
   const urls=[];
   for(const file of list){
    const r=ref(storage,folder+'/'+Date.now()+'-'+file.name);
