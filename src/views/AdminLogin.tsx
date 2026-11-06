@@ -1,78 +1,100 @@
 import React, { useState } from 'react';
-import {
-  signInWithPopup,
-  GoogleAuthProvider,
-  signOut
-} from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../lib/firebase';
-
-const ADMIN_EMAIL = 'ourtripafricaa@gmail.com';
 
 export function AdminLogin({
   onLoginSuccess
 }: {
   onLoginSuccess: () => void;
 }) {
+  const [email, setEmail] = useState('ourtripafricaa@gmail.com');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleLogin = async () => {
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
     setLoading(true);
     setError('');
 
     try {
-      const provider = new GoogleAuthProvider();
-      const result = await signInWithPopup(auth, provider);
+      const result = await signInWithEmailAndPassword(
+        auth,
+        email.trim(),
+        password
+      );
 
-      if (result.user.email?.toLowerCase() !== ADMIN_EMAIL) {
-        await signOut(auth);
-        setError('Access denied. This account is not authorized.');
+      if (result.user.email?.toLowerCase() !== 'ourtripafricaa@gmail.com') {
+        await auth.signOut();
+        setError('Huna ruhusa ya kuingia kwenye Admin Dashboard.');
         return;
       }
 
       onLoginSuccess();
 
-    } catch (err) {
-  console.error('Login failed:', err);
-
-  const firebaseError = err as {
-    code?: string;
-    message?: string;
-  };
-
-  setError(
-    `${firebaseError.code || 'Unknown error'}: ${firebaseError.message || 'Please try again.'}`
-  );
+    } catch (err: any) {
+      console.error('Admin login error:', err);
+      setError(
+        err.code === 'auth/invalid-credential'
+          ? 'Email au password si sahihi.'
+          : err.message || 'Imeshindikana kuingia. Jaribu tena.'
+      );
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] p-6">
-      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md text-center">
-        <h2 className="text-2xl font-bold mb-3 text-[#0e3022]">
-          Our Trip Africa Admin
+    <div className="min-h-[60vh] flex items-center justify-center p-6">
+      <form
+        onSubmit={handleLogin}
+        className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md"
+      >
+        <h2 className="text-2xl font-bold text-[#0e3022] mb-2">
+          Our Trip Africa
         </h2>
 
         <p className="text-gray-600 mb-6">
-          Sign in with your authorized administrator account.
+          Administrator Login
         </p>
 
-        <button
-          onClick={handleLogin}
-          disabled={loading}
-          className="w-full px-6 py-3 bg-[#0e3022] text-white rounded-lg hover:bg-[#174b35] disabled:opacity-50"
-        >
-          {loading ? 'Signing in...' : 'Sign in with Google'}
-        </button>
+        <label className="block text-sm font-medium mb-2">
+          Email Address
+        </label>
+
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full border rounded-lg p-3 mb-4"
+          required
+        />
+
+        <label className="block text-sm font-medium mb-2">
+          Password
+        </label>
+
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full border rounded-lg p-3 mb-5"
+          placeholder="Enter your password"
+          required
+        />
 
         {error && (
-          <p className="text-red-600 mt-4 text-sm">
-            {error}
-          </p>
+          <p className="text-red-600 text-sm mb-4">{error}</p>
         )}
-      </div>
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full bg-[#0e3022] text-white p-3 rounded-lg font-bold disabled:opacity-50"
+        >
+          {loading ? 'Signing in...' : 'Login to Admin'}
+        </button>
+      </form>
     </div>
   );
-          }
+      }
