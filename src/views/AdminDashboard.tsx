@@ -57,41 +57,41 @@ export function AdminDashboard(){
  onChange={e=>F({...form,[key]:e.target.value})}/>
  </label>;
 
- const upload=async(list:any[],folder:string)=>{
+const upload=async(list:any[],folder:string)=>{
  const urls:string[]=[];
 
  for(const file of list){
   const type=file.type.startsWith('video/')?'video':
-  folder.toLowerCase()==='attachments'?'raw':'image';
+   folder.toLowerCase()==='attachments'?'raw':'image';
 
   const data=new FormData();
   data.append('file',file);
   data.append('upload_preset','ourtripafrica_upload');
   data.append('folder',folder);
 
-  const controller=new AbortController();
-  const timer=setTimeout(()=>controller.abort(),30000);
-
   try{
-   const r=await fetch(
+   const response=await fetch(
     `https://api.cloudinary.com/v1_1/mbigrxjw/${type}/upload`,
-    {method:'POST',body:data,signal:controller.signal}
+    {method:'POST',body:data}
    );
 
-   const result=await r.json();
+   const result=await response.json();
 
-   if(!r.ok) throw new Error(result.error?.message||'Upload failed');
-   if(!result.secure_url) throw new Error('Image URL missing');
+   if(!response.ok){
+    throw new Error(result.error?.message||'Cloudinary upload failed');
+   }
+
+   if(!result.secure_url){
+    throw new Error('Picha haijapata URL.');
+   }
 
    urls.push(result.secure_url);
 
-  }catch(e:any){
-   if(e.name==='AbortError'){
-    throw new Error('Upload imezidi sekunde 30. Angalia internet au Cloudinary.');
+  }catch(error:any){
+   if(error instanceof TypeError){
+    throw new Error('Imeshindwa kuwasiliana na Cloudinary. Jaribu internet nyingine.');
    }
-   throw e;
-  }finally{
-   clearTimeout(timer);
+   throw error;
   }
  }
 
