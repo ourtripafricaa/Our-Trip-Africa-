@@ -97,15 +97,7 @@ export function AdminDashboard(){
 
  return urls;
 };
-  const urls=[];
-  for(const file of list){
-   const r=ref(storage,folder+'/'+Date.now()+'-'+file.name);
-   await uploadBytes(r,file);
-   urls.push(await getDownloadURL(r));
-  }
-  return urls;
- };
-
+ 
  async function save(){
   try{
    B(true);
