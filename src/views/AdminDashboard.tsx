@@ -163,9 +163,15 @@ export function AdminDashboard(){
 
  {['Images','Videos','Attachments'].includes(tab)&&<>
  <h3>Upload {tab}</h3>
- <input type="file" multiple onChange={e=>Q({media:Array.from(e.target.files||[])})}/>
- <br/>{button('UPLOAD',save)}
- </>}
+ <input type="file" multiple
+ accept={tab==='Images'?'image/*':tab==='Videos'?'video/*':'.pdf,.doc,.docx'}
+ onChange={e=>Q({media:Array.from(e.target.files||[])})}/>
+ <br/><br/>
+ <button disabled={busy} onClick={()=>save()}
+ style={{background:'#046A38',color:'white',padding:14,border:0}}>
+ {busy?'UPLOADING...':'UPLOAD NOW'}
+ </button>
+</>}
 
  {items.map(x=><div key={x.firestoreId} style={{background:'white',padding:12,margin:8}}>
  <b>{x.title||x.name||x.type}</b><br/>
