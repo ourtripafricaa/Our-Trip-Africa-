@@ -1,64 +1,259 @@
 [
   {
-    "slug": "the-great-migration-unfolds-6d5n",
-    "title": "the-great-migration-unfolds-6d5n",
-    "price": 0,
-    "days": 0,
-    "nights": 0,
-    "category": "safari",
-    "description": "",
-    "inclusions": [],
-    "exclusions": [],
-    "tags": [],
-    "itinerary": [],
-    "images": [
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777898696089_helena_pfisterer_u9eNzDu_q20_unsplash.jpg",
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777898698496_dawn_westveld_FmUx8z_Tz4A_unsplash.jpg",
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777898700154_kai_putter_XYNL6PWmJyM_unsplash.jpg",
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777898702129_jorge_tung_1pZJqQlgpsY_unsplash.jpg",
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1778832280257_Discover_Tanzania_.pdf"
-    ]
+  "slug": "the-great-migration-unfolds-6d5n",
+  "title": "The Great Migration Unfolds",
+  "price": 1850,
+  "days": 6,
+  "nights": 5,
+  "category": "safari",
+  "description": "Experience an unforgettable 6-day Tanzania wildlife safari through Tarangire National Park, the legendary Serengeti and the spectacular Ngorongoro Crater. Discover incredible wildlife, breathtaking landscapes, elephants, lions, giraffes, zebras and the world-famous Great Migration. This adventure is ideal for travelers seeking an authentic African safari experience.",
+  "budgetPrice": 1750,
+  "midrangePrice": 1850,
+  "luxuryPrice": 2750,
+  "inclusions": [
+    "Airport transfers in Arusha",
+    "Private 4x4 safari vehicle with pop-up roof",
+    "Professional English-speaking safari guide",
+    "Accommodation for 5 nights",
+    "Meals as specified in the safari itinerary",
+    "Park entrance fees",
+    "Ngorongoro Crater service fees",
+    "Daily game drives",
+    "Bottled drinking water during game drives",
+    "Government taxes and applicable tourism levies"
+  ],
+  "exclusions": [
+    "International flights",
+    "Tanzania visa fees",
+    "Travel and medical insurance",
+    "Personal expenses",
+    "Tips and gratuities",
+    "Alcoholic and premium beverages",
+    "Laundry services",
+    "Optional activities not mentioned in the itinerary",
+    "Additional accommodation before or after the safari"
+  ],
+  "tags": [
+    "Tanzania Safari",
+    "Great Migration",
+    "Serengeti",
+    "Ngorongoro Crater",
+    "Tarangire",
+    "Wildlife Safari",
+    "African Safari"
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Arrival in Arusha",
+      "description": "Arrive at Kilimanjaro International Airport and meet your safari representative. Transfer to your hotel in Arusha, relax and receive a safari briefing before your adventure begins."
+    },
+    {
+      "day": 2,
+      "title": "Arusha to Tarangire National Park",
+      "description": "After breakfast, drive to Tarangire National Park for an exciting game drive. Discover large elephant herds, ancient baobab trees, lions, giraffes and other wildlife. Enjoy a picnic lunch and continue exploring the park before heading to your accommodation."
+    },
+    {
+      "day": 3,
+      "title": "Tarangire to Serengeti National Park",
+      "description": "Travel towards the legendary Serengeti through the beautiful landscapes of the Ngorongoro Conservation Area. Enjoy wildlife viewing along the way and an afternoon game drive in the Serengeti plains."
+    },
+    {
+      "day": 4,
+      "title": "Full-Day Serengeti Wildlife Experience",
+      "description": "Spend a full day exploring the Serengeti in search of lions, elephants, cheetahs, leopards, giraffes and migrating wildebeest. Your guide will select the best wildlife viewing areas according to seasonal migration movements."
+    },
+    {
+      "day": 5,
+      "title": "Serengeti to Ngorongoro Highlands",
+      "description": "Enjoy a morning game drive in Serengeti before travelling towards the Ngorongoro Highlands. Experience the changing landscapes and enjoy spectacular views of the conservation area."
+    },
+    {
+      "day": 6,
+      "title": "Ngorongoro Crater and Departure",
+      "description": "Descend into the magnificent Ngorongoro Crater for a memorable wildlife experience. Enjoy a game drive before returning to Arusha or transferring to the airport for your onward journey."
+    }
+  ],
+  "images": [
+    "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777898696089_helena_pfisterer_u9eNzDu_q20_unsplash.jpg",
+    "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777898698496_dawn_westveld_FmUx8z_Tz4A_unsplash.jpg",
+    "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777898700154_kai_putter_XYNL6PWmJyM_unsplash.jpg",
+    "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777898702129_jorge_tung_1pZJqQlgpsY_unsplash.jpg"
+  ]
   },
+  
   {
-    "slug": "the-spice-island-slow-6d5n",
-    "title": "the-spice-island-slow-6d5n",
-    "price": 0,
-    "days": 0,
-    "nights": 0,
-    "category": "safari",
-    "description": "",
-    "inclusions": [],
-    "exclusions": [],
-    "tags": [],
-    "itinerary": [],
-    "images": [
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777898907218_jack_balke_Og6m4AXRKvY_unsplash.jpg",
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1778853220206_Screenshot_20260515_061426_ChatGPT.jpg",
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1778853232557_Screenshot_20260515_064110_ChatGPT.jpg",
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1778853368807_Screenshot_20260514_170529_ChatGPT.jpg",
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1778830855489_Discover_Tanzania_.pdf"
-    ]
+  "slug": "the-spice-island-slow-6d5n",
+  "title": "The Spice Island Slow",
+  "price": 1250,
+  "days": 6,
+  "nights": 5,
+  "category": "safari",
+  "description": "Discover the tropical paradise of Zanzibar with a relaxing 6-day island escape. Explore historic Stone Town, experience the famous spice plantations, enjoy beautiful white-sand beaches and discover the island's fascinating Swahili culture. This holiday combines relaxation, adventure, culture and unforgettable ocean experiences.",
+  "budgetPrice": 1250,
+  "midrangePrice": 1680,
+  "luxuryPrice": 2890,
+  "inclusions": [
+    "Airport transfers in Zanzibar",
+    "Accommodation for 5 nights",
+    "Daily breakfast",
+    "Stone Town guided walking tour",
+    "Spice farm guided experience",
+    "Scheduled island excursions included in the itinerary",
+    "Professional local tour guide",
+    "Transportation for scheduled excursions",
+    "Government taxes and applicable tourism levies"
+  ],
+  "exclusions": [
+    "International and domestic flights",
+    "Tanzania visa fees",
+    "Mandatory travel insurance",
+    "Mandatory Zanzibar inbound travel insurance where applicable",
+    "Personal expenses",
+    "Lunches and dinners unless specified",
+    "Alcoholic and premium beverages",
+    "Tips and gratuities",
+    "Optional water sports and diving activities",
+    "Laundry services",
+    "Additional accommodation outside the package"
+  ],
+  "tags": [
+    "Zanzibar",
+    "Beach Holiday",
+    "Stone Town",
+    "Spice Tour",
+    "Indian Ocean",
+    "Island Escape",
+    "Swahili Culture"
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Arrival in Zanzibar",
+      "description": "Arrive at Abeid Amani Karume International Airport. Meet your representative and transfer to your hotel. Spend the rest of the day relaxing and enjoying the tropical island atmosphere."
+    },
+    {
+      "day": 2,
+      "title": "Discover Historic Stone Town",
+      "description": "Explore the historic streets of Stone Town with a local guide. Discover traditional architecture, cultural landmarks, local markets and the island's fascinating history."
+    },
+    {
+      "day": 3,
+      "title": "Zanzibar Spice Farm Experience",
+      "description": "Visit a traditional spice plantation and discover why Zanzibar is known as the Spice Island. Learn about cloves, cinnamon, vanilla, nutmeg and tropical fruits while enjoying a cultural experience."
+    },
+    {
+      "day": 4,
+      "title": "Beach Relaxation and Ocean Experience",
+      "description": "Enjoy a relaxing day on Zanzibar's beautiful beaches. Swim in the Indian Ocean, enjoy the sunshine or choose optional ocean activities."
+    },
+    {
+      "day": 5,
+      "title": "Island Excursion",
+      "description": "Enjoy an island excursion and discover Zanzibar's spectacular marine environment. Depending on the selected excursion, experience beautiful sandbanks, turquoise waters and marine scenery."
+    },
+    {
+      "day": 6,
+      "title": "Departure from Zanzibar",
+      "description": "Enjoy breakfast at your hotel, check out and transfer to the airport for your departure flight."
+    }
+  ],
+  "images": [
+    "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777898907218_jack_balke_Og6m4AXRKvY_unsplash.jpg",
+    "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1778853220206_Screenshot_20260515_061426_ChatGPT.jpg",
+    "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1778853232557_Screenshot_20260515_064110_ChatGPT.jpg",
+    "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1778853368807_Screenshot_20260514_170529_ChatGPT.jpg"
+  ]
   },
+  
   {
-    "slug": "summit-the-roof-of-africa-machame-route-6d5n",
-    "title": "summit-the-roof-of-africa-machame-route-6d5n",
-    "price": 0,
-    "days": 0,
-    "nights": 0,
-    "category": "safari",
-    "description": "",
-    "inclusions": [],
-    "exclusions": [],
-    "tags": [],
-    "itinerary": [],
-    "images": [
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777899003767_slava_auchynnikau_6uRXRbIMXO8_unsplash.jpg",
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777899005650_slava_auchynnikau_z74fpuF_kcA_unsplash.jpg",
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777899007872_ben_sp_uPphqyTGZzI_unsplash.jpg",
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777899010482_daniel_vargas_oOp5mgNUd2U_unsplash.jpg",
-      "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777899013304_david_magalhaes_Yz8r_LeSuow_unsplash.jpg"
-    ]
-  },
+  "slug": "summit-the-roof-of-africa-machame-route-6d5n",
+  "title": "Summit the Roof of Africa - Machame Route",
+  "price": 1980,
+  "days": 6,
+  "nights": 5,
+  "category": "safari",
+  "description": "Take on the adventure of a lifetime and climb Mount Kilimanjaro via the spectacular Machame Route. Known for its breathtaking scenery and diverse ecological zones, this 6-day trekking adventure takes you through rainforest, moorland and alpine desert before reaching Uhuru Peak, the highest point in Africa.",
+  "budgetPrice": 1980,
+  "midrangePrice": 2450,
+  "luxuryPrice": 2850,
+  "inclusions": [
+    "Professional licensed mountain guides",
+    "Experienced mountain support crew",
+    "Park entrance fees",
+    "Camping fees",
+    "Rescue fees",
+    "Mountain camping accommodation",
+    "Sleeping tents",
+    "Camping equipment",
+    "All meals during the climb",
+    "Drinking water during the trek",
+    "Airport transfers as specified",
+    "Mountain crew wages",
+    "Government taxes and applicable tourism levies"
+  ],
+  "exclusions": [
+    "International flights",
+    "Tanzania visa fees",
+    "Travel and medical insurance",
+    "Personal trekking equipment",
+    "Sleeping bags unless provided by arrangement",
+    "Tips and gratuities for mountain crew",
+    "Personal expenses",
+    "Additional hotel accommodation",
+    "Alcoholic and premium beverages",
+    "Emergency evacuation costs not covered by insurance",
+    "Optional activities before or after the climb"
+  ],
+  "tags": [
+    "Mount Kilimanjaro",
+    "Machame Route",
+    "Uhuru Peak",
+    "Mountain Trekking",
+    "Tanzania",
+    "Africa's Highest Mountain",
+    "Adventure Travel"
+  ],
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Machame Gate to Machame Camp",
+      "description": "After breakfast, drive to Machame Gate for registration and preparation. Begin trekking through the beautiful rainforest with your mountain team. Arrive at Machame Camp for dinner and overnight."
+    },
+    {
+      "day": 2,
+      "title": "Machame Camp to Shira Camp",
+      "description": "Continue climbing through the forest towards the open moorland zone. Enjoy spectacular views of Mount Meru and the surrounding landscapes before reaching Shira Camp."
+    },
+    {
+      "day": 3,
+      "title": "Shira Camp to Barranco Camp",
+      "description": "Trek across the alpine desert towards Lava Tower for altitude acclimatization before descending to the beautiful Barranco Valley. Overnight at Barranco Camp."
+    },
+    {
+      "day": 4,
+      "title": "Barranco Camp to Barafu Camp",
+      "description": "Climb the famous Barranco Wall and continue through the Karanga Valley towards Barafu Camp. Rest, enjoy dinner and prepare for the summit attempt."
+    },
+    {
+      "day": 5,
+      "title": "Barafu Camp to Uhuru Peak and Mweka Camp",
+      "description": "Begin the summit attempt around midnight. Reach Stella Point and continue towards Uhuru Peak, the highest point in Africa at 5,895 metres. Celebrate your achievement before descending to Mweka Camp for dinner and overnight."
+    },
+    {
+      "day": 6,
+      "title": "Mweka Camp to Mweka Gate",
+      "description": "After breakfast, descend through the rainforest to Mweka Gate. Complete the mountain registration formalities and receive your summit certificate before returning to Arusha or Moshi."
+    }
+  ],
+  "images": [
+    "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777899003767_slava_auchynnikau_6uRXRbIMXO8_unsplash.jpg",
+    "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777899005650_slava_auchynnikau_z74fpuF_kcA_unsplash.jpg",
+    "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777899007872_ben_sp_uPphqyTGZzI_unsplash.jpg",
+    "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777899010482_daniel_vargas_oOp5mgNUd2U_unsplash.jpg",
+    "https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1777899013304_david_magalhaes_Yz8r_LeSuow_unsplash.jpg"
+  ]
+  }
   {
     "slug": "the-gentle-giant-marangu-route-6d5n",
     "title": "the-gentle-giant-marangu-route-6d5n",
