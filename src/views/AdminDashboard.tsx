@@ -1,8 +1,19 @@
 import React,{useEffect,useState} from 'react';
-import {collection,onSnapshot,addDoc,updateDoc,deleteDoc,doc} from 'firebase/firestore';
-import {ref,uploadBytes,getDownloadURL} from 'firebase/storage';
+
+import {
+ collection,onSnapshot,addDoc,
+ updateDoc,deleteDoc,doc,getDocs
+} from 'firebase/firestore';
+
+import {
+ ref,uploadBytes,getDownloadURL
+} from 'firebase/storage';
+
 import {signOut} from 'firebase/auth';
+
 import {auth,db,storage} from '../lib/firebase';
+
+import {SAFARI_PACKAGES} from '../data/safariData';
 
 export function AdminDashboard(){
  const [tab,setTab]=useState('packages');
@@ -45,7 +56,17 @@ export function AdminDashboard(){
   if(confirm('Una uhakika wa kufuta?'))
    await deleteDoc(doc(db,tab,id));
  }
-
+async function importOldPackages(){
+ const snap = await getDocs(collection(db,'packages'));
+ if(!snap.empty){
+  alert('Packages tayari zimeingizwa!');
+  return;
+ }
+ for(const p of SAFARI_PACKAGES){
+  await addDoc(collection(db,'packages'),p as any);
+ }
+ alert('Packages za zamani zimeingizwa!');
+}
  return <div style={{padding:20,maxWidth:800,margin:'auto'}}>
   <h2>Our Trip Africa Admin</h2>
   <button onClick={()=>setTab('packages')}>Packages</button>{' '}
@@ -55,6 +76,9 @@ export function AdminDashboard(){
   <hr/>
   {tab!=='bookings'&&<>
    <h3>{edit?'Edit':'Add'} {tab}</h3>
+   <button onClick={importOldPackages}>
+Manage Old Packages
+</button>
    <input placeholder="Title" value={title}
     onChange={e=>setTitle(e.target.value)}/><br/><br/>
    <input placeholder="Price" value={price}
