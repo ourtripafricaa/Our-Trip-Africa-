@@ -1,105 +1,63 @@
-import React,{useEffect,useState} from 'react';
-
-import {
- collection,onSnapshot,addDoc,
- updateDoc,deleteDoc,doc,getDocs
-} from 'firebase/firestore';
-
-import {
- ref,uploadBytes,getDownloadURL
-} from 'firebase/storage';
-
+import React,{useState,useEffect} from 'react';
+import {collection,onSnapshot,addDoc,updateDoc,deleteDoc,doc} from 'firebase/firestore';
+import {ref,uploadBytes,getDownloadURL} from 'firebase/storage';
 import {signOut} from 'firebase/auth';
-
 import {auth,db,storage} from '../lib/firebase';
-
 import {SAFARI_PACKAGES} from '../data/safariData';
 
 export function AdminDashboard(){
- const [tab,setTab]=useState('packages');
- const [items,setItems]=useState<any[]>([]);
- const [edit,setEdit]=useState<any>(null);
- const [title,setTitle]=useState('');
- const [price,setPrice]=useState('');
- const [description,setDescription]=useState('');
- const [image,setImage]=useState('');
- const [file,setFile]=useState<File|null>(null);
+ const [tab,T]=useState('packages');
+ const [items,S]=useState<any[]>([]);
+ const [edit,E]=useState<any>(null);
+ const [title,N]=useState('');
+ const [price,P]=useState('');
+ const [desc,D]=useState('');
+ const [photo,I]=useState<File|null>(null);
 
- useEffect(()=>{
-  return onSnapshot(collection(db,tab),s=>
-   setItems(s.docs.map(d=>({id:d.id,...d.data()})))
-  );
- },[tab]);
+ useEffect(()=>onSnapshot(collection(db,tab),s=>
+ S(s.docs.map(d=>({id:d.id,...d.data()})))),[tab]);
 
  async function save(){
-  let photo=image;
-  if(file){
-   const r=ref(storage,`uploads/${Date.now()}-${file.name}`);
-   await uploadBytes(r,file);
-   photo=await getDownloadURL(r);
+ let image='';
+ if(photo){
+ const r=ref(storage,'images/'+Date.now());
+ await uploadBytes(r,photo);
+ image=await getDownloadURL(r);
+ }
+ const data={title,price,description:desc,image};
+ if(edit) await updateDoc(doc(db,tab,edit.id),data);
+ else await addDoc(collection(db,tab),data);
+ E(null);N('');P('');D('');I(null);
+ }
+
+ async function importOld(){
+ for(const p of SAFARI_PACKAGES)
+ await addDoc(collection(db,'packages'),p as any);
+ alert('Packages zimeongezwa!');
+ }
+
+ return <main style={{padding:20}}>
+ <h2>Our Trip Africa Admin</h2>
+ <button onClick={()=>T('packages')}>Packages</button>
+ <button onClick={()=>T('blogPosts')}>Blog</button>
+ <button onClick={()=>T('bookings')}>Bookings</button>
+ <button onClick={()=>signOut(auth)}>Logout</button>
+
+ {tab==='packages'&&<button onClick={importOld}>Import Old Packages</button>}
+
+ {tab!=='bookings'&&<>
+ <h3>{edit?'Edit':'Add'} {tab}</h3>
+ <input placeholder="Title" value={title} onChange={e=>N(e.target.value)}/>
+ <input placeholder="Price" value={price} onChange={e=>P(e.target.value)}/>
+ <textarea placeholder="Description" value={desc} onChange={e=>D(e.target.value)}/>
+ <input type="file" accept="image/*" onChange={e=>I(e.target.files?.[0]||null)}/>
+ <button onClick={save}>SAVE</button>
+ </>}
+
+ {items.map(x=><div key={x.id}>
+ <b>{x.title||x.name}</b>
+ <button onClick={()=>{E(x);N(x.title||x.name||'');P(x.price||'');D(x.description||'')}}>EDIT</button>
+ <button onClick={()=>deleteDoc(doc(db,tab,x.id))}>DELETE</button>
+ </div>)}
+ </main>;
   }
-  const data={title,price,description,image:photo};
-  if(edit) await updateDoc(doc(db,tab,edit.id),data);
-  else await addDoc(collection(db,tab),data);
-  clear();
- }
- function clear(){
-  setEdit(null);setTitle('');setPrice('');
-  setDescription('');setImage('');setFile(null);
- }
- function choose(x:any){
-  setEdit(x);setTitle(x.title||'');
-  setPrice(x.price||'');setDescription(x.description||'');
-  setImage(x.image||'');
- }
- async function remove(id:string){
-  if(confirm('Una uhakika wa kufuta?'))
-   await deleteDoc(doc(db,tab,id));
- }
-async function importOldPackages(){
- const snap = await getDocs(collection(db,'packages'));
- if(!snap.empty){
-  alert('Packages tayari zimeingizwa!');
-  return;
- }
- for(const p of SAFARI_PACKAGES){
-  await addDoc(collection(db,'packages'),p as any);
- }
- alert('Packages za zamani zimeingizwa!');
-}
- return <div style={{padding:20,maxWidth:800,margin:'auto'}}>
-  <h2>Our Trip Africa Admin</h2>
-  <button onClick={()=>setTab('packages')}>Packages</button>{' '}
-  <button onClick={()=>setTab('blogPosts')}>Blog</button>{' '}
-  <button onClick={()=>setTab('bookings')}>Bookings</button>{' '}
-  <button onClick={()=>signOut(auth)}>Logout</button>
-  <hr/>
-  {tab!=='bookings'&&<>
-   <h3>{edit?'Edit':'Add'} {tab}</h3>
-   <button onClick={importOldPackages}>
-Manage Old Packages
-</button>
-   <input placeholder="Title" value={title}
-    onChange={e=>setTitle(e.target.value)}/><br/><br/>
-   <input placeholder="Price" value={price}
-    onChange={e=>setPrice(e.target.value)}/><br/><br/>
-   <textarea placeholder="Description / Details"
-    value={description}
-    onChange={e=>setDescription(e.target.value)}/><br/><br/>
-   <input type="file" accept="image/*"
-    onChange={e=>setFile(e.target.files?.[0]||null)}/><br/>
-   {image&&<img src={image} width="120" alt="Preview"/>}
-   <br/>
-   <button onClick={save}>SAVE</button>{' '}
-   <button onClick={clear}>CANCEL</button>
-  </>}
-  <hr/>
-  {items.map(x=><div key={x.id}
-   style={{padding:10,borderBottom:'1px solid #ccc'}}>
-   <b>{x.title||x.name||x.id}</b>
-   {x.image&&<img src={x.image} width="70" alt=""/>}
-   <button onClick={()=>choose(x)}>Edit</button>{' '}
-   <button onClick={()=>remove(x.id)}>Delete</button>
-  </div>)}
- </div>;
-}
