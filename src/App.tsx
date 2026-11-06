@@ -1,9 +1,7 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
+import React, { useState, useEffect } from 'react';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from './lib/firebase';
 
-import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { PackageModal } from './components/PackageModal';
@@ -22,8 +20,9 @@ import { SalesTeamView } from './views/SalesTeamView';
 import { AdminLogin } from './views/AdminLogin';
 import { AdminDashboard } from './views/AdminDashboard';
 
+import { SafariPackage } from './data/safariData';
 
-import { SafariPackage, SAFARI_PACKAGES } from './data/safariData';
+const ADMIN_EMAIL = 'ourtripafricaa@gmail.com';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<string>('home');
@@ -32,9 +31,28 @@ export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [bookingPackage, setBookingPackage] = useState<SafariPackage | null>(null);
   const [isCloudflareGuideOpen, setIsCloudflareGuideOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Scroll to top upon navigating to a new view
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [authChecked, setAuthChecked] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user?.email?.toLowerCase() === ADMIN_EMAIL) {
+        setIsAuthenticated(true);
+      } else {
+        setIsAuthenticated(false);
+
+        if (user) {
+          await signOut(auth);
+        }
+      }
+
+      setAuthChecked(true);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const handleNavigate = (view: string, extraParam?: string) => {
     setCurrentView(view);
     setViewParam(extraParam);
@@ -48,7 +66,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#faf9f5] text-slate-800 selection:bg-[#c5a059] selection:text-white">
-      {/* Top Navigation Bar */}
+
       <Navbar
         currentView={currentView}
         onNavigate={handleNavigate}
@@ -56,8 +74,8 @@ export default function App() {
         onOpenCloudflareGuide={() => setIsCloudflareGuideOpen(true)}
       />
 
-      {/* Main Content Area */}
       <main className="flex-1">
+
         {currentView === 'home' && (
           <HomeView
             onNavigate={handleNavigate}
@@ -74,106 +92,67 @@ export default function App() {
         )}
 
         {currentView === 'tanzania' && (
-          <DestinationView
-            country="Tanzania"
-            onSelectPackage={(pkg) => setSelectedPackage(pkg)}
-            onOpenBooking={handleOpenBooking}
-          />
+          <DestinationView country="Tanzania" onSelectPackage={(pkg) => setSelectedPackage(pkg)} onOpenBooking={handleOpenBooking} />
         )}
 
         {currentView === 'kenya' && (
-          <DestinationView
-            country="Kenya"
-            onSelectPackage={(pkg) => setSelectedPackage(pkg)}
-            onOpenBooking={handleOpenBooking}
-          />
+          <DestinationView country="Kenya" onSelectPackage={(pkg) => setSelectedPackage(pkg)} onOpenBooking={handleOpenBooking} />
         )}
 
         {currentView === 'uganda' && (
-          <DestinationView
-            country="Uganda"
-            onSelectPackage={(pkg) => setSelectedPackage(pkg)}
-            onOpenBooking={handleOpenBooking}
-          />
+          <DestinationView country="Uganda" onSelectPackage={(pkg) => setSelectedPackage(pkg)} onOpenBooking={handleOpenBooking} />
         )}
 
         {currentView === 'zanzibar' && (
-          <DestinationView
-            country="Zanzibar"
-            onSelectPackage={(pkg) => setSelectedPackage(pkg)}
-            onOpenBooking={handleOpenBooking}
-          />
+          <DestinationView country="Zanzibar" onSelectPackage={(pkg) => setSelectedPackage(pkg)} onOpenBooking={handleOpenBooking} />
         )}
 
         {currentView === 'south-africa' && (
-          <DestinationView
-            country="South Africa"
-            onSelectPackage={(pkg) => setSelectedPackage(pkg)}
-            onOpenBooking={handleOpenBooking}
-          />
+          <DestinationView country="South Africa" onSelectPackage={(pkg) => setSelectedPackage(pkg)} onOpenBooking={handleOpenBooking} />
         )}
 
         {currentView === 'uae' && (
-          <DestinationView
-            country="UAE"
-            onSelectPackage={(pkg) => setSelectedPackage(pkg)}
-            onOpenBooking={handleOpenBooking}
-          />
+          <DestinationView country="UAE" onSelectPackage={(pkg) => setSelectedPackage(pkg)} onOpenBooking={handleOpenBooking} />
         )}
 
         {currentView === 'packages' && (
-          <PackagesView
-            initialFilter={viewParam}
-            onSelectPackage={(pkg) => setSelectedPackage(pkg)}
-            onOpenBooking={handleOpenBooking}
-          />
+          <PackagesView initialFilter={viewParam} onSelectPackage={(pkg) => setSelectedPackage(pkg)} onOpenBooking={handleOpenBooking} />
         )}
 
         {currentView === 'compare' && (
-          <PackagesView
-            initialFilter={viewParam}
-            onSelectPackage={(pkg) => setSelectedPackage(pkg)}
-            onOpenBooking={handleOpenBooking}
-          />
+          <PackagesView initialFilter={viewParam} onSelectPackage={(pkg) => setSelectedPackage(pkg)} onOpenBooking={handleOpenBooking} />
         )}
 
         {currentView === 'blog' && (
-          <BlogView
-            onOpenBooking={() => handleOpenBooking()}
-          />
+          <BlogView onOpenBooking={() => handleOpenBooking()} />
         )}
 
-        {currentView === 'contact' && (
-          <ContactView />
-        )}
+        {currentView === 'contact' && <ContactView />}
 
-        {currentView === 'support-team' && (
-          <SupportTeamView />
-        )}
+        {currentView === 'support-team' && <SupportTeamView />}
 
         {currentView === 'sales-team' && (
-          <SalesTeamView
-            onOpenBooking={() => handleOpenBooking()}
-            onNavigate={handleNavigate}
-          />
+          <SalesTeamView onOpenBooking={() => handleOpenBooking()} onNavigate={handleNavigate} />
         )}
+
         {currentView === 'admin' && (
-          isAuthenticated ? (
+          !authChecked ? (
+            <div className="p-10 text-center">Checking admin access...</div>
+          ) : isAuthenticated ? (
             <AdminDashboard />
           ) : (
             <AdminLogin onLoginSuccess={() => setIsAuthenticated(true)} />
           )
         )}
+
       </main>
 
-      {/* Footer */}
       <Footer
         onNavigate={handleNavigate}
         onOpenBooking={() => handleOpenBooking()}
         onOpenCloudflareGuide={() => setIsCloudflareGuideOpen(true)}
       />
 
-      {/* Safari Package Detail Modal */}
       {selectedPackage && (
         <PackageModal
           packageItem={selectedPackage}
@@ -182,7 +161,6 @@ export default function App() {
         />
       )}
 
-      {/* Safari Booking & Enquiry Modal */}
       {isBookingOpen && (
         <BookingForm
           initialPackage={bookingPackage}
@@ -193,15 +171,12 @@ export default function App() {
         />
       )}
 
-      {/* Cloudflare Pages Deployment & Custom Domain Guide Modal */}
       {isCloudflareGuideOpen && (
-        <CloudflareGuideModal
-          onClose={() => setIsCloudflareGuideOpen(false)}
-        />
+        <CloudflareGuideModal onClose={() => setIsCloudflareGuideOpen(false)} />
       )}
 
-      {/* Floating AI Safari Assistant Chatbot */}
       <SafariChatbot />
+
     </div>
   );
-}
+    }
