@@ -33,8 +33,16 @@ export function AdminLogin({
       onLoginSuccess();
 
     } catch (err) {
-      console.error('Login failed:', err);
-      setError('Login failed. Please try again.');
+  console.error('Login failed:', err);
+
+  const firebaseError = err as {
+    code?: string;
+    message?: string;
+  };
+
+  setError(
+    `${firebaseError.code || 'Unknown error'}: ${firebaseError.message || 'Please try again.'}`
+  );
     } finally {
       setLoading(false);
     }
