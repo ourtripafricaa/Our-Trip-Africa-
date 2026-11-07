@@ -6,7 +6,9 @@ import {
  addDoc,
  setDoc,
  doc,
- deleteDoc
+ deleteDoc,
+ updateDoc,
+ serverTimestamp
 } from 'firebase/firestore';
 
 import {signOut} from 'firebase/auth';
@@ -72,9 +74,9 @@ export function AdminDashboard(){
   }
 ];
 
- const menus=['Overview','Home','About Us','Contacts','Packages','Old Packages','Destinations','Bookings','Blog','Reviews','Images','Videos','Attachments','Logout'];
+ const menus=['Overview','Home','About Us','Contacts','Packages','Old Packages','Destinations','Bookings','Blog','Reviews','Offers','Images','Videos','Attachments','Logout'];
  const pages=['Home','About Us','Contacts'];
- const cols:any={Packages:'packages',Destinations:'destinations',Bookings:'bookings',Blog:'blogPosts',Reviews:'reviews'};
+ const cols:any={Packages:'packages',Destinations:'destinations',Bookings:'bookings',Blog:'blogPosts',Reviews:'reviews',Offers:'offers'};
 
  const defaults:any={
  Home:{title:'Discover the Untamed Wonder of East Africa',heading:'Welcome to Our Trip Africa',description:'Discover. Explore. Enjoy.'},
@@ -202,6 +204,19 @@ const upload=async(list:any[],folder:string)=>{
   T('Packages');
  }
 
+ async function changeBookingStatus(x:any,status:string){
+  try{
+   await updateDoc(doc(db,'bookings',x.firestoreId),{status,statusUpdatedAt:serverTimestamp()});
+   if(x.email){
+    await addDoc(collection(db,'mail'),{
+     to:x.email,
+     message:{subject:`Your Our Trip Africa enquiry ${x.bookingRef||''} - ${status.replaceAll('_',' ')}`,text:`Dear ${x.fullName||'Guest'},\\n\\nThe status of your booking enquiry ${x.bookingRef||''} for ${x.packageTitle||'your selected trip'} has been updated to: ${status.replaceAll('_',' ').toUpperCase()}.\\n\\nOur team will contact you with the next details. For assistance, WhatsApp +255624661830 or email info@ourtripafrica.com.\\n\\nOur Trip Africa`},
+     createdAt:serverTimestamp()
+    });
+   }
+  }catch(e:any){alert('Status update / email queue failed: '+e.message);}
+ }
+
  async function remove(x:any){
   if(!confirm('Una uhakika wa kufuta?'))return;
   try{
@@ -242,7 +257,7 @@ const upload=async(list:any[],folder:string)=>{
  </div>)}
  </>}
 
- {['Packages','Destinations','Blog','Reviews'].includes(tab)&&<>
+ {['Packages','Destinations','Blog','Reviews','Offers'].includes(tab)&&<>
  <h3>{edit?'Edit':'Add New'} {tab}</h3>
  {tab==='Packages'&&<>
  {['id','slug','title','destination','country','category','durationDays','durationNights','durationLabel','basePrice','currency','priceNote','minGuests','maxGuests','rating','reviewsCount','featured','bestTime','physicalRating','heroImage','overview'].map(field)}
@@ -251,6 +266,7 @@ const upload=async(list:any[],folder:string)=>{
  {tab==='Destinations'&&['title','country','description','image'].map(field)}
  {tab==='Blog'&&['title','slug','category','readTime','publishedDate','image','excerpt','content','tags','seoDescription'].map(field)}
  {tab==='Reviews'&&['name','country','packageTitle','rating','review','status'].map(field)}
+ {tab==='Offers'&&['title','description','discountLabel','validUntil','image','packageSlug','active','ctaLabel'].map(field)}
  <p>Select an image from GitHub Gallery</p>
  <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(105px,1fr))',gap:8}}>
  {galleryImages.map((img:any)=><button type="button" key={img.url} onClick={()=>{SI(img.url);F({...form,image:img.url,heroImage:img.url})}} style={{border:selectedImage===img.url?'3px solid #046A38':'1px solid #ccc',background:'white',padding:5}}><img src={img.url} alt={img.name} style={{width:'100%',height:75,objectFit:'cover'}}/><small>{img.name}</small></button>)}
@@ -277,7 +293,18 @@ const upload=async(list:any[],folder:string)=>{
  </button>
 </>}
 
- {items.map(x=><div key={x.firestoreId} style={{background:'white',padding:12,margin:8}}>
+ {tab==='Bookings'&&<section style={{background:'white',padding:14,borderRadius:12,marginBottom:16}}>
+  <h3 style={{fontSize:18,fontWeight:700}}>Live Booking Tracker</h3>
+  <div style={{display:'flex',flexWrap:'wrap',gap:8,margin:'12px 0'}}>
+   {['new','under_review','quotation_sent','confirmed','cancelled'].map(status=><div key={status} style={{background:'#edf5ef',padding:'8px 12px',borderRadius:8}}><b>{items.filter(x=>(x.status||'new')===status).length}</b><br/><small>{status.replaceAll('_',' ').toUpperCase()}</small></div>)}
+  </div>
+  {items.length===0?<p>No booking enquiries received yet.</p>:items.map(x=><article key={x.firestoreId} style={{border:'1px solid #dce7df',borderRadius:10,padding:12,margin:'10px 0'}}>
+   <div style={{display:'flex',justifyContent:'space-between',gap:8,flexWrap:'wrap'}}><b>{x.bookingRef||x.fullName||'Booking enquiry'}</b><strong style={{color:green}}>{(x.status||'new').replaceAll('_',' ').toUpperCase()}</strong></div>
+   <p><b>{x.packageTitle}</b> — {x.destination}</p><p>{x.fullName} | {x.email} | {x.phone}</p><p>Travel: {x.travelDate||'Flexible'} | Group: {x.adults} adults, {x.children} children</p><p>Estimate: {x.currency||'USD'} {x.estimatedTotal||'—'}</p>
+   <label style={{display:'block',marginTop:8}}>Update booking status <select value={x.status||'new'} onChange={e=>changeBookingStatus(x,e.target.value)} style={{padding:9,border:'1px solid #ccc',borderRadius:7,marginLeft:8}}>{['new','under_review','quotation_sent','confirmed','cancelled'].map(v=><option key={v} value={v}>{v.replaceAll('_',' ').toUpperCase()}</option>)}</select></label>
+  </article>)}
+ </section>}
+ {items.filter(x=>tab!=='Bookings').map(x=><div key={x.firestoreId} style={{background:'white',padding:12,margin:8}}>
  <b>{x.title||x.name||x.type}</b><br/>
  {x.image&&<img src={x.image} width="80" alt=""/>}
  {x.heroImage&&<img src={x.heroImage} width="80" alt=""/>}
