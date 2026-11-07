@@ -51,6 +51,17 @@ export const PackageCard: React.FC<PackageCardProps> = ({
           </span>
         </div>
 
+        {/* Animated NEW badge on every package card */}
+        <div className="absolute bottom-4 left-3 z-10">
+          <span className="relative inline-flex items-center gap-1.5 rounded-full border border-[#f2d18b] bg-[#c5a059] px-3 py-1.5 text-[10px] font-extrabold tracking-[0.16em] text-[#0e3022] shadow-lg animate-bounce">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0e3022] opacity-60"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#0e3022]"></span>
+            </span>
+            NEW
+          </span>
+        </div>
+
         {/* Bottom subtle gradient */}
         <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/40 to-transparent" />
       </div>
