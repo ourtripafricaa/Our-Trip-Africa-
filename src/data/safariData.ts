@@ -728,11 +728,11 @@ export const SAFARI_PACKAGES: SafariPackage[] = [
     featured: false,
     bestTime: 'Year-Round',
     physicalRating: 'Moderate',
-    heroImage: 'https://images.unsplash.com/photo-1611652951546-7dde1b5f804c?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://commons.wikimedia.org/wiki/Special:FilePath/Hadzabe_Hunters.jpg?width=1400',
     gallery: [
-      LOCAL_IMAGES.lakeEyasi,
-      'https://flyo4business.s3.ap-south-1.amazonaws.com/images/11972_1779884611070_fc.jpg',
-      LOCAL_IMAGES.hero
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Hadzabe_Hunters.jpg?width=1400',
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Tanzania_-_Young_Hadzabe_hunter_%2814533463462%29.jpg?width=1400',
+      LOCAL_IMAGES.lakeEyasi
     ],
     overview: 'Step back thousands of years to walk and hunt alongside the indigenous Hadzabe bushmen — one of Earth’s last remaining click-speaking hunter-gatherer tribes. Visit the skilled Datoga blacksmiths and enjoy wildlife game drives in Tarangire.',
     highlights: [
