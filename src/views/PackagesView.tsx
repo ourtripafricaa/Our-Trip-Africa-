@@ -32,7 +32,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
       setPackagesLoaded(true);
     });
     return () => unsubscribe();
-  }, [allPackages.length]);
+  }, []);
 
   const packageMap = new Map<string, SafariPackage>();
   SAFARI_PACKAGES.forEach(pkg => packageMap.set(pkg.slug || pkg.id, pkg));
