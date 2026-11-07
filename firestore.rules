@@ -3,8 +3,7 @@ service cloud.firestore {
   match /databases/{database}/documents {
     function isSignedIn() { return request.auth != null; }
     function isAdmin() {
-      return isSignedIn() &&
-        exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+      return isSignedIn() && request.auth.token.email == 'ourtripafricaa@gmail.com';
     }
 
     match /reviews/{reviewId} {
@@ -28,10 +27,6 @@ service cloud.firestore {
       allow update, delete: if isAdmin();
     }
 
-    match /admins/{userId} {
-      allow read: if isAdmin();
-      allow write: if false;
-    }
 
     // Public visitors may submit a booking enquiry, but cannot read or alter bookings.
     match /bookings/{bookingId} {
