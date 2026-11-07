@@ -234,14 +234,14 @@ export const HomeView: React.FC<HomeViewProps> = ({
               Curated Destinations
             </span>
             <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900 mt-1">
-              Iconic Safari & Travel Destinations
+              DISCOVER THE ICONIC DESTINATIONS IN AFRICA AND UAE
             </h2>
           </div>
           <button
-            onClick={() => onNavigate('packages')}
+            onClick={() => onNavigate('destinations')}
             className="text-xs text-[#0e3022] hover:text-[#c5a059] flex items-center gap-1 font-semibold cursor-pointer transition-colors"
           >
-            <span>View All Destinations</span>
+            <span>Explore All Destinations</span>
             <ArrowRight size={14} />
           </button>
         </div>
