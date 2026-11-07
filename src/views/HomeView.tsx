@@ -546,6 +546,67 @@ export const HomeView: React.FC<HomeViewProps> = ({
       </section>
 
 
+
+      {/* Guest Reviews & Customer Feedback */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
+        <div className="text-center max-w-3xl mx-auto space-y-2">
+          <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#0e3022]">Guest Experiences</span>
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Stories From Our Safari Guests</h2>
+          <p className="text-sm text-slate-600">A great journey deserves to be shared. Contact our team to request guest references or share feedback about your Our Trip Africa experience.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="rounded-3xl bg-white border border-slate-200 p-6 shadow-sm">
+            <div className="flex gap-1 text-[#c5a059] mb-3"><Star/><Star/><Star/><Star/><Star/></div>
+            <h3 className="font-serif text-lg font-bold text-slate-900">Personal Safari Planning</h3>
+            <p className="text-sm text-slate-600 mt-2">Tell us what mattered most on your trip. Our team welcomes honest feedback about planning, guiding, accommodation and wildlife experiences.</p>
+          </div>
+          <div className="rounded-3xl bg-white border border-slate-200 p-6 shadow-sm">
+            <div className="flex gap-1 text-[#c5a059] mb-3"><Star/><Star/><Star/><Star/><Star/></div>
+            <h3 className="font-serif text-lg font-bold text-slate-900">Share Your Experience</h3>
+            <p className="text-sm text-slate-600 mt-2">Past guests can send a review, travel photo or short video directly to our Arusha team for permission-based publication.</p>
+          </div>
+          <div className="rounded-3xl bg-white border border-slate-200 p-6 shadow-sm">
+            <div className="flex gap-1 text-[#c5a059] mb-3"><Star/><Star/><Star/><Star/><Star/></div>
+            <h3 className="font-serif text-lg font-bold text-slate-900">Real Guest Feedback</h3>
+            <p className="text-sm text-slate-600 mt-2">We aim to publish genuine feedback with the guest's approval, helping future travellers make informed decisions.</p>
+          </div>
+        </div>
+        <div className="text-center">
+          <a href={`https://wa.me/${COMPANY_DETAILS.whatsappRaw}?text=${encodeURIComponent('Hello Our Trip Africa, I would like to share feedback about my trip.')}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[#0e3022] px-6 py-3 text-sm font-bold text-white hover:bg-[#154632]">
+            <MessageSquare size={17}/> Share Your Review
+          </a>
+        </div>
+      </section>
+
+      {/* Customer Trust & Booking Confidence */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-[#c5a059]/40 bg-[#0e3022] p-7 sm:p-10 text-white">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8">
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#e4c681]">Travel With Confidence</span>
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold">Why Plan Your Journey With Our Trip Africa?</h2>
+            <p className="text-sm text-slate-200">Clear communication, locally planned journeys and direct access to our Arusha-based team from your first enquiry to the end of your trip.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              ['Local Arusha Team', 'Plan directly with a Tanzania-based safari operator.'],
+              ['Tailor-Made Itineraries', 'Choose your dates, destinations, travel style and budget.'],
+              ['Clear Package Details', 'Review the itinerary, inclusions and exclusions before confirming.'],
+              ['Direct Guest Support', 'Reach our team by WhatsApp or email for trip planning assistance.']
+            ].map(([title, description]) => (
+              <div key={title} className="rounded-2xl border border-white/15 bg-white/5 p-5">
+                <ShieldCheck className="text-[#c5a059] mb-3" size={25}/>
+                <h3 className="font-bold text-white">{title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-300">{description}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-7 flex flex-col sm:flex-row justify-center gap-3">
+            <button onClick={() => onOpenBooking()} className="rounded-xl bg-[#c5a059] px-6 py-3 text-sm font-bold text-[#061d14]">Start a Booking Enquiry</button>
+            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-white/30 px-6 py-3 text-center text-sm font-bold text-white">Chat With Our Team</a>
+          </div>
+        </div>
+      </section>
+
       {/* 6. DIRECTOR SUMMARY (Replaced Highlighted Section) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center gap-8">
