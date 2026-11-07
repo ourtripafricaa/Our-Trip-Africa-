@@ -38,3 +38,26 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #c5a059;
 }
+
+
+/* Refined brand entrance: a one-time slide-in, with reduced-motion support. */
+@keyframes ota-brand-slide-in {
+  from { opacity: 0; transform: translateX(-18px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.brand-welcome-slide {
+  animation: ota-brand-slide-in 650ms ease-out both;
+}
+.brand-name-slide {
+  animation: ota-brand-slide-in 850ms ease-out 120ms both;
+}
+.brand-tagline-slide {
+  animation: ota-brand-slide-in 900ms ease-out 240ms both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-welcome-slide,
+  .brand-name-slide,
+  .brand-tagline-slide {
+    animation: none;
+  }
+}
