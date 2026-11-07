@@ -287,6 +287,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <p className="text-xs sm:text-sm text-slate-200 max-w-xl line-clamp-2">
                 The Great Wildebeest Migration, Ngorongoro Crater Big Five, Tarangire baobabs, and the snow-capped summit of Mount Kilimanjaro (5,895m).
               </p>
+              <button
+                type="button"
+                onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
+              >
+                Explore Tanzania Packages
+              </button>
             </div>
           </div>
 
@@ -311,6 +318,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <p className="text-xs text-slate-200 line-clamp-2">
                 White-sand beaches of Nungwi, Safari Blue dhow cruises, and historic Stone Town spice alleys.
               </p>
+              <button
+                type="button"
+                onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
+              >
+                Explore Zanzibar Packages
+              </button>
             </div>
           </div>
 
@@ -335,6 +349,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <p className="text-xs text-slate-200 line-clamp-2">
                 Maasai Mara predator action, Amboseli giant tuskers beneath Kilimanjaro, and Tsavo red elephants.
               </p>
+              <button
+                type="button"
+                onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
+              >
+                Explore Kenya Packages
+              </button>
             </div>
           </div>
 
@@ -359,6 +380,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <p className="text-xs text-slate-200 line-clamp-2">
                 Bwindi Impenetrable Forest gorilla trekking, Kibale wild chimpanzees, and Kazinga Channel boat cruises.
               </p>
+              <button
+                type="button"
+                onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
+              >
+                Explore Uganda Packages
+              </button>
             </div>
           </div>
 
@@ -383,6 +411,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <p className="text-xs text-slate-200 line-clamp-2">
                 Greater Kruger Big 5 safaris, Cape Town Table Mountain, and picturesque Garden Route coastal road trips.
               </p>
+              <button
+                type="button"
+                onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
+              >
+                Explore South Africa Packages
+              </button>
             </div>
           </div>
 
@@ -409,7 +444,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   Red dunes 4x4 desert safaris, sunset camel treks, Bedouin feasts under the stars, Burj Khalifa, and Sheikh Zayed Grand Mosque.
                 </p>
               </div>
-              <button className="px-5 py-2.5 rounded-xl bg-[#c5a059] text-[#061d14] font-bold text-xs shrink-0 shadow">
+              <button
+                type="button"
+                onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
+                className="px-5 py-2.5 rounded-xl bg-[#c5a059] text-[#061d14] font-bold text-xs shrink-0 shadow hover:bg-[#d6b36d] transition-colors"
+              >
                 Explore UAE Packages
               </button>
             </div>
@@ -432,6 +471,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <p className="text-xs sm:text-sm text-slate-200 max-w-3xl">
                 Discover the living knowledge, language and traditions of the Hadzabe through a respectful, locally guided visit arranged with community consent.
               </p>
+              <button
+                type="button"
+                onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
+              >
+                Explore Hadzabe Packages
+              </button>
             </div>
           </div>
           </div>
