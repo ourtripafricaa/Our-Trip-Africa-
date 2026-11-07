@@ -38,6 +38,10 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   const handleSubmitEmail = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName || !email || saving) return;
+    if (adults + children > 30) {
+      setSubmitError('The maximum group size is 30 travellers, including adults and children.');
+      return;
+    }
 
     setSaving(true);
     setSubmitError('');
@@ -241,9 +245,12 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                   <input
                     type="number"
                     min={1}
-                    max={20}
+                    max={30 - children}
                     value={adults}
-                    onChange={(e) => setAdults(Math.max(1, parseInt(e.target.value) || 1))}
+                    onChange={(e) => {
+                      const nextAdults = Math.max(1, parseInt(e.target.value) || 1);
+                      setAdults(Math.min(nextAdults, 30 - children));
+                    }}
                     className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
                   />
                 </div>
@@ -255,13 +262,18 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                   <input
                     type="number"
                     min={0}
-                    max={10}
+                    max={30 - adults}
                     value={children}
-                    onChange={(e) => setChildren(Math.max(0, parseInt(e.target.value) || 0))}
+                    onChange={(e) => {
+                      const nextChildren = Math.max(0, parseInt(e.target.value) || 0);
+                      setChildren(Math.min(nextChildren, 30 - adults));
+                    }}
                     className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
                   />
                 </div>
               </div>
+
+              <p className="text-[11px] text-[#c5a059] -mt-4">Maximum group size: 30 travellers in total, including adults and children.</p>
 
               {/* Guest Contact Details */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
