@@ -200,6 +200,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                 <p className="text-[11px] text-[#c5a059] mt-1.5">
                   Includes private 4x4 Land Cruiser, guides, park permits & meals
                 </p>
+                <p className="text-[11px] text-[#faf7f2] mt-2 font-semibold">Displayed price is per person and is based on a group of at least 6 travellers.</p>
               </div>
 
               {/* Dual BOOK NOW Actions */}
