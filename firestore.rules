@@ -63,7 +63,7 @@ service cloud.firestore {
     // Admins may queue customer status updates. Install Firebase Trigger Email to deliver these messages.
     match /mail/{mailId} {
       allow create: if isAdmin() || (
-        request.resource.data.to == 'info@ourtripafrica.com' &&
+        (request.resource.data.to == 'info@ourtripafrica.com' || request.resource.data.to == getAfter(/databases/$(database)/documents/bookings/$(request.resource.data.bookingId)).data.email) &&
         request.resource.data.bookingId is string &&
         request.resource.data.bookingRef is string &&
         getAfter(/databases/$(database)/documents/bookings/$(request.resource.data.bookingId)).data.bookingRef == request.resource.data.bookingRef &&
