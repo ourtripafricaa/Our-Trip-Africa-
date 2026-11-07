@@ -161,22 +161,67 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
-      {/* 2.5 DON'T RUN OUT PLEASE TELL US YOUR BUDGET */}
+      {/* 2.5 DREAM TRIP PLANNER / BUDGET CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#0e3022] rounded-3xl p-8 sm:p-10 border border-[#c5a059]/40 shadow-2xl text-center space-y-6 text-white">
-          <p className="font-serif text-sm font-bold text-[#c5a059]">
-            WARMLY WELCOME TO OUR TRIP AFRICA, FEEL FREE AS YOU ARE IN TANZANIA, KENYA, UGANDA, SOUTH AFRICA AND DUBAI, LET'S TURN YOUR DREAM INTO REALITY AND UNFORGETTABLE MEMORIES.
-          </p>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            DON'T RUN OUT<br />PLEASE TELL US YOUR BUDGET
-          </h2>
-          <p className="text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
-            Planning your African safari shouldn't be stressful. Please share your estimated budget, your preferred travel dates, and the number of people in your group. Our Arusha team will expertly craft a perfect package that fits your specific needs without compromising on quality. Don't hesitate to contact us!
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button onClick={() => onNavigate('contact')} className="px-6 py-3 bg-[#c5a059] hover:bg-[#d6b36d] text-[#061d14] font-bold rounded-xl text-sm transition-all shadow-md cursor-pointer">
-              Share Your Budget & Requirements
-            </button>
+        <div className="relative overflow-hidden bg-[#0e3022] rounded-3xl p-8 sm:p-12 border border-[#c5a059]/40 shadow-2xl text-white">
+          <div className="absolute -top-24 -right-20 w-72 h-72 rounded-full bg-[#c5a059]/10 blur-3xl pointer-events-none" />
+          <div className="relative max-w-4xl mx-auto text-center space-y-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-[#c5a059]/40 text-[#e4c681] text-xs font-bold uppercase tracking-[0.18em]">
+              <Sparkles size={14} />
+              Welcome to Our Trip Africa
+            </span>
+            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+              YOUR AFRICAN ADVENTURE STARTS HERE
+            </h2>
+            <p className="text-base sm:text-lg text-slate-200 max-w-3xl mx-auto leading-relaxed">
+              Feel at home as you explore the wonders of Tanzania, Kenya, Uganda, South Africa and Dubai. From breathtaking wildlife safaris to beautiful beach escapes and unforgettable cultural experiences, we turn your travel dreams into extraordinary memories.
+            </p>
+
+            <div className="pt-5 space-y-5">
+              <div className="w-16 h-px bg-[#c5a059] mx-auto" />
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#e4c681]">
+                LET'S PLAN YOUR DREAM JOURNEY
+              </h3>
+              <p className="text-lg sm:text-xl font-semibold text-white">
+                Tell Us Your Budget – We'll Create the Perfect Experience!
+              </p>
+              <p className="text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
+                Planning your African adventure should be exciting, not stressful. Simply tell us:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto text-left">
+              <div className="flex items-center gap-3 rounded-2xl bg-white/10 border border-white/10 px-4 py-4">
+                <CheckCircle2 className="text-[#c5a059] shrink-0" size={20} />
+                <span className="text-sm font-medium">Your estimated travel budget</span>
+              </div>
+              <div className="flex items-center gap-3 rounded-2xl bg-white/10 border border-white/10 px-4 py-4">
+                <CheckCircle2 className="text-[#c5a059] shrink-0" size={20} />
+                <span className="text-sm font-medium">Your preferred travel dates</span>
+              </div>
+              <div className="flex items-center gap-3 rounded-2xl bg-white/10 border border-white/10 px-4 py-4">
+                <CheckCircle2 className="text-[#c5a059] shrink-0" size={20} />
+                <span className="text-sm font-medium">The number of travellers</span>
+              </div>
+            </div>
+
+            <p className="text-sm sm:text-base text-slate-200 max-w-3xl mx-auto leading-relaxed">
+              Our experienced Arusha-based travel team will design a personalised holiday package tailored to your budget, interests and expectations — without compromising on quality or unforgettable experiences.
+            </p>
+
+            <p className="font-serif text-lg sm:text-xl font-bold tracking-wide text-[#e4c681]">
+              YOUR DREAM. YOUR BUDGET. YOUR ADVENTURE.
+            </p>
+            <div className="space-y-3 pt-2">
+              <p className="text-white font-semibold">Ready to begin?</p>
+              <button onClick={() => onNavigate('contact')} className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-[#c5a059] hover:bg-[#d6b36d] text-[#061d14] font-extrabold rounded-xl text-sm sm:text-base transition-all shadow-lg hover:shadow-xl cursor-pointer">
+                GET YOUR PERSONALIZED SAFARI QUOTE TODAY!
+                <ArrowRight size={18} />
+              </button>
+              <p className="text-xs sm:text-sm text-slate-300">
+                Contact Our Trip Africa and let us make your dream journey a reality.
+              </p>
+            </div>
           </div>
         </div>
       </section>
