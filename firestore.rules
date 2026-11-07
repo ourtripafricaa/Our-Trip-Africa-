@@ -6,6 +6,125 @@ service cloud.firestore {
       return isSignedIn() && request.auth.token.email == 'ourtripafricaa@gmail.com';
     }
 
+    // Anonymous, one-per-browser-per-day website visit records.
+    match /siteVisits/{visitId} {
+      allow create: if
+        request.resource.data.keys().hasOnly(['date','visitorId','pagePath','createdAt']) &&
+        request.resource.data.keys().hasAll(['date','visitorId','pagePath','createdAt']) &&
+        request.resource.data.date is string &&
+        request.resource.data.date.matches('^\\d{4}-\\d{2}-\\d{2}
+      allow read: if (resource.data.status == 'approved') || isAdmin();
+      allow create: if
+        request.resource.data.keys().hasAll(['name','country','packageTitle','rating','review','status','createdAt']) &&
+        request.resource.data.name is string &&
+        request.resource.data.name.size() > 0 &&
+        request.resource.data.name.size() <= 100 &&
+        request.resource.data.country is string &&
+        request.resource.data.country.size() <= 100 &&
+        request.resource.data.packageTitle is string &&
+        request.resource.data.packageTitle.size() <= 200 &&
+        request.resource.data.rating is int &&
+        request.resource.data.rating >= 1 &&
+        request.resource.data.rating <= 5 &&
+        request.resource.data.review is string &&
+        request.resource.data.review.size() >= 10 &&
+        request.resource.data.review.size() <= 2000 &&
+        request.resource.data.status == 'pending';
+      allow update, delete: if isAdmin();
+    }
+
+
+    // Public visitors may submit a booking enquiry, but cannot read or alter bookings.
+    match /bookings/{bookingId} {
+      allow create: if
+        request.resource.data.keys().hasAll([
+          'bookingRef', 'packageSlug', 'packageTitle', 'destination',
+          'accommodationTier', 'unitPrice', 'estimatedTotal', 'currency',
+          'travelDate', 'adults', 'children', 'fullName', 'email',
+          'phone', 'country', 'specialRequests', 'status', 'createdAt'
+        ]) &&
+        request.resource.data.bookingRef is string &&
+        request.resource.data.bookingRef.size() <= 32 &&
+        request.resource.data.packageTitle is string &&
+        request.resource.data.packageTitle.size() <= 200 &&
+        request.resource.data.fullName is string &&
+        request.resource.data.fullName.size() > 0 &&
+        request.resource.data.fullName.size() <= 120 &&
+        request.resource.data.email is string &&
+        request.resource.data.email.size() <= 254 &&
+        request.resource.data.adults is int &&
+        request.resource.data.adults >= 1 &&
+        request.resource.data.adults <= 30 &&
+        request.resource.data.children is int &&
+        request.resource.data.children >= 0 &&
+        request.resource.data.children <= 30 &&
+        request.resource.data.adults + request.resource.data.children <= 30 &&
+        request.resource.data.status == 'new' &&
+        !('customerUid' in request.resource.data);
+      allow read: if isAdmin();
+      allow update, delete: if isAdmin();
+    }
+
+    // Email queue: public booking form may queue only an admin alert linked to a booking created in the same batch.
+    // Admins may queue customer status updates. Install Firebase Trigger Email to deliver these messages.
+    match /mail/{mailId} {
+      allow create: if isAdmin() || (
+        (request.resource.data.to == 'info@ourtripafrica.com' || request.resource.data.to == getAfter(/databases/$(database)/documents/bookings/$(request.resource.data.bookingId)).data.email) &&
+        request.resource.data.bookingId is string &&
+        request.resource.data.bookingRef is string &&
+        getAfter(/databases/$(database)/documents/bookings/$(request.resource.data.bookingId)).data.bookingRef == request.resource.data.bookingRef &&
+        getAfter(/databases/$(database)/documents/bookings/$(request.resource.data.bookingId)).data.email is string &&
+        getAfter(/databases/$(database)/documents/bookings/$(request.resource.data.bookingId)).data.createdAt == request.time &&
+        request.resource.data.message.subject is string &&
+        request.resource.data.message.subject.size() <= 200 &&
+        request.resource.data.message.text is string &&
+        request.resource.data.message.text.size() <= 5000
+      );
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /offers/{offerId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Public website content is readable; only authenticated admins can manage it.
+    match /siteContent/{pageId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /packages/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /destinations/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /blogPosts/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /media/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /images/{imageId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}) &&
+        request.resource.data.visitorId is string &&
+        request.resource.data.visitorId.size() >= 8 &&
+        request.resource.data.visitorId.size() <= 80 &&
+        request.resource.data.pagePath is string &&
+        request.resource.data.pagePath.size() <= 500 &&
+        request.resource.data.createdAt == request.time;
+      allow read: if isAdmin();
+      allow update, delete: if isAdmin();
+    }
+
     match /reviews/{reviewId} {
       allow read: if (resource.data.status == 'approved') || isAdmin();
       allow create: if
