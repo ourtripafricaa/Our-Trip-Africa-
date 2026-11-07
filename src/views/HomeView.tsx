@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowRight, Star, ShieldCheck, Compass, Heart, Users, MapPin, Sparkles, ChevronDown, CheckCircle2, MessageSquare, Mail, Globe } from 'lucide-react';
 import { COMPANY_DETAILS, LOCAL_IMAGES, SAFARI_PACKAGES, TESTIMONIALS, SAFARI_FAQS, SafariPackage } from '../data/safariData';
 import { PackageCard } from '../components/PackageCard';
@@ -73,6 +73,14 @@ export const HomeView: React.FC<HomeViewProps> = ({
   const [filterDuration, setFilterDuration] = useState<string>('all');
   const [filterTier, setFilterTier] = useState<string>('all');
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [galleryIndex, setGalleryIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setGalleryIndex((current) => (current + 1) % TANZANIA_GALLERY.length);
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, []);
 
   const featuredPackages = SAFARI_PACKAGES.filter((p) => p.featured).slice(0, 6);
 
@@ -574,23 +582,77 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </button>
           </div>
         </div>
-      </section>
-      {/* 5.6 GALLERY */}
+            {/* 5.6 SLIDE GALLERY */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs font-semibold uppercase tracking-widest text-[#0e3022]">Visual Journey</span>
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Safari & Landscape Gallery</h2>
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Experience Africa Through Our Gallery</h2>
+          <p className="text-sm text-slate-600">A glimpse of the wildlife, landscapes and unforgettable places waiting to be explored.</p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {TANZANIA_GALLERY.map((photo) => (
-            <figure key={photo.name} className="overflow-hidden rounded-3xl bg-white shadow-sm">
-              <img src={photo.url} alt={photo.name} loading="lazy" className="w-full h-44 sm:h-52 object-cover transition-transform duration-500 hover:scale-105" />
-              <figcaption className="px-3 py-2 text-xs font-semibold text-[#0e3022]">{photo.name}</figcaption>
-            </figure>
-          ))}
+
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#061d14] border border-[#c5a059]/50 shadow-2xl">
+          <div className="relative h-[300px] sm:h-[440px] lg:h-[540px]">
+            {TANZANIA_GALLERY.map((photo, index) => (
+              <div
+                key={photo.name}
+                className={`absolute inset-0 transition-opacity duration-700 ${galleryIndex === index ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                aria-hidden={galleryIndex !== index}
+              >
+                <img
+                  src={photo.url}
+                  alt={photo.name}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#061d14]/90 via-[#061d14]/10 to-black/10" />
+                <div className="absolute bottom-7 left-6 right-6 sm:bottom-10 sm:left-12 sm:right-12">
+                  <span className="inline-flex rounded-full border border-[#e4c681]/60 bg-[#061d14]/70 px-3 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#e4c681] backdrop-blur">
+                    Our Trip Africa • Visual Journey
+                  </span>
+                  <h3 className="mt-3 font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white">{photo.name}</h3>
+                  <p className="mt-2 max-w-xl text-xs sm:text-sm text-slate-200">Discover the beauty, wildlife and spirit of Africa with journeys thoughtfully planned by our local team.</p>
+                </div>
+              </div>
+            ))}
+
+            <button
+              type="button"
+              onClick={() => setGalleryIndex((current) => (current - 1 + TANZANIA_GALLERY.length) % TANZANIA_GALLERY.length)}
+              aria-label="Previous gallery image"
+              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#c5a059] hover:text-[#061d14] transition-colors"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              onClick={() => setGalleryIndex((current) => (current + 1) % TANZANIA_GALLERY.length)}
+              aria-label="Next gallery image"
+              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#c5a059] hover:text-[#061d14] transition-colors"
+            >
+              ›
+            </button>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-[#081a13] px-4 py-4 sm:px-7">
+            <div className="flex items-center gap-2" aria-label="Choose gallery image">
+              {TANZANIA_GALLERY.map((photo, index) => (
+                <button
+                  key={photo.name}
+                  type="button"
+                  onClick={() => setGalleryIndex(index)}
+                  aria-label={`Show image ${index + 1}: ${photo.name}`}
+                  aria-current={galleryIndex === index ? 'true' : undefined}
+                  className={`h-2.5 rounded-full transition-all ${galleryIndex === index ? 'w-8 bg-[#c5a059]' : 'w-2.5 bg-white/40 hover:bg-white/80'}`}
+                />
+              ))}
+            </div>
+            <span className="text-[11px] sm:text-xs font-semibold tracking-wide text-[#e4c681]">
+              {String(galleryIndex + 1).padStart(2, '0')} / {String(TANZANIA_GALLERY.length).padStart(2, '0')} • {TANZANIA_GALLERY[galleryIndex].name}
+            </span>
+          </div>
         </div>
         <p className="text-center text-[11px] text-slate-500">Selected photographs hosted by Wikimedia Commons. Image authorship and licence details are available on each original file page.</p>
-      </section>
+      </section></section>
 
 
 
