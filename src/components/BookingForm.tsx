@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { collection, doc, serverTimestamp, writeBatch } from 'firebase/firestore';
-import { auth } from '../lib/firebase';
 import { db } from '../lib/firebase';
 import { X, Calendar, Users, Mail, Phone, MapPin, ShieldCheck, CheckCircle2, MessageSquare, CreditCard, Lock, Sparkles } from 'lucide-react';
 import { COMPANY_DETAILS, SAFARI_PACKAGES, SafariPackage } from '../data/safariData';
@@ -68,7 +67,6 @@ export const BookingForm: React.FC<BookingFormProps> = ({
         country: country.trim(),
         specialRequests: specialRequests.trim(),
         status: 'new',
-        ...(auth.currentUser ? { customerUid: auth.currentUser.uid } : {}),
         createdAt: serverTimestamp()
       });
       const mailDoc = doc(collection(db, 'mail'));
