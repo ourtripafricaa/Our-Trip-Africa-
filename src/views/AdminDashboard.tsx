@@ -72,9 +72,9 @@ export function AdminDashboard(){
   }
 ];
 
- const menus=['Overview','Home','About Us','Contacts','Packages','Old Packages','Destinations','Bookings','Blog','Images','Videos','Attachments','Logout'];
+ const menus=['Overview','Home','About Us','Contacts','Packages','Old Packages','Destinations','Bookings','Blog','Reviews','Images','Videos','Attachments','Logout'];
  const pages=['Home','About Us','Contacts'];
- const cols:any={Packages:'packages',Destinations:'destinations',Bookings:'bookings',Blog:'blogPosts'};
+ const cols:any={Packages:'packages',Destinations:'destinations',Bookings:'bookings',Blog:'blogPosts',Reviews:'reviews'};
 
  const defaults:any={
  Home:{title:'Discover the Untamed Wonder of East Africa',heading:'Welcome to Our Trip Africa',description:'Discover. Explore. Enjoy.'},
@@ -238,7 +238,7 @@ const upload=async(list:any[],folder:string)=>{
  </div>)}
  </>}
 
- {['Packages','Destinations','Blog'].includes(tab)&&<>
+ {['Packages','Destinations','Blog','Reviews'].includes(tab)&&<>
  <h3>{edit?'Edit':'Add New'} {tab}</h3>
  {tab==='Packages'&&<>
  {['id','slug','title','destination','country','category','durationDays','durationNights','durationLabel','basePrice','currency','priceNote','minGuests','maxGuests','rating','reviewsCount','featured','bestTime','physicalRating','heroImage','overview'].map(field)}
@@ -246,6 +246,7 @@ const upload=async(list:any[],folder:string)=>{
  </>}
  {tab==='Destinations'&&['title','country','description','image'].map(field)}
  {tab==='Blog'&&['title','slug','category','readTime','publishedDate','image','excerpt','content','tags','seoDescription'].map(field)}
+ {tab==='Reviews'&&['name','country','packageTitle','rating','review','status'].map(field)}
  <p>Select an image from GitHub Gallery</p>
  <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(105px,1fr))',gap:8}}>
  {galleryImages.map((img:any)=><button type="button" key={img.url} onClick={()=>{SI(img.url);F({...form,image:img.url,heroImage:img.url})}} style={{border:selectedImage===img.url?'3px solid #046A38':'1px solid #ccc',background:'white',padding:5}}><img src={img.url} alt={img.name} style={{width:'100%',height:75,objectFit:'cover'}}/><small>{img.name}</small></button>)}
