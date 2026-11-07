@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from './lib/firebase';
+import { auth, db } from './lib/firebase';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -36,6 +37,32 @@ export default function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [authChecked, setAuthChecked] = useState(false);
+
+  // Record one anonymous visit per browser per calendar day (no names, emails or IP addresses).
+  useEffect(() => {
+    if (currentView === 'admin') return;
+    const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Africa/Dar_es_Salaam' }).format(new Date());
+    const storageKey = `ota-visit-${today}`;
+    if (localStorage.getItem(storageKey)) return;
+    let visitorId = localStorage.getItem('ota-anonymous-visitor');
+    if (!visitorId) {
+      visitorId = typeof crypto !== 'undefined' && 'randomUUID' in crypto
+        ? crypto.randomUUID()
+        : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+      localStorage.setItem('ota-anonymous-visitor', visitorId);
+    }
+    localStorage.setItem(storageKey, 'recording');
+    addDoc(collection(db, 'siteVisits'), {
+      date: today,
+      visitorId,
+      pagePath: window.location.pathname + window.location.hash,
+      createdAt: serverTimestamp()
+    }).then(() => localStorage.setItem(storageKey, '1'))
+      .catch((error) => {
+        localStorage.removeItem(storageKey);
+        console.warn('Website visit could not be recorded:', error);
+      });
+  }, [currentView, viewParam]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
