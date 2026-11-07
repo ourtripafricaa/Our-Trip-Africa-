@@ -195,12 +195,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             Safari Map
           </button>
           <button
-            onClick={() => handleLinkClick('account')}
-            className={`transition-colors whitespace-nowrap cursor-pointer py-1 relative ${currentView === 'account' ? 'text-[#c5a059] font-bold' : 'hover:text-white'}`}
-          >
-            Guest Account
-          </button>
-          <button
             onClick={() => handleLinkClick('compare')}
             className={`transition-colors whitespace-nowrap cursor-pointer py-1 relative ${
               currentView === 'compare' ? 'text-[#c5a059] font-bold' : 'hover:text-white'
@@ -362,7 +356,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             <button onClick={() => handleLinkClick('safari-map')} className="text-left px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-[#0e3022]">Interactive Safari Map</button>
-            <button onClick={() => handleLinkClick('account')} className="text-left px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-[#0e3022]">Guest Account / My Bookings</button>
             <button
               onClick={() => handleLinkClick('compare')}
               className={`text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
