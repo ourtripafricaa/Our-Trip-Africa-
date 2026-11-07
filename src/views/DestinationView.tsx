@@ -83,6 +83,47 @@ export const DestinationView: React.FC<DestinationViewProps> = ({ country, onSel
         </div>
       </section>
 
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 sm:pb-20">
+        <div className="mb-8">
+          <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#9b783e]">Explore the region</p>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0e3022] mt-2">National Parks, Mountains & Places to Discover</h2>
+          <p className="max-w-3xl text-slate-600 leading-7 mt-3">Explore the landscapes that make {story.country} special. Each place has its own character, wildlife, scenery and experiences. Our team can help you choose the right route for your journey.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+          {story.places.map((place, index) => (
+            <article key={place.name} className="rounded-2xl bg-white border border-[#e8dfcf] p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <div className="flex items-center justify-between gap-3 mb-4">
+                <span className="inline-flex items-center rounded-full bg-[#edf3ee] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#24563d]">{place.type}</span>
+                <span className="text-xs font-bold tracking-widest text-[#b18b4d]">{String(index + 1).padStart(2, '0')}</span>
+              </div>
+              <h3 className="font-serif text-xl font-bold text-[#0e3022] mb-3">{place.name}</h3>
+              <p className="text-sm leading-7 text-slate-600">{place.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {story.culture.length > 0 && (
+        <section className="bg-[#0e3022] py-14 sm:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mb-8">
+              <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#d7b36e]">People, heritage & living traditions</p>
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">Meet the People Behind the Destination</h2>
+              <p className="text-slate-200 leading-7 mt-3">Travel is also about the people, stories and traditions that give each place its identity. Discover these experiences respectfully, with local hosts and community participation.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+              {story.culture.map((item) => (
+                <article key={item.title} className="rounded-2xl border border-white/15 bg-white/5 p-6">
+                  <div className="flex items-center gap-2 text-[#d7b36e] mb-4"><Users size={19} /><span className="text-xs uppercase tracking-wider font-bold">Culture & Community</span></div>
+                  <h3 className="font-serif text-xl font-bold text-white mb-3">{item.title}</h3>
+                  <p className="text-sm leading-7 text-slate-200">{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="bg-[#f0ede5] py-14 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-7">
