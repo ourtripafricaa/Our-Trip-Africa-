@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, Filter, ArrowUpDown, LayoutGrid, Table, SlidersHorizontal, Sparkles } from 'lucide-react';
 import { SAFARI_PACKAGES, SafariPackage } from '../data/safariData';
 import { PackageCard } from '../components/PackageCard';
@@ -21,6 +21,39 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
   const [selectedPhysical, setSelectedPhysical] = useState<string>('all');
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'duration'>('featured');
   const [viewMode, setViewMode] = useState<'grid' | 'comparison'>('grid');
+
+  // Publish structured package information so search engines can better understand this catalog.
+  useEffect(() => {
+    const scriptId = 'our-trip-africa-package-list-schema';
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = scriptId;
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+    script.text = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Our Trip Africa Safari and Holiday Packages',
+      description: 'Tanzania, Kenya, Uganda, Zanzibar, South Africa and Dubai safari and holiday packages by Our Trip Africa.',
+      numberOfItems: SAFARI_PACKAGES.length,
+      itemListElement: SAFARI_PACKAGES.map((pkg, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'TouristTrip',
+          name: pkg.seoTitle || pkg.title,
+          description: pkg.seoDescription || pkg.overview,
+          touristType: pkg.seoKeywords || [pkg.country, pkg.category],
+          url: 'https://ourtripafrica.com/#packages-' + pkg.slug
+        }
+      }))
+    });
+    return () => {
+      document.getElementById(scriptId)?.remove();
+    };
+  }, []);
 
   const filteredPackages = SAFARI_PACKAGES.filter((pkg) => {
     // Search
@@ -69,7 +102,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
             All Safari & Holiday Packages ({SAFARI_PACKAGES.length})
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 mt-1">
-            Browse all verified circuits from our Flyo catalog across Tanzania, Kenya, Uganda, Zanzibar, South Africa, and UAE with transparent pricing.
+            Explore Tanzania safari packages, Kenya wildlife tours, Uganda gorilla trekking, Zanzibar beach holidays, South Africa safari tours and Dubai holiday packages. Compare budget, mid-range and luxury trips with Our Trip Africa, your local travel team in Arusha, Tanzania.
           </p>
         </div>
 
