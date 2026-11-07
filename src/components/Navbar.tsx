@@ -103,8 +103,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           />
           <div className="min-w-0 flex-1 overflow-hidden leading-tight">
             <div className="brand-marquee-track font-serif text-xs sm:text-2xl font-bold tracking-tight uppercase whitespace-nowrap">
-              <span><span className="text-[#c5a059]">WELCOME TO</span> <span className="text-white">OUR TRIP AFRICA</span><span className="text-[#c5a059]">&nbsp; ★ &nbsp;DISCOVER. EXPLORE. ENJOY.&nbsp; ★ &nbsp;TANZANIA, ZANZIBAR, KENYA, UGANDA, RWANDA, SOUTH AFRICA AND UAE.&nbsp; </span><span className="text-white">★</span><span className="text-[#c5a059]">&nbsp;</span></span>
-              <span aria-hidden="true"><span className="text-[#c5a059]">WELCOME TO</span> <span className="text-white">OUR TRIP AFRICA</span><span className="text-[#c5a059]">&nbsp; ★ &nbsp;DISCOVER. EXPLORE. ENJOY.&nbsp; ★ &nbsp;TANZANIA, ZANZIBAR, KENYA, UGANDA, RWANDA, SOUTH AFRICA AND UAE.&nbsp; </span><span className="text-white">★</span><span className="text-[#c5a059]">&nbsp;</span></span>
+              <span><span className="text-[#c5a059]">WELCOME TO</span> <span className="text-white">OUR TRIP AFRICA</span><span className="text-white">&nbsp; ★ &nbsp;</span><span className="text-[#c5a059]">DISCOVER. EXPLORE. ENJOY.</span><span className="text-white">&nbsp; ★ &nbsp;</span><span className="text-[#c5a059]">TANZANIA, ZANZIBAR, KENYA, UGANDA, RWANDA, SOUTH AFRICA AND UAE.</span><span className="text-white">&nbsp; ★ &nbsp;</span></span>
+              <span aria-hidden="true"><span className="text-[#c5a059]">WELCOME TO</span> <span className="text-white">OUR TRIP AFRICA</span><span className="text-white">&nbsp; ★ &nbsp;</span><span className="text-[#c5a059]">DISCOVER. EXPLORE. ENJOY.</span><span className="text-white">&nbsp; ★ &nbsp;</span><span className="text-[#c5a059]">TANZANIA, ZANZIBAR, KENYA, UGANDA, RWANDA, SOUTH AFRICA AND UAE.</span><span className="text-white">&nbsp; ★ &nbsp;</span></span>
             </div>
           </div>
         </button>
