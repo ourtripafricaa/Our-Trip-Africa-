@@ -102,9 +102,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="h-12 w-12 rounded-full object-cover border border-[#c5a059]/40 shadow-sm transition-transform group-hover:scale-105"
           />
           <div className="min-w-0 flex-1 overflow-hidden leading-tight">
-            <div className="brand-marquee-track font-serif text-xs sm:text-2xl font-bold tracking-tight uppercase text-[#c5a059] whitespace-nowrap">
-              <span>WELCOME TO OUR TRIP AFRICA&nbsp; • &nbsp;DISCOVER. EXPLORE. ENJOY.&nbsp; • &nbsp;TANZANIA, ZANZIBAR, KENYA, UGANDA, RWANDA AND SOUTH AFRICA.&nbsp; • &nbsp;</span>
-              <span aria-hidden="true">WELCOME TO OUR TRIP AFRICA&nbsp; • &nbsp;DISCOVER. EXPLORE. ENJOY.&nbsp; • &nbsp;TANZANIA, ZANZIBAR, KENYA, UGANDA, RWANDA AND SOUTH AFRICA.&nbsp; • &nbsp;</span>
+            <div className="brand-marquee-track font-serif text-xs sm:text-2xl font-bold tracking-tight uppercase whitespace-nowrap">
+              <span><span className="text-[#c5a059]">WELCOME TO</span> <span className="text-white">OUR TRIP AFRICA</span><span className="text-[#c5a059]">&nbsp; • &nbsp;DISCOVER. EXPLORE. ENJOY.&nbsp; • &nbsp;TANZANIA, ZANZIBAR, </span><span className="text-white">KENYA, UGANDA</span><span className="text-[#c5a059]">, RWANDA, SOUTH AFRICA AND UAE.&nbsp; • &nbsp;</span></span>
+              <span aria-hidden="true"><span className="text-[#c5a059]">WELCOME TO</span> <span className="text-white">OUR TRIP AFRICA</span><span className="text-[#c5a059]">&nbsp; • &nbsp;DISCOVER. EXPLORE. ENJOY.&nbsp; • &nbsp;TANZANIA, ZANZIBAR, </span><span className="text-white">KENYA, UGANDA</span><span className="text-[#c5a059]">, RWANDA, SOUTH AFRICA AND UAE.&nbsp; • &nbsp;</span></span>
             </div>
           </div>
         </button>
