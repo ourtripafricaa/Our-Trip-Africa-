@@ -690,33 +690,33 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
 
 
-      {/* SAFARI VIDEO SHOWCASE */}
+      {/* OUR SOCIAL VIDEO CHANNELS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#0e3022]"><Video size={15}/> Watch • Explore • Get Inspired</span>
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">See Africa Before You Experience It</h2>
-          <p className="text-sm text-slate-600">Explore our video stories on YouTube and imagine the wildlife, landscapes, beaches and cultural experiences waiting on your journey.</p>
+          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#0e3022]"><Video size={15}/> Follow • Watch • Explore</span>
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Watch Our Trip Africa in Action</h2>
+          <p className="text-sm text-slate-600">Explore our latest safari moments, wildlife encounters, island escapes and travel stories. Choose a platform below to open our official page directly.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {[
-            { title: 'Wildlife & Big Five Safaris', subtitle: 'Lions, elephants and the endless plains', image: TANZANIA_GALLERY[0].url },
-            { title: 'Zanzibar Island Escapes', subtitle: 'Turquoise water and white-sand beaches', image: LOCAL_IMAGES.zanzibar },
-            { title: 'Kilimanjaro Adventures', subtitle: 'Mountain trails and unforgettable views', image: LOCAL_IMAGES.kilimanjaro },
-            { title: 'Culture & Local Experiences', subtitle: 'Discover the people and traditions of Africa', image: LOCAL_IMAGES.lakeEyasi }
-          ].map((item) => (
-            <a key={item.title} href="https://www.youtube.com/@ourtripafrica" target="_blank" rel="noopener noreferrer" className="group relative min-h-[250px] overflow-hidden rounded-3xl border border-[#c5a059]/40 bg-[#061d14] shadow-lg">
-              <img src={item.image} alt={item.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"/>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#061d14] via-[#061d14]/35 to-transparent"/>
-              <div className="absolute inset-0 flex items-center justify-center"><span className="flex h-14 w-14 items-center justify-center rounded-full border border-white/70 bg-[#c5a059]/90 text-[#061d14] shadow-xl transition-transform group-hover:scale-110"><PlayCircle size={30}/></span></div>
-              <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                <h3 className="font-serif text-lg font-bold">{item.title}</h3>
-                <p className="mt-1 text-xs text-slate-200">{item.subtitle}</p>
-                <span className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-[#e4c681]">Watch on YouTube <ArrowRight size={14}/></span>
+            { name: 'Facebook', handle: '@ourtripafrica', description: 'Safari videos, guest moments and travel updates.', url: 'https://www.facebook.com/ourtripafrica', label: 'Open Facebook Page' },
+            { name: 'Instagram', handle: '@ourtripafricaa', description: 'Reels, destination inspiration and beautiful photo stories.', url: 'https://www.instagram.com/ourtripafricaa/', label: 'Open Instagram Page' },
+            { name: 'TikTok', handle: '@ourtripafrica', description: 'Short safari clips, wildlife moments and quick travel ideas.', url: 'https://www.tiktok.com/@ourtripafrica', label: 'Open TikTok Page' },
+            { name: 'YouTube', handle: '@ourtripafrica', description: 'Watch our longer safari films and destination videos.', url: 'https://www.youtube.com/@ourtripafrica', label: 'Open YouTube Channel' }
+          ].map((platform) => (
+            <a key={platform.name} href={platform.url} target="_blank" rel="noopener noreferrer" aria-label={platform.label}
+              className="group flex min-h-[230px] flex-col justify-between rounded-3xl border border-[#c5a059]/40 bg-[#061d14] p-6 text-white shadow-lg transition-all hover:-translate-y-1 hover:border-[#e4c681] hover:shadow-2xl">
+              <div>
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-[#c5a059]/50 bg-[#c5a059]/15 text-[#e4c681]"><PlayCircle size={27}/></span>
+                <h3 className="mt-5 font-serif text-2xl font-bold">{platform.name}</h3>
+                <p className="mt-1 text-xs font-semibold tracking-wide text-[#e4c681]">{platform.handle}</p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-300">{platform.description}</p>
               </div>
+              <span className="mt-6 inline-flex items-center gap-2 text-xs font-extrabold text-[#e4c681]">{platform.label} <ArrowRight size={15} className="transition-transform group-hover:translate-x-1"/></span>
             </a>
           ))}
         </div>
-        <p className="text-center text-xs text-slate-500">Video cards open the Our Trip Africa YouTube channel. Add your own safari footage there to turn this showcase into a library of original travel videos.</p>
+        <p className="text-center text-xs text-slate-500">Each button opens the selected Our Trip Africa social page in a new tab. Visitors can watch videos and follow your page there.</p>
       </section>
 
       <GuestReviews />
