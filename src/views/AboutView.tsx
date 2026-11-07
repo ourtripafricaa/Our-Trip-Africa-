@@ -80,13 +80,60 @@ export const AboutView: React.FC<AboutViewProps> = ({ onOpenBooking, onNavigate 
             "{COMPANY_DETAILS.director.quote}"
           </blockquote>
 
-          <div className="space-y-4 text-xs sm:text-sm text-slate-200 leading-relaxed">
-            <p>
-              My name is <strong>James Felix</strong>, the Founder and Owner of Our Trip Africa, a Tanzania-based tourism company established in 2021 with a clear vision of showcasing the extraordinary beauty of Tanzania and Africa to travelers from every corner of the world.
-            </p>
-            <p>
-              Today, Our Trip Africa is dedicated to helping international travelers explore Tanzania and Africa through carefully organized safaris, cultural experiences, beach holidays, mountain adventures, and personalized travel arrangements.
-            </p>
+          <div className="space-y-5 text-xs sm:text-sm text-slate-200 leading-relaxed">
+            <div className="space-y-3">
+              <h3 className="text-lg sm:text-xl font-serif font-bold text-[#e5c07b]">A Dream Born in the Heart of Africa</h3>
+              <p>
+                My name is <strong>James Felix</strong>, Founder and Owner of <strong>Our Trip Africa</strong>. I am proud to come from Tanzania — a land of extraordinary landscapes, remarkable wildlife, rich cultures and people whose warmth can make a visitor feel at home. For me, tourism has never been only about moving from one destination to another. It is about creating moments that stay in a person's heart long after the journey has ended.
+              </p>
+              <p>
+                For more than 15 years, my experience in the tourism industry has shaped the way I understand travel, hospitality and the responsibility that comes with welcoming visitors to Africa. Over those years, one belief became increasingly clear to me: Africa deserves to be experienced beyond photographs and brochures. Its beauty is found in the sunrise over the Serengeti, the immense walls of the Ngorongoro Crater, the quiet strength of Mount Kilimanjaro, the rhythm of Zanzibar, and the stories shared by the people who call this continent home.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-lg sm:text-xl font-serif font-bold text-[#e5c07b]">The Beginning of Our Trip Africa</h3>
+              <p>
+                In 2021, I turned that belief into a clear business vision and established Our Trip Africa. The idea was simple, but meaningful: to help travellers from around the world discover Africa through thoughtfully planned journeys, genuine hospitality and personal attention. I wanted to build a company that listens before it recommends, understands each traveller's expectations, and treats every enquiry as the beginning of a relationship rather than just another booking.
+              </p>
+              <p>
+                Building a travel company takes patience, commitment and the willingness to keep learning. Every itinerary must be considered carefully. Every transfer, accommodation choice, guide and activity contributes to a guest's experience. Behind every beautiful safari photograph is planning, coordination and a team of people working together to make the journey feel effortless. That is the standard I want Our Trip Africa to pursue every day.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-lg sm:text-xl font-serif font-bold text-[#e5c07b]">More Than Safaris — A Connection With Africa</h3>
+              <p>
+                Tanzania will always hold a special place in our story. From the endless plains of the Serengeti and the wildlife-rich Ngorongoro Conservation Area to Tarangire's great elephant herds, the forests and mountains of the north, and the welcoming shores of Zanzibar, our home offers experiences for every kind of traveller. We also celebrate the living heritage of local communities, including Maasai traditions and the cultural experiences around Lake Eyasi, approached with respect, consent and appreciation.
+              </p>
+              <p>
+                Our vision reaches beyond one country. We help guests explore the wider possibilities of Africa, including Kenya, Uganda and South Africa, as well as memorable journeys in the United Arab Emirates. Whether someone dreams of witnessing the Great Migration, climbing Mount Kilimanjaro, meeting mountain gorillas, enjoying an island escape or discovering the energy of Dubai, we want to help turn that dream into a well-planned and meaningful experience.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-lg sm:text-xl font-serif font-bold text-[#e5c07b]">The Values Behind Every Journey</h3>
+              <p>
+                I believe that excellent hospitality begins with listening. Some guests seek a luxury escape; others want an affordable adventure, a family holiday, a private safari or a cultural journey. There should be room for different budgets, interests and travel styles. Our role is to understand what matters to each guest and help shape an itinerary around those expectations, with clear communication and thoughtful planning.
+              </p>
+              <p>
+                I also believe that responsible tourism must respect the places and people who make travel special. Wildlife deserves protection, cultural encounters deserve dignity, and local communities deserve to be treated as partners. When visitors travel with curiosity and respect, tourism can create valuable connections and support livelihoods while encouraging appreciation for Africa's natural and cultural heritage.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-lg sm:text-xl font-serif font-bold text-[#e5c07b]">A Welcome That Feels Personal</h3>
+              <p>
+                From our base in Kisongo, Arusha, our purpose is to make planning feel straightforward and welcoming. We want guests to feel comfortable asking questions, sharing their ideas and telling us their budget. We want them to know who is helping arrange their journey and to feel supported as they prepare to travel. The experience should begin with the first conversation and continue through the memories they take home.
+              </p>
+              <p>
+                To every traveller who chooses to explore with us, I say: karibu sana — you are warmly welcome. Come for the wildlife, the mountains, the beaches and the breathtaking landscapes. Stay for the people, the culture, the stories and the feeling of discovering somewhere extraordinary. We would be honoured to help you experience it.
+              </p>
+              <p className="font-serif italic text-base sm:text-lg text-[#e5c07b] border-l-4 border-[#c5a059] pl-4 py-2">
+                “Our Trip Africa is built on a simple promise: every journey should mean more than the miles travelled. It should bring people closer to the beauty, spirit and stories of Africa.”
+              </p>
+              <p className="font-bold text-white">James Felix<br /><span className="font-normal text-[#e5c07b]">Founder & Owner, Our Trip Africa</span></p>
+            </div>
           </div>
 
           {/* Action Row */}
