@@ -10,6 +10,59 @@ interface HomeViewProps {
   onOpenBooking: (pkg?: SafariPackage) => void;
 }
 
+const TANZANIA_GALLERY = [
+  {
+    "name": "Lion — Serengeti",
+    "file": "Serengeti National Park 08 - lion - Panthera leo.jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti%20National%20Park%2008%20-%20lion%20-%20Panthera%20leo.jpg"
+  },
+  {
+    "name": "Elephant — Serengeti",
+    "file": "Serengeti National Park 09 - African elephant (Loxodonta).jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti%20National%20Park%2009%20-%20African%20elephant%20(Loxodonta).jpg"
+  },
+  {
+    "name": "Giraffe — Serengeti",
+    "file": "Serengeti National Park 13 - giraffe - Giraffa camelopardalis.jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti%20National%20Park%2013%20-%20giraffe%20-%20Giraffa%20camelopardalis.jpg"
+  },
+  {
+    "name": "Great Migration",
+    "file": "Ngorongoro Conservation Area 07 - migration.jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ngorongoro%20Conservation%20Area%2007%20-%20migration.jpg"
+  },
+  {
+    "name": "Leopard — Serengeti",
+    "file": "Leopard tree Serengeti-1.jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Leopard%20tree%20Serengeti-1.jpg"
+  },
+  {
+    "name": "Ngorongoro Crater",
+    "file": "Ngorongoro Crater Panorama.jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ngorongoro%20Crater%20Panorama.jpg"
+  },
+  {
+    "name": "Mount Kilimanjaro",
+    "file": "Mount Kilimanjaro,Moshi 1.jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount%20Kilimanjaro%2CMoshi%201.jpg"
+  },
+  {
+    "name": "Zanzibar Dhow",
+    "file": "Dhow boat Zanzibar.jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dhow%20boat%20Zanzibar.jpg"
+  },
+  {
+    "name": "Safari Vehicle",
+    "file": "Tanzania (Serengeti National Park) Safari vehicle (21113135729).jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tanzania%20(Serengeti%20National%20Park)%20Safari%20vehicle%20(21113135729).jpg"
+  },
+  {
+    "name": "Zebra — Ngorongoro",
+    "file": "NgoroNgoro Crater, Tanzania, Africa.jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/NgoroNgoro%20Crater%2C%20Tanzania%2C%20Africa.jpg"
+  }
+];
+
 export const HomeView: React.FC<HomeViewProps> = ({
   onNavigate,
   onSelectPackage,
@@ -397,14 +450,15 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <span className="text-xs font-semibold uppercase tracking-widest text-[#0e3022]">Visual Journey</span>
           <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Safari & Landscape Gallery</h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <img src="/assets/aistudio/Screenshot_20260929_194629_Gallery_51f1a0f7.jpg" alt="Zanzibar Beach" className="w-full h-64 object-cover rounded-3xl" />
-            <img src={LOCAL_IMAGES.hero} alt="Safari Landscape" className="w-full h-64 object-cover rounded-3xl" />
-            <img src={LOCAL_IMAGES.lion} alt="Wildlife" className="w-full h-64 object-cover rounded-3xl" />
-            <img src={LOCAL_IMAGES.kilimanjaro} alt="Mount Kilimanjaro" className="w-full h-64 object-cover rounded-3xl" />
-            <img src={LOCAL_IMAGES.gorilla} alt="Mountain Gorilla" className="w-full h-64 object-cover rounded-3xl" />
-            <img src={LOCAL_IMAGES.uaeDubai} alt="UAE Desert" className="w-full h-64 object-cover rounded-3xl" />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {TANZANIA_GALLERY.map((photo) => (
+            <figure key={photo.name} className="overflow-hidden rounded-3xl bg-white shadow-sm">
+              <img src={photo.url} alt={photo.name} loading="lazy" className="w-full h-44 sm:h-52 object-cover transition-transform duration-500 hover:scale-105" />
+              <figcaption className="px-3 py-2 text-xs font-semibold text-[#0e3022]">{photo.name}</figcaption>
+            </figure>
+          ))}
         </div>
+        <p className="text-center text-[11px] text-slate-500">Selected photographs hosted by Wikimedia Commons. Image authorship and licence details are available on each original file page.</p>
       </section>
 
 
