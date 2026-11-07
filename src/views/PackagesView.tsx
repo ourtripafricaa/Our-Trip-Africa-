@@ -188,67 +188,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
         </>
       )}
 
-      {/* Personalised travel-planning callout below the complete package catalogue */}
-      <section className="relative overflow-hidden rounded-[2rem] border-2 border-[#c5a059] bg-[#073b29] shadow-xl">
-        <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full border border-[#c5a059]/25" />
-        <div className="absolute -right-5 -bottom-24 h-64 w-64 rounded-full border border-[#c5a059]/20" />
-        <div className="relative grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 p-6 sm:p-9 lg:p-11 items-center">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#c5a059]/70 bg-[#c5a059]/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#e8c77f]">
-              <Sparkles size={14} /> Your journey, your way
-            </span>
-            <h2 className="mt-5 text-3xl sm:text-4xl font-serif font-bold leading-tight text-white">
-              Haven’t Found Your Perfect Safari Yet?
-            </h2>
-            <p className="mt-4 max-w-2xl text-sm sm:text-base leading-7 text-emerald-50/90">
-              Tell us when you would like to travel and which destinations you dream of exploring. Whether it’s a wildlife safari, a Kilimanjaro climb, a Zanzibar escape or a multi-country adventure, our Arusha-based team will help shape the right experience for you.
-            </p>
-            <div className="mt-5 flex flex-col sm:flex-row gap-3">
-              <div className="flex items-center gap-3 rounded-xl border border-[#c5a059]/35 bg-white/5 px-4 py-3 text-sm text-white"><CalendarDays className="text-[#e8c77f]" size={19} /><span>Share your preferred travel dates</span></div>
-              <div className="flex items-center gap-3 rounded-xl border border-[#c5a059]/35 bg-white/5 px-4 py-3 text-sm text-white"><MapPin className="text-[#e8c77f]" size={19} /><span>Choose your dream destinations</span></div>
-            </div>
-            <p className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#f0d48f]"><Clock3 size={18} /> A personalised travel solution within 24 hours.</p>
-          </div>
-          <div className="rounded-2xl border border-[#c5a059]/50 bg-[#0d5139] p-6 sm:p-7 shadow-lg">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#e8c77f]">Let’s plan something unforgettable</p>
-            <h3 className="mt-3 text-2xl font-serif font-bold text-white">Your dream trip starts with a message.</h3>
-            <p className="mt-3 text-sm leading-6 text-emerald-50/85">Send us your travel dates and preferred destinations. We’ll help you with an itinerary and a quotation tailored to your plans.</p>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#c5a059] px-5 py-4 text-sm font-extrabold text-[#073b29] shadow-md transition hover:bg-[#e3c27b]">
-              <MessageCircle size={19} /> PLAN MY SAFARI WITH US <ArrowRight size={18} />
-            </a>
-            <p className="mt-4 text-center text-xs text-emerald-100/75">WhatsApp: +255 624 661 830 · We’re here to help, 24/7.</p>
-          </div>
-        </div>
-      </section>
 
-      {/* Frequently asked safari questions - visible directly on the packages page */}
-      <section className="space-y-6 rounded-[2rem] border border-[#c5a059]/50 bg-white p-5 sm:p-8 lg:p-10 shadow-lg">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex rounded-full bg-[#0e3022]/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#0e3022]">Travel with confidence</span>
-          <h2 className="mt-4 font-serif text-3xl sm:text-4xl font-bold text-[#0e3022]">Safari Frequently Asked Questions</h2>
-          <p className="mt-3 text-sm sm:text-base leading-7 text-slate-600">Find clear answers to common questions about safari prices, booking, travel seasons, accommodation and your journey with Our Trip Africa.</p>
-        </div>
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-3">
-          {safariFaqs.map((item, index) => (
-            <details key={item.q} className="group overflow-hidden rounded-2xl border border-emerald-900/15 bg-[#fbfaf6] open:border-[#c5a059] open:bg-white">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 sm:px-5 text-left text-sm sm:text-base font-semibold text-[#0e3022] marker:content-none">
-                <span className="flex items-start gap-3"><span className="mt-0.5 text-xs font-bold text-[#b18a42]">{String(index + 1).padStart(2, '0')}</span>{item.q}</span>
-                <span className="shrink-0 text-xl leading-none text-[#b18a42] transition-transform group-open:rotate-45">+</span>
-              </summary>
-              <div className="border-t border-[#c5a059]/25 px-4 py-4 sm:px-5 text-sm leading-7 text-slate-600">{item.a}</div>
-            </details>
-          ))}
-        </div>
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 rounded-2xl bg-[#073b29] p-5 sm:flex-row sm:px-7">
-          <div>
-            <h3 className="font-serif text-xl font-bold text-white">Still have a question?</h3>
-            <p className="mt-1 text-sm text-emerald-50/85">Talk to our Arusha-based team and let’s plan your journey.</p>
-          </div>
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#c5a059] px-5 py-3 text-sm font-extrabold text-[#073b29] transition hover:bg-[#e3c27b] sm:w-auto">
-            <MessageCircle size={18} /> ASK US ON WHATSAPP
-          </a>
-        </div>
-      </section>
     </div>
   );
 };
