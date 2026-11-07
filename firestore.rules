@@ -54,8 +54,8 @@ service cloud.firestore {
         request.resource.data.children <= 30 &&
         request.resource.data.adults + request.resource.data.children <= 30 &&
         request.resource.data.status == 'new' &&
-        (!('customerUid' in request.resource.data) || (request.auth != null && request.resource.data.customerUid == request.auth.uid));
-      allow read: if isAdmin() || (request.auth != null && resource.data.customerUid == request.auth.uid);
+        !('customerUid' in request.resource.data);
+      allow read: if isAdmin();
       allow update, delete: if isAdmin();
     }
 
