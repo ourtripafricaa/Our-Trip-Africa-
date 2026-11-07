@@ -84,6 +84,14 @@ export const PackageCard: React.FC<PackageCardProps> = ({
             <span className="truncate">{packageItem.destination}</span>
           </p>
 
+          <a
+            href={`/packages/${packageItem.slug}/`}
+            className="inline-flex mt-2 text-[11px] font-semibold text-[#0e5638] hover:text-[#c5a059] underline underline-offset-2"
+            aria-label={`Open dedicated page for ${packageItem.title}`}
+          >
+            View dedicated package page
+          </a>
+
           {/* Overview text */}
           <p className="text-xs text-slate-600 mt-2.5 line-clamp-2 leading-relaxed">
             {packageItem.seoDescription || packageItem.overview}
