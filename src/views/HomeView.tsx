@@ -4,6 +4,7 @@ import { COMPANY_DETAILS, LOCAL_IMAGES, SAFARI_PACKAGES, TESTIMONIALS, SAFARI_FA
 import { PackageCard } from '../components/PackageCard';
 import { DualBookNow } from '../components/DualBookNow';
 import { GuestReviews } from '../components/GuestReviews';
+import { SpecialOffers } from '../components/SpecialOffers';
 
 interface HomeViewProps {
   onNavigate: (view: string, extraParam?: string) => void;
@@ -727,6 +728,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
         <p className="text-center text-xs text-slate-500">Each video category offers all four official social links, so visitors can choose where they prefer to watch.</p>
       </section>
+
+      <SpecialOffers onOpenBooking={() => onOpenBooking()} />
 
       <GuestReviews />
 
