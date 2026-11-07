@@ -25,6 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'zanzibar', label: 'Zanzibar Beach Holidays' },
     { id: 'south-africa', label: 'South Africa Safaris & Cape Town' },
     { id: 'uae', label: 'UAE Dubai & Desert Dunes' },
+    { id: 'hadzabe', label: 'Hadzabe Cultural Experience (Lake Eyasi)' },
   ];
 
   const handleLinkClick = (id: string, extraParam?: string) => {
@@ -33,7 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     setDestinationsDropdownOpen(false);
   };
 
-  const isDestinationActive = ['tanzania', 'kenya', 'uganda', 'zanzibar', 'south-africa', 'uae'].includes(currentView);
+  const isDestinationActive = ['tanzania', 'kenya', 'uganda', 'zanzibar', 'south-africa', 'uae', 'hadzabe'].includes(currentView);
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#0e3022] backdrop-blur-md border-b border-[#1b4d38] shadow-md">
