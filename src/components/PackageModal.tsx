@@ -23,6 +23,49 @@ export const PackageModal: React.FC<PackageModalProps> = ({
   const images = packageItem.gallery.length > 0 ? packageItem.gallery : [packageItem.heroImage];
   const currentPrice = packageItem.tierPricing[selectedTier] || packageItem.basePrice;
 
+  const itineraryExperienceNotes: Record<string, string[]> = {
+    'Wildlife Safari': [
+      'Take in the changing landscapes along the way and keep your camera close. Your guide will help you look for wildlife while sharing insights about the animals and their natural environment.',
+      'Enjoy the unhurried rhythm of the wilderness, with time to pause for photographs, appreciate the scenery and learn how the ecosystem fits together. Wildlife sightings are natural and can never be guaranteed.',
+      'Each stretch of the journey brings a new perspective on the African landscape. Settle into the safari experience and enjoy the small moments as much as the unforgettable sightings.',
+      'As the light changes across the plains, enjoy another opportunity to observe nature at its own pace and discover details you might otherwise miss.'
+    ],
+    'Beach Holiday': [
+      'Enjoy the island atmosphere at a relaxed pace, with time to admire the coastline, feel the ocean breeze and capture beautiful holiday photographs.',
+      'This part of the journey is all about slowing down and enjoying the sea, local flavours and the easy rhythm of island life.',
+      'Make room for little discoveries along the way, from coastal scenery to the colours and character of Zanzibar. The schedule can be enjoyed at a comfortable pace.',
+      'Take a moment to unwind and enjoy the Indian Ocean setting. Your day balances memorable experiences with time to simply relax.'
+    ],
+    'Mountain Trek': [
+      'Move at a steady, guided pace and take time to appreciate how the landscape changes with altitude. Your mountain crew will support the planned walking rhythm and regular rest stops.',
+      'The trail reveals a different side of the mountain, with changing vegetation, wide views and a growing sense of achievement. Follow your guide’s advice and listen to your body.',
+      'Enjoy the journey one step at a time. The route is as much about the changing scenery and teamwork as it is about reaching the next camp.',
+      'As you progress, take in the remarkable mountain environment and the quiet moments along the trail. The guide will manage the pace according to the route and conditions.'
+    ],
+    'Cultural Safari': [
+      'Approach each encounter with curiosity and respect. Where community visits are included, experiences are guided by local hosts and shaped by their preferences and availability.',
+      'Look beyond the scenery and discover the stories, skills and traditions that give this region its character. Guests are encouraged to ask questions respectfully and follow local guidance.',
+      'Enjoy the opportunity to learn from local people and understand more about everyday life, heritage and the relationship between communities and their surroundings.',
+      'Every cultural experience is an invitation to listen, learn and appreciate different perspectives. Photography and participation should always follow the wishes of local hosts.'
+    ],
+    'Grand Circuit': [
+      'Enjoy the variety that makes a multi-destination journey special, from changing landscapes to local encounters. Your guide will help connect each stop into one memorable travel story.',
+      'The route offers a rewarding mix of discovery and travel time. Take in the scenery between destinations and enjoy the different character each place brings.',
+      'Look forward to a fresh setting and new highlights as the journey unfolds, with time to appreciate the details that make each destination distinctive.',
+      'This day adds another chapter to your wider adventure, combining scenic travel, guided discovery and moments to pause and take it all in.'
+    ],
+    'City & Desert Tour': [
+      'Discover the destination through its architecture, local atmosphere and striking contrasts. Your guide can share context that brings the places you visit to life.',
+      'Enjoy a change of scenery and a closer look at the region’s heritage and modern character, with opportunities to pause for photos and take in the views.',
+      'From impressive landmarks to quieter local details, this part of the itinerary is designed to make the destination feel more familiar and memorable.',
+      'Take in the atmosphere at a comfortable pace and enjoy the contrast between the city, surrounding landscapes and local traditions.'
+    ]
+  };
+  const getDayExperienceNote = (dayNumber: number) => {
+    const notes = itineraryExperienceNotes[packageItem.category] || itineraryExperienceNotes['Grand Circuit'];
+    return notes[(dayNumber - 1) % notes.length];
+  };
+
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-fadeIn">
       <div className="relative w-full max-w-5xl bg-[#092218] border border-[#c5a059]/40 rounded-3xl shadow-2xl overflow-hidden my-6 flex flex-col max-h-[92vh]">
@@ -258,9 +301,15 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                       )}
                     </div>
 
-                    <p className="text-xs sm:text-sm text-[#dcd4c7] leading-relaxed pl-10">
-                      {day.description}
-                    </p>
+                    <div className="pl-10 space-y-3">
+                      <p className="text-xs sm:text-sm text-[#dcd4c7] leading-relaxed">
+                        {day.description}
+                      </p>
+                      <div className="rounded-xl bg-[#081a13]/80 border border-[#c5a059]/20 px-4 py-3">
+                        <p className="text-[10px] uppercase tracking-wider font-bold text-[#c5a059] mb-1.5">A little more to look forward to</p>
+                        <p className="text-xs text-[#dcd4c7] leading-relaxed">{getDayExperienceNote(day.day)}</p>
+                      </div>
+                    </div>
 
                     {day.accommodation && (
                       <p className="text-xs text-[#a49a88] pl-10 flex items-center gap-1.5">
