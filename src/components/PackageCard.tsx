@@ -86,10 +86,11 @@ export const PackageCard: React.FC<PackageCardProps> = ({
 
           <a
             href={`/packages/${packageItem.slug}/`}
-            className="inline-flex mt-2 text-[11px] font-semibold text-[#0e5638] hover:text-[#c5a059] underline underline-offset-2"
-            aria-label={`Open dedicated page for ${packageItem.title}`}
+            className="inline-flex items-center justify-center gap-2 mt-3 px-4 py-2.5 rounded-xl bg-[#0e3022] text-white text-xs font-bold border border-[#c5a059]/70 shadow-sm hover:bg-[#174b35] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+            aria-label={`View dedicated package page for ${packageItem.title}`}
           >
-            View dedicated package page
+            <Eye size={14} className="text-[#e5c07b]" />
+            <span>View Dedicated Package</span>
           </a>
 
           {/* Overview text */}
