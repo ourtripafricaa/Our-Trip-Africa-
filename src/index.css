@@ -44,23 +44,18 @@
 
 
 
-/* Refined brand entrance: a one-time slide-in, with reduced-motion support. */
-@keyframes ota-brand-slide-in {
-  from { opacity: 0; transform: translateX(-18px); }
-  to { opacity: 1; transform: translateX(0); }
+/* Single-line continuous brand marquee beside the logo. */
+.brand-marquee-track {
+  display: inline-flex;
+  width: max-content;
+  animation: ota-brand-marquee 28s linear infinite;
+  will-change: transform;
 }
-.brand-welcome-slide { animation: ota-brand-slide-in 650ms ease-out both; }
-.brand-name-slide { animation: ota-brand-slide-in 850ms ease-out 120ms both; }
-.brand-tagline-slide { animation: ota-brand-slide-in 900ms ease-out 240ms both; }
-@media (prefers-reduced-motion: reduce) {
-  .brand-welcome-slide,
-  .brand-name-slide,
-  .brand-tagline-slide { animation: none; }
-}
-
-.brand-destinations-slide {
-  animation: ota-brand-slide-in 1050ms ease-out 360ms both;
+.brand-marquee-track > span { flex: 0 0 auto; }
+@keyframes ota-brand-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .brand-destinations-slide { animation: none; }
+  .brand-marquee-track { animation: none; }
 }
