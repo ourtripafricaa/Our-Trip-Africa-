@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { collection, doc, serverTimestamp, writeBatch } from 'firebase/firestore';
+import { auth } from '../lib/firebase';
 import { db } from '../lib/firebase';
 import { X, Calendar, Users, Mail, Phone, MapPin, ShieldCheck, CheckCircle2, MessageSquare, CreditCard, Lock, Sparkles } from 'lucide-react';
 import { COMPANY_DETAILS, SAFARI_PACKAGES, SafariPackage } from '../data/safariData';
@@ -47,7 +48,9 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     setSubmitError('');
     const ref = 'OTA-' + Math.floor(100000 + Math.random() * 900000);
     try {
-      await addDoc(collection(db, 'bookings'), {
+      const bookingDoc = doc(collection(db, 'bookings'));
+      const batch = writeBatch(db);
+      batch.set(bookingDoc, {
         bookingRef: ref,
         packageSlug: currentPkg.slug,
         packageTitle: currentPkg.title,
@@ -65,8 +68,21 @@ export const BookingForm: React.FC<BookingFormProps> = ({
         country: country.trim(),
         specialRequests: specialRequests.trim(),
         status: 'new',
+        ...(auth.currentUser ? { customerUid: auth.currentUser.uid } : {}),
         createdAt: serverTimestamp()
       });
+      const mailDoc = doc(collection(db, 'mail'));
+      batch.set(mailDoc, {
+        bookingId: bookingDoc.id,
+        bookingRef: ref,
+        to: 'info@ourtripafrica.com',
+        message: {
+          subject: `New booking enquiry ${ref} - ${currentPkg.title}`,
+          text: `A new booking enquiry has arrived.\\nReference: ${ref}\\nPackage: ${currentPkg.title}\\nGuest: ${fullName}\\nEmail: ${email}\\nPhone: ${phone}\\nTravel date: ${travelDate || 'Flexible'}\\nGroup: ${adults} adults, ${children} children.\\nPlease sign in to the Admin Dashboard to review this enquiry.`
+        },
+        createdAt: serverTimestamp()
+      });
+      await batch.commit();
       setBookingRef(ref);
       setSubmitted(true);
     } catch (error) {
