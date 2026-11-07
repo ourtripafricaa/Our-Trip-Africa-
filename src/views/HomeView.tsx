@@ -61,6 +61,31 @@ const TANZANIA_GALLERY = [
     "name": "Zebra — Ngorongoro",
     "file": "NgoroNgoro Crater, Tanzania, Africa.jpg",
     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/NgoroNgoro%20Crater%2C%20Tanzania%2C%20Africa.jpg"
+  },
+  {
+    "name": "Serengeti at Sunrise",
+    "file": "004 Sunrise at Serengeti National Park Photo by Giles Laurent.jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/004%20Sunrise%20at%20Serengeti%20National%20Park%20Photo%20by%20Giles%20Laurent.jpg"
+  },
+  {
+    "name": "Tarangire Baobab Country",
+    "file": "Baobab (Adansonia digitata), parque nacional de Tarangire, Tanzania, 2024-05-24, DD 78.jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Baobab%20(Adansonia%20digitata)%2C%20parque%20nacional%20de%20Tarangire%2C%20Tanzania%2C%202024-05-24%2C%20DD%2078.jpg"
+  },
+  {
+    "name": "Inside Ngorongoro Crater",
+    "file": "Inside Ngorongoro crater.jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Inside%20Ngorongoro%20crater.jpg"
+  },
+  {
+    "name": "Nungwi Beach — Zanzibar",
+    "file": "Nungwi Beach Zanzibar.jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nungwi%20Beach%20Zanzibar.jpg"
+  },
+  {
+    "name": "Jambiani Seaweed Coast — Zanzibar",
+    "file": "Harvesting seaweed in Jambiani.jpg",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Harvesting%20seaweed%20in%20Jambiani.jpg"
   }
 ];
 
@@ -652,6 +677,15 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
         </div>
         <p className="text-center text-[11px] text-slate-500">Selected photographs hosted by Wikimedia Commons. Image authorship and licence details are available on each original file page.</p>
+        <div className="rounded-2xl border border-[#c5a059]/40 bg-[#0e3022] px-6 py-7 text-center text-white shadow-xl">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#e4c681]">Your adventure is one message away</p>
+          <h3 className="mt-2 font-serif text-2xl sm:text-3xl font-bold">Seen a place you would love to visit?</h3>
+          <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-200">Tell our Arusha team your travel dates, group size and budget. We will help you shape the right journey.</p>
+          <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3">
+            <button type="button" onClick={() => onOpenBooking()} className="rounded-xl bg-[#c5a059] px-7 py-3.5 text-sm font-extrabold text-[#061d14] shadow-lg hover:bg-[#e4c681] transition-colors">Enquire & Start Booking</button>
+            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-white/40 px-7 py-3.5 text-sm font-bold text-white hover:bg-white/10 transition-colors">Book on WhatsApp</a>
+          </div>
+        </div>
       </section></section>
 
 
