@@ -115,6 +115,10 @@ export default function App() {
           <DestinationView country="UAE" onSelectPackage={(pkg) => setSelectedPackage(pkg)} onOpenBooking={handleOpenBooking} />
         )}
 
+        {currentView === 'hadzabe' && (
+          <DestinationView country="Hadzabe" onSelectPackage={(pkg) => setSelectedPackage(pkg)} onOpenBooking={handleOpenBooking} />
+        )}
+
         {currentView === 'packages' && (
           <PackagesView initialFilter={viewParam} onSelectPackage={(pkg) => setSelectedPackage(pkg)} onOpenBooking={handleOpenBooking} />
         )}
