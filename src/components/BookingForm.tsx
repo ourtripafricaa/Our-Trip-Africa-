@@ -82,6 +82,17 @@ export const BookingForm: React.FC<BookingFormProps> = ({
         },
         createdAt: serverTimestamp()
       });
+      const guestMailDoc = doc(collection(db, 'mail'));
+      batch.set(guestMailDoc, {
+        bookingId: bookingDoc.id,
+        bookingRef: ref,
+        to: email.trim().toLowerCase(),
+        message: {
+          subject: `We received your Our Trip Africa enquiry - ${ref}`,
+          text: `Dear ${fullName},\\n\\nThank you for contacting Our Trip Africa. We have received your enquiry for ${currentPkg.title}.\\nReference: ${ref}\\nTravel date: ${travelDate || 'Flexible'}\\nGroup: ${adults} adults, ${children} children.\\n\\nOur Arusha team will review your request and contact you with availability and a tailored quotation. No payment has been taken.\\n\\nFor urgent assistance, WhatsApp +255624661830.\\nOur Trip Africa\\ninfo@ourtripafrica.com`
+        },
+        createdAt: serverTimestamp()
+      });
       await batch.commit();
       setBookingRef(ref);
       setSubmitted(true);
