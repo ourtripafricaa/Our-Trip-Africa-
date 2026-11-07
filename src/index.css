@@ -59,3 +59,8 @@
 @media (prefers-reduced-motion: reduce) {
   .brand-marquee-track { animation: none; }
 }
+
+
+/* Keep long animated brand text from widening the whole page on phones. */
+html, body, #root { width: 100%; max-width: 100%; overflow-x: clip; }
+.brand-marquee-track { max-width: none; }
