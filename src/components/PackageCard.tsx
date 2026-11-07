@@ -166,9 +166,9 @@ export const PackageCard: React.FC<PackageCardProps> = ({
                   ${currentPrice.toLocaleString()}
                 </span>
                 <span className="text-[11px] text-slate-500">/ person</span>
-                <span className="sr-only">Price applies to groups of 6 or more travellers.</span>
+                <span className="sr-only">Package group size: 6–21 travellers.</span>
               </div>
-              <p className="mt-1.5 max-w-[210px] text-[10px] leading-snug font-semibold text-[#0e5638]">Price per person, based on a group of 6 or more travellers.</p>
+              <p className="mt-1.5 max-w-[210px] text-[10px] leading-snug font-semibold text-[#0e5638]">Group size: 6–21 people. Displayed price is per person.</p>
             </div>
 
             <button
