@@ -22,6 +22,9 @@ export interface SafariPackage {
   id: string;
   slug: string;
   title: string;
+  seoTitle: string;
+  seoDescription: string;
+  seoKeywords: string[];
   destination: string;
   country: 'Tanzania' | 'Kenya' | 'Uganda' | 'Zanzibar' | 'South Africa' | 'UAE';
   category: 'Wildlife Safari' | 'Mountain Trek' | 'Beach Holiday' | 'Cultural Safari' | 'Grand Circuit' | 'City & Desert Tour';
