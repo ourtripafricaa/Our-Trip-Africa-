@@ -179,7 +179,11 @@ const upload=async(list:any[],folder:string)=>{
 
     if(tab==='Packages'){
      const id=edit?.static?form.id:edit?.firestoreId;
-     await setDoc(doc(db,'packages',String(id||form.id||form.slug||Date.now())),data);
+     const packageData = {
+      ...data,
+      ...(!edit && !form.createdAt ? {createdAt:new Date().toISOString()} : {})
+     };
+     await setDoc(doc(db,'packages',String(id||form.id||form.slug||Date.now())),packageData);
     }else if(edit?.firestoreId){
      await setDoc(doc(db,cols[tab],edit.firestoreId),data);
     }else{
