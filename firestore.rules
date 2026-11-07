@@ -7,6 +7,27 @@ service cloud.firestore {
         exists(/databases/$(database)/documents/admins/$(request.auth.uid));
     }
 
+    match /reviews/{reviewId} {
+      allow read: if (resource.data.status == 'approved') || isAdmin();
+      allow create: if
+        request.resource.data.keys().hasAll(['name','country','packageTitle','rating','review','status','createdAt']) &&
+        request.resource.data.name is string &&
+        request.resource.data.name.size() > 0 &&
+        request.resource.data.name.size() <= 100 &&
+        request.resource.data.country is string &&
+        request.resource.data.country.size() <= 100 &&
+        request.resource.data.packageTitle is string &&
+        request.resource.data.packageTitle.size() <= 200 &&
+        request.resource.data.rating is int &&
+        request.resource.data.rating >= 1 &&
+        request.resource.data.rating <= 5 &&
+        request.resource.data.review is string &&
+        request.resource.data.review.size() >= 10 &&
+        request.resource.data.review.size() <= 2000 &&
+        request.resource.data.status == 'pending';
+      allow update, delete: if isAdmin();
+    }
+
     match /admins/{userId} {
       allow read: if isAdmin();
       allow write: if false;
