@@ -162,9 +162,9 @@ export const SAFARI_PACKAGES: SafariPackage[] = [
     bestTime: 'June – October & January – March',
     physicalRating: 'Easy',
     // Photo: Charles J. Sharp, Wikimedia Commons, CC BY-SA 4.0
-    heroImage: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Western_white-bearded_wildebeest_%28Connochaetes_taurinus_mearnsi%29_Mara_River_crossing_2c.jpg/1280px-Western_white-bearded_wildebeest_%28Connochaetes_taurinus_mearnsi%29_Mara_River_crossing_2c.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Western_white-bearded_wildebeest_%28Connochaetes_taurinus_mearnsi%29_Mara_River_crossing_2c.jpg/1280px-Western_white-bearded_wildebeest_%28Connochaetes_taurinus_mearnsi%29_Mara_River_crossing_2c.jpg',
     gallery: [
-      'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Western_white-bearded_wildebeest_%28Connochaetes_taurinus_mearnsi%29_Mara_River_crossing_2c.jpg/1280px-Western_white-bearded_wildebeest_%28Connochaetes_taurinus_mearnsi%29_Mara_River_crossing_2c.jpg'
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Western_white-bearded_wildebeest_%28Connochaetes_taurinus_mearnsi%29_Mara_River_crossing_2c.jpg/1280px-Western_white-bearded_wildebeest_%28Connochaetes_taurinus_mearnsi%29_Mara_River_crossing_2c.jpg'
     ],
     overview: 'Follow the world-famous Great Wildebeest Migration across the boundless Serengeti plains. Witness dramatic predator interactions, descend into the primordial caldera of Ngorongoro Crater, and discover the legendary baobab giants and elephant herds of Tarangire National Park.',
     highlights: [
