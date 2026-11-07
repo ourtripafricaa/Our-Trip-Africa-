@@ -3,6 +3,8 @@ import React,{useState,useEffect} from 'react';
 import {
  collection,
  onSnapshot,
+ query,
+ where,
  addDoc,
  setDoc,
  doc,
@@ -74,9 +76,9 @@ export function AdminDashboard(){
   }
 ];
 
- const menus=['Overview','Home','About Us','Contacts','Packages','Old Packages','Destinations','Bookings','Blog','Reviews','Offers','Images','Videos','Attachments','Logout'];
+ const menus=['Overview','Visitors','Home','About Us','Contacts','Packages','Old Packages','Destinations','Bookings','Blog','Reviews','Offers','Images','Videos','Attachments','Logout'];
  const pages=['Home','About Us','Contacts'];
- const cols:any={Packages:'packages',Destinations:'destinations',Bookings:'bookings',Blog:'blogPosts',Reviews:'reviews',Offers:'offers'};
+ const cols:any={Visitors:'siteVisits',Packages:'packages',Destinations:'destinations',Bookings:'bookings',Blog:'blogPosts',Reviews:'reviews',Offers:'offers'};
 
  const defaults:any={
  Home:{title:'Discover the Untamed Wonder of East Africa',heading:'Welcome to Our Trip Africa',description:'Discover. Explore. Enjoy.'},
@@ -86,6 +88,11 @@ export function AdminDashboard(){
 
  useEffect(()=>{
   if(cols[tab]){
+   if(tab==='Visitors'){
+    const since=new Date(); since.setDate(since.getDate()-6);
+    const startDate=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Dar_es_Salaam'}).format(since);
+    return onSnapshot(query(collection(db,'siteVisits'),where('date','>=',startDate)),s=>S(s.docs.map(d=>({...d.data(),firestoreId:d.id}))));
+   }
    return onSnapshot(collection(db,cols[tab]),s=>S(s.docs.map(d=>({...d.data(),firestoreId:d.id}))));
   }
   if(['Images','Videos','Attachments'].includes(tab)){
@@ -241,6 +248,32 @@ const upload=async(list:any[],folder:string)=>{
  <h3>Welcome to Our Trip Africa Admin</h3>
  {menus.slice(1,-1).map(x=>button(x,()=>T(x)))}
  </>}
+
+ {tab==='Visitors'&&(()=>{
+  const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Dar_es_Salaam'}).format(new Date());
+  const todayCount=items.filter(x=>x.date===today).length;
+  const daily=Array.from({length:7},(_,i)=>{
+   const d=new Date(); d.setDate(d.getDate()-(6-i));
+   const date=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Dar_es_Salaam'}).format(d);
+   return {date,count:items.filter(x=>x.date===date).length};
+  });
+  const pages=Object.entries(items.reduce((acc:any,x:any)=>{const p=x.pagePath||'/';acc[p]=(acc[p]||0)+1;return acc;},{})).sort((a:any,b:any)=>b[1]-a[1]).slice(0,8);
+  return <section style={{background:'white',padding:16,borderRadius:12}}>
+   <h3 style={{fontSize:19,fontWeight:700}}>Website Visitor Analytics</h3>
+   <p style={{color:'#52665a'}}>Anonymous daily visitor estimates for Our Trip Africa. Times use Tanzania time (EAT).</p>
+   <div style={{display:'flex',gap:10,flexWrap:'wrap',margin:'14px 0'}}>
+    <div style={{background:'#e9f4ec',padding:16,borderRadius:10,minWidth:145}}><small>Visitors today</small><div style={{fontSize:30,fontWeight:800,color:green}}>{todayCount}</div></div>
+    <div style={{background:'#fff5df',padding:16,borderRadius:10,minWidth:145}}><small>Visitors in 7 days</small><div style={{fontSize:30,fontWeight:800,color:'#9a6b19'}}>{items.length}</div></div>
+   </div>
+   <h4 style={{fontWeight:700,marginTop:18}}>Daily visitors — last 7 days</h4>
+   {daily.map(d=><div key={d.date} style={{display:'grid',gridTemplateColumns:'110px 1fr 35px',gap:8,alignItems:'center',margin:'10px 0'}}>
+    <small>{d.date}</small><div style={{height:13,background:'#edf1ed',borderRadius:20,overflow:'hidden'}}><div style={{height:'100%',width:(items.length?Math.max(d.count/Math.max(...daily.map(x=>x.count),1)*100,d.count?3:0):0)+'%',background:'#046A38',borderRadius:20}}/></div><b>{d.count}</b>
+   </div>)}
+   <h4 style={{fontWeight:700,marginTop:20}}>Most viewed pages (recorded visit entries)</h4>
+   {pages.length?pages.map(([page,count]:any)=><div key={page} style={{display:'flex',justifyContent:'space-between',gap:8,borderBottom:'1px solid #edf1ed',padding:'8px 0'}}><span style={{overflowWrap:'anywhere'}}>{page}</span><b>{count}</b></div>):<p>No visitor data yet. Open the public website after tracking is deployed.</p>}
+   <p style={{fontSize:12,color:'#68766d',marginTop:16}}>Privacy: this counter stores a random anonymous browser ID, date and page path only. It does not collect names, email addresses or IP addresses. Repeat visits from the same browser are counted once per day. Counts are approximate and may be affected by private browsing, cleared storage, blockers or multiple devices.</p>
+  </section>;
+ })()}
 
  {pages.includes(tab)&&<>
  <h3>Edit {tab} information</h3>
