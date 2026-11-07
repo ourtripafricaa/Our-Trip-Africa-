@@ -10,6 +10,7 @@ import { CloudflareGuideModal } from './components/CloudflareGuideModal';
 import { SafariChatbot } from './components/SafariChatbot';
 
 import { HomeView } from './views/HomeView';
+import { DestinationsView } from './views/DestinationsView';
 import { AboutView } from './views/AboutView';
 import { DestinationView } from './views/DestinationView';
 import { PackagesView } from './views/PackagesView';
@@ -82,6 +83,10 @@ export default function App() {
             onSelectPackage={(pkg) => setSelectedPackage(pkg)}
             onOpenBooking={handleOpenBooking}
           />
+        )}
+
+        {currentView === 'destinations' && (
+          <DestinationsView onNavigate={handleNavigate} />
         )}
 
         {currentView === 'about' && (
