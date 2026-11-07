@@ -34,7 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     setDestinationsDropdownOpen(false);
   };
 
-  const isDestinationActive = ['tanzania', 'kenya', 'uganda', 'zanzibar', 'south-africa', 'uae', 'hadzabe'].includes(currentView);
+  const isDestinationActive = ['destinations', 'tanzania', 'kenya', 'uganda', 'zanzibar', 'south-africa', 'uae', 'hadzabe'].includes(currentView);
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#0e3022] backdrop-blur-md border-b border-[#1b4d38] shadow-md">
@@ -121,6 +121,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             Home
             {currentView === 'home' && (
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#c5a059] rounded-full" />
+            )}
+          </button>
+
+          <button
+            onClick={() => handleLinkClick('destinations')}
+            className={`transition-colors whitespace-nowrap cursor-pointer py-1 relative ${
+              currentView === 'destinations' ? 'text-[#c5a059] font-bold' : 'hover:text-white'
+            }`}
+          >
+            Explore Destinations
+            {currentView === 'destinations' && (
               <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#c5a059] rounded-full" />
             )}
           </button>
@@ -291,6 +303,17 @@ export const Navbar: React.FC<NavbarProps> = ({
               }`}
             >
               Home
+            </button>
+
+            <button
+              onClick={() => handleLinkClick('destinations')}
+              className={`text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                currentView === 'destinations'
+                  ? 'bg-[#0e3022] text-[#c5a059] font-bold border-l-2 border-[#c5a059]'
+                  : 'text-slate-300 hover:bg-[#0e3022] hover:text-white'
+              }`}
+            >
+              Explore All Destinations
             </button>
 
             {/* Destinations Subgroup */}
