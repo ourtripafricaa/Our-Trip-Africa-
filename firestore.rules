@@ -68,8 +68,11 @@ service cloud.firestore {
         request.resource.data.bookingRef is string &&
         getAfter(/databases/$(database)/documents/bookings/$(request.resource.data.bookingId)).data.bookingRef == request.resource.data.bookingRef &&
         getAfter(/databases/$(database)/documents/bookings/$(request.resource.data.bookingId)).data.email is string &&
+        getAfter(/databases/$(database)/documents/bookings/$(request.resource.data.bookingId)).data.createdAt == request.time &&
         request.resource.data.message.subject is string &&
-        request.resource.data.message.text is string
+        request.resource.data.message.subject.size() <= 200 &&
+        request.resource.data.message.text is string &&
+        request.resource.data.message.text.size() <= 5000
       );
       allow read, update, delete: if isAdmin();
     }
