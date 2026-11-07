@@ -44,6 +44,7 @@ export interface SafariPackage {
   rating: number;
   reviewsCount: number;
   featured: boolean;
+  createdAt?: any;
   bestTime: string;
   physicalRating: 'Easy' | 'Moderate' | 'Challenging' | 'Strenuous';
   heroImage: string;
