@@ -86,7 +86,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
 
           {/* Overview text */}
           <p className="text-xs text-slate-600 mt-2.5 line-clamp-2 leading-relaxed">
-            {packageItem.overview}
+            {packageItem.seoDescription || packageItem.overview}
           </p>
 
           {/* Tier Pricing Selector Switcher */}
