@@ -364,7 +364,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button onClick={() => handleLinkClick('safari-map')} className="text-left px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-[#0e3022]">Interactive Safari Map</button>
             <button onClick={() => handleLinkClick('account')} className="text-left px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-[#0e3022]">Guest Account / My Bookings</button>
             <button
-              onClick={() => handleLinkClick('compare')
+              onClick={() => handleLinkClick('compare')}
               className={`text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 currentView === 'compare'
                   ? 'bg-[#0e3022] text-[#c5a059] font-bold border-l-2 border-[#c5a059]'
