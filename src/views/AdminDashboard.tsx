@@ -26,6 +26,8 @@ export function AdminDashboard(){
  const [edit,E]=useState<any>(null);
  const [files,Q]=useState<any>({});
  const [busy,B]=useState(false);
+ const [galleryImages,GI]=useState<any[]>([]);
+ const [selectedImage,SI]=useState('');
 
  const menus=['Overview','Home','About Us','Contacts','Packages','Old Packages','Destinations','Bookings','Blog','Images','Videos','Attachments','Logout'];
  const pages=['Home','About Us','Contacts'];
@@ -49,6 +51,13 @@ export function AdminDashboard(){
   }
   S([]);
  },[tab]);
+
+ useEffect(()=>{
+  fetch('https://api.github.com/repos/ourtripafricaa/Our-Trip-Africa-/contents/public/images?ref=main')
+   .then(r=>r.ok?r.json():Promise.reject(new Error('GitHub images folder haipatikani')))
+   .then(data=>GI(Array.isArray(data)?data.filter((x:any)=>x.type==='file'&&/\\.(png|jpe?g|webp|gif|avif)$/i.test(x.name)).map((x:any)=>({name:x.name,url:x.download_url})):[]))
+   .catch(err=>console.error('GitHub gallery:',err));
+ },[]);
 
  const field=(key:string)=> <label style={{display:'block',margin:'10px 0'}}>
  <b>{key}</b>
@@ -108,15 +117,15 @@ const upload=async(list:any[],folder:string)=>{
     for(let i=0;i<urls.length;i++)
      await addDoc(collection(db,'media'),{type:tab,url:urls[i],name:files.media[i].name});
    }else{
-    const images=await upload(files.images||[],'images');
+    const images:string[]=[];
     const videos=await upload(files.videos||[],'videos');
     const attachments=await upload(files.docs||[],'attachments');
     const data={...form,
      images:[...(Array.isArray(form.images)?form.images:[]),...images],
      videos:[...(Array.isArray(form.videos)?form.videos:[]),...videos],
      attachments:[...(Array.isArray(form.attachments)?form.attachments:[]),...attachments],
-     heroImage:images[0]||form.heroImage||form.image||'',
-     image:images[0]||form.image||''
+     heroImage:form.heroImage||form.image||'',
+     image:form.image||form.heroImage||''
     };
 
     ['itinerary','highlights','inclusions','exclusions','gallery','tags','content'].forEach(k=>{
@@ -194,8 +203,11 @@ const upload=async(list:any[],folder:string)=>{
  </>}
  {tab==='Destinations'&&['title','country','description','image'].map(field)}
  {tab==='Blog'&&['title','slug','category','readTime','publishedDate','image','excerpt','content','tags','seoDescription'].map(field)}
- <p>Upload Images</p>
- <input type="file" accept="image/*" multiple onChange={e=>Q({...files,images:Array.from(e.target.files||[])})}/>
+ <p>Select an image from GitHub Gallery</p>
+ <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(105px,1fr))',gap:8}}>
+ {galleryImages.map((img:any)=><button type="button" key={img.url} onClick={()=>{SI(img.url);F({...form,image:img.url,heroImage:img.url})}} style={{border:selectedImage===img.url?'3px solid #046A38':'1px solid #ccc',background:'white',padding:5}}><img src={img.url} alt={img.name} style={{width:'100%',height:75,objectFit:'cover'}}/><small>{img.name}</small></button>)}
+ </div>
+ {(selectedImage||form.heroImage||form.image)&&<p>Selected image: <img src={selectedImage||form.heroImage||form.image} alt="Selected" style={{width:100,display:'block'}}/></p>}
  <p>Upload Videos</p>
  <input type="file" accept="video/*" multiple onChange={e=>Q({...files,videos:Array.from(e.target.files||[])})}/>
  <p>Upload PDF / Documents</p>
