@@ -228,24 +228,38 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 3. DESTINATIONS SHOWCASE BENTO */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="relative overflow-hidden rounded-3xl border border-[#c5a059]/40 bg-gradient-to-br from-[#061d14] via-[#0e3022] to-[#123d2b] px-6 py-9 sm:px-10 sm:py-12 text-center shadow-xl">
-          <div className="absolute -top-20 -right-16 h-56 w-56 rounded-full bg-[#c5a059]/10 blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-white/5 blur-3xl pointer-events-none" />
-          <div className="relative mx-auto max-w-4xl space-y-4">
-            <span className="inline-flex items-center rounded-full border border-[#c5a059]/50 bg-white/5 px-5 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-[0.24em] text-[#e4c681]">
-              Curated Destinations
-            </span>
-            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-wide text-white">
-              DISCOVER THE ICONIC DESTINATIONS IN AFRICA AND UAE
-            </h2>
-            <div className="mx-auto h-px w-20 bg-[#c5a059]" />
-            <button
-              onClick={() => onNavigate('destinations')}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#e4c681] bg-[#c5a059] px-6 py-3.5 text-sm font-extrabold text-[#061d14] shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#e4c681] cursor-pointer"
-            >
-              <span>Explore All Destinations</span>
-              <ArrowRight size={17} />
-            </button>
+        <div className="relative overflow-hidden rounded-[2rem] border border-[#c5a059]/50 bg-[#061d14] shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[360px]">
+            <div className="relative z-10 flex flex-col justify-center items-start px-7 py-10 sm:px-10 sm:py-14 lg:px-12">
+              <span className="inline-flex items-center rounded-full border border-[#c5a059]/60 bg-[#c5a059]/10 px-4 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-[0.24em] text-[#e4c681]">
+                Curated Destinations
+              </span>
+              <h2 className="mt-5 font-serif text-3xl sm:text-4xl xl:text-5xl font-bold leading-tight text-white">
+                DISCOVER THE ICONIC DESTINATIONS IN AFRICA AND UAE
+              </h2>
+              <p className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-slate-200">
+                From the great wildlife plains of East Africa to tropical island shores, mountain adventures and the remarkable cities of the UAE, discover journeys made unforgettable.
+              </p>
+              <button
+                onClick={() => onNavigate('destinations')}
+                className="mt-7 inline-flex items-center justify-center gap-3 rounded-xl bg-[#c5a059] px-7 py-4 text-sm font-extrabold text-[#061d14] shadow-lg transition-all hover:-translate-y-1 hover:bg-[#e4c681] cursor-pointer"
+              >
+                Explore All Destinations
+                <ArrowRight size={18} />
+              </button>
+            </div>
+            <div className="relative min-h-[260px] lg:min-h-full overflow-hidden">
+              <img
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/Acacia%20tree%20at%20sunset%2C%20Maasai%20Mara%2C%20Kenya.jpg?width=1600"
+                alt="Golden sunset over the African savannah and acacia trees"
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#061d14] via-[#061d14]/20 to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-[#061d14]/10" />
+              <div className="absolute bottom-4 right-4 rounded-lg border border-white/20 bg-[#061d14]/75 px-3 py-2 text-[10px] text-white backdrop-blur-sm">
+                Maasai Mara • African Savannah
+              </div>
+            </div>
           </div>
         </div>
 
