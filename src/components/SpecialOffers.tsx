@@ -3,7 +3,7 @@ import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 import { Sparkles, CalendarDays, ArrowRight } from 'lucide-react';
 
-type Offer = { id:string; title:string; description?:string; discountLabel?:string; validUntil?:string; image?:string; packageSlug?:string; active?:boolean; ctaLabel?:string };
+type Offer = { id:string; title:string; description?:string; discountLabel?:string; validUntil?:string; image?:string; packageSlug?:string; active?:boolean|string; ctaLabel?:string };
 
 export const SpecialOffers: React.FC<{onOpenBooking:()=>void}> = ({onOpenBooking}) => {
  const [offers,setOffers]=useState<Offer[]>([]);
