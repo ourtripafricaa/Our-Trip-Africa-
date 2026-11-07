@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { collection, onSnapshot } from 'firebase/firestore';
+import { db } from '../lib/firebase';
 import { Search, Filter, ArrowUpDown, LayoutGrid, Table, SlidersHorizontal, Sparkles } from 'lucide-react';
 import { SAFARI_PACKAGES, SafariPackage } from '../data/safariData';
 import { PackageCard } from '../components/PackageCard';
@@ -16,6 +18,26 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
   onOpenBooking,
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [livePackages, setLivePackages] = useState<SafariPackage[]>([]);
+  const [packagesLoaded, setPackagesLoaded] = useState(false);
+
+  // Merge administrator-managed Firestore packages with the built-in catalogue.
+  // Firestore records override static records with the same slug or id.
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, 'packages'), snapshot => {
+      setLivePackages(snapshot.docs.map(item => ({ ...item.data(), id: item.data().id || item.id } as SafariPackage)));
+      setPackagesLoaded(true);
+    }, error => {
+      console.error('Live packages could not be loaded; showing built-in catalogue:', error);
+      setPackagesLoaded(true);
+    });
+    return () => unsubscribe();
+  }, [allPackages.length]);
+
+  const packageMap = new Map<string, SafariPackage>();
+  SAFARI_PACKAGES.forEach(pkg => packageMap.set(pkg.slug || pkg.id, pkg));
+  livePackages.forEach(pkg => packageMap.set(pkg.slug || pkg.id, { ...(packageMap.get(pkg.slug || pkg.id) || {} as SafariPackage), ...pkg }));
+  const allPackages = Array.from(packageMap.values());
   const [selectedCountry, setSelectedCountry] = useState<string>(initialFilter || 'all');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedPhysical, setSelectedPhysical] = useState<string>('all');
@@ -37,8 +59,8 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
       '@type': 'ItemList',
       name: 'Our Trip Africa Safari and Holiday Packages',
       description: 'Tanzania, Kenya, Uganda, Zanzibar, South Africa and Dubai safari and holiday packages by Our Trip Africa.',
-      numberOfItems: SAFARI_PACKAGES.length,
-      itemListElement: SAFARI_PACKAGES.map((pkg, index) => ({
+      numberOfItems: allPackages.length,
+      itemListElement: allPackages.map((pkg, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         item: {
@@ -55,7 +77,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
     };
   }, []);
 
-  const filteredPackages = SAFARI_PACKAGES.filter((pkg) => {
+  const filteredPackages = allPackages.filter((pkg) => {
     // Search
     if (searchTerm.trim()) {
       const term = searchTerm.toLowerCase();
@@ -99,7 +121,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
             Complete Safari & Holiday Catalog
           </span>
           <h1 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mt-1">
-            All Safari & Holiday Packages ({SAFARI_PACKAGES.length})
+            All Safari & Holiday Packages ({allPackages.length})
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 mt-1">
             Explore Tanzania safari packages, Kenya wildlife tours, Uganda gorilla trekking, Zanzibar beach holidays, South Africa safari tours and Dubai holiday packages. Compare budget, mid-range and luxury trips with Our Trip Africa, your local travel team in Arusha, Tanzania.
@@ -133,6 +155,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
         </div>
       </div>
 
+      {!packagesLoaded && <p className="text-xs text-slate-500">Loading latest package updates…</p>}
       {viewMode === 'comparison' ? (
         <PackageComparison
           onSelectPackage={onSelectPackage}
@@ -208,7 +231,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
             <div className="flex items-center justify-between text-xs text-slate-500 pt-2 border-t border-slate-100">
               <span>
                 Showing <strong className="text-slate-900">{filteredPackages.length}</strong> of{' '}
-                <strong className="text-slate-900">{SAFARI_PACKAGES.length}</strong> packages
+                <strong className="text-slate-900">{allPackages.length}</strong> packages
               </span>
               {(searchTerm || selectedCountry !== 'all' || selectedCategory !== 'all') && (
                 <button
