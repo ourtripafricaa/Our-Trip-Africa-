@@ -90,16 +90,16 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-20 flex min-w-0 items-center justify-between gap-2 sm:gap-4">
         {/* Brand Zone */}
         <button
           onClick={() => handleLinkClick('home')}
-          className="flex items-center gap-3 text-left shrink-0 cursor-pointer group"
+          className="flex min-w-0 flex-1 max-w-[58vw] sm:max-w-[420px] xl:max-w-[360px] items-center gap-2 sm:gap-3 text-left cursor-pointer group"
         >
           <img
             src={COMPANY_DETAILS.logo}
             alt="Our Trip Africa Logo"
-            className="h-12 w-12 rounded-full object-cover border border-[#c5a059]/40 shadow-sm transition-transform group-hover:scale-105"
+            className="h-10 w-10 sm:h-12 sm:w-12 shrink-0 rounded-full object-cover border border-[#c5a059]/40 shadow-sm transition-transform group-hover:scale-105"
           />
           <div className="min-w-0 flex-1 overflow-hidden leading-tight">
             <div className="brand-marquee-track font-serif text-xs sm:text-2xl font-bold tracking-tight uppercase whitespace-nowrap">
@@ -110,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </button>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden xl:flex items-center gap-6 text-sm font-medium text-slate-200">
+        <nav className="hidden 2xl:flex items-center gap-3 text-xs font-medium text-slate-200">
           <button
             onClick={() => handleLinkClick('home')}
             className={`transition-colors whitespace-nowrap cursor-pointer py-1 relative ${
@@ -253,7 +253,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </nav>
 
         {/* Primary Action Buttons */}
-        <div className="hidden sm:flex items-center gap-3 shrink-0">
+        <div className="hidden 2xl:flex items-center gap-2 shrink-0">
           <a
             href={COMPANY_DETAILS.whatsappUrl}
             target="_blank"
@@ -274,7 +274,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Mobile Hamburger Toggle */}
-        <div className="flex items-center gap-2 xl:hidden">
+        <div className="flex items-center gap-2 2xl:hidden shrink-0">
           <a
             href={COMPANY_DETAILS.whatsappUrl}
             target="_blank"
@@ -296,7 +296,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-[#061d14] border-b border-[#1b4d38] px-4 pt-3 pb-6 max-h-[85vh] overflow-y-auto space-y-3">
+        <div className="2xl:hidden bg-[#061d14] border-b border-[#1b4d38] px-4 pt-3 pb-6 max-h-[85vh] overflow-y-auto space-y-3">
           <div className="flex flex-col space-y-1">
             <button
               onClick={() => handleLinkClick('home')}
