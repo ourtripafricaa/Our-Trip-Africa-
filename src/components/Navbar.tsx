@@ -101,19 +101,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             alt="Our Trip Africa Logo"
             className="h-12 w-12 rounded-full object-cover border border-[#c5a059]/40 shadow-sm transition-transform group-hover:scale-105"
           />
-          <div className="flex flex-col overflow-hidden leading-tight">
-            <span className="brand-welcome-slide font-serif text-base sm:text-2xl font-bold tracking-tight text-[#c5a059] uppercase whitespace-nowrap">
-              WELCOME TO
-            </span>
-            <span className="brand-name-slide font-serif text-base sm:text-2xl font-bold tracking-tight text-white group-hover:text-[#c5a059] transition-colors whitespace-nowrap">
-              OUR TRIP AFRICA
-            </span>
-            <span className="brand-tagline-slide font-serif text-base sm:text-2xl font-bold tracking-tight text-[#c5a059] uppercase whitespace-nowrap">
-              DISCOVER. EXPLORE. ENJOY.
-            </span>
-            <span className="brand-destinations-slide font-serif text-base sm:text-2xl font-bold tracking-tight text-white uppercase whitespace-nowrap">
-              TANZANIA, ZANZIBAR, KENYA, UGANDA, RWANDA AND SOUTH AFRICA.
-            </span>
+          <div className="min-w-0 flex-1 overflow-hidden leading-tight">
+            <div className="brand-marquee-track font-serif text-xs sm:text-2xl font-bold tracking-tight uppercase text-[#c5a059] whitespace-nowrap">
+              <span>WELCOME TO OUR TRIP AFRICA&nbsp; • &nbsp;DISCOVER. EXPLORE. ENJOY.&nbsp; • &nbsp;TANZANIA, ZANZIBAR, KENYA, UGANDA, RWANDA AND SOUTH AFRICA.&nbsp; • &nbsp;</span>
+              <span aria-hidden="true">WELCOME TO OUR TRIP AFRICA&nbsp; • &nbsp;DISCOVER. EXPLORE. ENJOY.&nbsp; • &nbsp;TANZANIA, ZANZIBAR, KENYA, UGANDA, RWANDA AND SOUTH AFRICA.&nbsp; • &nbsp;</span>
+            </div>
           </div>
         </button>
 
