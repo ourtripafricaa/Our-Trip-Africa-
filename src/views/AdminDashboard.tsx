@@ -55,7 +55,7 @@ export function AdminDashboard(){
  useEffect(()=>{
   fetch('https://api.github.com/repos/ourtripafricaa/Our-Trip-Africa-/contents/public/images?ref=main')
    .then(r=>r.ok?r.json():Promise.reject(new Error('GitHub images folder haipatikani')))
-   .then(data=>GI(Array.isArray(data)?data.filter((x:any)=>x.type==='file'&&/\\.(png|jpe?g|webp|gif|avif)$/i.test(x.name)).map((x:any)=>({name:x.name,url:x.download_url})):[]))
+   .then(data=>GI(Array.isArray(data)?data.filter((x:any)=>x.type==='file'&&/\.(png|jpe?g|webp|gif|avif)$/i.test(x.name)).map((x:any)=>({name:x.name,url:x.download_url})):[]))
    .catch(err=>console.error('GitHub gallery:',err));
  },[]);
 
