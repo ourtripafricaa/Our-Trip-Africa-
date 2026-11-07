@@ -48,12 +48,35 @@ service cloud.firestore {
         request.resource.data.email.size() <= 254 &&
         request.resource.data.adults is int &&
         request.resource.data.adults >= 1 &&
-        request.resource.data.adults <= 20 &&
+        request.resource.data.adults <= 30 &&
         request.resource.data.children is int &&
         request.resource.data.children >= 0 &&
-        request.resource.data.children <= 10 &&
-        request.resource.data.status == 'new';
+        request.resource.data.children <= 30 &&
+        request.resource.data.adults + request.resource.data.children <= 30 &&
+        request.resource.data.status == 'new' &&
+        (!('customerUid' in request.resource.data) || (request.auth != null && request.resource.data.customerUid == request.auth.uid));
+      allow read: if isAdmin() || (request.auth != null && resource.data.customerUid == request.auth.uid);
+      allow update, delete: if isAdmin();
+    }
+
+    // Email queue: public booking form may queue only an admin alert linked to a booking created in the same batch.
+    // Admins may queue customer status updates. Install Firebase Trigger Email to deliver these messages.
+    match /mail/{mailId} {
+      allow create: if isAdmin() || (
+        request.resource.data.to == 'info@ourtripafrica.com' &&
+        request.resource.data.bookingId is string &&
+        request.resource.data.bookingRef is string &&
+        getAfter(/databases/$(database)/documents/bookings/$(request.resource.data.bookingId)).data.bookingRef == request.resource.data.bookingRef &&
+        getAfter(/databases/$(database)/documents/bookings/$(request.resource.data.bookingId)).data.email is string &&
+        request.resource.data.message.subject is string &&
+        request.resource.data.message.text is string
+      );
       allow read, update, delete: if isAdmin();
+    }
+
+    match /offers/{offerId} {
+      allow read: if true;
+      allow write: if isAdmin();
     }
 
     // Public website content is readable; only authenticated admins can manage it.
