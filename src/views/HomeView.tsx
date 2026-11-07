@@ -228,22 +228,25 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 3. DESTINATIONS SHOWCASE BENTO */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div>
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#0e3022]">
+        <div className="relative overflow-hidden rounded-3xl border border-[#c5a059]/40 bg-gradient-to-br from-[#061d14] via-[#0e3022] to-[#123d2b] px-6 py-9 sm:px-10 sm:py-12 text-center shadow-xl">
+          <div className="absolute -top-20 -right-16 h-56 w-56 rounded-full bg-[#c5a059]/10 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-white/5 blur-3xl pointer-events-none" />
+          <div className="relative mx-auto max-w-4xl space-y-4">
+            <span className="inline-flex items-center rounded-full border border-[#c5a059]/50 bg-white/5 px-5 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-[0.24em] text-[#e4c681]">
               Curated Destinations
             </span>
-            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900 mt-1">
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-wide text-white">
               DISCOVER THE ICONIC DESTINATIONS IN AFRICA AND UAE
             </h2>
+            <div className="mx-auto h-px w-20 bg-[#c5a059]" />
+            <button
+              onClick={() => onNavigate('destinations')}
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#e4c681] bg-[#c5a059] px-6 py-3.5 text-sm font-extrabold text-[#061d14] shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#e4c681] cursor-pointer"
+            >
+              <span>Explore All Destinations</span>
+              <ArrowRight size={17} />
+            </button>
           </div>
-          <button
-            onClick={() => onNavigate('destinations')}
-            className="text-xs text-[#0e3022] hover:text-[#c5a059] flex items-center gap-1 font-semibold cursor-pointer transition-colors"
-          >
-            <span>Explore All Destinations</span>
-            <ArrowRight size={14} />
-          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
