@@ -690,33 +690,42 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
 
 
-      {/* OUR SOCIAL VIDEO CHANNELS */}
+      {/* SOCIAL VIDEO LINKS ON EVERY VIDEO CATEGORY */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#0e3022]"><Video size={15}/> Follow • Watch • Explore</span>
+          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#0e3022]"><Video size={15}/> Watch • Follow • Explore</span>
           <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Watch Our Trip Africa in Action</h2>
-          <p className="text-sm text-slate-600">Explore our latest safari moments, wildlife encounters, island escapes and travel stories. Choose a platform below to open our official page directly.</p>
+          <p className="text-sm text-slate-600">Choose a video category, then select your favourite social platform to watch more from Our Trip Africa.</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {[
-            { name: 'Facebook', handle: '@ourtripafrica', description: 'Safari videos, guest moments and travel updates.', url: 'https://www.facebook.com/ourtripafrica', label: 'Open Facebook Page' },
-            { name: 'Instagram', handle: '@ourtripafricaa', description: 'Reels, destination inspiration and beautiful photo stories.', url: 'https://www.instagram.com/ourtripafricaa/', label: 'Open Instagram Page' },
-            { name: 'TikTok', handle: '@ourtripafrica', description: 'Short safari clips, wildlife moments and quick travel ideas.', url: 'https://www.tiktok.com/@ourtripafrica', label: 'Open TikTok Page' },
-            { name: 'YouTube', handle: '@ourtripafrica', description: 'Watch our longer safari films and destination videos.', url: 'https://www.youtube.com/@ourtripafrica', label: 'Open YouTube Channel' }
-          ].map((platform) => (
-            <a key={platform.name} href={platform.url} target="_blank" rel="noopener noreferrer" aria-label={platform.label}
-              className="group flex min-h-[230px] flex-col justify-between rounded-3xl border border-[#c5a059]/40 bg-[#061d14] p-6 text-white shadow-lg transition-all hover:-translate-y-1 hover:border-[#e4c681] hover:shadow-2xl">
-              <div>
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-[#c5a059]/50 bg-[#c5a059]/15 text-[#e4c681]"><PlayCircle size={27}/></span>
-                <h3 className="mt-5 font-serif text-2xl font-bold">{platform.name}</h3>
-                <p className="mt-1 text-xs font-semibold tracking-wide text-[#e4c681]">{platform.handle}</p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300">{platform.description}</p>
+            { title: 'Wildlife & Big Five Safaris', subtitle: 'Lions, elephants and the endless plains of Africa.', image: TANZANIA_GALLERY[0].url },
+            { title: 'Zanzibar Island Escapes', subtitle: 'Turquoise water, white-sand beaches and island life.', image: LOCAL_IMAGES.zanzibar },
+            { title: 'Kilimanjaro Adventures', subtitle: 'Mountain trails, breathtaking views and summit moments.', image: LOCAL_IMAGES.kilimanjaro },
+            { title: 'Culture & Local Experiences', subtitle: 'Discover local communities, traditions and heritage.', image: LOCAL_IMAGES.lakeEyasi }
+          ].map((item) => (
+            <div key={item.title} className="overflow-hidden rounded-3xl border border-[#c5a059]/40 bg-white shadow-lg">
+              <div className="relative h-48 sm:h-56 bg-[#061d14]">
+                <img src={item.image} alt={item.title} loading="lazy" className="h-full w-full object-cover"/>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#061d14]/85 via-transparent to-transparent"/>
+                <div className="absolute bottom-4 left-5 right-5">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">{item.title}</h3>
+                  <p className="mt-1 text-xs text-slate-200">{item.subtitle}</p>
+                </div>
               </div>
-              <span className="mt-6 inline-flex items-center gap-2 text-xs font-extrabold text-[#e4c681]">{platform.label} <ArrowRight size={15} className="transition-transform group-hover:translate-x-1"/></span>
-            </a>
+              <div className="p-4 sm:p-5">
+                <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-600">Choose where to watch</p>
+                <div className="grid grid-cols-2 gap-2">
+                  <a href="https://www.facebook.com/ourtripafrica" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#1877F2] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on Facebook</a>
+                  <a href="https://www.instagram.com/ourtripafricaa/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#FCAF45] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on Instagram</a>
+                  <a href="https://www.tiktok.com/@ourtripafrica" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#111111] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:bg-black">Watch on TikTok</a>
+                  <a href="https://www.youtube.com/@ourtripafrica" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#FF0033] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on YouTube</a>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
-        <p className="text-center text-xs text-slate-500">Each button opens the selected Our Trip Africa social page in a new tab. Visitors can watch videos and follow your page there.</p>
+        <p className="text-center text-xs text-slate-500">Each video category offers all four official social links, so visitors can choose where they prefer to watch.</p>
       </section>
 
       <GuestReviews />
