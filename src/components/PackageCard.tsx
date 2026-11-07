@@ -18,6 +18,16 @@ export const PackageCard: React.FC<PackageCardProps> = ({
   const [imgError, setImgError] = useState(false);
 
   const currentPrice = packageItem.tierPricing[selectedTier] || packageItem.basePrice;
+  const createdAtValue = packageItem.createdAt as any;
+  const createdAtDate = createdAtValue?.toDate
+    ? createdAtValue.toDate()
+    : createdAtValue
+      ? new Date(createdAtValue)
+      : null;
+  const isNewPackage = !!createdAtDate &&
+    !Number.isNaN(createdAtDate.getTime()) &&
+    Date.now() - createdAtDate.getTime() >= 0 &&
+    Date.now() - createdAtDate.getTime() <= 14 * 24 * 60 * 60 * 1000;
   return (
     <article className="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden flex flex-col hover:border-[#c5a059] hover:shadow-xl transition-all duration-300">
       {/* Image Container */}
@@ -49,6 +59,19 @@ export const PackageCard: React.FC<PackageCardProps> = ({
             <span className="text-slate-400">({packageItem.reviewsCount})</span>
           </span>
         </div>
+
+        {/* NEW badge for packages added within the last 14 days */}
+        {isNewPackage && (
+          <div className="absolute bottom-4 left-3 z-10">
+            <span className="relative inline-flex items-center gap-1.5 rounded-full border border-[#f2d18b] bg-[#c5a059] px-3 py-1.5 text-[10px] font-extrabold tracking-[0.16em] text-[#0e3022] shadow-lg">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0e3022] opacity-60"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#0e3022]"></span>
+              </span>
+              NEW
+            </span>
+          </div>
+        )}
 
         {/* Bottom subtle gradient */}
         <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/40 to-transparent" />
