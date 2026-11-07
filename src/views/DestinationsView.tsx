@@ -134,6 +134,29 @@ export const DestinationsView: React.FC<DestinationsViewProps> = ({ onNavigate }
         </div>
       </section>
 
+      <section className="bg-white py-10 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#9b783e]">Choose your next adventure</p>
+            <h2 className="mt-2 font-serif text-2xl font-bold text-[#0e3022] sm:text-4xl">Explore Destinations</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-slate-600">Select a destination below to jump straight to its full travel guide, attractions, culture and experiences.</p>
+          </div>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
+            {destinations.map(({ name, story, route }) => (
+              <a key={name} href={`#${route}`} className="group flex flex-col items-center text-center">
+                <span className="relative block h-28 w-28 overflow-hidden rounded-full border-4 border-[#e7d7b7] bg-[#edf3ee] shadow-md transition duration-300 group-hover:scale-105 group-hover:border-[#c5a059] group-hover:shadow-xl sm:h-32 sm:w-32">
+                  <img src={story.image} alt={`${story.country} destination`} loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-110" />
+                </span>
+                <span className="mt-3 font-serif text-base font-bold text-[#0e3022] group-hover:text-[#9b783e]">{name}</span>
+                <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-wide text-[#9b783e] transition group-hover:text-[#0e3022]">
+                  View destination details <ArrowRight size={13} />
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl space-y-10 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#9b783e]">Every destination, one place</p>
