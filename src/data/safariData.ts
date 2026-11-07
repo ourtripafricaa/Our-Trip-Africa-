@@ -161,9 +161,9 @@ export const SAFARI_PACKAGES: SafariPackage[] = [
     featured: true,
     bestTime: 'June – October & January – March',
     physicalRating: 'Easy',
-    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/Wildebeest_Migration_in_Serengeti_National_Park%2C_Tanzania.jpg',
+    heroImage: 'https://commons.wikimedia.org/wiki/Special:FilePath/Wildebeest_herd,_Northern_Serengeti,_Tanzania.jpg',
     gallery: [
-      'https://upload.wikimedia.org/wikipedia/commons/6/6a/Wildebeest_Migration_in_Serengeti_National_Park%2C_Tanzania.jpg'
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Wildebeest_herd,_Northern_Serengeti,_Tanzania.jpg'
     ],
     overview: 'Follow the world-famous Great Wildebeest Migration across the boundless Serengeti plains. Witness dramatic predator interactions, descend into the primordial caldera of Ngorongoro Crater, and discover the legendary baobab giants and elephant herds of Tarangire National Park.',
     highlights: [
