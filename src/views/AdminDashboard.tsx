@@ -266,7 +266,7 @@ const upload=async(list:any[],folder:string)=>{
  {tab==='Destinations'&&['title','country','description','image'].map(field)}
  {tab==='Blog'&&['title','slug','category','readTime','publishedDate','image','excerpt','content','tags','seoDescription'].map(field)}
  {tab==='Reviews'&&['name','country','packageTitle','rating','review','status'].map(field)}
- {tab==='Offers'&&['title','description','discountLabel','validUntil','image','packageSlug','active','ctaLabel'].map(field)}
+ {tab==='Offers'&&<><p style={{fontSize:12,color:'#52665a'}}>Set active to true to publish this offer on the homepage. Leave it false to keep it hidden.</p>{['title','description','discountLabel','validUntil','image','packageSlug','active','ctaLabel'].map(field)}</>}
  <p>Select an image from GitHub Gallery</p>
  <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(105px,1fr))',gap:8}}>
  {galleryImages.map((img:any)=><button type="button" key={img.url} onClick={()=>{SI(img.url);F({...form,image:img.url,heroImage:img.url})}} style={{border:selectedImage===img.url?'3px solid #046A38':'1px solid #ccc',background:'white',padding:5}}><img src={img.url} alt={img.name} style={{width:'100%',height:75,objectFit:'cover'}}/><small>{img.name}</small></button>)}
@@ -295,6 +295,7 @@ const upload=async(list:any[],folder:string)=>{
 
  {tab==='Bookings'&&<section style={{background:'white',padding:14,borderRadius:12,marginBottom:16}}>
   <h3 style={{fontSize:18,fontWeight:700}}>Live Booking Tracker</h3>
+  <p style={{fontSize:12,color:'#52665a',background:'#edf5ef',padding:10,borderRadius:8}}>Email alerts are queued when a booking arrives or its status changes. To deliver them, install Firebase Trigger Email and connect an SMTP mail provider to the <b>mail</b> collection.</p>
   <div style={{display:'flex',flexWrap:'wrap',gap:8,margin:'12px 0'}}>
    {['new','under_review','quotation_sent','confirmed','cancelled'].map(status=><div key={status} style={{background:'#edf5ef',padding:'8px 12px',borderRadius:8}}><b>{items.filter(x=>(x.status||'new')===status).length}</b><br/><small>{status.replaceAll('_',' ').toUpperCase()}</small></div>)}
   </div>
