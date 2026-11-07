@@ -29,6 +29,49 @@ export function AdminDashboard(){
  const [galleryImages,GI]=useState<any[]>([]);
  const [selectedImage,SI]=useState('');
 
+ const curatedGallery:any[]=[
+  {
+    "name": "Lion — Serengeti",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti%20National%20Park%2008%20-%20lion%20-%20Panthera%20leo.jpg"
+  },
+  {
+    "name": "Elephant — Serengeti",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti%20National%20Park%2009%20-%20African%20elephant%20(Loxodonta).jpg"
+  },
+  {
+    "name": "Giraffe — Serengeti",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti%20National%20Park%2013%20-%20giraffe%20-%20Giraffa%20camelopardalis.jpg"
+  },
+  {
+    "name": "Great Migration",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ngorongoro%20Conservation%20Area%2007%20-%20migration.jpg"
+  },
+  {
+    "name": "Leopard — Serengeti",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Leopard%20tree%20Serengeti-1.jpg"
+  },
+  {
+    "name": "Ngorongoro Crater",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ngorongoro%20Crater%20Panorama.jpg"
+  },
+  {
+    "name": "Mount Kilimanjaro",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount%20Kilimanjaro%2CMoshi%201.jpg"
+  },
+  {
+    "name": "Zanzibar Dhow",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dhow%20boat%20Zanzibar.jpg"
+  },
+  {
+    "name": "Safari Vehicle",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tanzania%20(Serengeti%20National%20Park)%20Safari%20vehicle%20(21113135729).jpg"
+  },
+  {
+    "name": "Zebra — Ngorongoro",
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/NgoroNgoro%20Crater%2C%20Tanzania%2C%20Africa.jpg"
+  }
+];
+
  const menus=['Overview','Home','About Us','Contacts','Packages','Old Packages','Destinations','Bookings','Blog','Images','Videos','Attachments','Logout'];
  const pages=['Home','About Us','Contacts'];
  const cols:any={Packages:'packages',Destinations:'destinations',Bookings:'bookings',Blog:'blogPosts'};
@@ -55,7 +98,7 @@ export function AdminDashboard(){
  useEffect(()=>{
   fetch('https://api.github.com/repos/ourtripafricaa/Our-Trip-Africa-/contents/public/images?ref=main')
    .then(r=>r.ok?r.json():Promise.reject(new Error('GitHub images folder haipatikani')))
-   .then(data=>GI(Array.isArray(data)?data.filter((x:any)=>x.type==='file'&&/\.(png|jpe?g|webp|gif|avif)$/i.test(x.name)).map((x:any)=>({name:x.name,url:x.download_url})):[]))
+   .then(data=>GI([...curatedGallery,...(Array.isArray(data)?data.filter((x:any)=>x.type==='file'&&/\.(png|jpe?g|webp|gif|avif)$/i.test(x.name)).map((x:any)=>({name:x.name,url:x.download_url})):[])]))
    .catch(err=>console.error('GitHub gallery:',err));
  },[]);
 
