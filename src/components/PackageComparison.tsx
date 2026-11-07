@@ -6,17 +6,19 @@ import { DualBookNow } from './DualBookNow';
 interface PackageComparisonProps {
   onSelectPackage: (pkg: SafariPackage) => void;
   onOpenBooking: (pkg?: SafariPackage) => void;
+  packages?: SafariPackage[];
 }
 
 export const PackageComparison: React.FC<PackageComparisonProps> = ({
   onSelectPackage,
   onOpenBooking,
+  packages = SAFARI_PACKAGES,
 }) => {
   const [countryFilter, setCountryFilter] = useState<string>('all');
   const [selectedTier, setSelectedTier] = useState<'budget' | 'midrange' | 'luxury'>('budget');
   const [sortBy, setSortBy] = useState<'price-asc' | 'price-desc' | 'duration'>('price-asc');
 
-  const filteredPackages = SAFARI_PACKAGES.filter((pkg) => {
+  const filteredPackages = packages.filter((pkg) => {
     if (countryFilter === 'all') return true;
     return pkg.country.toLowerCase() === countryFilter.toLowerCase();
   }).sort((a, b) => {
