@@ -101,12 +101,15 @@ export const Navbar: React.FC<NavbarProps> = ({
             alt="Our Trip Africa Logo"
             className="h-12 w-12 rounded-full object-cover border border-[#c5a059]/40 shadow-sm transition-transform group-hover:scale-105"
           />
-          <div className="flex flex-col">
-            <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-[#c5a059] transition-colors whitespace-nowrap">
+          <div className="flex flex-col overflow-hidden">
+            <span className="brand-welcome-slide text-[9px] sm:text-[10px] tracking-[0.28em] font-bold text-[#c5a059] uppercase whitespace-nowrap">
+              Welcome to
+            </span>
+            <span className="brand-name-slide font-serif text-lg sm:text-2xl font-bold tracking-tight text-white group-hover:text-[#c5a059] transition-colors whitespace-nowrap">
               OUR TRIP AFRICA
             </span>
-            <span className="text-[10px] tracking-[0.2em] font-medium text-[#c5a059] uppercase whitespace-nowrap">
-              Discover • Explore • Enjoy
+            <span className="brand-tagline-slide text-[9px] sm:text-[10px] tracking-[0.16em] font-semibold text-[#c5a059] uppercase whitespace-nowrap">
+              Discover. Explore. Enjoy.
             </span>
           </div>
         </button>
