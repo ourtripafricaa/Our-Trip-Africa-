@@ -394,6 +394,27 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 Explore UAE Packages
               </button>
             </div>
+          {/* Card 7: Hadzabe Cultural Experience */}
+          <div
+            onClick={() => onNavigate('hadzabe')}
+            className="md:col-span-12 group relative h-72 sm:h-80 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#c5a059] transition-all duration-300 shadow-md"
+          >
+            <img
+              src={LOCAL_IMAGES.lakeEyasi}
+              alt="Lake Eyasi cultural landscape and Hadzabe experience"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#061d14] via-[#061d14]/55 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 space-y-2">
+              <span className="text-xs uppercase font-bold text-[#c5a059] tracking-wider">Culture & Community • Lake Eyasi</span>
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-[#c5a059] transition-colors">
+                Hadzabe Cultural Experience
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-200 max-w-3xl">
+                Discover the living knowledge, language and traditions of the Hadzabe through a respectful, locally guided visit arranged with community consent.
+              </p>
+            </div>
+          </div>
           </div>
         </div>
       </section>
