@@ -180,7 +180,7 @@ export const SAFARI_PACKAGES: SafariPackage[] = [
       'High probability of seeing all Big Five (Lion, Leopard, Elephant, Rhino, Buffalo)',
       'Custom 4x4 pop-up roof safari vehicle with private expert English-speaking guide'
     ],
-    inclusions: [
+    inclusions: [ 
       "Airport pick-up and drop-off.",
       "Private 4x4 safari vehicle.",
       "Professional English-speaking safari guide.",
