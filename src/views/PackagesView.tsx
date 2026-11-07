@@ -82,10 +82,10 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
     if (searchTerm.trim()) {
       const term = searchTerm.toLowerCase();
       const match =
-        pkg.title.toLowerCase().includes(term) ||
-        pkg.destination.toLowerCase().includes(term) ||
-        pkg.overview.toLowerCase().includes(term) ||
-        pkg.highlights.some((h) => h.toLowerCase().includes(term));
+        String(pkg.title || '').toLowerCase().includes(term) ||
+        String(pkg.destination || '').toLowerCase().includes(term) ||
+        String(pkg.overview || '').toLowerCase().includes(term) ||
+        (pkg.highlights || []).some((h) => String(h).toLowerCase().includes(term));
       if (!match) return false;
     }
 
@@ -158,6 +158,7 @@ export const PackagesView: React.FC<PackagesViewProps> = ({
       {!packagesLoaded && <p className="text-xs text-slate-500">Loading latest package updates…</p>}
       {viewMode === 'comparison' ? (
         <PackageComparison
+          packages={allPackages}
           onSelectPackage={onSelectPackage}
           onOpenBooking={onOpenBooking}
         />
