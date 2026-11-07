@@ -102,19 +102,18 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="h-12 w-12 rounded-full object-cover border border-[#c5a059]/40 shadow-sm transition-transform group-hover:scale-105"
           />
           <div className="flex flex-col overflow-hidden leading-tight">
-            <span className="brand-welcome-slide font-serif text-base sm:text-2xl tracking-tight font-bold text-[#c5a059] uppercase whitespace-nowrap">
+            <span className="brand-welcome-slide font-serif text-base sm:text-2xl font-bold tracking-tight text-[#c5a059] uppercase whitespace-nowrap">
               WELCOME TO
             </span>
             <span className="brand-name-slide font-serif text-base sm:text-2xl font-bold tracking-tight text-white group-hover:text-[#c5a059] transition-colors whitespace-nowrap">
               OUR TRIP AFRICA
             </span>
-            <span className="brand-tagline-slide font-serif text-base sm:text-2xl tracking-tight font-bold text-[#c5a059] uppercase whitespace-nowrap">
+            <span className="brand-tagline-slide font-serif text-base sm:text-2xl font-bold tracking-tight text-[#c5a059] uppercase whitespace-nowrap">
               DISCOVER. EXPLORE. ENJOY.
             </span>
-            <span className="brand-destinations-slide font-serif text-base sm:text-2xl tracking-tight font-bold text-white uppercase whitespace-nowrap">
+            <span className="brand-destinations-slide font-serif text-base sm:text-2xl font-bold tracking-tight text-white uppercase whitespace-nowrap">
               TANZANIA, ZANZIBAR, KENYA, UGANDA, RWANDA AND SOUTH AFRICA.
             </span>
-          </div>
           </div>
         </button>
 
