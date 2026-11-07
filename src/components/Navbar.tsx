@@ -101,17 +101,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             alt="Our Trip Africa Logo"
             className="h-12 w-12 rounded-full object-cover border border-[#c5a059]/40 shadow-sm transition-transform group-hover:scale-105"
           />
-          <div className="brand-marquee-window min-w-0 w-[190px] sm:w-[270px] overflow-hidden" aria-label="Welcome to Our Trip Africa. Discover. Explore. Enjoy.">
-            <div className="brand-marquee-track">
-              {[0, 1].map((copy) => (
-                <span key={copy} className="brand-marquee-line" aria-hidden={copy === 1}>
-                  <span className="text-[#c5a059]">WELCOME TO</span>
-                  <span className="text-white font-serif text-base sm:text-xl group-hover:text-[#c5a059] transition-colors">OUR TRIP AFRICA</span>
-                  <span className="text-[#c5a059]">DISCOVER. EXPLORE. ENJOY.</span>
-                  <span className="text-[#c5a059] px-3">✦</span>
-                </span>
-              ))}
-            </div>
+          <div className="flex flex-col overflow-hidden">
+            <span className="brand-welcome-slide text-[9px] sm:text-[10px] tracking-[0.28em] font-bold text-[#c5a059] uppercase whitespace-nowrap">
+              Welcome to
+            </span>
+            <span className="brand-name-slide font-serif text-lg sm:text-2xl font-bold tracking-tight text-white group-hover:text-[#c5a059] transition-colors whitespace-nowrap">
+              OUR TRIP AFRICA
+            </span>
+            <span className="brand-tagline-slide text-[9px] sm:text-[10px] tracking-[0.16em] font-semibold text-[#c5a059] uppercase whitespace-nowrap">
+              Discover. Explore. Enjoy.
+            </span>
+          </div>
           </div>
         </button>
 
