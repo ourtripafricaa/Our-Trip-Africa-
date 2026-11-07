@@ -1,22 +1,69 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} {
-      allow read, write: if false;
-    }
-
     function isSignedIn() { return request.auth != null; }
-    function isAdmin() { return isSignedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid)); }
-    function isValidId(id) { return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); }
+    function isAdmin() {
+      return isSignedIn() &&
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
 
     match /admins/{userId} {
       allow read: if isAdmin();
       allow write: if false;
     }
 
+    // Public visitors may submit a booking enquiry, but cannot read or alter bookings.
+    match /bookings/{bookingId} {
+      allow create: if
+        request.resource.data.keys().hasAll([
+          'bookingRef', 'packageSlug', 'packageTitle', 'destination',
+          'accommodationTier', 'unitPrice', 'estimatedTotal', 'currency',
+          'travelDate', 'adults', 'children', 'fullName', 'email',
+          'phone', 'country', 'specialRequests', 'status', 'createdAt'
+        ]) &&
+        request.resource.data.bookingRef is string &&
+        request.resource.data.bookingRef.size() <= 32 &&
+        request.resource.data.packageTitle is string &&
+        request.resource.data.packageTitle.size() <= 200 &&
+        request.resource.data.fullName is string &&
+        request.resource.data.fullName.size() > 0 &&
+        request.resource.data.fullName.size() <= 120 &&
+        request.resource.data.email is string &&
+        request.resource.data.email.size() <= 254 &&
+        request.resource.data.adults is int &&
+        request.resource.data.adults >= 1 &&
+        request.resource.data.adults <= 20 &&
+        request.resource.data.children is int &&
+        request.resource.data.children >= 0 &&
+        request.resource.data.children <= 10 &&
+        request.resource.data.status == 'new';
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Public website content is readable; only authenticated admins can manage it.
+    match /siteContent/{pageId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /packages/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /destinations/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /blogPosts/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /media/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
     match /images/{imageId} {
       allow read: if true;
-      allow create, update, delete: if isSignedIn() && isAdmin();
+      allow write: if isAdmin();
     }
   }
 }
