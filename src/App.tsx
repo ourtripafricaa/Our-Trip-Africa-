@@ -18,7 +18,6 @@ import { BlogView } from './views/BlogView';
 import { ContactView } from './views/ContactView';
 import { SupportTeamView } from './views/SupportTeamView';
 import { SalesTeamView } from './views/SalesTeamView';
-import { AccountView } from './views/AccountView';
 import { SafariMapView } from './views/SafariMapView';
 import { AdminLogin } from './views/AdminLogin';
 import { AdminDashboard } from './views/AdminDashboard';
@@ -125,8 +124,6 @@ export default function App() {
         {currentView === 'hadzabe' && (
           <DestinationView country="Hadzabe" onSelectPackage={(pkg) => setSelectedPackage(pkg)} onOpenBooking={handleOpenBooking} />
         )}
-
-        {currentView === 'account' && <AccountView />}
 
         {currentView === 'safari-map' && <SafariMapView />}
 
