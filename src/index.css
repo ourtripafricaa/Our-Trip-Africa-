@@ -57,3 +57,10 @@
   .brand-name-slide,
   .brand-tagline-slide { animation: none; }
 }
+
+.brand-destinations-slide {
+  animation: ota-brand-slide-in 1050ms ease-out 360ms both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-destinations-slide { animation: none; }
+}
