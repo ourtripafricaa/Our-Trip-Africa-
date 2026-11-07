@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { db } from '../lib/firebase';
 import { X, Calendar, Users, Mail, Phone, MapPin, ShieldCheck, CheckCircle2, MessageSquare, CreditCard, Lock, Sparkles } from 'lucide-react';
 import { COMPANY_DETAILS, SAFARI_PACKAGES, SafariPackage } from '../data/safariData';
 
@@ -30,13 +32,45 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   const unitPrice = currentPkg.tierPricing[selectedTier] || currentPkg.basePrice;
   const estimatedTotal = unitPrice * adults + (unitPrice * 0.7 * children);
 
-  const handleSubmitEmail = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!fullName || !email) return;
+  const [submitError, setSubmitError] = useState('');
+  const [saving, setSaving] = useState(false);
 
+  const handleSubmitEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!fullName || !email || saving) return;
+
+    setSaving(true);
+    setSubmitError('');
     const ref = 'OTA-' + Math.floor(100000 + Math.random() * 900000);
-    setBookingRef(ref);
-    setSubmitted(true);
+    try {
+      await addDoc(collection(db, 'bookings'), {
+        bookingRef: ref,
+        packageSlug: currentPkg.slug,
+        packageTitle: currentPkg.title,
+        destination: currentPkg.destination,
+        accommodationTier: selectedTier,
+        unitPrice,
+        estimatedTotal: Math.round(estimatedTotal),
+        currency: 'USD',
+        travelDate: travelDate || '',
+        adults,
+        children,
+        fullName: fullName.trim(),
+        email: email.trim().toLowerCase(),
+        phone: phone.trim(),
+        country: country.trim(),
+        specialRequests: specialRequests.trim(),
+        status: 'new',
+        createdAt: serverTimestamp()
+      });
+      setBookingRef(ref);
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Booking request could not be saved:', error);
+      setSubmitError('Your request could not be saved just now. Please use the WhatsApp button to send it directly to our team.');
+    } finally {
+      setSaving(false);
+    }
   };
 
   const handleSendToWhatsApp = () => {
@@ -322,6 +356,10 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                 </div>
               </div>
 
+              {submitError && (
+                <p role="alert" className="rounded-xl border border-red-400/40 bg-red-950/40 p-3 text-xs text-red-200">{submitError}</p>
+              )}
+
               {/* Dual Booking Buttons */}
               <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                 <button
@@ -335,10 +373,11 @@ export const BookingForm: React.FC<BookingFormProps> = ({
 
                 <button
                   type="submit"
-                  className="w-full sm:flex-1 py-3 px-4 rounded-xl bg-[#c5a059] hover:bg-[#d6b36d] text-[#081a13] font-bold flex items-center justify-center gap-2 text-xs sm:text-sm shadow-md cursor-pointer transition-colors"
+                  disabled={saving}
+                  className="w-full sm:flex-1 disabled:opacity-60 py-3 px-4 rounded-xl bg-[#c5a059] hover:bg-[#d6b36d] text-[#081a13] font-bold flex items-center justify-center gap-2 text-xs sm:text-sm shadow-md cursor-pointer transition-colors"
                 >
                   <Mail size={16} />
-                  <span>BOOK NOW (Email)</span>
+                  <span>{saving ? 'SAVING REQUEST...' : 'SEND BOOKING REQUEST'}</span>
                 </button>
               </div>
 
@@ -346,10 +385,10 @@ export const BookingForm: React.FC<BookingFormProps> = ({
               <div className="pt-4 border-t border-[#1a4a35] space-y-2 text-xs text-[#a49a88]">
                 <div className="flex items-center gap-2 text-white font-medium">
                   <Lock size={13} className="text-[#c5a059]" />
-                  <span>Integrated Secure Payment Gateway & Consumer Protection:</span>
+                  <span>Booking Request & Payment Safety:</span>
                 </div>
                 <p className="leading-relaxed">
-                  We accept secure online card payments (Visa, Mastercard, American Express via Pesapal payment gateway) and direct International Bank SWIFT Wire transfers in USD. All payments are secured with 256-bit SSL encryption.
+                  Submitting this form sends a booking enquiry only; no payment is taken on this website. Our team will confirm availability, the final quotation, payment instructions and booking terms with you before any deposit is requested.
                 </p>
               </div>
             </form>
