@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { addDoc, collection, onSnapshot, query, serverTimestamp, where } from 'firebase/firestore';
-import { MessageSquare, Star, Send, CheckCircle2 } from 'lucide-react';
+import { Star, Send, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { db } from '../lib/firebase';
 
 type GuestReview = {
@@ -73,6 +73,21 @@ export const GuestReviews: React.FC = () => {
   };
 
   const allReviews = [...GOOGLE_GUEST_REVIEWS, ...reviews.filter(item => !GOOGLE_GUEST_REVIEWS.some(g => g.id === item.id))];
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (allReviews.length < 2) return;
+    const timer = window.setInterval(() => {
+      setActiveIndex(current => (current + 1) % allReviews.length);
+    }, 6500);
+    return () => window.clearInterval(timer);
+  }, [allReviews.length]);
+
+  useEffect(() => {
+    if (activeIndex >= allReviews.length) setActiveIndex(0);
+  }, [activeIndex, allReviews.length]);
+
+  const activeReview = allReviews[activeIndex];
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -82,25 +97,44 @@ export const GuestReviews: React.FC = () => {
         <p className="text-sm text-slate-600">Read feedback shared by guests about their Our Trip Africa experiences.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {allReviews.map(item => (
-          <article key={item.id} className="rounded-3xl bg-white border border-slate-200 p-6 shadow-sm flex flex-col">
-            {item.rating > 0 ? (
-              <div className="flex gap-1 text-[#c5a059] mb-3" aria-label={item.rating + ' out of 5 stars'}>
-                {Array.from({ length: item.rating }, (_, index) => <Star key={index} size={16} fill="currentColor" />)}
-                <span className="ml-2 text-xs text-slate-500">{item.rating}/5</span>
-              </div>
-            ) : (
-              <p className="text-xs font-semibold text-slate-500 mb-3">Guest feedback</p>
-            )}
-            <p className="text-sm leading-relaxed text-slate-700 flex-1">“{item.review}”</p>
-            <div className="mt-5 border-t border-slate-100 pt-4">
-              <p className="font-bold text-slate-900">{item.name}</p>
-              <p className="text-xs text-slate-500">{[item.country, item.packageTitle].filter(Boolean).join(' • ')}</p>
+      {activeReview && (
+        <div className="max-w-3xl mx-auto">
+          <article key={activeReview.id} aria-live="polite" className="min-h-[280px] rounded-3xl bg-white border border-slate-200 p-7 sm:p-9 shadow-md flex flex-col">
+            <div className="flex items-center justify-between gap-3 mb-5">
+              {activeReview.rating > 0 ? (
+                <div className="flex items-center gap-1 text-[#c5a059]" aria-label={activeReview.rating + ' out of 5 stars'}>
+                  {Array.from({ length: 5 }, (_, index) => <Star key={index} size={19} fill={index < activeReview.rating ? 'currentColor' : 'none'} />)}
+                  <span className="ml-2 text-xs text-slate-500">{activeReview.rating}/5</span>
+                </div>
+              ) : (
+                <p className="text-xs font-semibold text-slate-500">Guest feedback</p>
+              )}
+              <span className="text-xs font-semibold text-slate-400">{activeIndex + 1} / {allReviews.length}</span>
+            </div>
+            <p className="text-base sm:text-lg leading-relaxed text-slate-700 flex-1">“{activeReview.review}”</p>
+            <div className="mt-6 border-t border-slate-100 pt-5">
+              <p className="font-bold text-slate-900">{activeReview.name}</p>
+              {(activeReview.country || activeReview.packageTitle) && (
+                <p className="text-xs text-slate-500 mt-1">{[activeReview.country, activeReview.packageTitle].filter(Boolean).join(' • ')}</p>
+              )}
             </div>
           </article>
-        ))}
-      </div>
+          <div className="mt-5 flex items-center justify-center gap-5">
+            <button type="button" aria-label="Previous review" onClick={() => setActiveIndex(current => (current - 1 + allReviews.length) % allReviews.length)} className="rounded-full border border-[#0e3022] p-3 text-[#0e3022] hover:bg-[#0e3022] hover:text-white transition-colors">
+              <ChevronLeft size={20}/>
+            </button>
+            <div className="flex items-center gap-2" aria-label="Choose a review">
+              {allReviews.map((item, index) => (
+                <button key={item.id} type="button" aria-label={'Show review ' + (index + 1)} aria-current={index === activeIndex ? 'true' : undefined} onClick={() => setActiveIndex(index)} className={`h-2.5 rounded-full transition-all ${index === activeIndex ? 'w-7 bg-[#c5a059]' : 'w-2.5 bg-slate-300 hover:bg-slate-500'}`}/>
+              ))}
+            </div>
+            <button type="button" aria-label="Next review" onClick={() => setActiveIndex(current => (current + 1) % allReviews.length)} className="rounded-full border border-[#0e3022] p-3 text-[#0e3022] hover:bg-[#0e3022] hover:text-white transition-colors">
+              <ChevronRight size={20}/>
+            </button>
+          </div>
+          <p className="mt-3 text-center text-xs text-slate-500">Reviews change automatically. Use the arrows to browse.</p>
+        </div>
+      )}
 
       <div className="text-center">
         <a href="https://maps.app.goo.gl/V8ABAVgJC64W57Pz7" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full border border-[#0e3022] px-6 py-3 text-sm font-bold text-[#0e3022] hover:bg-[#0e3022] hover:text-white transition-colors">
