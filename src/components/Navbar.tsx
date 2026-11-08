@@ -111,147 +111,25 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Desktop Navigation Links */}
         <nav className="hidden 2xl:flex items-center gap-3 text-xs font-medium text-slate-200">
-          <button
-            onClick={() => handleLinkClick('home')}
-            className={`transition-colors whitespace-nowrap cursor-pointer py-1 relative ${
-              currentView === 'home' ? 'text-[#c5a059] font-bold' : 'hover:text-white'
-            }`}
-          >
-            Home
-            {currentView === 'home' && (
-              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#c5a059] rounded-full" />
-            )}
-          </button>
-
-          <button
-            onClick={() => handleLinkClick('destinations')}
-            className={`transition-colors whitespace-nowrap cursor-pointer py-1 relative ${
-              currentView === 'destinations' ? 'text-[#c5a059] font-bold' : 'hover:text-white'
-            }`}
-          >
-            Explore Destinations
-            {currentView === 'destinations' && (
-              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#c5a059] rounded-full" />
-            )}
-          </button>
-
-          {/* Destinations Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setDestinationsDropdownOpen(true)}
-            onMouseLeave={() => setDestinationsDropdownOpen(false)}
-          >
-            <button
-              onClick={() => setDestinationsDropdownOpen(!destinationsDropdownOpen)}
-              className={`flex items-center gap-1 transition-colors whitespace-nowrap cursor-pointer py-1 relative ${
-                isDestinationActive ? 'text-[#c5a059] font-bold' : 'hover:text-white'
-              }`}
-            >
-              <span>Destinations</span>
-              <ChevronDown size={14} className={`transition-transform ${destinationsDropdownOpen ? 'rotate-180 text-[#c5a059]' : ''}`} />
-              {isDestinationActive && (
-                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#c5a059] rounded-full" />
-              )}
+          <button onClick={() => handleLinkClick('home')} className={`transition-colors whitespace-nowrap py-1 ${currentView==='home'?'text-[#c5a059] font-bold':'hover:text-white'}`}>Home</button>
+          <button onClick={() => handleLinkClick('packages')} className={`transition-colors whitespace-nowrap py-1 ${currentView==='packages'?'text-[#c5a059] font-bold':'hover:text-white'}`}>All Packages</button>
+          <button onClick={() => handleLinkClick('services')} className={`transition-colors whitespace-nowrap py-1 ${currentView==='services'?'text-[#c5a059] font-bold':'hover:text-white'}`}>Our Services</button>
+          <button onClick={() => handleLinkClick('about')} className={`transition-colors whitespace-nowrap py-1 ${currentView==='about'?'text-[#c5a059] font-bold':'hover:text-white'}`}>About Us</button>
+          <button onClick={() => handleLinkClick('team')} className={`transition-colors whitespace-nowrap py-1 ${currentView==='team'?'text-[#c5a059] font-bold':'hover:text-white'}`}>Meet Our Team</button>
+          <button onClick={() => handleLinkClick('contact')} className={`transition-colors whitespace-nowrap py-1 ${currentView==='contact'?'text-[#c5a059] font-bold':'hover:text-white'}`}>Contact</button>
+          <button onClick={() => handleLinkClick('destinations')} className={`transition-colors whitespace-nowrap py-1 ${currentView==='destinations'?'text-[#c5a059] font-bold':'hover:text-white'}`}>Explore Destinations</button>
+          <div className="relative" onMouseEnter={() => setDestinationsDropdownOpen(true)} onMouseLeave={() => setDestinationsDropdownOpen(false)}>
+            <button onClick={() => setDestinationsDropdownOpen(!destinationsDropdownOpen)} className={`flex items-center gap-1 whitespace-nowrap py-1 ${isDestinationActive?'text-[#c5a059] font-bold':'hover:text-white'}`}>
+              <span>Destinations</span><ChevronDown size={14} className={destinationsDropdownOpen?'rotate-180 text-[#c5a059]':''}/>
             </button>
-
-            {/* Dropdown Menu */}
-            {destinationsDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 w-72 bg-[#061d14] border border-[#1b4d38] rounded-2xl shadow-2xl py-2 z-50">
-                {destinationItems.map((dest) => (
-                  <button
-                    key={dest.id}
-                    onClick={() => handleLinkClick(dest.id)}
-                    className={`w-full text-left px-4 py-2.5 text-xs transition-colors block cursor-pointer ${
-                      currentView === dest.id
-                        ? 'bg-[#0e3022] text-[#c5a059] font-bold border-l-2 border-[#c5a059]'
-                        : 'text-slate-300 hover:bg-[#0e3022] hover:text-white'
-                    }`}
-                  >
-                    {dest.label}
-                  </button>
-                ))}
-              </div>
-            )}
+            {destinationsDropdownOpen && <div className="absolute top-full left-0 mt-2 w-72 bg-[#061d14] border border-[#1b4d38] rounded-2xl shadow-2xl py-2 z-50">
+              {destinationItems.map(dest=><button key={dest.id} onClick={()=>handleLinkClick(dest.id)} className={`w-full text-left px-4 py-2.5 text-xs block ${currentView===dest.id?'bg-[#0e3022] text-[#c5a059] font-bold':'text-slate-300 hover:bg-[#0e3022] hover:text-white'}`}>{dest.label}</button>)}
+            </div>}
           </div>
-
-          <button
-            onClick={() => handleLinkClick('packages')}
-            className={`transition-colors whitespace-nowrap cursor-pointer py-1 relative ${
-              currentView === 'packages' ? 'text-[#c5a059] font-bold' : 'hover:text-white'
-            }`}
-          >
-            All Packages
-            {currentView === 'packages' && (
-              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#c5a059] rounded-full" />
-            )}
-          </button>
-
-          <button
-            onClick={() => handleLinkClick('safari-map')}
-            className={`transition-colors whitespace-nowrap cursor-pointer py-1 relative ${currentView === 'safari-map' ? 'text-[#c5a059] font-bold' : 'hover:text-white'}`}
-          >
-            Safari Map
-          </button>
-          <button
-            onClick={() => handleLinkClick('compare')}
-            className={`transition-colors whitespace-nowrap cursor-pointer py-1 relative ${
-              currentView === 'compare' ? 'text-[#c5a059] font-bold' : 'hover:text-white'
-            }`}
-          >
-            Compare Prices
-            {currentView === 'compare' && (
-              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#c5a059] rounded-full" />
-            )}
-          </button>
-
-          <button
-            onClick={() => handleLinkClick('blog')}
-            className={`transition-colors whitespace-nowrap cursor-pointer py-1 relative ${
-              currentView === 'blog' ? 'text-[#c5a059] font-bold' : 'hover:text-white'
-            }`}
-          >
-            Travel Guides
-            {currentView === 'blog' && (
-              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#c5a059] rounded-full" />
-            )}
-          </button>
-
-          <button
-            onClick={() => handleLinkClick('about')}
-            className={`transition-colors whitespace-nowrap cursor-pointer py-1 relative ${
-              currentView === 'about' ? 'text-[#c5a059] font-bold' : 'hover:text-white'
-            }`}
-          >
-            About Us
-            {currentView === 'about' && (
-              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#c5a059] rounded-full" />
-            )}
-          </button>
-          <button onClick={() => handleLinkClick('services')} className={`transition-colors whitespace-nowrap cursor-pointer py-1 ${currentView === 'services' ? 'text-[#c5a059] font-bold' : 'hover:text-white'}`}>Our Services</button>
-          <button onClick={() => handleLinkClick('team')} className={`transition-colors whitespace-nowrap cursor-pointer py-1 ${currentView === 'team' ? 'text-[#c5a059] font-bold' : 'hover:text-white'}`}>Meet Our Team</button>
-
-          <button
-            onClick={() => handleLinkClick('contact')}
-            className={`transition-colors whitespace-nowrap cursor-pointer py-1 relative ${
-              currentView === 'contact' ? 'text-[#c5a059] font-bold' : 'hover:text-white'
-            }`}
-          >
-            Contact
-            {currentView === 'contact' && (
-              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#c5a059] rounded-full" />
-            )}
-          </button>
-          <button
-            onClick={() => handleLinkClick('admin')}
-            className={`transition-colors whitespace-nowrap cursor-pointer py-1 relative ${
-              currentView === 'admin' ? 'text-[#c5a059] font-bold' : 'hover:text-white'
-            }`}
-          >
-            Admin
-            {currentView === 'admin' && (
-              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#c5a059] rounded-full" />
-            )}
-          </button>
+          <button onClick={() => handleLinkClick('safari-map')} className={`whitespace-nowrap py-1 ${currentView==='safari-map'?'text-[#c5a059] font-bold':'hover:text-white'}`}>Safari Map</button>
+          <button onClick={() => handleLinkClick('compare')} className={`whitespace-nowrap py-1 ${currentView==='compare'?'text-[#c5a059] font-bold':'hover:text-white'}`}>Compare Prices</button>
+          <button onClick={() => handleLinkClick('blog')} className={`whitespace-nowrap py-1 ${currentView==='blog'?'text-[#c5a059] font-bold':'hover:text-white'}`}>Travel Guides</button>
+          <button onClick={() => handleLinkClick('admin')} className={`whitespace-nowrap py-1 ${currentView==='admin'?'text-[#c5a059] font-bold':'hover:text-white'}`}>Admin</button>
         </nav>
 
         {/* Primary Action Buttons */}
@@ -300,117 +178,21 @@ export const Navbar: React.FC<NavbarProps> = ({
       {mobileMenuOpen && (
         <div className="2xl:hidden bg-[#061d14] border-b border-[#1b4d38] px-4 pt-3 pb-6 max-h-[85vh] overflow-y-auto space-y-3">
           <div className="flex flex-col space-y-1">
-            <button
-              onClick={() => handleLinkClick('home')}
-              className={`text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                currentView === 'home'
-                  ? 'bg-[#0e3022] text-[#c5a059] font-bold border-l-2 border-[#c5a059]'
-                  : 'text-slate-300 hover:bg-[#0e3022] hover:text-white'
-              }`}
-            >
-              Home
-            </button>
-
-            <button
-              onClick={() => handleLinkClick('destinations')}
-              className={`text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                currentView === 'destinations'
-                  ? 'bg-[#0e3022] text-[#c5a059] font-bold border-l-2 border-[#c5a059]'
-                  : 'text-slate-300 hover:bg-[#0e3022] hover:text-white'
-              }`}
-            >
-              Explore All Destinations
-            </button>
-
-            {/* Destinations Subgroup */}
+            <button onClick={() => handleLinkClick('home')} className={`text-left px-3 py-2 rounded-lg text-sm font-medium ${currentView==='home'?'bg-[#0e3022] text-[#c5a059] font-bold':'text-slate-300 hover:bg-[#0e3022]'}`}>Home</button>
+            <button onClick={() => handleLinkClick('packages')} className={`text-left px-3 py-2 rounded-lg text-sm font-medium ${currentView==='packages'?'bg-[#0e3022] text-[#c5a059] font-bold':'text-slate-300 hover:bg-[#0e3022]'}`}>All Packages</button>
+            <button onClick={() => handleLinkClick('services')} className={`text-left px-3 py-2 rounded-lg text-sm font-medium ${currentView==='services'?'bg-[#0e3022] text-[#c5a059] font-bold':'text-slate-300 hover:bg-[#0e3022]'}`}>Our Services</button>
+            <button onClick={() => handleLinkClick('about')} className={`text-left px-3 py-2 rounded-lg text-sm font-medium ${currentView==='about'?'bg-[#0e3022] text-[#c5a059] font-bold':'text-slate-300 hover:bg-[#0e3022]'}`}>About Us</button>
+            <button onClick={() => handleLinkClick('team')} className={`text-left px-3 py-2 rounded-lg text-sm font-medium ${currentView==='team'?'bg-[#0e3022] text-[#c5a059] font-bold':'text-slate-300 hover:bg-[#0e3022]'}`}>Meet Our Team</button>
+            <button onClick={() => handleLinkClick('contact')} className={`text-left px-3 py-2 rounded-lg text-sm font-medium ${currentView==='contact'?'bg-[#0e3022] text-[#c5a059] font-bold':'text-slate-300 hover:bg-[#0e3022]'}`}>Contact Us</button>
+            <button onClick={() => handleLinkClick('destinations')} className={`text-left px-3 py-2 rounded-lg text-sm font-medium ${currentView==='destinations'?'bg-[#0e3022] text-[#c5a059] font-bold':'text-slate-300 hover:bg-[#0e3022]'}`}>Explore All Destinations</button>
             <div className="pt-2 pb-1">
-              <span className="text-[10px] uppercase font-bold tracking-wider text-[#c5a059] px-3">
-                Destinations
-              </span>
-              <div className="pl-2 space-y-1 mt-1">
-                {destinationItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => handleLinkClick(item.id)}
-                    className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                      currentView === item.id
-                        ? 'bg-[#0e3022] text-[#c5a059] font-bold'
-                        : 'text-slate-300 hover:bg-[#0e3022] hover:text-white'
-                    }`}
-                  >
-                    • {item.label}
-                  </button>
-                ))}
-              </div>
+              <span className="text-[10px] uppercase font-bold tracking-wider text-[#c5a059] px-3">Destinations</span>
+              <div className="pl-2 space-y-1 mt-1">{destinationItems.map(item=><button key={item.id} onClick={()=>handleLinkClick(item.id)} className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium ${currentView===item.id?'bg-[#0e3022] text-[#c5a059] font-bold':'text-slate-300 hover:bg-[#0e3022]'}`}>• {item.label}</button>)}</div>
             </div>
-
-            <button
-              onClick={() => handleLinkClick('packages')}
-              className={`text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                currentView === 'packages'
-                  ? 'bg-[#0e3022] text-[#c5a059] font-bold border-l-2 border-[#c5a059]'
-                  : 'text-slate-300 hover:bg-[#0e3022] hover:text-white'
-              }`}
-            >
-              All Packages
-            </button>
-
             <button onClick={() => handleLinkClick('safari-map')} className="text-left px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-[#0e3022]">Interactive Safari Map</button>
-            <button
-              onClick={() => handleLinkClick('compare')}
-              className={`text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                currentView === 'compare'
-                  ? 'bg-[#0e3022] text-[#c5a059] font-bold border-l-2 border-[#c5a059]'
-                  : 'text-slate-300 hover:bg-[#0e3022] hover:text-white'
-              }`}
-            >
-              Compare Prices
-            </button>
-
-            <button
-              onClick={() => handleLinkClick('blog')}
-              className={`text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                currentView === 'blog'
-                  ? 'bg-[#0e3022] text-[#c5a059] font-bold border-l-2 border-[#c5a059]'
-                  : 'text-slate-300 hover:bg-[#0e3022] hover:text-white'
-              }`}
-            >
-              Travel Guides & Blog
-            </button>
-
-            <button
-              onClick={() => handleLinkClick('about')}
-              className={`text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                currentView === 'about'
-                  ? 'bg-[#0e3022] text-[#c5a059] font-bold border-l-2 border-[#c5a059]'
-                  : 'text-slate-300 hover:bg-[#0e3022] hover:text-white'
-              }`}
-            >
-              About Us (Mr. James Felix)
-            </button>
-            <button onClick={() => handleLinkClick('services')} className="text-left px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-[#0e3022]">Our Services</button>
-            <button onClick={() => handleLinkClick('team')} className="text-left px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-[#0e3022]">Meet Our Team</button>
-
-            <button
-              onClick={() => handleLinkClick('contact')}
-              className={`text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                currentView === 'contact'
-                  ? 'bg-[#0e3022] text-[#c5a059] font-bold border-l-2 border-[#c5a059]'
-                  : 'text-slate-300 hover:bg-[#0e3022] hover:text-white'
-              }`}
-            >
-              Contact Us
-            </button>
-            <button
-              onClick={() => handleLinkClick('admin')}
-              className={`text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                currentView === 'admin'
-                  ? 'bg-[#0e3022] text-[#c5a059] font-bold border-l-2 border-[#c5a059]'
-                  : 'text-slate-300 hover:bg-[#0e3022] hover:text-white'
-              }`}
-            >
-              Admin Dashboard
-            </button>
+            <button onClick={() => handleLinkClick('compare')} className="text-left px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-[#0e3022]">Compare Prices</button>
+            <button onClick={() => handleLinkClick('blog')} className="text-left px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-[#0e3022]">Travel Guides & Blog</button>
+            <button onClick={() => handleLinkClick('admin')} className="text-left px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-[#0e3022]">Admin Dashboard</button>
           </div>
 
           <div className="pt-3 border-t border-[#1b4d38] space-y-2.5">
