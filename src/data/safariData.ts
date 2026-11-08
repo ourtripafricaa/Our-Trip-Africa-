@@ -2562,6 +2562,94 @@ export const BLOG_POSTS: BlogPost[] = [
       'Direct Support for Indigenous Tribal Schools: A dedicated percentage of every safari package booked with Our Trip Africa is channeled directly to primary school supplies and clean water cisterns in rural villages around Lake Eyasi and West Kilimanjaro.',
       'Zero Single-Use Plastic Vehicle Protocol: All our custom Land Cruisers are equipped with large filtered mineral water dispensers and reusable stainless steel water bottles, eliminating thousands of plastic bottles from entering national park ecosystems every season.'
     ]
+  },
+  {
+    id: 'post-6',
+    slug: 'tanzania-safari-travel-guide',
+    title: 'Tanzania Safaris: A Complete Guide to Wildlife, Parks and Planning Your Journey',
+    category: 'Travel Guides',
+    readTime: '7 min read',
+    publishedDate: 'November 8, 2026',
+    author: { name: 'Our Trip Africa Team', role: 'Tanzania Safari Specialists', avatar: LOCAL_IMAGES.logo },
+    image: LOCAL_IMAGES.hero,
+    excerpt: 'Discover the Serengeti, Ngorongoro Crater, Tarangire and Lake Manyara, and learn how to choose the right season, itinerary and safari style for your Tanzania adventure.',
+    seoDescription: 'Plan a Tanzania safari with this guide to national parks, wildlife experiences, seasons, safari durations and budget, mid-range and luxury travel styles.',
+    tags: ['Tanzania Safaris', 'Serengeti', 'Ngorongoro', 'Tarangire', 'Safari Planning'],
+    content: [
+      'Tanzania is one of Africa’s most rewarding safari destinations, with vast savannahs, volcanic landscapes, ancient baobab trees and remarkable concentrations of wildlife. A well-planned journey can bring together several different ecosystems and give travellers a varied picture of the country.',
+      'The Serengeti National Park is famous for its open plains, resident predators and the annual movement of wildebeest and zebra. The timing and location of the herds change throughout the year, so the best route depends on your travel dates and the wildlife experiences you hope to see.',
+      'The Ngorongoro Crater offers a dramatic setting for game drives and is known for its rich wildlife habitat. Tarangire National Park is celebrated for its elephant herds and baobab-studded scenery, while Lake Manyara offers a compact mix of forest, lake shore and open habitats. Your itinerary can focus on one region or combine several parks.',
+      'The dry season, often from around June to October, can make wildlife easier to spot as animals gather around water sources. The green seasons bring fresh landscapes, birdlife and, in some areas, calving activity. Conditions vary by region, and every season has its own appeal.',
+      'How long should you stay? A short safari can introduce you to one or two parks, while a longer journey allows more time in the Serengeti and additional stops. When planning, consider driving distances, arrival and departure times, the pace you prefer and whether you want to combine your safari with Zanzibar.',
+      'Choose the comfort level that suits you. Budget trips may use simple campsites, mid-range journeys typically include comfortable lodges or tented camps, and luxury safaris feature premium accommodation and added services. The final quotation depends on dates, group size, accommodation, park fees and the itinerary.',
+      'Our Trip Africa can help you compare routes and accommodation options for a private or group safari. Share your travel dates, group size and preferred budget so the team can suggest a practical itinerary.'
+    ]
+  },
+  {
+    id: 'post-7',
+    slug: 'kenya-safari-guide-maasai-mara-amboseli',
+    title: 'Kenya Safaris: Explore Maasai Mara, Amboseli and Kenya’s Diverse Landscapes',
+    category: 'Travel Guides',
+    readTime: '6 min read',
+    publishedDate: 'November 8, 2026',
+    author: { name: 'Our Trip Africa Team', role: 'East Africa Travel Specialists', avatar: LOCAL_IMAGES.logo },
+    image: LOCAL_IMAGES.lion,
+    excerpt: 'From big-cat country in the Maasai Mara to elephant views beneath Mount Kilimanjaro in Amboseli, explore the highlights of a Kenya safari.',
+    seoDescription: 'A practical Kenya safari guide covering Maasai Mara, Amboseli, wildlife seasons, itinerary planning and combining Kenya with Tanzania.',
+    tags: ['Kenya Safaris', 'Maasai Mara', 'Amboseli', 'East Africa'],
+    content: [
+      'Kenya offers a wonderful variety of safari landscapes, from rolling grasslands and open plains to lakes, woodlands and mountain views. It is an excellent destination for travellers who want memorable wildlife encounters and the opportunity to experience different regions in one trip.',
+      'The Maasai Mara National Reserve is renowned for its large predator populations and open savannah scenery. It is also part of the wider Mara–Serengeti ecosystem, where wildebeest and zebra move across the border region during their annual migration. River crossings are natural events and cannot be guaranteed on a particular day.',
+      'Amboseli National Park is well known for its elephants and, when weather conditions allow, striking views of Mount Kilimanjaro. Other possible additions include Lake Nakuru, often visited for its birdlife and rhinos, and Samburu, which has distinctive dry-country wildlife and scenery.',
+      'The best time to visit depends on the parks and experiences you want. The drier months can offer easier game viewing in many areas, while greener months may bring beautiful scenery and excellent birdwatching. Wildlife sightings are never guaranteed, so allow enough time and keep your plans flexible.',
+      'A Kenya itinerary can be arranged as a short focused safari or as a longer circuit. Travellers may also combine Kenya and Tanzania in one East African holiday, with the route planned around border logistics, flight connections, travel time and the season.',
+      'When comparing safari quotations, check what is included: accommodation, meals, park fees, transport, guide services, transfers and any domestic flights. Budget, mid-range and luxury options are available depending on the location, dates and accommodation selected.',
+      'Our Trip Africa can assist with planning a Kenya safari or a combined Kenya–Tanzania journey. Tell us which parks interest you, your dates and the type of experience you prefer.'
+    ]
+  },
+  {
+    id: 'post-8',
+    slug: 'uganda-safari-gorilla-trekking-guide',
+    title: 'Uganda Safaris: Gorilla Trekking, Wildlife and the Beauty of the Pearl of Africa',
+    category: 'Wildlife Spotlights',
+    readTime: '7 min read',
+    publishedDate: 'November 8, 2026',
+    author: { name: 'Our Trip Africa Team', role: 'East Africa Travel Specialists', avatar: LOCAL_IMAGES.logo },
+    image: LOCAL_IMAGES.gorilla,
+    excerpt: 'Discover Uganda’s mountain gorillas, forest walks, savannah wildlife and scenic national parks, with practical advice for planning a responsible visit.',
+    seoDescription: 'Explore Uganda safari highlights including Bwindi gorilla trekking, Queen Elizabeth National Park, Murchison Falls and travel planning tips.',
+    tags: ['Uganda Safaris', 'Gorilla Trekking', 'Bwindi', 'Murchison Falls', 'Queen Elizabeth'],
+    content: [
+      'Uganda is often called the Pearl of Africa, and its landscapes make it a distinctive destination for nature lovers. Tropical forests, crater lakes, wetlands, rivers and savannah parks create opportunities for a varied journey that can include primates, classic game drives and beautiful scenery.',
+      'Bwindi Impenetrable National Park is one of the best-known places to track endangered mountain gorillas. Gorilla trekking is conducted with trained park guides and requires a valid permit issued by the relevant wildlife authority. Permits are limited, and travellers should confirm current fees, availability and rules before making final arrangements.',
+      'Queen Elizabeth National Park combines savannah game viewing with wetlands and the Kazinga Channel, where boat trips can offer views of hippos, elephants and abundant birdlife. Murchison Falls National Park is known for the Nile River, its powerful waterfall and game drives across open landscapes.',
+      'Kibale Forest is a popular destination for chimpanzee tracking. As with gorilla trekking, visits are regulated to protect wildlife and reduce disturbance. Follow guide instructions, maintain the required distance and never visit primates when you are unwell.',
+      'A Uganda safari may involve long road journeys between parks, so allow enough days rather than trying to fit too many locations into a short trip. Comfortable walking shoes, rain protection, neutral outdoor clothing and a small daypack are useful for forest activities.',
+      'The best itinerary depends on your interests, fitness, travel dates and permit availability. A gorilla trekking holiday can be combined with other parks, or planned as a focused forest experience. Check entry requirements, health guidance and current park regulations before departure.',
+      'Our Trip Africa can help coordinate a Uganda itinerary and discuss how it may fit into a wider East African holiday. Gorilla permits and other regulated activities must be confirmed before they can be treated as secured.'
+    ]
+  },
+  {
+    id: 'post-9',
+    slug: 'zanzibar-holidays-beaches-culture-travel-guide',
+    title: 'Zanzibar Holidays: Beautiful Beaches, Stone Town Culture and Island Experiences',
+    category: 'Cultural Experiences',
+    readTime: '6 min read',
+    publishedDate: 'November 8, 2026',
+    author: { name: 'Our Trip Africa Team', role: 'Zanzibar Travel Specialists', avatar: LOCAL_IMAGES.logo },
+    image: LOCAL_IMAGES.zanzibar,
+    excerpt: 'Plan an island escape with Zanzibar’s beaches, historic Stone Town, spice experiences, ocean excursions and the option to add a Tanzania safari.',
+    seoDescription: 'Plan Zanzibar holidays with a guide to beaches, Stone Town, spice tours, ocean activities, seasons and combining the island with a Tanzania safari.',
+    tags: ['Zanzibar Holidays', 'Stone Town', 'Beach Holiday', 'Spice Tours', 'Tanzania'],
+    content: [
+      'Zanzibar is an inviting Indian Ocean destination where beautiful beaches meet Swahili culture and a rich history shaped by centuries of trade. Visitors can enjoy a relaxed beach stay, explore historic streets, take boat excursions or combine the island with a wildlife safari on mainland Tanzania.',
+      'Stone Town is a fascinating place to discover on foot. Its narrow lanes, carved wooden doors, historic buildings and lively markets reflect a blend of African, Arab, Indian and European influences. A guided walk can help visitors understand the town’s history and cultural heritage.',
+      'The island has beaches to suit different travel styles. Nungwi and Kendwa in the north are popular for swimming and sunset views, while the east coast offers a quieter atmosphere and a more noticeable tidal rhythm. Ask about the tide conditions and beach location when choosing accommodation.',
+      'Spice tours introduce visitors to some of the plants and ingredients associated with Zanzibar’s history. Depending on the season and operator, other experiences may include dhow sailing, snorkelling, sandbank visits, local food experiences and excursions to nearby islands.',
+      'Zanzibar can be enjoyed throughout the year, but weather patterns vary. Many visitors prefer the drier periods for beach time, while the greener or wetter seasons can offer a different atmosphere and may suit travellers with flexible plans. Check local forecasts for your travel dates.',
+      'For a memorable combination, spend several days on safari in destinations such as Serengeti or Ngorongoro before flying to Zanzibar to relax by the ocean. When planning the connection, consider flight schedules, luggage arrangements and enough time between services.',
+      'Whether you are planning a honeymoon, family holiday, friends’ getaway or a quiet retreat, accommodation can be selected across budget, mid-range and luxury categories. Our Trip Africa can help tailor the length of stay, excursions and transfers to your preferences.'
+    ]
   }
 ];
 
