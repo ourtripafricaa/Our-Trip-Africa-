@@ -205,20 +205,10 @@ export const Footer: React.FC<FooterProps> = ({
               </button>
             </li>
             <li>
-              <button
-                onClick={() => onNavigate('support-team')}
-                className="hover:text-[#c5a059] transition-colors text-left"
-              >
-                Support Team (24/7)
-              </button>
+              <button onClick={() => onNavigate('services')} className="hover:text-[#c5a059] transition-colors text-left">Our Services</button>
             </li>
             <li>
-              <button
-                onClick={() => onNavigate('sales-team')}
-                className="hover:text-[#c5a059] transition-colors text-left"
-              >
-                Sales & Safari Planners
-              </button>
+              <button onClick={() => onNavigate('team')} className="hover:text-[#c5a059] transition-colors text-left">Meet Our Team</button>
             </li>
             <li>
               <button
