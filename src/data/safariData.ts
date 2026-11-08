@@ -100,11 +100,11 @@ export const COMPANY_DETAILS = {
   logo: '/assets/aistudio/1793428227163_297558c5.jpg',
   director: {
     name: 'Mr. James Felix',
-    title: 'Founder and Owner of Our Trip Africa',
+    title: 'CEO & Founder | Partnership & Sales Manager',
     experience: '15+ Years',
     photo: '/assets/aistudio/20260919_111305_8de8147f.png',
     email: 'james@ourtripafrica.com',
-    phone: '+255743661850',
+    phone: '+255743661830',
     quote: 'My vision is to provide meaningful travel experiences that allow visitors to discover, appreciate, and connect with the true spirit of Africa.',
     bio: 'Founder and Owner of Our Trip Africa, established in 2021 with a clear vision of showcasing the extraordinary beauty of Tanzania and Africa to travelers from every corner of the world. With over 15+ years of safari and hospitality experience, James Felix has guided and organized life-changing expeditions across the Serengeti, Ngorongoro Crater, Mount Kilimanjaro, and the coastal paradise of Zanzibar.',
     fullStory: `My name is James Felix, the Founder and Owner of Our Trip Africa, a Tanzania-based tourism company established in 2021 with a clear vision of showcasing the extraordinary beauty of Tanzania and Africa to travelers from every corner of the world.
