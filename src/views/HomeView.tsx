@@ -896,7 +896,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center gap-8">
           <img src={COMPANY_DETAILS.director.photo} alt={COMPANY_DETAILS.director.name} className="w-40 h-40 rounded-full object-cover border-4 border-[#0e3022]/10" />
           <div className="flex-1 space-y-3">
-            <h2 className="font-serif text-2xl font-bold text-slate-900">Meet Mr. James Felix</h2>
+            <h2 className="font-serif text-2xl font-bold text-slate-900">Meet Our Team</h2>
             <p className="text-sm text-slate-600">{COMPANY_DETAILS.director.quote}</p>
             <button onClick={() => onNavigate('about')} className="text-[#0e3022] font-semibold flex items-center gap-2 hover:text-[#c5a059] transition-colors cursor-pointer">
               Read Our Full Story <ArrowRight size={16} />
