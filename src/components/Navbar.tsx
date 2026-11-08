@@ -227,6 +227,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#c5a059] rounded-full" />
             )}
           </button>
+          <button onClick={() => handleLinkClick('services')} className={`transition-colors whitespace-nowrap cursor-pointer py-1 ${currentView === 'services' ? 'text-[#c5a059] font-bold' : 'hover:text-white'}`}>Our Services</button>
+          <button onClick={() => handleLinkClick('team')} className={`transition-colors whitespace-nowrap cursor-pointer py-1 ${currentView === 'team' ? 'text-[#c5a059] font-bold' : 'hover:text-white'}`}>Meet Our Team</button>
 
           <button
             onClick={() => handleLinkClick('contact')}
@@ -386,6 +388,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               About Us (Mr. James Felix)
             </button>
+            <button onClick={() => handleLinkClick('services')} className="text-left px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-[#0e3022]">Our Services</button>
+            <button onClick={() => handleLinkClick('team')} className="text-left px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-[#0e3022]">Meet Our Team</button>
 
             <button
               onClick={() => handleLinkClick('contact')}
