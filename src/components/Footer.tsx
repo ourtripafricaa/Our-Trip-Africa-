@@ -281,6 +281,11 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div>
+              <p className="text-[10px] text-[#7d7465] uppercase font-semibold">Management Team</p>
+              <a href="mailto:james@ourtripafrica.com" className="text-[#faf7f2] hover:text-[#c5a059] hover:underline block mt-0.5">james@ourtripafrica.com</a>
+            </div>
+
+            <div>
               <p className="text-[10px] text-[#7d7465] uppercase font-semibold">Sales Desk</p>
               <a
                 href={`mailto:${COMPANY_DETAILS.salesEmail}`}
