@@ -830,6 +830,30 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
+      {/* Payment Methods */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-[#c5a059]/40 bg-[#0e3022] p-7 sm:p-9 text-white">
+          <div className="mx-auto max-w-3xl text-center space-y-3">
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#e4c681]">Convenient Payment Options</span>
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white">PAYMENT METHODS</h2>
+            <p className="text-sm sm:text-base text-slate-200">We accept Visa and Mastercard payments through CRDB Bank and NMB Bank. A USD account payment option is also available through Selcom Pesa.</p>
+          </div>
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {[
+              ['Visa & Mastercard', 'Card payments through CRDB Bank and NMB Bank'],
+              ['CRDB & NMB Banks', 'Pay using Visa or Mastercard'],
+              ['USD Account', 'Available through Selcom Pesa']
+            ].map(([title, description]) => (
+              <div key={title} className="rounded-2xl border border-white/15 bg-white/5 px-5 py-5 text-center">
+                <h3 className="font-bold text-[#e4c681]">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-200">{description}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-center text-xs text-slate-300">Our team will share the relevant payment instructions when your booking is confirmed. The website enquiry form does not process payments.</p>
+        </div>
+      </section>
+
       {/* 6. DIRECTOR SUMMARY (Replaced Highlighted Section) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center gap-8">
