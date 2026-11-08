@@ -64,3 +64,34 @@
 /* Keep long animated brand text from widening the whole page on phones. */
 html, body, #root { width: 100%; max-width: 100%; overflow-x: clip; }
 .brand-marquee-track { max-width: none; }
+
+/* Our Trip Africa: subtle emerald-and-gold ambient glow */
+:root {
+  --ota-glow-emerald: rgba(16, 185, 129, 0.28);
+  --ota-glow-gold: rgba(197, 160, 89, 0.32);
+}
+body {
+  background-image:
+    radial-gradient(ellipse at 8% 12%, rgba(16, 185, 129, 0.055), transparent 34%),
+    radial-gradient(ellipse at 92% 82%, rgba(197, 160, 89, 0.06), transparent 32%);
+  background-attachment: fixed;
+}
+button, a[role="button"], .glow-button {
+  transition: box-shadow 220ms ease, filter 220ms ease, transform 220ms ease;
+}
+button:hover, a[role="button"]:hover, .glow-button:hover {
+  box-shadow: 0 0 10px var(--ota-glow-emerald), 0 0 22px rgba(197, 160, 89, 0.14);
+  filter: brightness(1.06);
+}
+@keyframes ota-soft-light {
+  0%, 100% { box-shadow: 0 0 5px rgba(197, 160, 89, 0.12), 0 0 12px rgba(16, 185, 129, 0.08); }
+  50% { box-shadow: 0 0 10px rgba(197, 160, 89, 0.25), 0 0 20px rgba(16, 185, 129, 0.16); }
+}
+.glow-accent {
+  animation: ota-soft-light 3.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .glow-accent { animation: none; }
+  button, a[role="button"], .glow-button { transition: none; }
+}
+
