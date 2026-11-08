@@ -787,12 +787,14 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   <a href="https://www.instagram.com/ourtripafricaa/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#FCAF45] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on Instagram</a>
                   <a href="https://www.tiktok.com/@ourtripafrica" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#111111] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:bg-black">Watch on TikTok</a>
                   <a href="https://www.youtube.com/@ourtripafrica" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#FF0033] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on YouTube</a>
+                  <a href="https://www.linkedin.com/in/our-trip-africa-13ab08222" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#0A66C2] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on LinkedIn</a>
+                  <a href="https://www.threads.net/@ourtripafricaa" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#111111] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:bg-black">Watch on Threads</a>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <p className="text-center text-xs text-slate-500">Each video category offers all four official social links, so visitors can choose where they prefer to watch.</p>
+        <p className="text-center text-xs text-slate-500">Each video category offers six official social links, so visitors can choose where they prefer to watch.</p>
       </section>
 
       <SpecialOffers onOpenBooking={() => onOpenBooking()} />
