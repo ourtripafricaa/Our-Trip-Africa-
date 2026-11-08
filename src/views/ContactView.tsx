@@ -86,6 +86,11 @@ export const ContactView: React.FC = () => {
               </div>
 
               <div className="p-3.5 bg-slate-50 rounded-2xl border border-slate-200">
+                <span className="text-[10px] uppercase text-slate-400 font-bold block">Management Team</span>
+                <a href="mailto:james@ourtripafrica.com" className="font-bold text-slate-800 hover:text-[#0e3022] hover:underline text-sm block mt-0.5">james@ourtripafrica.com</a>
+              </div>
+
+              <div className="p-3.5 bg-slate-50 rounded-2xl border border-slate-200">
                 <span className="text-[10px] uppercase text-slate-400 font-bold block">Sales, Groups & Agency Partnerships</span>
                 <a
                   href={`mailto:${COMPANY_DETAILS.salesEmail}`}
