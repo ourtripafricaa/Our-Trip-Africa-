@@ -857,6 +857,36 @@ export const HomeView: React.FC<HomeViewProps> = ({
               ))}
             </div>
             <p className="mt-4 text-center text-xs text-slate-300">Our team will share the relevant payment instructions when your booking is confirmed. The website enquiry form does not process payments.</p>
+            <div className="mt-7 border-t border-[#c5a059]/30 pt-6">
+              <h3 className="text-center text-base sm:text-lg font-bold text-[#e4c681]">Are you ready to make a payment?</h3>
+              <div className="mt-2 text-center text-sm text-slate-200">Contact Mr James Felix or our Reservation Team:</div>
+              <div className="mx-auto mt-4 grid max-w-2xl grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="rounded-xl border border-[#c5a059]/40 bg-white/5 p-3">
+                  <h4 className="mb-2 text-sm font-bold text-[#e4c681]">Mr James Felix</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <a href="mailto:james@ourtripafrica.com" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
+                      <Mail size={14}/> Email
+                    </a>
+                    <a href="https://wa.me/255743661850" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
+                      <MessageCircle size={14}/> WhatsApp
+                    </a>
+                  </div>
+                  <p className="mt-2 text-[11px] text-slate-300">james@ourtripafrica.com · +255 743 661 850</p>
+                </div>
+                <div className="rounded-xl border border-[#c5a059]/40 bg-white/5 p-3">
+                  <h4 className="mb-2 text-sm font-bold text-[#e4c681]">Reservation Team</h4>
+                  <div className="flex flex-wrap gap-2">
+                    <a href="mailto:info@ourtripafrica.com" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
+                      <Mail size={14}/> Email
+                    </a>
+                    <a href="https://wa.me/255624661830" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
+                      <MessageCircle size={14}/> WhatsApp
+                    </a>
+                  </div>
+                  <p className="mt-2 text-[11px] text-slate-300">info@ourtripafrica.com · +255 624 661 830</p>
+                </div>
+              </div>
+            </div>
           </div>
         </details>
       </section>
