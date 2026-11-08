@@ -13,6 +13,8 @@ import { SafariChatbot } from './components/SafariChatbot';
 import { HomeView } from './views/HomeView';
 import { DestinationsView } from './views/DestinationsView';
 import { AboutView } from './views/AboutView';
+import { ServicesView } from './views/ServicesView';
+import { TeamView } from './views/TeamView';
 import { DestinationView } from './views/DestinationView';
 import { PackagesView } from './views/PackagesView';
 import { BlogView } from './views/BlogView';
@@ -116,6 +118,10 @@ export default function App() {
         {currentView === 'destinations' && (
           <DestinationsView onNavigate={handleNavigate} />
         )}
+
+        {currentView === 'services' && <ServicesView onOpenBooking={() => handleOpenBooking()} onNavigate={handleNavigate} />}
+
+        {currentView === 'team' && <TeamView />}
 
         {currentView === 'about' && (
           <AboutView
