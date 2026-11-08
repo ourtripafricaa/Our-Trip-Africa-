@@ -830,50 +830,33 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
-      {/* Payment Methods */}
+      {/* Payment Methods — compact expandable panel */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-[#c5a059]/40 bg-[#0e3022] p-7 sm:p-9 text-white">
-          <div className="mx-auto max-w-3xl text-center space-y-3">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#e4c681]">Convenient Payment Options</span>
-            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white">PAYMENT METHODS</h2>
-            <p className="text-sm sm:text-base text-slate-200">We accept Visa and Mastercard payments through CRDB Bank and NMB Bank. A USD account payment option is also available through Selcom Pesa.</p>
-          </div>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {[
-              ['Visa & Mastercard', 'Card payments through CRDB Bank and NMB Bank'],
-              ['CRDB & NMB Banks', 'Pay using Visa or Mastercard'],
-              ['USD Account', 'Available through Selcom Pesa']
-            ].map(([title, description]) => (
-              <div key={title} className="rounded-2xl border border-white/15 bg-white/5 px-5 py-5 text-center">
-                <h3 className="font-bold text-[#e4c681]">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-200">{description}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-5 text-center text-xs text-slate-300">Our team will share the relevant payment instructions when your booking is confirmed. The website enquiry form does not process payments.</p>
-        </div>
-      </section>
-
-      {/* Company Registration — certificates can be added later */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <details className="group overflow-hidden rounded-2xl border border-[#c5a059]/70 bg-[#0e3022] shadow-md">
+        <details className="group mx-auto max-w-3xl overflow-hidden rounded-2xl border border-[#c5a059]/60 bg-[#0e3022] shadow-md">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:px-6">
-            <span className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#c5a059]/50 bg-[#c5a059]/10 text-[#e4c681]">
-                <ShieldCheck size={21} />
-              </span>
-              <span>
-                <span className="block text-sm sm:text-base font-bold uppercase tracking-wider text-[#e4c681]">Company Registration</span>
-                <span className="mt-0.5 block text-xs text-slate-300">Official company certificates and registration documents</span>
-              </span>
+            <span>
+              <span className="block text-xs font-bold uppercase tracking-[0.18em] text-[#e4c681]">Convenient Payment Options</span>
+              <span className="mt-1 block text-base sm:text-lg font-bold text-white">PAYMENT METHODS</span>
             </span>
-            <ChevronDown className="shrink-0 text-[#e4c681] transition-transform duration-200 group-open:rotate-180" size={20} />
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#c5a059]/50 text-[#e4c681] transition-transform duration-200 group-open:rotate-180">
+              <ChevronDown size={19} />
+            </span>
           </summary>
           <div className="border-t border-[#c5a059]/30 px-5 py-5 sm:px-6">
-            <div className="rounded-xl border border-dashed border-[#c5a059]/50 bg-white/5 px-4 py-6 text-center">
-              <p className="font-semibold text-[#e4c681]">Certificates Coming Soon</p>
-              <p className="mt-2 text-sm leading-relaxed text-slate-300">Our official company registration certificates will be displayed here soon.</p>
+            <p className="mx-auto max-w-3xl text-center text-sm sm:text-base text-slate-200">We accept Visa and Mastercard payments through CRDB Bank and NMB Bank. A USD account payment option is also available through Selcom Pesa.</p>
+            <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                ['Visa & Mastercard', 'Card payments through CRDB Bank and NMB Bank'],
+                ['CRDB & NMB Banks', 'Pay using Visa or Mastercard'],
+                ['USD Account', 'Available through Selcom Pesa']
+              ].map(([title, description]) => (
+                <div key={title} className="rounded-xl border border-white/15 bg-white/5 px-4 py-4 text-center">
+                  <h3 className="font-bold text-[#e4c681]">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-200">{description}</p>
+                </div>
+              ))}
             </div>
+            <p className="mt-4 text-center text-xs text-slate-300">Our team will share the relevant payment instructions when your booking is confirmed. The website enquiry form does not process payments.</p>
           </div>
         </details>
       </section>
