@@ -854,6 +854,30 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
+      {/* Company Registration — certificates can be added later */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <details className="group overflow-hidden rounded-2xl border border-[#c5a059]/70 bg-[#0e3022] shadow-md">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:px-6">
+            <span className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#c5a059]/50 bg-[#c5a059]/10 text-[#e4c681]">
+                <ShieldCheck size={21} />
+              </span>
+              <span>
+                <span className="block text-sm sm:text-base font-bold uppercase tracking-wider text-[#e4c681]">Company Registration</span>
+                <span className="mt-0.5 block text-xs text-slate-300">Official company certificates and registration documents</span>
+              </span>
+            </span>
+            <ChevronDown className="shrink-0 text-[#e4c681] transition-transform duration-200 group-open:rotate-180" size={20} />
+          </summary>
+          <div className="border-t border-[#c5a059]/30 px-5 py-5 sm:px-6">
+            <div className="rounded-xl border border-dashed border-[#c5a059]/50 bg-white/5 px-4 py-6 text-center">
+              <p className="font-semibold text-[#e4c681]">Certificates Coming Soon</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">Our official company registration certificates will be displayed here soon.</p>
+            </div>
+          </div>
+        </details>
+      </section>
+
       {/* 6. DIRECTOR SUMMARY (Replaced Highlighted Section) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center gap-8">
