@@ -30,7 +30,7 @@ import { SafariPackage } from './data/safariData';
 const ADMIN_EMAIL = 'ourtripafricaa@gmail.com';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<string>('home');
+  const [currentView, setCurrentView] = useState<string>(() => window.location.pathname.startsWith('/blog') ? 'blog' : 'home');
   const [viewParam, setViewParam] = useState<string | undefined>(undefined);
   const [selectedPackage, setSelectedPackage] = useState<SafariPackage | null>(null);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -169,7 +169,7 @@ export default function App() {
         )}
 
         {currentView === 'blog' && (
-          <BlogView onOpenBooking={() => handleOpenBooking()} />
+          <BlogView onOpenBooking={() => handleOpenBooking()} initialSlug={window.location.pathname.startsWith('/blog/') ? window.location.pathname.split('/').filter(Boolean)[1] : undefined} />
         )}
 
         {currentView === 'contact' && <ContactView />}
