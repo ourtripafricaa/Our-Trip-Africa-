@@ -31,7 +31,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking, initialSlug }
       if (!canonical) { canonical = document.createElement('link'); canonical.setAttribute('rel', 'canonical'); document.head.appendChild(canonical); }
       canonical.setAttribute('href', `https://www.ourtripafrica.com/blog/${activePost.slug}`);
     } else {
-      document.title = 'Travel Guides, Wildlife & News | Our Trip Africa';
+      document.title = 'African Safari Stories, Wildlife, Travel Guides & News | Our Trip Africa';
       const canonical = document.querySelector('link[rel="canonical"]');
       if (canonical) canonical.setAttribute('href', 'https://www.ourtripafrica.com/blog');
     }
@@ -318,7 +318,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking, initialSlug }
               <span>African Safari Knowledge Hub</span>
             </span>
             <h1 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
-              Travel Guides, Wildlife & News
+              African Safari Stories, Wildlife, Travel Guides &amp; News
             </h1>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
               Expert advice directly from our licensed guides in Arusha. Learn the best seasons for the Great Migration, gorilla trekking rules, budget comparisons, and local community updates.
