@@ -556,7 +556,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </div>
             </div>
             <img
-              src="/assets/aistudio/1793428227163_297558c5.jpg"
+              src="/assets/aistudio/20261024_122515_aa5135aa.png"
               alt="African travel and safari story"
               className="h-64 w-full shrink-0 rounded-xl object-cover shadow-md sm:h-80 sm:w-[48%] lg:w-1/2"
               loading="lazy"
