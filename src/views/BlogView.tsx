@@ -387,9 +387,9 @@ export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking, initialSlug }
                       />
                       <span className="truncate max-w-[130px] font-medium">{post.author.name}</span>
                     </div>
-                    <span className="text-[#0e3022] font-bold group-hover:underline">
+                    <a href={`/blog/${post.slug}`} onClick={(event) => { event.stopPropagation(); event.preventDefault(); setActivePost(post); window.history.pushState({}, '', `/blog/${post.slug}`); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-[#0e3022] font-bold group-hover:underline">
                       Read Article →
-                    </span>
+                    </a>
                   </div>
                 </div>
               </article>
