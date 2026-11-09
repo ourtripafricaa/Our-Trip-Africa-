@@ -539,10 +539,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* Compact travel stories feature */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl border border-[#c5a059]/45 bg-[#0e3022] px-5 py-5 sm:px-7 sm:py-6 shadow-lg">
+        <div className="relative overflow-hidden rounded-2xl border border-[#c5a059]/45 bg-[#0e3022] p-4 sm:p-5 shadow-lg">
           <div className="pointer-events-none absolute -right-12 -top-16 h-40 w-40 rounded-full bg-[#c5a059]/10 blur-2xl" />
-          <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-start gap-3 sm:gap-4">
+          <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="min-w-0 flex-1 flex items-start gap-3 sm:gap-4">
               <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#c5a059]/40 bg-white/5 text-[#e4c681]">
                 <Compass size={21} />
               </div>
@@ -550,11 +550,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#e4c681]">Explore • Learn • Get Inspired</p>
                 <h2 className="mt-1 font-serif text-lg sm:text-2xl font-bold leading-snug text-white">African Safari Stories, Wildlife, Travel Guides &amp; News</h2>
                 <p className="mt-1 max-w-2xl text-xs sm:text-sm leading-relaxed text-emerald-50/80">Discover safari inspiration, wildlife stories, destination guides and useful travel advice from across Africa.</p>
+                <button type="button" onClick={() => onNavigate('blog')} className="mt-3 inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-[#c5a059] px-4 py-2.5 text-xs sm:text-sm font-extrabold text-[#061d14] shadow-md transition hover:bg-[#e4c681]">
+                  Discover the Travel Story <ArrowRight size={16} />
+                </button>
               </div>
             </div>
-            <button type="button" onClick={() => onNavigate('blog')} className="inline-flex shrink-0 items-center justify-center gap-2 self-start sm:self-center rounded-xl bg-[#c5a059] px-5 py-3 text-xs sm:text-sm font-extrabold text-[#061d14] shadow-md transition hover:bg-[#e4c681]">
-              Discover the Travel Story <ArrowRight size={16} />
-            </button>
+            <img
+              src="/assets/aistudio/1793428227163_297558c5.jpg"
+              alt="African travel and safari story"
+              className="h-32 w-full shrink-0 rounded-xl object-cover sm:h-28 sm:w-44 lg:w-52"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
