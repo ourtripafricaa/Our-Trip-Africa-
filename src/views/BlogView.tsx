@@ -5,11 +5,37 @@ import { DualBookNow } from '../components/DualBookNow';
 
 interface BlogViewProps {
   onOpenBooking: () => void;
+  initialSlug?: string;
 }
 
-export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking }) => {
+export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking, initialSlug }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [activePost, setActivePost] = useState<BlogPost | null>(null);
+  const [activePost, setActivePost] = useState<BlogPost | null>(() => BLOG_POSTS.find((post) => post.slug === initialSlug) || null);
+
+  React.useEffect(() => {
+    const syncPostFromPath = () => {
+      const slug = window.location.pathname.startsWith('/blog/') ? window.location.pathname.split('/').filter(Boolean)[1] : undefined;
+      setActivePost(BLOG_POSTS.find((post) => post.slug === slug) || null);
+    };
+    window.addEventListener('popstate', syncPostFromPath);
+    return () => window.removeEventListener('popstate', syncPostFromPath);
+  }, []);
+
+  React.useEffect(() => {
+    if (activePost) {
+      document.title = `${activePost.title} | Our Trip Africa`;
+      let description = document.querySelector('meta[name="description"]');
+      if (!description) { description = document.createElement('meta'); description.setAttribute('name', 'description'); document.head.appendChild(description); }
+      description.setAttribute('content', activePost.seoDescription);
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) { canonical = document.createElement('link'); canonical.setAttribute('rel', 'canonical'); document.head.appendChild(canonical); }
+      canonical.setAttribute('href', `https://www.ourtripafrica.com/blog/${activePost.slug}`);
+    } else {
+      document.title = 'Travel Guides, Wildlife & News | Our Trip Africa';
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute('href', 'https://www.ourtripafrica.com/blog');
+    }
+  }, [activePost]);
 
   // Comments state for active post
   const [comments, setComments] = useState<Array<{ name: string; text: string; date: string }>>([
@@ -85,7 +111,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking }) => {
         <article className="max-w-4xl mx-auto space-y-8 animate-fadeIn">
           {/* Back button */}
           <button
-            onClick={() => setActivePost(null)}
+            onClick={() => { setActivePost(null); window.history.pushState({}, '', '/blog'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             className="inline-flex items-center gap-2 text-xs font-semibold text-[#0e3022] hover:text-[#c5a059] transition-colors cursor-pointer"
           >
             <ArrowLeft size={16} />
@@ -171,6 +197,16 @@ export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking }) => {
               <p key={idx}>{paragraph}</p>
             ))}
           </div>
+
+          {activePost.mapLinks && activePost.mapLinks.length > 0 && (
+            <section className="bg-white rounded-2xl border border-slate-200 p-6 space-y-3">
+              <h2 className="font-serif text-xl font-bold text-slate-900">Explore These Places on Google Maps</h2>
+              <p className="text-xs text-slate-600">Open the map links below to view the destinations mentioned in this guide.</p>
+              <div className="flex flex-wrap gap-2">{activePost.mapLinks.map(([label, url]) => (
+                <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-lg bg-[#0e3022]/5 border border-[#0e3022]/15 text-[#0e3022] text-xs font-semibold hover:bg-[#0e3022] hover:text-white">{label} · Map</a>
+              ))}</div>
+            </section>
+          )}
 
           {/* Tags */}
           <div className="pt-6 border-t border-slate-200 flex flex-wrap items-center gap-2">
@@ -311,7 +347,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking }) => {
             {filteredPosts.map((post) => (
               <article
                 key={post.id}
-                onClick={() => setActivePost(post)}
+                onClick={() => { setActivePost(post); window.history.pushState({}, '', `/blog/${post.slug}`); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 className="group bg-white rounded-3xl border border-slate-200 overflow-hidden flex flex-col hover:border-[#c5a059] hover:shadow-xl transition-all duration-300 cursor-pointer shadow-sm"
               >
                 <div className="relative h-56 w-full overflow-hidden bg-slate-100">
