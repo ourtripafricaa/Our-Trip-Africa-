@@ -304,15 +304,14 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </div>
             <div className="relative min-h-[260px] lg:min-h-full overflow-hidden">
               <img
-                src="https://commons.wikimedia.org/wiki/Special:FilePath/Elephant%20in%20the%20Savannah.jpg?width=1600"
-                alt="African elephant in the Serengeti savannah, Tanzania"
+                src="/assets/aistudio/1776627302280_aeeffdfe.jpg"
+                alt="Iconic destinations across Africa and the UAE"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#061d14] via-[#061d14]/20 to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-[#061d14]/10" />
               <div className="absolute bottom-4 right-4 rounded-lg border border-white/20 bg-[#061d14]/80 px-3 py-2 text-[10px] text-white backdrop-blur-sm">
-                Serengeti • African Elephant
-                <span className="block text-[9px] text-slate-300">Photo: Eric Kilby • CC BY-SA 2.0</span>
+                Africa & UAE • Iconic Destinations
               </div>
             </div>
           </div>
