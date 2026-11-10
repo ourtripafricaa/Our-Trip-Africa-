@@ -2522,7 +2522,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '6 min read',
     publishedDate: 'November 8, 2026',
     author: { name: 'Our Trip Africa Team', role: 'Zanzibar Travel Specialists', avatar: LOCAL_IMAGES.logo },
-    image: '/assets/aistudio/Screenshot_20260929_194629_Gallery_51f1a0f7.jpg',
+    image: '/assets/aistudio/1794279343986.jpg',
     excerpt: 'Plan an island escape with Zanzibar’s beaches, historic Stone Town, spice experiences, ocean excursions and the option to add a Tanzania safari.',
     seoDescription: 'Plan Zanzibar holidays with a guide to beaches, Stone Town, spice tours, ocean activities, seasons and combining the island with a Tanzania safari.',
     tags: ['Zanzibar Holidays', 'Stone Town', 'Beach Holiday', 'Spice Tours', 'Tanzania'],
