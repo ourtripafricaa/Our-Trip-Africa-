@@ -1375,9 +1375,9 @@ export const SAFARI_PACKAGES: SafariPackage[] = [
     featured: true,
     bestTime: 'July – October (Great Migration) & Year-Round',
     physicalRating: 'Easy',
-    heroImage: LOCAL_IMAGES.lion,
+    heroImage: '/assets/aistudio/20260321_120937_f48b28a3.jpg',
     gallery: [
-      LOCAL_IMAGES.lion,
+      '/assets/aistudio/20260321_120937_f48b28a3.jpg',
       LOCAL_IMAGES.hero,
       'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80'
     ],
