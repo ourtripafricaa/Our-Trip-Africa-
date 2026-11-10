@@ -2672,7 +2672,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "9 min read",
     publishedDate: "November 9, 2026",
     author: { name: 'Our Trip Africa Team', role: 'Local Tanzania Travel Specialists', avatar: LOCAL_IMAGES.logo },
-    image: '/assets/aistudio/1788252043526_202ccf55.jpg',
+    image: '/assets/aistudio/file_0000000034ec8211874d67f6d94af87f.png',
     excerpt: "Explore five memorable Zanzibar beaches, what makes each coast different, how tides affect swimming and which areas suit couples, families and ocean lovers.",
     seoDescription: "Discover the top five beaches in Zanzibar: Nungwi, Kendwa, Paje, Jambiani and Matemwe, with tips on swimming, tides, activities and where to stay.",
     tags: ["Best Beaches Zanzibar","Nungwi Beach","Kendwa Beach","Paje Beach","Jambiani Beach","Matemwe Beach"],
