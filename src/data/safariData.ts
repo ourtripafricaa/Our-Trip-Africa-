@@ -2726,7 +2726,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "11 min read",
     publishedDate: "November 9, 2026",
     author: { name: 'Our Trip Africa Team', role: 'Local Tanzania Travel Specialists', avatar: LOCAL_IMAGES.logo },
-    image: '/assets/aistudio/20260321_120937_f48b28a3.jpg',
+    image: '/assets/aistudio/file_00000000dbd88208b442a29bfa862e56.png',
     excerpt: "From Serengeti game drives and crater safaris to Stone Town, spice farms and ocean excursions, discover ten experiences for a combined Tanzania and Zanzibar trip.",
     seoDescription: "Discover ten memorable things to do in Tanzania and Zanzibar, including wildlife safaris, cultural visits, Kilimanjaro scenery, Stone Town and beach activities.",
     tags: ["Things to Do Tanzania","Things to Do Zanzibar","Tanzania Safari Activities","Zanzibar Excursions"],
