@@ -2596,7 +2596,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "11 min read",
     publishedDate: "November 9, 2026",
     author: { name: 'Our Trip Africa Team', role: 'Local Tanzania Travel Specialists', avatar: LOCAL_IMAGES.logo },
-    image: '/assets/aistudio/Screenshot_20260527_120120_ChatGPT_18140df3.jpg',
+    image: '/assets/aistudio/20261024_122559.jpg',
     excerpt: "Plan a combined Tanzania wildlife safari and Zanzibar beach escape, with two sample itineraries, travel tips and advice on choosing accommodation.",
     seoDescription: "Explore Tanzania and Zanzibar tour packages with two sample safari-and-beach itineraries covering Serengeti, Ngorongoro, Tarangire and Zanzibar.",
     tags: ["Tanzania Tour Packages","Zanzibar Holiday Packages","Safari and Beach","Tanzania Itinerary"],
