@@ -12,83 +12,94 @@ interface HomeViewProps {
   onOpenBooking: (pkg?: SafariPackage) => void;
 }
 
-const TANZANIA_GALLERY = [
+const AI_STUDIO_GALLERY = [
   {
-    "name": "Lion — Serengeti",
-    "file": "Serengeti National Park 08 - lion - Panthera leo.jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti%20National%20Park%2008%20-%20lion%20-%20Panthera%20leo.jpg"
+    "name": "1776627302280 aeeffdfe",
+    "url": "/assets/aistudio/1776627302280_aeeffdfe.jpg"
   },
   {
-    "name": "Elephant — Serengeti",
-    "file": "Serengeti National Park 09 - African elephant (Loxodonta).jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti%20National%20Park%2009%20-%20African%20elephant%20(Loxodonta).jpg"
+    "name": "1788252043526 202ccf55",
+    "url": "/assets/aistudio/1788252043526_202ccf55.jpg"
   },
   {
-    "name": "Giraffe — Serengeti",
-    "file": "Serengeti National Park 13 - giraffe - Giraffa camelopardalis.jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Serengeti%20National%20Park%2013%20-%20giraffe%20-%20Giraffa%20camelopardalis.jpg"
+    "name": "1792217020181",
+    "url": "/assets/aistudio/1792217020181.jpg"
   },
   {
-    "name": "Great Migration",
-    "file": "Ngorongoro Conservation Area 07 - migration.jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ngorongoro%20Conservation%20Area%2007%20-%20migration.jpg"
+    "name": "1793428227163 297558c5",
+    "url": "/assets/aistudio/1793428227163_297558c5.jpg"
   },
   {
-    "name": "Leopard — Serengeti",
-    "file": "Leopard tree Serengeti-1.jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Leopard%20tree%20Serengeti-1.jpg"
+    "name": "1793450997914 ae622466",
+    "url": "/assets/aistudio/1793450997914_ae622466.jpg"
   },
   {
-    "name": "Ngorongoro Crater",
-    "file": "Ngorongoro Crater Panorama.jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ngorongoro%20Crater%20Panorama.jpg"
+    "name": "1794279343986",
+    "url": "/assets/aistudio/1794279343986.jpg"
   },
   {
-    "name": "Mount Kilimanjaro",
-    "file": "Mount Kilimanjaro,Moshi 1.jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount%20Kilimanjaro%2CMoshi%201.jpg"
+    "name": "1794282016990",
+    "url": "/assets/aistudio/1794282016990.jpg"
   },
   {
-    "name": "Zanzibar Dhow",
-    "file": "Dhow boat Zanzibar.jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dhow%20boat%20Zanzibar.jpg"
+    "name": "20260321 120937 f48b28a3",
+    "url": "/assets/aistudio/20260321_120937_f48b28a3.jpg"
   },
   {
-    "name": "Safari Vehicle",
-    "file": "Tanzania (Serengeti National Park) Safari vehicle (21113135729).jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tanzania%20(Serengeti%20National%20Park)%20Safari%20vehicle%20(21113135729).jpg"
+    "name": "20260919 111305 8de8147f",
+    "url": "/assets/aistudio/20260919_111305_8de8147f.png"
   },
   {
-    "name": "Zebra — Ngorongoro",
-    "file": "NgoroNgoro Crater, Tanzania, Africa.jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/NgoroNgoro%20Crater%2C%20Tanzania%2C%20Africa.jpg"
+    "name": "20261024 122515 aa5135aa",
+    "url": "/assets/aistudio/20261024_122515_aa5135aa.png"
   },
   {
-    "name": "Serengeti at Sunrise",
-    "file": "004 Sunrise at Serengeti National Park Photo by Giles Laurent.jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/004%20Sunrise%20at%20Serengeti%20National%20Park%20Photo%20by%20Giles%20Laurent.jpg"
+    "name": "20261024 122559",
+    "url": "/assets/aistudio/20261024_122559.jpg"
   },
   {
-    "name": "Tarangire Baobab Country",
-    "file": "Baobab (Adansonia digitata), parque nacional de Tarangire, Tanzania, 2024-05-24, DD 78.jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Baobab%20(Adansonia%20digitata)%2C%20parque%20nacional%20de%20Tarangire%2C%20Tanzania%2C%202024-05-24%2C%20DD%2078.jpg"
+    "name": "20261110 070447",
+    "url": "/assets/aistudio/20261110_070447.jpg"
   },
   {
-    "name": "Inside Ngorongoro Crater",
-    "file": "Inside Ngorongoro crater.jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Inside%20Ngorongoro%20crater.jpg"
+    "name": "Screenshot 20260527 120120 ChatGPT 18140df3",
+    "url": "/assets/aistudio/Screenshot_20260527_120120_ChatGPT_18140df3.jpg"
   },
   {
-    "name": "Nungwi Beach — Zanzibar",
-    "file": "Nungwi Beach Zanzibar.jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nungwi%20Beach%20Zanzibar.jpg"
+    "name": "Screenshot 20260929 194629 Gallery 51f1a0f7",
+    "url": "/assets/aistudio/Screenshot_20260929_194629_Gallery_51f1a0f7.jpg"
   },
   {
-    "name": "Jambiani Seaweed Coast — Zanzibar",
-    "file": "Harvesting seaweed in Jambiani.jpg",
-    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Harvesting%20seaweed%20in%20Jambiani.jpg"
+    "name": "file 0000000034ec8211874d67f6d94af87f",
+    "url": "/assets/aistudio/file_0000000034ec8211874d67f6d94af87f.png"
+  },
+  {
+    "name": "file 00000000bff0820888f1fe403159119b",
+    "url": "/assets/aistudio/file_00000000bff0820888f1fe403159119b.png"
+  },
+  {
+    "name": "file 00000000cb788211a4d526fe730dd4d1",
+    "url": "/assets/aistudio/file_00000000cb788211a4d526fe730dd4d1.png"
+  },
+  {
+    "name": "file 00000000dbd88208b442a29bfa862e56",
+    "url": "/assets/aistudio/file_00000000dbd88208b442a29bfa862e56.png"
   }
 ];
+
+// Vite bundles every image stored in src/assets/images into the production build.
+const SOURCE_IMAGE_GALLERY = Object.entries(
+  import.meta.glob('../assets/images/*.{jpg,jpeg,png,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+).map(([path, url]) => ({
+  name: path.split('/').pop()?.replace(/\.[^.]+$/, '').replace(/[_-]+/g, ' ') || 'African travel photo',
+  url: url as string,
+}));
+
+const TANZANIA_GALLERY = [...AI_STUDIO_GALLERY, ...SOURCE_IMAGE_GALLERY];
 
 export const HomeView: React.FC<HomeViewProps> = ({
   onNavigate,
