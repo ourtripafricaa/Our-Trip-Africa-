@@ -297,11 +297,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-white/40 px-7 py-3.5 text-sm font-bold text-white hover:bg-white/10 transition-colors">Book on WhatsApp</a>
           </div>
         </div>
-      </section></section>
+      </section>
 
-
-
-            {/* 2.5 DREAM TRIP PLANNER / BUDGET CTA */}
+      {/* 2.5 DREAM TRIP PLANNER / BUDGET CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden bg-[#0e3022] rounded-3xl p-8 sm:p-12 border border-[#c5a059]/40 shadow-2xl text-white">
           <div className="absolute -top-24 -right-20 w-72 h-72 rounded-full bg-[#c5a059]/10 blur-3xl pointer-events-none" />
