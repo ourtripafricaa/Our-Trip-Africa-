@@ -226,7 +226,82 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
-      {/* 2.5 DREAM TRIP PLANNER / BUDGET CTA */}
+            {/* 5.6 SLIDE GALLERY */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="text-center max-w-2xl mx-auto space-y-2">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#0e3022]">Visual Journey</span>
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Experience Africa Through Our Gallery</h2>
+          <p className="text-sm text-slate-600">A glimpse of the wildlife, landscapes and unforgettable places waiting to be explored.</p>
+        </div>
+
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#061d14] border border-[#c5a059]/50 shadow-2xl">
+          <div className="relative h-[300px] sm:h-[440px] lg:h-[540px]">
+            {TANZANIA_GALLERY.map((photo, index) => (
+              <div
+                key={photo.name}
+                className={`absolute inset-0 transition-opacity duration-700 ${galleryIndex === index ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                aria-hidden={galleryIndex !== index}
+              >
+                <img
+                  src={photo.url}
+                  alt={photo.name}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  className="h-full w-full object-cover"
+                />
+
+              </div>
+            ))}
+
+            <button
+              type="button"
+              onClick={() => setGalleryIndex((current) => (current - 1 + TANZANIA_GALLERY.length) % TANZANIA_GALLERY.length)}
+              aria-label="Previous gallery image"
+              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#c5a059] hover:text-[#061d14] transition-colors"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              onClick={() => setGalleryIndex((current) => (current + 1) % TANZANIA_GALLERY.length)}
+              aria-label="Next gallery image"
+              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#c5a059] hover:text-[#061d14] transition-colors"
+            >
+              ›
+            </button>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-[#081a13] px-4 py-4 sm:px-7">
+            <div className="flex items-center gap-2" aria-label="Choose gallery image">
+              {TANZANIA_GALLERY.map((photo, index) => (
+                <button
+                  key={photo.name}
+                  type="button"
+                  onClick={() => setGalleryIndex(index)}
+                  aria-label={`Show image ${index + 1}: ${photo.name}`}
+                  aria-current={galleryIndex === index ? 'true' : undefined}
+                  className={`h-2.5 rounded-full transition-all ${galleryIndex === index ? 'w-8 bg-[#c5a059]' : 'w-2.5 bg-white/40 hover:bg-white/80'}`}
+                />
+              ))}
+            </div>
+            <span className="text-[11px] sm:text-xs font-semibold tracking-wide text-[#e4c681]" aria-live="polite">
+              {String(galleryIndex + 1).padStart(2, '0')} / {String(TANZANIA_GALLERY.length).padStart(2, '0')}
+            </span>
+          </div>
+        </div>
+        <div className="rounded-2xl border border-[#c5a059]/40 bg-[#0e3022] px-6 py-7 text-center text-white shadow-xl">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#e4c681]">Your adventure is one message away</p>
+          <h3 className="mt-2 font-serif text-2xl sm:text-3xl font-bold">Seen a place you would love to visit?</h3>
+          <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-200">Tell our Arusha team your travel dates, group size and budget. We will help you shape the right journey.</p>
+          <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3">
+            <button type="button" onClick={() => onOpenBooking()} className="rounded-xl bg-[#c5a059] px-7 py-3.5 text-sm font-extrabold text-[#061d14] shadow-lg hover:bg-[#e4c681] transition-colors">Enquire & Start Booking</button>
+            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-white/40 px-7 py-3.5 text-sm font-bold text-white hover:bg-white/10 transition-colors">Book on WhatsApp</a>
+          </div>
+        </div>
+      </section></section>
+
+
+
+            {/* 2.5 DREAM TRIP PLANNER / BUDGET CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden bg-[#0e3022] rounded-3xl p-8 sm:p-12 border border-[#c5a059]/40 shadow-2xl text-white">
           <div className="absolute -top-24 -right-20 w-72 h-72 rounded-full bg-[#c5a059]/10 blur-3xl pointer-events-none" />
@@ -665,79 +740,6 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </button>
           </div>
         </div>
-            {/* 5.6 SLIDE GALLERY */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#0e3022]">Visual Journey</span>
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Experience Africa Through Our Gallery</h2>
-          <p className="text-sm text-slate-600">A glimpse of the wildlife, landscapes and unforgettable places waiting to be explored.</p>
-        </div>
-
-        <div className="relative overflow-hidden rounded-[2rem] bg-[#061d14] border border-[#c5a059]/50 shadow-2xl">
-          <div className="relative h-[300px] sm:h-[440px] lg:h-[540px]">
-            {TANZANIA_GALLERY.map((photo, index) => (
-              <div
-                key={photo.name}
-                className={`absolute inset-0 transition-opacity duration-700 ${galleryIndex === index ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-                aria-hidden={galleryIndex !== index}
-              >
-                <img
-                  src={photo.url}
-                  alt={photo.name}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  className="h-full w-full object-cover"
-                />
-
-              </div>
-            ))}
-
-            <button
-              type="button"
-              onClick={() => setGalleryIndex((current) => (current - 1 + TANZANIA_GALLERY.length) % TANZANIA_GALLERY.length)}
-              aria-label="Previous gallery image"
-              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#c5a059] hover:text-[#061d14] transition-colors"
-            >
-              ‹
-            </button>
-            <button
-              type="button"
-              onClick={() => setGalleryIndex((current) => (current + 1) % TANZANIA_GALLERY.length)}
-              aria-label="Next gallery image"
-              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#c5a059] hover:text-[#061d14] transition-colors"
-            >
-              ›
-            </button>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-[#081a13] px-4 py-4 sm:px-7">
-            <div className="flex items-center gap-2" aria-label="Choose gallery image">
-              {TANZANIA_GALLERY.map((photo, index) => (
-                <button
-                  key={photo.name}
-                  type="button"
-                  onClick={() => setGalleryIndex(index)}
-                  aria-label={`Show image ${index + 1}: ${photo.name}`}
-                  aria-current={galleryIndex === index ? 'true' : undefined}
-                  className={`h-2.5 rounded-full transition-all ${galleryIndex === index ? 'w-8 bg-[#c5a059]' : 'w-2.5 bg-white/40 hover:bg-white/80'}`}
-                />
-              ))}
-            </div>
-            <span className="text-[11px] sm:text-xs font-semibold tracking-wide text-[#e4c681]" aria-live="polite">
-              {String(galleryIndex + 1).padStart(2, '0')} / {String(TANZANIA_GALLERY.length).padStart(2, '0')}
-            </span>
-          </div>
-        </div>
-        <div className="rounded-2xl border border-[#c5a059]/40 bg-[#0e3022] px-6 py-7 text-center text-white shadow-xl">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#e4c681]">Your adventure is one message away</p>
-          <h3 className="mt-2 font-serif text-2xl sm:text-3xl font-bold">Seen a place you would love to visit?</h3>
-          <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-200">Tell our Arusha team your travel dates, group size and budget. We will help you shape the right journey.</p>
-          <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3">
-            <button type="button" onClick={() => onOpenBooking()} className="rounded-xl bg-[#c5a059] px-7 py-3.5 text-sm font-extrabold text-[#061d14] shadow-lg hover:bg-[#e4c681] transition-colors">Enquire & Start Booking</button>
-            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-white/40 px-7 py-3.5 text-sm font-bold text-white hover:bg-white/10 transition-colors">Book on WhatsApp</a>
-          </div>
-        </div>
-      </section></section>
-
       {/* Personalised safari planning and FAQ - placed immediately below the image slideshow */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="relative overflow-hidden rounded-[2rem] border-2 border-[#c5a059] bg-[#073b29] shadow-xl">
