@@ -687,14 +687,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   loading={index === 0 ? 'eager' : 'lazy'}
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#061d14]/90 via-[#061d14]/10 to-black/10" />
-                <div className="absolute bottom-7 left-6 right-6 sm:bottom-10 sm:left-12 sm:right-12">
-                  <span className="inline-flex rounded-full border border-[#e4c681]/60 bg-[#061d14]/70 px-3 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#e4c681] backdrop-blur">
-                    Our Trip Africa • Visual Journey
-                  </span>
-                  <h3 className="mt-3 font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white">{photo.name}</h3>
-                  <p className="mt-2 max-w-xl text-xs sm:text-sm text-slate-200">Discover the beauty, wildlife and spirit of Africa with journeys thoughtfully planned by our local team.</p>
-                </div>
+
               </div>
             ))}
 
@@ -729,12 +722,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 />
               ))}
             </div>
-            <span className="text-[11px] sm:text-xs font-semibold tracking-wide text-[#e4c681]">
-              {String(galleryIndex + 1).padStart(2, '0')} / {String(TANZANIA_GALLERY.length).padStart(2, '0')} • {TANZANIA_GALLERY[galleryIndex].name}
+            <span className="text-[11px] sm:text-xs font-semibold tracking-wide text-[#e4c681]" aria-live="polite">
+              {String(galleryIndex + 1).padStart(2, '0')} / {String(TANZANIA_GALLERY.length).padStart(2, '0')}
             </span>
           </div>
         </div>
-        <p className="text-center text-[11px] text-slate-500">Selected photographs hosted by Wikimedia Commons. Image authorship and licence details are available on each original file page.</p>
         <div className="rounded-2xl border border-[#c5a059]/40 bg-[#0e3022] px-6 py-7 text-center text-white shadow-xl">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#e4c681]">Your adventure is one message away</p>
           <h3 className="mt-2 font-serif text-2xl sm:text-3xl font-bold">Seen a place you would love to visit?</h3>
