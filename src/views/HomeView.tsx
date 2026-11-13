@@ -73,9 +73,6 @@ const AI_STUDIO_GALLERY = [
     "name": "file 00000000cb788211a4d526fe730dd4d1",
     "url": "/assets/aistudio/file_00000000cb788211a4d526fe730dd4d1.png"
   },
-  {
-    "name": "file 00000000dbd88208b442a29bfa862e56",
-  }
 ];
 
 // Vite bundles every image stored in src/assets/images into the production build.
