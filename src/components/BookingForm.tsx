@@ -238,27 +238,17 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                   <label className="text-xs font-semibold text-[#dcd4c7]">
                     Adults (12+ yrs):
                   </label>
-                  <input
-                    type="number"
-                    type="text"
-                    inputMode="numeric"
-                    pattern="[0-9]*"
-                    maxLength={2}
+                  <select
                     required
                     value={adults}
-                    placeholder="0"
-                    onChange={(e) => {
-                      const raw = e.target.value;
-                      if (raw === '') {
-                        setAdults('');
-                        return;
-                      }
-                      if (!/^\\d*$/.test(raw)) return;
-                      const nextAdults = raw === '' ? '' : String(Math.min(parseInt(raw, 10), 30 - children));
-                      setAdults(nextAdults);
-                    }}
+                    onChange={(e) => setAdults(e.target.value)}
                     className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
-                  />
+                  >
+                    <option value="" disabled>Select adults</option>
+                    {Array.from({ length: 30 - children }, (_, index) => index + 1).map((count) => (
+                      <option key={count} value={count}>{count}</option>
+                    ))}
+                  </select>
                 </div>
 
                 <div className="space-y-1.5">
