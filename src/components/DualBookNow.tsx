@@ -40,7 +40,8 @@ export const DualBookNow: React.FC<DualBookNowProps> = ({
       `Thank you!\n`
   );
 
-  const mailtoHref = `mailto:${COMPANY_DETAILS.bookingEmail}?subject=${mailSubject}&body=${mailBody}`;
+  const bookingRecipients = 'info@ourtripafrica.com,ourtripafricaa@gmail.com';
+  const mailtoHref = `mailto:${bookingRecipients}?subject=${mailSubject}&body=${mailBody}`;
 
   const sizeClasses = {
     sm: 'px-3 py-1.5 text-xs',
