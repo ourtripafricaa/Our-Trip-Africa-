@@ -32,20 +32,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   const estimatedTotal = unitPrice * adultCount + (unitPrice * 0.7 * children);
 
 
-  const handleSubmitEmail = (e: React.FormEvent) => {
-    e.preventDefault();
-    const form = e.currentTarget as HTMLFormElement;
-    if (!form.reportValidity()) return;
-    if (adultCount < 1) {
-      window.alert('Please enter the number of adults travelling.');
-      return;
-    }
-    if (adultCount + children > 30) {
-      window.alert('The maximum group size is 30 travellers, including adults and children.');
-      return;
-    }
-
-    const recipients = 'info@ourtripafrica.com,ourtripafricaa@gmail.com';
+  const buildBookingMailto = () => {
     const subject = `New booking enquiry - ${currentPkg.title}`;
     const body = [
       'NEW BOOKING ENQUIRY - OUR TRIP AFRICA',
@@ -66,9 +53,23 @@ export const BookingForm: React.FC<BookingFormProps> = ({
       `Special requests: ${specialRequests.trim() || 'None'}`,
       '',
       'Please contact the guest to confirm availability and provide a quotation.'
-    ].join('\n');
+    ].join('\\n');
 
-    window.location.href = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    return `mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const handleEmailButtonClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const form = e.currentTarget.closest('form');
+    if (form && !form.reportValidity()) {
+      e.preventDefault();
+      return;
+    }
+    if (adultCount < 1 || adultCount + children > 30) {
+      e.preventDefault();
+      window.alert(adultCount < 1
+        ? 'Please select at least one adult.'
+        : 'The maximum group size is 30 travellers, including adults and children.');
+    }
   };
 
   const handleSendToWhatsApp = () => {
@@ -156,7 +157,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmitEmail} className="space-y-6">
+            <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
               {/* Package & Tier Selection */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
@@ -371,13 +372,14 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                   <span>BOOK NOW (WhatsApp)</span>
                 </button>
 
-                <button
-                  type="submit"
-                  className="w-full sm:flex-1 disabled:opacity-60 py-3 px-4 rounded-xl bg-[#c5a059] hover:bg-[#d6b36d] text-[#081a13] font-bold flex items-center justify-center gap-2 text-xs sm:text-sm shadow-md cursor-pointer transition-colors"
+                <a
+                  href={buildBookingMailto()}
+                  onClick={handleEmailButtonClick}
+                  className="w-full sm:flex-1 py-3 px-4 rounded-xl bg-[#c5a059] hover:bg-[#d6b36d] text-[#081a13] font-bold flex items-center justify-center gap-2 text-xs sm:text-sm shadow-md cursor-pointer transition-colors"
                 >
                   <Mail size={16} />
                   <span>SEND BOOKING REQUEST</span>
-                </button>
+                </a>
               </div>
 
               {/* Secure Payment Gateway Information */}
