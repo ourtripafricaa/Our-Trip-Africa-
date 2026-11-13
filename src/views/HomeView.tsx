@@ -38,10 +38,6 @@ const AI_STUDIO_GALLERY = [
     "url": "/assets/aistudio/1794279343986.jpg"
   },
   {
-    "name": "1794282016990",
-    "url": "/assets/aistudio/1794282016990.jpg"
-  },
-  {
     "name": "20260321 120937 f48b28a3",
     "url": "/assets/aistudio/20260321_120937_f48b28a3.jpg"
   },
