@@ -255,17 +255,15 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                   <label className="text-xs font-semibold text-[#dcd4c7]">
                     Children (under 12):
                   </label>
-                  <input
-                    type="number"
-                    min={0}
-                    max={30 - adultCount}
+                  <select
                     value={children}
-                    onChange={(e) => {
-                      const nextChildren = Math.max(0, parseInt(e.target.value) || 0);
-                      setChildren(Math.min(nextChildren, 30 - adultCount));
-                    }}
+                    onChange={(e) => setChildren(Number(e.target.value))}
                     className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
-                  />
+                  >
+                    {Array.from({ length: 31 - adultCount }, (_, index) => index).map((count) => (
+                      <option key={count} value={count}>{count}</option>
+                    ))}
+                  </select>
                 </div>
               </div>
 
