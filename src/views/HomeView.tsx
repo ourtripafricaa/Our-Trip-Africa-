@@ -758,6 +758,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </button>
           </div>
         </div>
+      </section>
+
       {/* Personalised safari planning and FAQ - placed immediately below the image slideshow */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="relative overflow-hidden rounded-[2rem] border-2 border-[#c5a059] bg-[#073b29] shadow-xl">
