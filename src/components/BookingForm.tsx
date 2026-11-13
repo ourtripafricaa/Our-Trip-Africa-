@@ -20,7 +20,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   const [phone, setPhone] = useState('');
   const [country, setCountry] = useState('');
   const [travelDate, setTravelDate] = useState('');
-  const [adults, setAdults] = useState('0');
+  const [adults, setAdults] = useState('');
   const [children, setChildren] = useState(0);
   const [specialRequests, setSpecialRequests] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -28,7 +28,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
 
   const currentPkg = SAFARI_PACKAGES.find((p) => p.slug === selectedPackageSlug) || SAFARI_PACKAGES[0];
   const unitPrice = currentPkg.tierPricing[selectedTier] || currentPkg.basePrice;
-  const adultCount = Number(adults) || 0;
+  const adultCount = adults === '' ? 0 : Number(adults);
   const estimatedTotal = unitPrice * adultCount + (unitPrice * 0.7 * children);
 
   const [submitError, setSubmitError] = useState('');
@@ -240,19 +240,22 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                   </label>
                   <input
                     type="number"
-                    min={0}
-                    max={30 - children}
+                    type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    maxLength={2}
                     required
                     value={adults}
-                    placeholder="Enter number of adults"
+                    placeholder="0"
                     onChange={(e) => {
                       const raw = e.target.value;
                       if (raw === '') {
                         setAdults('');
                         return;
                       }
-                      const nextAdults = Math.max(0, parseInt(raw, 10) || 0);
-                      setAdults(String(Math.min(nextAdults, 30 - children)));
+                      if (!/^\\d*$/.test(raw)) return;
+                      const nextAdults = raw === '' ? '' : String(Math.min(parseInt(raw, 10), 30 - children));
+                      setAdults(nextAdults);
                     }}
                     className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
                   />
