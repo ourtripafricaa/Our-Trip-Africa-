@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { collection, doc, serverTimestamp, writeBatch } from 'firebase/firestore';
-import { db } from '../lib/firebase';
 import { X, Calendar, Users, Mail, Phone, MapPin, ShieldCheck, CheckCircle2, MessageSquare, CreditCard, Lock, Sparkles } from 'lucide-react';
 import { COMPANY_DETAILS, SAFARI_PACKAGES, SafariPackage } from '../data/safariData';
 
@@ -35,71 +33,39 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   const [submitError, setSubmitError] = useState('');
   const [saving, setSaving] = useState(false);
 
-  const handleSubmitEmail = async (e: React.FormEvent) => {
+  const handleSubmitEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!fullName || !email || saving) return;
+    const form = e.currentTarget as HTMLFormElement;
+    if (!form.reportValidity()) return;
     if (adults + children > 30) {
-      setSubmitError('The maximum group size is 30 travellers, including adults and children.');
+      window.alert('The maximum group size is 30 travellers, including adults and children.');
       return;
     }
 
-    setSaving(true);
-    setSubmitError('');
-    const ref = 'OTA-' + Math.floor(100000 + Math.random() * 900000);
-    try {
-      const bookingDoc = doc(collection(db, 'bookings'));
-      const batch = writeBatch(db);
-      batch.set(bookingDoc, {
-        bookingRef: ref,
-        packageSlug: currentPkg.slug,
-        packageTitle: currentPkg.title,
-        destination: currentPkg.destination,
-        accommodationTier: selectedTier,
-        unitPrice,
-        estimatedTotal: Math.round(estimatedTotal),
-        currency: 'USD',
-        travelDate: travelDate || '',
-        adults,
-        children,
-        fullName: fullName.trim(),
-        email: email.trim().toLowerCase(),
-        phone: phone.trim(),
-        country: country.trim(),
-        specialRequests: specialRequests.trim(),
-        status: 'new',
-        createdAt: serverTimestamp()
-      });
-      const mailDoc = doc(collection(db, 'mail'));
-      batch.set(mailDoc, {
-        bookingId: bookingDoc.id,
-        bookingRef: ref,
-        to: 'info@ourtripafrica.com',
-        message: {
-          subject: `New booking enquiry ${ref} - ${currentPkg.title}`,
-          text: `A new booking enquiry has arrived.\\nReference: ${ref}\\nPackage: ${currentPkg.title}\\nGuest: ${fullName}\\nEmail: ${email}\\nPhone: ${phone}\\nTravel date: ${travelDate || 'Flexible'}\\nGroup: ${adults} adults, ${children} children.\\nPlease sign in to the Admin Dashboard to review this enquiry.`
-        },
-        createdAt: serverTimestamp()
-      });
-      const guestMailDoc = doc(collection(db, 'mail'));
-      batch.set(guestMailDoc, {
-        bookingId: bookingDoc.id,
-        bookingRef: ref,
-        to: email.trim().toLowerCase(),
-        message: {
-          subject: `We received your Our Trip Africa enquiry - ${ref}`,
-          text: `Dear ${fullName},\\n\\nThank you for contacting Our Trip Africa. We have received your enquiry for ${currentPkg.title}.\\nReference: ${ref}\\nTravel date: ${travelDate || 'Flexible'}\\nGroup: ${adults} adults, ${children} children.\\n\\nOur Arusha team will review your request and contact you with availability and a tailored quotation. No payment has been taken.\\n\\nFor urgent assistance, WhatsApp +255624661830.\\nOur Trip Africa\\ninfo@ourtripafrica.com`
-        },
-        createdAt: serverTimestamp()
-      });
-      await batch.commit();
-      setBookingRef(ref);
-      setSubmitted(true);
-    } catch (error) {
-      console.error('Booking request could not be saved:', error);
-      setSubmitError('Your request could not be saved just now. Please use the WhatsApp button to send it directly to our team.');
-    } finally {
-      setSaving(false);
-    }
+    const recipients = 'info@ourtripafrica.com,ourtripafricaa@gmail.com';
+    const subject = `New booking enquiry - ${currentPkg.title}`;
+    const body = [
+      'NEW BOOKING ENQUIRY - OUR TRIP AFRICA',
+      '',
+      `Package: ${currentPkg.title}`,
+      `Destination: ${currentPkg.destination}`,
+      `Accommodation: ${selectedTier.toUpperCase()}`,
+      `Price per adult: ${unitPrice} USD`,
+      `Estimated total: ${Math.round(estimatedTotal)} USD`,
+      `Travel date: ${travelDate || 'Flexible'}`,
+      `Travellers: ${adults} adults, ${children} children`,
+      '',
+      'GUEST DETAILS',
+      `Full name: ${fullName.trim()}`,
+      `Guest email: ${email.trim()}`,
+      `WhatsApp / phone: ${phone.trim() || 'Not provided'}`,
+      `Country: ${country.trim() || 'Not provided'}`,
+      `Special requests: ${specialRequests.trim() || 'None'}`,
+      '',
+      'Please contact the guest to confirm availability and provide a quotation.'
+    ].join('\\n');
+
+    window.location.href = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const handleSendToWhatsApp = () => {
