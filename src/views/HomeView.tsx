@@ -99,7 +99,33 @@ const SOURCE_IMAGE_GALLERY = Object.entries(
   url: url as string,
 }));
 
-const TANZANIA_GALLERY = [...AI_STUDIO_GALLERY, ...SOURCE_IMAGE_GALLERY];
+const PUBLIC_UPLOAD_GALLERY = [
+  { name: '1776450559885.jpg', url: '/assets/public/images/1776450559885.jpg' },
+  { name: '1777597958709.jpg', url: '/assets/public/images/1777597958709.jpg' },
+  { name: '1778440939292.jpg', url: '/assets/public/images/1778440939292.jpg' },
+  { name: '1778440945464.jpg', url: '/assets/public/images/1778440945464.jpg' },
+  { name: '1778441004119.jpg', url: '/assets/public/images/1778441004119.jpg' },
+  { name: '1787925953415.jpg', url: '/assets/public/images/1787925953415.jpg' },
+  { name: '1792074067466.jpg', url: '/assets/public/images/1792074067466.jpg' },
+  { name: '1792217009223.jpg', url: '/assets/public/images/1792217009223.jpg' },
+  { name: '1792255469107.jpg', url: '/assets/public/images/1792255469107.jpg' },
+  { name: '20260814_200001.jpg', url: '/assets/public/images/20260814_200001.jpg' },
+  { name: '4V8A2900-400x284.jpeg', url: '/assets/public/images/4V8A2900-400x284.jpeg' },
+  { name: '4V8A2915-400x284.jpeg', url: '/assets/public/images/4V8A2915-400x284.jpeg' },
+  { name: 'Screenshot_20260514_170622_ChatGPT.jpg', url: '/assets/public/images/Screenshot_20260514_170622_ChatGPT.jpg' },
+  { name: 'Screenshot_20260527_120430_ChatGPT.jpg', url: '/assets/public/images/Screenshot_20260527_120430_ChatGPT.jpg' },
+  { name: 'a6508815e3e2e4ac95f3fc3365f3ea86.jpg', url: '/assets/public/images/a6508815e3e2e4ac95f3fc3365f3ea86.jpg' },
+  { name: 'file_000000000a648211aa89e69aaa859d6c.png', url: '/assets/public/images/file_000000000a648211aa89e69aaa859d6c.png' },
+  { name: 'file_000000009ab482118f89eda7f274ab91.png', url: '/assets/public/images/file_000000009ab482118f89eda7f274ab91.png' },
+  { name: 'file_00000000a06082078ca3970dd7491979.png', url: '/assets/public/images/file_00000000a06082078ca3970dd7491979.png' },
+  { name: 'file_00000000b14c820890270f322f26e7cc.png', url: '/assets/public/images/file_00000000b14c820890270f322f26e7cc.png' },
+  { name: 'file_00000000c7008208b8deba0e733d2332.png', url: '/assets/public/images/file_00000000c7008208b8deba0e733d2332.png' },
+  { name: 'file_00000000dbd88208b442a29bfa862e56.png', url: '/assets/public/images/file_00000000dbd88208b442a29bfa862e56.png' },
+  { name: 'file_00000000ee448208bdfc9b127a2bd58a.png', url: '/assets/public/images/file_00000000ee448208bdfc9b127a2bd58a.png' },
+];
+
+const HERO_SLIDES = [...SOURCE_IMAGE_GALLERY, ...PUBLIC_UPLOAD_GALLERY];
+const TANZANIA_GALLERY = [...AI_STUDIO_GALLERY, ...SOURCE_IMAGE_GALLERY, ...PUBLIC_UPLOAD_GALLERY];
 
 export const HomeView: React.FC<HomeViewProps> = ({
   onNavigate,
@@ -114,9 +140,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
   const [heroSlideIndex, setHeroSlideIndex] = useState(0);
 
   useEffect(() => {
-    if (SOURCE_IMAGE_GALLERY.length < 2) return;
+    if (HERO_SLIDES.length < 2) return;
     const heroTimer = window.setInterval(() => {
-      setHeroSlideIndex((current) => (current + 1) % SOURCE_IMAGE_GALLERY.length);
+      setHeroSlideIndex((current) => (current + 1) % HERO_SLIDES.length);
     }, 5000);
     return () => window.clearInterval(heroTimer);
   }, []);
@@ -159,7 +185,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Deep Emerald Scrim */}
         <div className="absolute inset-0 z-0">
-          {SOURCE_IMAGE_GALLERY.length > 0 ? SOURCE_IMAGE_GALLERY.map((photo, index) => (
+          {HERO_SLIDES.length > 0 ? HERO_SLIDES.map((photo, index) => (
             <img
               key={photo.name}
               src={photo.url}
