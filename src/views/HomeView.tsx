@@ -75,7 +75,6 @@ const AI_STUDIO_GALLERY = [
   },
   {
     "name": "file 00000000dbd88208b442a29bfa862e56",
-    "url": "/assets/aistudio/file_00000000dbd88208b442a29bfa862e56.png"
   }
 ];
 
@@ -92,27 +91,12 @@ const SOURCE_IMAGE_GALLERY = Object.entries(
 }));
 
 const PUBLIC_UPLOAD_GALLERY = [
-  { name: '1776450559885.jpg', url: '/assets/public/images/1776450559885.jpg' },
-  { name: '1777597958709.jpg', url: '/assets/public/images/1777597958709.jpg' },
-  { name: '1778440939292.jpg', url: '/assets/public/images/1778440939292.jpg' },
-  { name: '1778440945464.jpg', url: '/assets/public/images/1778440945464.jpg' },
-  { name: '1778441004119.jpg', url: '/assets/public/images/1778441004119.jpg' },
-  { name: '1787925953415.jpg', url: '/assets/public/images/1787925953415.jpg' },
-  { name: '1792074067466.jpg', url: '/assets/public/images/1792074067466.jpg' },
   { name: '1792217009223.jpg', url: '/assets/public/images/1792217009223.jpg' },
-  { name: '1792255469107.jpg', url: '/assets/public/images/1792255469107.jpg' },
   { name: '20260814_200001.jpg', url: '/assets/public/images/20260814_200001.jpg' },
-  { name: '4V8A2900-400x284.jpeg', url: '/assets/public/images/4V8A2900-400x284.jpeg' },
-  { name: '4V8A2915-400x284.jpeg', url: '/assets/public/images/4V8A2915-400x284.jpeg' },
   { name: 'Screenshot_20260514_170622_ChatGPT.jpg', url: '/assets/public/images/Screenshot_20260514_170622_ChatGPT.jpg' },
   { name: 'Screenshot_20260527_120430_ChatGPT.jpg', url: '/assets/public/images/Screenshot_20260527_120430_ChatGPT.jpg' },
-  { name: 'a6508815e3e2e4ac95f3fc3365f3ea86.jpg', url: '/assets/public/images/a6508815e3e2e4ac95f3fc3365f3ea86.jpg' },
-  { name: 'file_000000000a648211aa89e69aaa859d6c.png', url: '/assets/public/images/file_000000000a648211aa89e69aaa859d6c.png' },
   { name: 'file_000000009ab482118f89eda7f274ab91.png', url: '/assets/public/images/file_000000009ab482118f89eda7f274ab91.png' },
-  { name: 'file_00000000a06082078ca3970dd7491979.png', url: '/assets/public/images/file_00000000a06082078ca3970dd7491979.png' },
-  { name: 'file_00000000b14c820890270f322f26e7cc.png', url: '/assets/public/images/file_00000000b14c820890270f322f26e7cc.png' },
   { name: 'file_00000000c7008208b8deba0e733d2332.png', url: '/assets/public/images/file_00000000c7008208b8deba0e733d2332.png' },
-  { name: 'file_00000000dbd88208b442a29bfa862e56.png', url: '/assets/public/images/file_00000000dbd88208b442a29bfa862e56.png' },
   { name: 'file_00000000ee448208bdfc9b127a2bd58a.png', url: '/assets/public/images/file_00000000ee448208bdfc9b127a2bd58a.png' },
 ];
 
