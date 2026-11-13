@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { X, Calendar, Users, Mail, Phone, MapPin, ShieldCheck, CheckCircle2, MessageSquare, CreditCard, Lock, Sparkles } from 'lucide-react';
+import React from 'react';
+import { X, Mail, MessageSquare, ShieldCheck, Sparkles } from 'lucide-react';
 import { COMPANY_DETAILS, SAFARI_PACKAGES, SafariPackage } from '../data/safariData';
 
 interface BookingFormProps {
@@ -7,393 +7,97 @@ interface BookingFormProps {
   onClose: () => void;
 }
 
-export const BookingForm: React.FC<BookingFormProps> = ({
-  initialPackage,
-  onClose,
-}) => {
-  const [selectedPackageSlug, setSelectedPackageSlug] = useState<string>(
-    initialPackage ? initialPackage.slug : SAFARI_PACKAGES[0].slug
-  );
-  const [selectedTier, setSelectedTier] = useState<'budget' | 'midrange' | 'luxury'>('midrange');
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [country, setCountry] = useState('');
-  const [travelDate, setTravelDate] = useState('');
-  const [adults, setAdults] = useState('');
-  const [children, setChildren] = useState(0);
-  const [specialRequests, setSpecialRequests] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-  const [bookingRef, setBookingRef] = useState('');
+export const BookingForm: React.FC<BookingFormProps> = ({ initialPackage, onClose }) => {
+  const currentPackage = initialPackage || SAFARI_PACKAGES[0];
 
-  const currentPkg = SAFARI_PACKAGES.find((p) => p.slug === selectedPackageSlug) || SAFARI_PACKAGES[0];
-  const unitPrice = currentPkg.tierPricing[selectedTier] || currentPkg.basePrice;
-  const adultCount = adults === '' ? 0 : Number(adults);
-  const estimatedTotal = unitPrice * adultCount + (unitPrice * 0.7 * children);
+  const emailSubject = `Safari booking enquiry - ${currentPackage.title}`;
+  const emailBody = [
+    'Hello Our Trip Africa team,',
+    '',
+    'I am interested in booking the following safari package:',
+    `Package: ${currentPackage.title}`,
+    `Destination: ${currentPackage.destination}`,
+    '',
+    'Please share availability, the full itinerary, pricing and booking instructions.',
+    '',
+    'My details:',
+    'Full name:',
+    'Email address:',
+    'WhatsApp / phone:',
+    'Preferred travel date:',
+    'Number of travellers:',
+    '',
+    'Thank you.'
+  ].join('\n');
+  const emailLink = `mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
-
-  const buildBookingMailto = () => {
-    const subject = `New booking enquiry - ${currentPkg.title}`;
-    const body = [
-      'NEW BOOKING ENQUIRY - OUR TRIP AFRICA',
-      '',
-      `Package: ${currentPkg.title}`,
-      `Destination: ${currentPkg.destination}`,
-      `Accommodation: ${selectedTier.toUpperCase()}`,
-      `Price per adult: ${unitPrice} USD`,
-      `Estimated total: ${Math.round(estimatedTotal)} USD`,
-      `Travel date: ${travelDate || 'Flexible'}`,
-      `Travellers: ${adultCount} adults, ${children} children`,
-      '',
-      'GUEST DETAILS',
-      `Full name: ${fullName.trim()}`,
-      `Guest email: ${email.trim()}`,
-      `WhatsApp / phone: ${phone.trim() || 'Not provided'}`,
-      `Country: ${country.trim() || 'Not provided'}`,
-      `Special requests: ${specialRequests.trim() || 'None'}`,
-      '',
-      'Please contact the guest to confirm availability and provide a quotation.'
-    ].join('\\n');
-
-    return `mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
-
-  const handleEmailButtonClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const form = e.currentTarget.closest('form');
-    if (form && !form.reportValidity()) {
-      e.preventDefault();
-      return;
-    }
-    if (adultCount < 1 || adultCount + children > 30) {
-      e.preventDefault();
-      window.alert(adultCount < 1
-        ? 'Please select at least one adult.'
-        : 'The maximum group size is 30 travellers, including adults and children.');
-    }
-  };
-
-  const handleSendToWhatsApp = () => {
-    const text = `Hi Our Trip Africa! I would like to book a safari expedition:\n\n` +
-      `• Package: ${currentPkg.title}\n` +
-      `• Tier: ${selectedTier.toUpperCase()} (${unitPrice} USD/person)\n` +
-      `• Travel Date: ${travelDate || 'Flexible / In Discussion'}\n` +
-      `• Group: ${adultCount || 'Not specified'} Adults, ${children} Children\n` +
-      `• Estimated Total: ~$${Math.round(estimatedTotal).toLocaleString()} USD\n` +
-      `• Name: ${fullName || 'Guest'}\n` +
-      `• Email: ${email || 'Provided in chat'}\n` +
-      `• Country: ${country || 'International'}\n` +
-      `• Special Requests: ${specialRequests || 'None'}\n\n` +
-      `Please confirm lodge availability and send pro-forma booking voucher. Asante!`;
-
-    window.open(`https://wa.me/${COMPANY_DETAILS.whatsappRaw}?text=${encodeURIComponent(text)}`, '_blank');
-  };
+  const whatsappMessage = [
+    'Hello Our Trip Africa team! I would like to enquire about booking:',
+    `Package: ${currentPackage.title}`,
+    `Destination: ${currentPackage.destination}`,
+    '',
+    'Please share availability, itinerary, pricing and booking instructions.',
+    'My name:',
+    'Preferred travel date:',
+    'Number of travellers:'
+  ].join('\n');
+  const whatsappLink = `https://wa.me/${COMPANY_DETAILS.whatsappRaw}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-fadeIn">
-      <div className="relative w-full max-w-3xl bg-[#092218] border border-[#c5a059]/40 rounded-3xl shadow-2xl overflow-hidden my-6 flex flex-col max-h-[92vh]">
-        {/* Header */}
-        <div className="bg-[#081a13]/95 backdrop-blur-md border-b border-[#1a4a35] px-6 py-4 flex items-center justify-between">
+    <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/85 p-4 backdrop-blur-md">
+      <div className="relative my-6 w-full max-w-xl overflow-hidden rounded-3xl border border-[#c5a059]/40 bg-[#092218] shadow-2xl">
+        <div className="flex items-center justify-between border-b border-[#1a4a35] bg-[#081a13]/95 px-6 py-5">
           <div className="flex items-center gap-3">
-            <span className="w-8 h-8 rounded-full bg-[#1a4a35] text-[#c5a059] flex items-center justify-center">
-              <Sparkles size={16} />
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1a4a35] text-[#c5a059]">
+              <Sparkles size={17} />
             </span>
             <div>
-              <h2 className="font-serif text-lg font-bold text-white">
-                Book Your Safari with Our Trip Africa
-              </h2>
-              <p className="text-[11px] text-[#c5a059]">Direct Booking & Tailor-Made Expeditions Desk</p>
+              <h2 className="font-serif text-lg font-bold text-white">Book Your Safari</h2>
+              <p className="text-xs text-[#c5a059]">Contact Our Trip Africa directly</p>
             </div>
           </div>
-
-          <button
-            onClick={onClose}
-            aria-label="Close form"
-            className="p-1.5 rounded-full text-[#a49a88] hover:text-white hover:bg-[#1a4a35] transition-colors cursor-pointer"
-          >
+          <button onClick={onClose} aria-label="Close booking options" className="rounded-full p-2 text-[#a49a88] transition-colors hover:bg-[#1a4a35] hover:text-white">
             <X size={20} />
           </button>
         </div>
 
-        {/* Content Body */}
-        <div className="overflow-y-auto p-6 sm:p-8 flex-1">
-          {submitted ? (
-            <div className="text-center py-10 space-y-6">
-              <div className="w-16 h-16 rounded-full bg-[#25D366]/20 text-[#25D366] flex items-center justify-center mx-auto border-2 border-[#25D366]">
-                <CheckCircle2 size={36} />
-              </div>
+        <div className="space-y-6 p-6 sm:p-8">
+          <div className="rounded-2xl border border-[#1a4a35] bg-[#081a13] p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[#c5a059]">Selected package</p>
+            <h3 className="mt-1 text-lg font-bold text-white">{currentPackage.title}</h3>
+            <p className="mt-1 text-sm text-[#dcd4c7]">{currentPackage.destination}</p>
+          </div>
 
-              <div className="space-y-2">
-                <span className="text-xs font-semibold text-[#c5a059] uppercase tracking-wider">
-                  Enquiry Received • Reference: {bookingRef}
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
-                  Asante Sana, {fullName}!
-                </h3>
-                <p className="text-sm text-[#dcd4c7] max-w-lg mx-auto">
-                  Our Founder and Owner <strong className="text-[#c5a059]">Mr. James Felix</strong> and the Arusha planning team have received your request for{' '}
-                  <strong className="text-white">{currentPkg.title}</strong>. We will review park availability and send your detailed customized quotation and day-by-day confirmation to <strong className="text-[#c5a059]">{email}</strong> within 4 hours.
-                </p>
-              </div>
+          <div className="text-center">
+            <h3 className="font-serif text-2xl font-bold text-white">How would you like to contact us?</h3>
+            <p className="mt-2 text-sm leading-relaxed text-[#dcd4c7]">
+              No booking form is needed. Choose email or WhatsApp and send your enquiry directly to our team.
+            </p>
+          </div>
 
-              {/* Instant WhatsApp Follow-up */}
-              <div className="p-6 rounded-2xl bg-[#0e271e] border border-[#1a4a35] max-w-md mx-auto space-y-3">
-                <p className="text-xs text-[#faf7f2] font-semibold">
-                  Want an instant reply right now?
-                </p>
-                <button
-                  onClick={handleSendToWhatsApp}
-                  className="w-full py-3 rounded-xl bg-[#25D366] hover:bg-[#1faa4f] text-white font-bold flex items-center justify-center gap-2 text-sm shadow cursor-pointer transition-colors"
-                >
-                  <MessageSquare size={16} />
-                  <span>Send Request to WhatsApp (+255624661830)</span>
-                </button>
-              </div>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <a
+              href={emailLink}
+              className="flex min-h-16 items-center justify-center gap-3 rounded-xl bg-[#c5a059] px-4 py-4 text-center text-sm font-bold text-[#081a13] shadow-md transition-colors hover:bg-[#d6b36d]"
+            >
+              <Mail size={20} />
+              <span>EMAIL OUR TEAM</span>
+            </a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-h-16 items-center justify-center gap-3 rounded-xl bg-[#25D366] px-4 py-4 text-center text-sm font-bold text-white shadow-md transition-colors hover:bg-[#1faa4f]"
+            >
+              <MessageSquare size={20} />
+              <span>BOOK VIA WHATSAPP</span>
+            </a>
+          </div>
 
-              <button
-                onClick={onClose}
-                className="px-6 py-2.5 rounded-xl bg-[#1a4a35] text-white text-xs font-semibold hover:bg-[#236347] transition-colors cursor-pointer"
-              >
-                Done
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
-              {/* Package & Tier Selection */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-[#dcd4c7]">
-                    Selected Safari Package:
-                  </label>
-                  <select
-                    value={selectedPackageSlug}
-                    onChange={(e) => setSelectedPackageSlug(e.target.value)}
-                    className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-3 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
-                  >
-                    {SAFARI_PACKAGES.map((pkg) => (
-                      <option key={pkg.slug} value={pkg.slug}>
-                        {pkg.title} ({pkg.country} - {pkg.durationLabel})
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-[#dcd4c7]">
-                    Accommodation Tier:
-                  </label>
-                  <div className="grid grid-cols-3 gap-1 bg-[#081a13] p-1 rounded-xl border border-[#1a4a35]">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedTier('budget')}
-                      className={`py-2 text-xs font-medium rounded-lg transition-all cursor-pointer ${
-                        selectedTier === 'budget'
-                          ? 'bg-[#1a4a35] text-[#c5a059] font-bold shadow-sm'
-                          : 'text-[#a49a88] hover:text-white'
-                      }`}
-                    >
-                      Budget (${currentPkg.tierPricing.budget})
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setSelectedTier('midrange')}
-                      className={`py-2 text-xs font-medium rounded-lg transition-all cursor-pointer ${
-                        selectedTier === 'midrange'
-                          ? 'bg-[#1a4a35] text-[#c5a059] font-bold shadow-sm'
-                          : 'text-[#a49a88] hover:text-white'
-                      }`}
-                    >
-                      Mid-Range (${currentPkg.tierPricing.midrange})
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setSelectedTier('luxury')}
-                      className={`py-2 text-xs font-medium rounded-lg transition-all cursor-pointer ${
-                        selectedTier === 'luxury'
-                          ? 'bg-[#1a4a35] text-[#c5a059] font-bold shadow-sm'
-                          : 'text-[#a49a88] hover:text-white'
-                      }`}
-                    >
-                      Luxury (${currentPkg.tierPricing.luxury})
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Travel Dates & Guests */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-[#dcd4c7]">
-                    Preferred Date / Month:
-                  </label>
-                  <input
-                    type="date"
-                    value={travelDate}
-                    onChange={(e) => setTravelDate(e.target.value)}
-                    className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-[#dcd4c7]">
-                    Adults (12+ yrs):
-                  </label>
-                  <select
-                    required
-                    value={adults}
-                    onChange={(e) => setAdults(e.target.value)}
-                    className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
-                  >
-                    <option value="" disabled>Select adults</option>
-                    {Array.from({ length: 30 - children }, (_, index) => index + 1).map((count) => (
-                      <option key={count} value={count}>{count}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-[#dcd4c7]">
-                    Children (under 12):
-                  </label>
-                  <select
-                    value={children}
-                    onChange={(e) => setChildren(Number(e.target.value))}
-                    className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
-                  >
-                    {Array.from({ length: 31 - adultCount }, (_, index) => index).map((count) => (
-                      <option key={count} value={count}>{count}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              <p className="text-[11px] text-[#c5a059] -mt-4">Maximum group size: 30 travellers in total, including adults and children.</p>
-
-              {/* Guest Contact Details */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-[#dcd4c7]">
-                    Your Full Name: <span className="text-red-400">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    placeholder="e.g. Sarah Jenkins"
-                    className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-[#dcd4c7]">
-                    Email Address: <span className="text-red-400">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="e.g. sarah@example.com"
-                    className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-[#dcd4c7]">
-                    WhatsApp / Phone Number:
-                  </label>
-                  <input
-                    type="tel"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="e.g. +44 7911 123456"
-                    className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-semibold text-[#dcd4c7]">
-                    Country of Residence:
-                  </label>
-                  <input
-                    type="text"
-                    value={country}
-                    onChange={(e) => setCountry(e.target.value)}
-                    placeholder="e.g. United Kingdom, USA, Germany"
-                    className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
-                  />
-                </div>
-              </div>
-
-              {/* Special Requests */}
-              <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-[#dcd4c7]">
-                  Special Wishes or Dietary Requests:
-                </label>
-                <textarea
-                  rows={2}
-                  value={specialRequests}
-                  onChange={(e) => setSpecialRequests(e.target.value)}
-                  placeholder="e.g. Vegetarian meals, honeymoon surprise, specific photo requests, flight arrival times..."
-                  className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
-                />
-              </div>
-
-              {/* Estimated Pricing Card */}
-              <div className="p-4 rounded-2xl bg-[#081a13] border border-[#1a4a35] flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div>
-                  <span className="text-[10px] text-[#a49a88] uppercase tracking-wider block">
-                    Estimated Package Total ({adults || '0'} Adults{children > 0 ? `, ${children} Children` : ''})
-                  </span>
-                  <div className="flex items-baseline gap-2 mt-0.5">
-                    <span className="text-2xl font-bold font-mono text-[#c5a059] tabular-nums">
-                      ${Math.round(estimatedTotal).toLocaleString()} USD
-                    </span>
-                    <span className="text-xs text-[#a49a88]">
-                      (${unitPrice.toLocaleString()} / adult)
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-1.5 text-xs text-[#a49a88]">
-                  <ShieldCheck size={16} className="text-[#c5a059]" />
-                  <span>30% Deposit to secure park permits & lodges</span>
-                </div>
-              </div>
-
-              {/* Dual Booking Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
-                <button
-                  type="button"
-                  onClick={handleSendToWhatsApp}
-                  className="w-full sm:flex-1 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#1faa4f] text-white font-bold flex items-center justify-center gap-2 text-xs sm:text-sm shadow-md cursor-pointer transition-colors"
-                >
-                  <MessageSquare size={16} />
-                  <span>BOOK NOW (WhatsApp)</span>
-                </button>
-
-                <a
-                  href={buildBookingMailto()}
-                  onClick={handleEmailButtonClick}
-                  className="w-full sm:flex-1 py-3 px-4 rounded-xl bg-[#c5a059] hover:bg-[#d6b36d] text-[#081a13] font-bold flex items-center justify-center gap-2 text-xs sm:text-sm shadow-md cursor-pointer transition-colors"
-                >
-                  <Mail size={16} />
-                  <span>SEND BOOKING REQUEST</span>
-                </a>
-              </div>
-
-              {/* Secure Payment Gateway Information */}
-              <div className="pt-4 border-t border-[#1a4a35] space-y-2 text-xs text-[#a49a88]">
-                <div className="flex items-center gap-2 text-white font-medium">
-                  <Lock size={13} className="text-[#c5a059]" />
-                  <span>Booking Request & Payment Safety:</span>
-                </div>
-                <p className="leading-relaxed">
-                  Submitting this form sends a booking enquiry only; no payment is taken on this website. Our team will confirm availability, the final quotation, payment instructions and booking terms with you before any deposit is requested.
-                </p>
-              </div>
-            </form>
-          )}
+          <div className="flex items-start gap-2 border-t border-[#1a4a35] pt-4 text-xs leading-relaxed text-[#a49a88]">
+            <ShieldCheck size={16} className="mt-0.5 shrink-0 text-[#c5a059]" />
+            <p>Email opens your device's email app with an enquiry prepared for you. WhatsApp opens a direct chat with our reservation team. Your booking is confirmed only after our team contacts you.</p>
+          </div>
         </div>
       </div>
     </div>
