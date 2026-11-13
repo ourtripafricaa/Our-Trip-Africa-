@@ -20,7 +20,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   const [phone, setPhone] = useState('');
   const [country, setCountry] = useState('');
   const [travelDate, setTravelDate] = useState('');
-  const [adults, setAdults] = useState(2);
+  const [adults, setAdults] = useState('');
   const [children, setChildren] = useState(0);
   const [specialRequests, setSpecialRequests] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -28,7 +28,8 @@ export const BookingForm: React.FC<BookingFormProps> = ({
 
   const currentPkg = SAFARI_PACKAGES.find((p) => p.slug === selectedPackageSlug) || SAFARI_PACKAGES[0];
   const unitPrice = currentPkg.tierPricing[selectedTier] || currentPkg.basePrice;
-  const estimatedTotal = unitPrice * adults + (unitPrice * 0.7 * children);
+  const adultCount = Number(adults) || 0;
+  const estimatedTotal = unitPrice * adultCount + (unitPrice * 0.7 * children);
 
   const [submitError, setSubmitError] = useState('');
   const [saving, setSaving] = useState(false);
@@ -37,7 +38,11 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     e.preventDefault();
     const form = e.currentTarget as HTMLFormElement;
     if (!form.reportValidity()) return;
-    if (adults + children > 30) {
+    if (adultCount < 1) {
+      window.alert('Please enter the number of adults travelling.');
+      return;
+    }
+    if (adultCount + children > 30) {
       window.alert('The maximum group size is 30 travellers, including adults and children.');
       return;
     }
@@ -53,7 +58,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
       `Price per adult: ${unitPrice} USD`,
       `Estimated total: ${Math.round(estimatedTotal)} USD`,
       `Travel date: ${travelDate || 'Flexible'}`,
-      `Travellers: ${adults} adults, ${children} children`,
+      `Travellers: ${adultCount} adults, ${children} children`,
       '',
       'GUEST DETAILS',
       `Full name: ${fullName.trim()}`,
@@ -73,7 +78,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
       `• Package: ${currentPkg.title}\n` +
       `• Tier: ${selectedTier.toUpperCase()} (${unitPrice} USD/person)\n` +
       `• Travel Date: ${travelDate || 'Flexible / In Discussion'}\n` +
-      `• Group: ${adults} Adults, ${children} Children\n` +
+      `• Group: ${adultCount || 'Not specified'} Adults, ${children} Children\n` +
       `• Estimated Total: ~$${Math.round(estimatedTotal).toLocaleString()} USD\n` +
       `• Name: ${fullName || 'Guest'}\n` +
       `• Email: ${email || 'Provided in chat'}\n` +
@@ -237,10 +242,17 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                     type="number"
                     min={1}
                     max={30 - children}
+                    required
                     value={adults}
+                    placeholder="Enter number of adults"
                     onChange={(e) => {
-                      const nextAdults = Math.max(1, parseInt(e.target.value) || 1);
-                      setAdults(Math.min(nextAdults, 30 - children));
+                      const raw = e.target.value;
+                      if (raw === '') {
+                        setAdults('');
+                        return;
+                      }
+                      const nextAdults = Math.max(1, parseInt(raw, 10) || 1);
+                      setAdults(String(Math.min(nextAdults, 30 - children)));
                     }}
                     className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
                   />
@@ -253,11 +265,11 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                   <input
                     type="number"
                     min={0}
-                    max={30 - adults}
+                    max={30 - adultCount}
                     value={children}
                     onChange={(e) => {
                       const nextChildren = Math.max(0, parseInt(e.target.value) || 0);
-                      setChildren(Math.min(nextChildren, 30 - adults));
+                      setChildren(Math.min(nextChildren, 30 - adultCount));
                     }}
                     className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
                   />
@@ -341,7 +353,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
               <div className="p-4 rounded-2xl bg-[#081a13] border border-[#1a4a35] flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div>
                   <span className="text-[10px] text-[#a49a88] uppercase tracking-wider block">
-                    Estimated Package Total ({adults} Adults{children > 0 ? `, ${children} Children` : ''})
+                    Estimated Package Total ({adults || '0'} Adults{children > 0 ? `, ${children} Children` : ''})
                   </span>
                   <div className="flex items-baseline gap-2 mt-0.5">
                     <span className="text-2xl font-bold font-mono text-[#c5a059] tabular-nums">
