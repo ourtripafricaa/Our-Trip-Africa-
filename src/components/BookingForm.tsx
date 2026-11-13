@@ -20,7 +20,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   const [phone, setPhone] = useState('');
   const [country, setCountry] = useState('');
   const [travelDate, setTravelDate] = useState('');
-  const [adults, setAdults] = useState('');
+  const [adults, setAdults] = useState('0');
   const [children, setChildren] = useState(0);
   const [specialRequests, setSpecialRequests] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -240,7 +240,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                   </label>
                   <input
                     type="number"
-                    min={1}
+                    min={0}
                     max={30 - children}
                     required
                     value={adults}
@@ -251,7 +251,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                         setAdults('');
                         return;
                       }
-                      const nextAdults = Math.max(1, parseInt(raw, 10) || 1);
+                      const nextAdults = Math.max(0, parseInt(raw, 10) || 0);
                       setAdults(String(Math.min(nextAdults, 30 - children)));
                     }}
                     className="w-full bg-[#081a13] text-white text-xs rounded-xl px-3.5 py-2.5 border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
