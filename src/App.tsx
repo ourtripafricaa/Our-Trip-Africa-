@@ -6,7 +6,6 @@ import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { PackageModal } from './components/PackageModal';
-import { BookingForm } from './components/BookingForm';
 import { CloudflareGuideModal } from './components/CloudflareGuideModal';
 import { SafariChatbot } from './components/SafariChatbot';
 
@@ -33,8 +32,6 @@ export default function App() {
   const [currentView, setCurrentView] = useState<string>(() => window.location.pathname.startsWith('/blog') ? 'blog' : 'home');
   const [viewParam, setViewParam] = useState<string | undefined>(undefined);
   const [selectedPackage, setSelectedPackage] = useState<SafariPackage | null>(null);
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [bookingPackage, setBookingPackage] = useState<SafariPackage | null>(null);
   const [isCloudflareGuideOpen, setIsCloudflareGuideOpen] = useState(false);
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -90,9 +87,24 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Booking CTAs open the visitor's email app directly; no booking modal/form is shown.
   const handleOpenBooking = (pkg?: SafariPackage) => {
-    setBookingPackage(pkg || null);
-    setIsBookingOpen(true);
+    const packageName = pkg?.title || 'African Safari';
+    const destination = pkg?.destination || 'Please advise on suitable destinations';
+    const subject = 'Booking Enquiry: ' + packageName + ' - Our Trip Africa';
+    const body = [
+      'Hello Our Trip Africa team,',
+      '',
+      'I would like to enquire about planning a trip.',
+      'Package: ' + packageName,
+      'Destination: ' + destination,
+      '',
+      'Please share availability, itinerary, pricing and booking instructions.',
+      '',
+      'Thank you.'
+    ].join('\n');
+    const mailto = 'mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    window.location.href = mailto;
   };
 
   return (
@@ -206,15 +218,6 @@ export default function App() {
         />
       )}
 
-      {isBookingOpen && (
-        <BookingForm
-          initialPackage={bookingPackage}
-          onClose={() => {
-            setIsBookingOpen(false);
-            setBookingPackage(null);
-          }}
-        />
-      )}
 
       {isCloudflareGuideOpen && (
         <CloudflareGuideModal onClose={() => setIsCloudflareGuideOpen(false)} />
