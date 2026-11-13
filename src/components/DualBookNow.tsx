@@ -24,13 +24,12 @@ export const DualBookNow: React.FC<DualBookNowProps> = ({
 
   const whatsappHref = `https://wa.me/${COMPANY_DETAILS.whatsappRaw}?text=${encodedWhatsAppMsg}`;
 
-  const mailSubject = encodeURIComponent(`Booking Enquiry: ${packageName} – Our Trip Africa`);
+  const mailSubject = encodeURIComponent(`Booking Enquiry: ${packageName} - Our Trip Africa`);
   const mailBody = encodeURIComponent(
-    `Hello Our Trip Africa team,\\n\\nI am interested in ${packageName}${packagePrice ? ` (${packagePrice})` : ''}. Please contact me with availability, itinerary and booking details.\\n\\nThank you.`
+    `Hello Our Trip Africa team,\n\nI am interested in ${packageName}${packagePrice ? ` (${packagePrice})` : ''}. Please contact me with availability, itinerary and booking details.\n\nThank you.`
   );
-
-  const bookingRecipients = 'info@ourtripafrica.com,ourtripafricaa@gmail.com';
-  const mailtoHref = `mailto:${bookingRecipients}?subject=${mailSubject}&body=${mailBody}`;
+  // Use one primary recipient and a separate CC for better compatibility with mobile email apps.
+  const mailtoHref = `mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=${mailSubject}&body=${mailBody}`;
 
   const sizeClasses = {
     sm: 'px-3 py-1.5 text-xs',
