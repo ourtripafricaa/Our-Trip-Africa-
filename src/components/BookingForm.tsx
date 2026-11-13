@@ -20,12 +20,6 @@ export const BookingForm: React.FC<BookingFormProps> = ({ initialPackage, onClos
     '',
     'Please share availability, the full itinerary, pricing and booking instructions.',
     '',
-    'My details:',
-    'Full name:',
-    'Email address:',
-    'WhatsApp / phone:',
-    'Preferred travel date:',
-    'Number of travellers:',
     '',
     'Thank you.'
   ].join('\n');
