@@ -914,7 +914,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <div className="rounded-xl border border-[#c5a059]/40 bg-white/5 p-3">
                   <h4 className="mb-2 text-sm font-bold text-[#e4c681]">Mr James Felix</h4>
                   <div className="flex flex-wrap gap-2">
-                    <a href="mailto:james@ourtripafrica.com" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
+                    <a href="mailto:info@ourtripafrica.com,ourtripafricaa@gmail.com?subject=Booking%20enquiry%20-%20Our%20Trip%20Africa" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
                       <Mail size={14}/> Email
                     </a>
                     <a href="https://wa.me/255743661850" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
@@ -926,7 +926,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <div className="rounded-xl border border-[#c5a059]/40 bg-white/5 p-3">
                   <h4 className="mb-2 text-sm font-bold text-[#e4c681]">Reservation Team</h4>
                   <div className="flex flex-wrap gap-2">
-                    <a href="mailto:info@ourtripafrica.com" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
+                    <a href="mailto:info@ourtripafrica.com,ourtripafricaa@gmail.com?subject=Booking%20enquiry%20-%20Our%20Trip%20Africa" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
                       <Mail size={14}/> Email
                     </a>
                     <a href="https://wa.me/255624661830" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
