@@ -14,7 +14,20 @@ export const ContactView: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !message) return;
-    setSubmitted(true);
+    const recipients = 'info@ourtripafrica.com,ourtripafricaa@gmail.com';
+    const mailSubject = `Website enquiry: ${subject}`;
+    const mailBody = [
+      'OUR TRIP AFRICA WEBSITE ENQUIRY',
+      '',
+      `Name: ${name.trim()}`,
+      `Guest email: ${email.trim()}`,
+      `Phone / WhatsApp: ${phone.trim() || 'Not provided'}`,
+      `Subject: ${subject}`,
+      '',
+      'Message:',
+      message.trim()
+    ].join('\\n');
+    window.location.href = `mailto:${recipients}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
   };
 
   const handleWhatsAppDirect = () => {
@@ -68,7 +81,7 @@ export const ContactView: React.FC = () => {
               <div className="p-3.5 bg-slate-50 rounded-2xl border border-slate-200">
                 <span className="text-[10px] uppercase text-slate-400 font-bold block">General Bookings & Quotes</span>
                 <a
-                  href={`mailto:${COMPANY_DETAILS.bookingEmail}`}
+                  href={`mailto:info@ourtripafrica.com,ourtripafricaa@gmail.com?subject=${encodeURIComponent('General booking enquiry - Our Trip Africa')}`}
                   className="font-bold text-[#0e3022] hover:text-[#c5a059] hover:underline text-sm block mt-0.5"
                 >
                   {COMPANY_DETAILS.bookingEmail}
