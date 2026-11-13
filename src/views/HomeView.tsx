@@ -111,6 +111,15 @@ export const HomeView: React.FC<HomeViewProps> = ({
   const [filterTier, setFilterTier] = useState<string>('all');
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [galleryIndex, setGalleryIndex] = useState(0);
+  const [heroSlideIndex, setHeroSlideIndex] = useState(0);
+
+  useEffect(() => {
+    if (SOURCE_IMAGE_GALLERY.length < 2) return;
+    const heroTimer = window.setInterval(() => {
+      setHeroSlideIndex((current) => (current + 1) % SOURCE_IMAGE_GALLERY.length);
+    }, 5000);
+    return () => window.clearInterval(heroTimer);
+  }, []);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -150,11 +159,22 @@ export const HomeView: React.FC<HomeViewProps> = ({
       <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Deep Emerald Scrim */}
         <div className="absolute inset-0 z-0">
-          <img
-            src={LOCAL_IMAGES.hero}
-            alt="African Safari Serengeti"
-            className="w-full h-full object-cover object-center filter brightness-90"
-          />
+          {SOURCE_IMAGE_GALLERY.length > 0 ? SOURCE_IMAGE_GALLERY.map((photo, index) => (
+            <img
+              key={photo.name}
+              src={photo.url}
+              alt={photo.name}
+              aria-hidden={heroSlideIndex !== index}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              className={`absolute inset-0 h-full w-full object-cover object-center filter brightness-90 transition-opacity duration-1000 ${heroSlideIndex === index ? 'opacity-100' : 'opacity-0'}`}
+            />
+          )) : (
+            <img
+              src={LOCAL_IMAGES.hero}
+              alt="African Safari Serengeti"
+              className="w-full h-full object-cover object-center filter brightness-90"
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-[#061d14] via-[#061d14]/65 to-[#061d14]/35" />
           <div className="absolute inset-0 bg-radial from-transparent via-[#061d14]/40 to-[#061d14]" />
         </div>
