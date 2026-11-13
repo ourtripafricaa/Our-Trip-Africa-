@@ -31,8 +31,6 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   const adultCount = adults === '' ? 0 : Number(adults);
   const estimatedTotal = unitPrice * adultCount + (unitPrice * 0.7 * children);
 
-  const [submitError, setSubmitError] = useState('');
-  const [saving, setSaving] = useState(false);
 
   const handleSubmitEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,7 +66,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
       `Special requests: ${specialRequests.trim() || 'None'}`,
       '',
       'Please contact the guest to confirm availability and provide a quotation.'
-    ].join('\\n');
+    ].join('\n');
 
     window.location.href = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
@@ -362,10 +360,6 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                 </div>
               </div>
 
-              {submitError && (
-                <p role="alert" className="rounded-xl border border-red-400/40 bg-red-950/40 p-3 text-xs text-red-200">{submitError}</p>
-              )}
-
               {/* Dual Booking Buttons */}
               <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                 <button
@@ -379,11 +373,10 @@ export const BookingForm: React.FC<BookingFormProps> = ({
 
                 <button
                   type="submit"
-                  disabled={saving}
                   className="w-full sm:flex-1 disabled:opacity-60 py-3 px-4 rounded-xl bg-[#c5a059] hover:bg-[#d6b36d] text-[#081a13] font-bold flex items-center justify-center gap-2 text-xs sm:text-sm shadow-md cursor-pointer transition-colors"
                 >
                   <Mail size={16} />
-                  <span>{saving ? 'SAVING REQUEST...' : 'SEND BOOKING REQUEST'}</span>
+                  <span>SEND BOOKING REQUEST</span>
                 </button>
               </div>
 
