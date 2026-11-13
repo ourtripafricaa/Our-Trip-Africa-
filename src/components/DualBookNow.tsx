@@ -6,14 +6,12 @@ interface DualBookNowProps {
   packageItem?: SafariPackage;
   size?: 'sm' | 'md' | 'lg';
   className?: string;
-  onOpenBookingModal?: (pkg?: SafariPackage) => void;
 }
 
 export const DualBookNow: React.FC<DualBookNowProps> = ({
   packageItem,
   size = 'md',
   className = '',
-  onOpenBookingModal,
 }) => {
   const packageName = packageItem ? packageItem.title : 'African Safari';
   const packagePrice = packageItem ? `$${packageItem.basePrice} per person` : '';
@@ -28,16 +26,7 @@ export const DualBookNow: React.FC<DualBookNowProps> = ({
 
   const mailSubject = encodeURIComponent(`Booking Enquiry: ${packageName} – Our Trip Africa`);
   const mailBody = encodeURIComponent(
-    `Dear Our Trip Africa Team,\n\nI would like to enquire about booking the following safari package:\n` +
-      `Package: ${packageName}\n` +
-      `Estimated Price: ${packagePrice || 'Request Quote'}\n\n` +
-      `My Details:\n` +
-      `- Preferred Travel Dates:\n` +
-      `- Number of Adults:\n` +
-      `- Number of Children (ages):\n` +
-      `- Preferred Tier (Budget / Mid-Range / Luxury):\n` +
-      `- Special Requests / Interests:\n\n` +
-      `Thank you!\n`
+    `Hello Our Trip Africa team,\\n\\nI am interested in ${packageName}${packagePrice ? ` (${packagePrice})` : ''}. Please contact me with availability, itinerary and booking details.\\n\\nThank you.`
   );
 
   const bookingRecipients = 'info@ourtripafrica.com,ourtripafricaa@gmail.com';
@@ -69,27 +58,15 @@ export const DualBookNow: React.FC<DualBookNowProps> = ({
         <span>BOOK NOW (WhatsApp)</span>
       </a>
 
-      {/* 2. Email / Direct Form BOOK NOW Button */}
-      {onOpenBookingModal ? (
-        <button
-          type="button"
-          onClick={() => onOpenBookingModal(packageItem)}
-          aria-label={`Book ${packageName} via Email / Form`}
-          className={`inline-flex items-center justify-center gap-2 font-semibold text-[#081a13] bg-[#c5a059] hover:bg-[#d6b36d] active:bg-[#b08b46] rounded-xl shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap shrink-0 cursor-pointer group ${sizeClasses[size]}`}
-        >
-          <Mail size={iconSizes[size]} className="transition-transform group-hover:scale-110 text-[#081a13]" />
-          <span>BOOK NOW (Email)</span>
-        </button>
-      ) : (
-        <a
-          href={mailtoHref}
-          aria-label={`Book ${packageName} via Email`}
-          className={`inline-flex items-center justify-center gap-2 font-semibold text-[#081a13] bg-[#c5a059] hover:bg-[#d6b36d] active:bg-[#b08b46] rounded-xl shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap shrink-0 group ${sizeClasses[size]}`}
-        >
-          <Mail size={iconSizes[size]} className="transition-transform group-hover:scale-110 text-[#081a13]" />
-          <span>BOOK NOW (Email)</span>
-        </a>
-      )}
+      {/* 2. Direct Email BOOK NOW Button */}
+      <a
+        href={mailtoHref}
+        aria-label={`Book ${packageName} via Email`}
+        className={`inline-flex items-center justify-center gap-2 font-semibold text-[#081a13] bg-[#c5a059] hover:bg-[#d6b36d] active:bg-[#b08b46] rounded-xl shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap shrink-0 group ${sizeClasses[size]}`}
+      >
+        <Mail size={iconSizes[size]} className="transition-transform group-hover:scale-110 text-[#081a13]" />
+        <span>BOOK NOW (Email)</span>
+      </a>
     </div>
   );
 };
