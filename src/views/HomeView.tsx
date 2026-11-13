@@ -58,10 +58,6 @@ const AI_STUDIO_GALLERY = [
     "url": "/assets/aistudio/20261024_122559.jpg"
   },
   {
-    "name": "20261110 070447",
-    "url": "/assets/aistudio/20261110_070447.jpg"
-  },
-  {
     "name": "Screenshot 20260527 120120 ChatGPT 18140df3",
     "url": "/assets/aistudio/Screenshot_20260527_120120_ChatGPT_18140df3.jpg"
   },
