@@ -853,8 +853,15 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* TripAdvisor business profile and guest reviews */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-3xl border border-[#c5a059]/50 bg-white p-7 sm:p-10 text-center shadow-lg">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#0e3022] text-[#e4c681]">
-            <Star size={28} fill="currentColor" />
+          <div className="mx-auto flex items-center justify-center" aria-label="Tripadvisor">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Tripadvisor_2025_Logo.svg"
+              alt="Tripadvisor"
+              width="150"
+              height="23"
+              loading="lazy"
+              className="h-6 w-auto object-contain"
+            />
           </div>
           <span className="mt-4 inline-block text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Guest feedback matters</span>
           <h2 className="mt-2 font-serif text-2xl sm:text-4xl font-bold text-[#0e3022]">Share Your Experience on TripAdvisor</h2>
