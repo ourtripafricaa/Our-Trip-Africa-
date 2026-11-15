@@ -195,7 +195,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
             <DualBookNow
-              size="lg"
+              size="md"
               onOpenBookingModal={() => onOpenBooking()}
             />
             <button
