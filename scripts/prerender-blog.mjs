@@ -51,7 +51,7 @@ try {
       schema ? `<script type="application/ld+json">${safeJson(schema)}</script>` : '',
     ].filter(Boolean).join('\n    ');
 
-    html = html.replace('</head>', '    ' + headTags + '\\n  </head>');
+    html = html.replace('</head>', '    ' + headTags + String.fromCharCode(10) + '  </head>');
     const outputDir = slug ? path.join(distDir, 'blog', slug) : path.join(distDir, 'blog');
     await fs.mkdir(outputDir, { recursive: true });
     await fs.writeFile(path.join(outputDir, 'index.html'), html, 'utf8');
