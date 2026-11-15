@@ -310,7 +310,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="rounded-2xl border border-[#c5a059]/40 bg-[#0e3022] px-6 py-7 text-center text-white shadow-xl">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#e4c681]">Your adventure is one message away</p>
           <h3 className="mt-2 font-serif text-2xl sm:text-3xl font-bold">Seen a place you would love to visit?</h3>
-          <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-200">Tell our Arusha team your travel dates, group size and budget. We will help you shape the right journey.</p>
+          <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-200">Tell our travel consultants your travel dates, group size and budget. We will help you shape the right journey.</p>
           <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3">
             <button type="button" onClick={() => onOpenBooking()} className="rounded-xl bg-[#c5a059] px-7 py-3.5 text-sm font-extrabold text-[#061d14] shadow-lg hover:bg-[#e4c681] transition-colors">Enquire & Start Booking</button>
             <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-white/40 px-7 py-3.5 text-sm font-bold text-white hover:bg-white/10 transition-colors">Book on WhatsApp</a>
