@@ -34,8 +34,8 @@ try {
   const writePage = async ({ slug, title, description, image, markup, schema }) => {
     const canonical = slug ? `${origin}/blog/${slug}` : `${origin}/blog`;
     let html = template
-      .replace(/<title>.*?<\/title>/s, \`<title>\${escapeHtml(title)}</title>\`)
-      .replace(/<meta name="description" content="[^"]*"\s*\/>/, \`<meta name="description" content="\${escapeHtml(description)}" />\`)
+      .replace(/<title>.*?<\/title>/s, '<title>' + escapeHtml(title) + '</title>')
+      .replace(/<meta name="description" content="[^"]*"\s*\/>/, '<meta name="description" content="' + escapeHtml(description) + '" />')
       .replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
 
     const headTags = [
@@ -51,7 +51,7 @@ try {
       schema ? `<script type="application/ld+json">${safeJson(schema)}</script>` : '',
     ].filter(Boolean).join('\n    ');
 
-    html = html.replace('</head>', \`    \${headTags}\n  </head>\`);
+    html = html.replace('</head>', '    ' + headTags + '\\n  </head>');
     const outputDir = slug ? path.join(distDir, 'blog', slug) : path.join(distDir, 'blog');
     await fs.mkdir(outputDir, { recursive: true });
     await fs.writeFile(path.join(outputDir, 'index.html'), html, 'utf8');
