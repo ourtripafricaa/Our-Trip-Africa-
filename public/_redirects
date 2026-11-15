@@ -1,2 +1,1 @@
-
-/blog/* /index.html 200
+# Blog index and article URLs are generated as static HTML pages during the production build.
