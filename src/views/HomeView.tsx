@@ -850,6 +850,22 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       <SpecialOffers onOpenBooking={() => onOpenBooking()} />
 
+      {/* TripAdvisor business profile and guest reviews */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl border border-[#c5a059]/50 bg-white p-7 sm:p-10 text-center shadow-lg">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#0e3022] text-[#e4c681]">
+            <Star size={28} fill="currentColor" />
+          </div>
+          <span className="mt-4 inline-block text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Guest feedback matters</span>
+          <h2 className="mt-2 font-serif text-2xl sm:text-4xl font-bold text-[#0e3022]">Share Your Experience on TripAdvisor</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-7 text-slate-600">Planning a trip with Our Trip Africa? Read traveller feedback or share your own experience on our TripAdvisor business page.</p>
+          <a href="https://www.tripadvisor.co.uk/Attraction_Review-g297913-d34728923-Reviews-Our_Trip_Africa-Arusha_Arusha_Region.html" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#00AA6C] px-7 py-3.5 text-sm font-extrabold text-white shadow-md transition hover:bg-[#008f5b]">
+            <Star size={17} fill="currentColor" /> View Us on TripAdvisor <ArrowRight size={17} />
+          </a>
+          <p className="mt-3 text-xs text-slate-500">Opens our TripAdvisor profile in a new tab.</p>
+        </div>
+      </section>
+
       <GuestReviews />
 
       {/* Customer Trust & Booking Confidence */}
