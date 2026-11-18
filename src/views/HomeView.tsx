@@ -327,10 +327,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <Sparkles size={13} /> A friendly message from Our Trip Africa
             </span>
             <h2 className="mt-4 font-serif text-2xl sm:text-4xl font-bold leading-tight text-[#e4c681]">
-              WAIT! DON'T LEAVE JUST YET!
+              DON'T GIVE UP ON YOUR DREAM SAFARI!
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-white">
-              Your dream African safari may be more affordable than you think. Don't leave because of the price — tell us your budget and we'll do our best to help you plan an experience that suits you.
+              Share your budget with us. We'll help you find the perfect safari for you.
             </p>
             <p className="mt-3 text-sm font-semibold text-emerald-100">
               Every budget matters. Friendly advice. No pressure to book.
