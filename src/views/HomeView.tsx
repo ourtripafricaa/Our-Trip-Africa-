@@ -577,7 +577,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <button
                 type="button"
                 onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
-                className="px-5 py-2.5 rounded-xl bg-[#c5a059] text-[#061d14] font-bold text-xs shrink-0 shadow hover:bg-[#d6b36d] transition-colors"
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
               >
                 Explore UAE Packages
               </button>
