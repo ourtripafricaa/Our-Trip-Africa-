@@ -683,57 +683,6 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
-      {/* 5. SAFARI STYLES COMPARISON */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#0e3022]">
-            Tailored To Your Style
-          </span>
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">
-            Choose Your African Safari Comfort
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch max-w-4xl mx-auto">
-          {/* Budget */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
-            <div className="space-y-4">
-              <span className="text-xs uppercase font-bold text-[#0e3022]">Adventure Tier</span>
-              <h3 className="font-serif text-2xl font-bold text-slate-900">Budget Camping</h3>
-              <div className="text-3xl font-bold font-mono text-slate-900">
-                $180 – $280 <span className="text-xs text-slate-500 font-normal">/ day</span>
-              </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Sleep inside national parks in high-grade waterproof canvas tents. Includes private safari cook preparing hearty meals and your own private 4x4 Land Cruiser.
-              </p>
-            </div>
-            <button onClick={() => onNavigate('packages')} className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold cursor-pointer transition-colors">
-              Browse Budget Safaris
-            </button>
-          </div>
-
-          {/* Mid-Range */}
-          <div className="bg-[#0e3022] rounded-3xl p-6 sm:p-8 border-2 border-[#c5a059] flex flex-col justify-between space-y-6 relative shadow-2xl text-white">
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#c5a059] text-[#061d14] text-[11px] font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow">
-              Most Popular
-            </div>
-            <div className="space-y-4 pt-2">
-              <span className="text-xs uppercase font-bold text-[#c5a059]">Comfort Tier</span>
-              <h3 className="font-serif text-2xl font-bold text-white">Mid-Range Lodges</h3>
-              <div className="text-3xl font-bold font-mono text-[#c5a059]">
-                $350 – $550 <span className="text-xs text-slate-300 font-normal">/ day</span>
-              </div>
-              <p className="text-xs text-slate-200 leading-relaxed">
-                The optimal balance of luxury and value. Stay in charming permanent safari lodges and luxury tented camps with en-suite bathrooms, hot showers, and swimming pools.
-              </p>
-            </div>
-            <button onClick={() => onNavigate('packages')} className="w-full py-3 rounded-xl bg-[#c5a059] hover:bg-[#d6b36d] text-[#061d14] font-bold text-xs shadow-md cursor-pointer transition-colors">
-              Browse Mid-Range Safaris
-            </button>
-          </div>
-        </div>
-      </section>
-
       {/* Personalised safari planning and FAQ - placed immediately below the image slideshow */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="relative overflow-hidden rounded-[2rem] border-2 border-[#c5a059] bg-[#073b29] shadow-xl">
