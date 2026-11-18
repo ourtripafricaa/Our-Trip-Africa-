@@ -562,18 +562,16 @@ export const HomeView: React.FC<HomeViewProps> = ({
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061d14] via-[#061d14]/50 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-              <div className="space-y-1.5">
-                <span className="text-xs uppercase font-bold text-[#c5a059] tracking-wider">
-                  Arabian Desert & Modern Marvels
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-[#c5a059] transition-colors">
-                  United Arab Emirates: Dubai & Abu Dhabi (2 Packages)
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-200 max-w-2xl">
-                  Red dunes 4x4 desert safaris, sunset camel treks, Bedouin feasts under the stars, Burj Khalifa, and Sheikh Zayed Grand Mosque.
-                </p>
-              </div>
+            <div className="absolute bottom-6 left-6 right-6 space-y-2">
+              <span className="text-xs uppercase font-bold text-[#c5a059] tracking-wider">
+                Arabian Desert & Modern Marvels
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-[#c5a059] transition-colors">
+                United Arab Emirates: Dubai & Abu Dhabi (2 Packages)
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-200 max-w-2xl">
+                Red dunes 4x4 desert safaris, sunset camel treks, Bedouin feasts under the stars, Burj Khalifa, and Sheikh Zayed Grand Mosque.
+              </p>
               <button
                 type="button"
                 onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
