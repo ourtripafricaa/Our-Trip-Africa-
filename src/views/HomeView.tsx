@@ -322,63 +322,38 @@ export const HomeView: React.FC<HomeViewProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden bg-[#0e3022] rounded-3xl p-8 sm:p-12 border border-[#c5a059]/40 shadow-2xl text-white">
           <div className="absolute -top-24 -right-20 w-72 h-72 rounded-full bg-[#c5a059]/10 blur-3xl pointer-events-none" />
-          <div className="relative max-w-4xl mx-auto text-center space-y-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-[#c5a059]/40 text-[#e4c681] text-xs font-bold uppercase tracking-[0.18em]">
-              <Sparkles size={14} />
-              Welcome to Our Trip Africa
+          <div className="relative mx-auto max-w-3xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#c5a059]/50 bg-[#c5a059]/10 px-3 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#e4c681]">
+              <Sparkles size={13} /> A friendly message from Our Trip Africa
             </span>
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
-              YOUR AFRICAN ADVENTURE STARTS HERE
+            <h2 className="mt-4 font-serif text-2xl sm:text-4xl font-bold leading-tight text-[#e4c681]">
+              WAIT! DON'T LEAVE JUST YET!
             </h2>
-            <p className="text-base sm:text-lg text-slate-200 max-w-3xl mx-auto leading-relaxed">
-              Feel at home as you explore the wonders of Tanzania, Kenya, Uganda, South Africa and Dubai. From breathtaking wildlife safaris to beautiful beach escapes and unforgettable cultural experiences, we turn your travel dreams into extraordinary memories.
+            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-white">
+              Your dream African safari may be more affordable than you think. Don't leave because of the price — tell us your budget and we'll do our best to help you plan an experience that suits you.
             </p>
-
-            <div className="pt-5 space-y-5">
-              <div className="w-16 h-px bg-[#c5a059] mx-auto" />
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#e4c681]">
-                LET'S PLAN YOUR DREAM JOURNEY
-              </h3>
-              <p className="text-lg sm:text-xl font-semibold text-white">
-                Tell Us Your Budget – We'll Create the Perfect Experience!
-              </p>
-              <p className="text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
-                Planning your African adventure should be exciting, not stressful. Simply tell us:
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto text-left">
-              <div className="flex items-center gap-3 rounded-2xl bg-white/10 border border-white/10 px-4 py-4">
-                <CheckCircle2 className="text-[#c5a059] shrink-0" size={20} />
-                <span className="text-sm font-medium">Your estimated travel budget</span>
-              </div>
-              <div className="flex items-center gap-3 rounded-2xl bg-white/10 border border-white/10 px-4 py-4">
-                <CheckCircle2 className="text-[#c5a059] shrink-0" size={20} />
-                <span className="text-sm font-medium">Your preferred travel dates</span>
-              </div>
-              <div className="flex items-center gap-3 rounded-2xl bg-white/10 border border-white/10 px-4 py-4">
-                <CheckCircle2 className="text-[#c5a059] shrink-0" size={20} />
-                <span className="text-sm font-medium">The number of travellers</span>
-              </div>
-            </div>
-
-            <p className="text-sm sm:text-base text-slate-200 max-w-3xl mx-auto leading-relaxed">
-              Our experienced Arusha-based travel team will design a personalised holiday package tailored to your budget, interests and expectations — without compromising on quality or unforgettable experiences.
+            <p className="mt-3 text-sm font-semibold text-emerald-100">
+              Every budget matters. Friendly advice. No pressure to book.
             </p>
-
-            <p className="font-serif text-lg sm:text-xl font-bold tracking-wide text-[#e4c681]">
-              YOUR DREAM. YOUR BUDGET. YOUR ADVENTURE.
-            </p>
-            <div className="space-y-3 pt-2">
-              <p className="text-white font-semibold">Ready to begin?</p>
-              <button onClick={() => onNavigate('contact')} className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-[#c5a059] hover:bg-[#d6b36d] text-[#061d14] font-extrabold rounded-xl text-sm sm:text-base transition-all shadow-lg hover:shadow-xl cursor-pointer">
-                GET YOUR PERSONALIZED SAFARI QUOTE TODAY!
-                <ArrowRight size={18} />
-              </button>
-              <p className="text-xs sm:text-sm text-slate-300">
-                Contact Our Trip Africa and let us make your dream journey a reality.
-              </p>
+            <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a
+                href="https://wa.me/255624661830?text=Hello%20Our%20Trip%20Africa!%20I%20am%20interested%20in%20a%20safari.%20My%20estimated%20budget%20is%3A%20_____.%20Please%20help%20me%20plan%20a%20trip%20that%20fits%20my%20budget."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-[#c5a059] px-6 py-3 text-sm font-extrabold text-[#061d14] shadow-lg transition hover:bg-[#e4c681]"
+              >
+                <MessageCircle size={18} /> LET'S PLAN MY SAFARI <ArrowRight size={17} />
+              </a>
+              <a
+                href={COMPANY_DETAILS.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-white/40 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+              >
+                CHAT WITH OUR TEAM
+              </a>
             </div>
+            <p className="mt-3 text-[11px] text-emerald-100/80">Share your budget with us on WhatsApp — our Arusha-based team is ready to help.</p>
           </div>
         </div>
       </section>
