@@ -29,7 +29,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
     Date.now() - createdAtDate.getTime() >= 0 &&
     Date.now() - createdAtDate.getTime() <= 14 * 24 * 60 * 60 * 1000;
   return (
-    <article className="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden flex flex-col hover:border-[#c5a059] hover:shadow-xl transition-all duration-300">
+    <article className="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden flex flex-col hover:border-[#C99A2E] hover:shadow-xl transition-all duration-300">
       {/* Image Container */}
       <div className="relative h-60 w-full overflow-hidden bg-slate-100">
         {!imgError ? (
@@ -41,7 +41,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
             className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#0e3022] to-[#081a13] text-[#c5a059] p-4 text-center">
+          <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#0e3022] to-[#081a13] text-[#C99A2E] p-4 text-center">
             <MapPin size={32} className="mb-2 opacity-80" />
             <span className="font-serif font-bold text-sm text-white">{packageItem.title}</span>
             <span className="text-xs text-slate-300 mt-1">{packageItem.destination}</span>
@@ -50,11 +50,11 @@ export const PackageCard: React.FC<PackageCardProps> = ({
 
         {/* Top Floating Info Bar */}
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-          <span className="bg-[#0e3022]/90 backdrop-blur-md text-[#c5a059] text-xs font-semibold px-3 py-1 rounded-full border border-[#c5a059]/40 shadow-sm">
+          <span className="bg-[#0e3022]/90 backdrop-blur-md text-[#C99A2E] text-xs font-semibold px-3 py-1 rounded-full border border-[#C99A2E]/40 shadow-sm">
             {packageItem.country}
           </span>
           <span className="bg-white/95 backdrop-blur-md text-slate-900 text-xs font-medium px-2.5 py-1 rounded-full flex items-center gap-1 border border-slate-200 shadow-sm">
-            <Star size={12} className="text-[#c5a059] fill-[#c5a059]" />
+            <Star size={12} className="text-[#C99A2E] fill-[#C99A2E]" />
             <span className="font-mono tabular-nums font-semibold">{packageItem.rating.toFixed(2)}</span>
             <span className="text-slate-400">({packageItem.reviewsCount})</span>
           </span>
@@ -63,7 +63,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
         {/* NEW badge for packages added within the last 14 days */}
         {isNewPackage && (
           <div className="absolute bottom-4 left-3 z-10">
-            <span className="relative inline-flex items-center gap-1.5 rounded-full border border-[#f2d18b] bg-[#c5a059] px-3 py-1.5 text-[10px] font-extrabold tracking-[0.16em] text-[#0e3022] shadow-lg">
+            <span className="relative inline-flex items-center gap-1.5 rounded-full border border-[#C99A2E] bg-[#C99A2E] px-3 py-1.5 text-[10px] font-extrabold tracking-[0.16em] text-[#0e3022] shadow-lg">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0e3022] opacity-60"></span>
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#0e3022]"></span>
@@ -83,7 +83,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
           {/* Metadata Line */}
           <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500 mb-2">
             <span className="flex items-center gap-1 text-[#0e3022] font-semibold">
-              <Clock size={13} className="text-[#c5a059]" />
+              <Clock size={13} className="text-[#C99A2E]" />
               <span>{packageItem.durationLabel}</span>
             </span>
             <span aria-hidden="true" className="text-slate-300">•</span>
@@ -102,16 +102,16 @@ export const PackageCard: React.FC<PackageCardProps> = ({
 
           {/* Destination */}
           <p className="text-xs text-[#0e3022] font-medium mt-1.5 flex items-center gap-1">
-            <MapPin size={12} className="text-[#c5a059] shrink-0" />
+            <MapPin size={12} className="text-[#C99A2E] shrink-0" />
             <span className="truncate">{packageItem.destination}</span>
           </p>
 
           <a
             href={`/packages/${packageItem.slug}/`}
-            className="inline-flex items-center justify-center gap-2 mt-3 px-4 py-2.5 rounded-xl bg-[#0e3022] text-white text-xs font-bold border border-[#c5a059]/70 shadow-sm hover:bg-[#174b35] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+            className="inline-flex items-center justify-center gap-2 mt-3 px-4 py-2.5 rounded-xl bg-[#0e3022] text-white text-xs font-bold border border-[#C99A2E]/70 shadow-sm hover:bg-[#174b35] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
             aria-label={`View dedicated package page for ${packageItem.title}`}
           >
-            <Eye size={14} className="text-[#e5c07b]" />
+            <Eye size={14} className="text-[#C99A2E]" />
             <span>View Dedicated Package</span>
           </a>
 
@@ -173,7 +173,7 @@ export const PackageCard: React.FC<PackageCardProps> = ({
 
             <button
               onClick={() => onSelect(packageItem)}
-              className="text-xs text-[#c5a059] hover:text-[#0e3022] font-semibold flex items-center gap-1 cursor-pointer transition-colors"
+              className="text-xs text-[#C99A2E] hover:text-[#0e3022] font-semibold flex items-center gap-1 cursor-pointer transition-colors"
             >
               <span>Full Itinerary</span>
               <Eye size={13} />
