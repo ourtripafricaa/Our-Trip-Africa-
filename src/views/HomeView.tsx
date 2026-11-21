@@ -320,19 +320,19 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 2.5 DREAM TRIP PLANNER / BUDGET CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden bg-[#0e3022] rounded-3xl p-8 sm:p-12 border border-[#c5a059]/40 shadow-2xl text-white">
-          <div className="absolute -top-24 -right-20 w-72 h-72 rounded-full bg-[#c5a059]/10 blur-3xl pointer-events-none" />
-          <div className="relative mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#c5a059]/50 bg-[#c5a059]/10 px-3 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#e4c681]">
+        <div className="relative overflow-hidden rounded-3xl border border-[#c5a059]/50 bg-white p-8 sm:p-12 text-center shadow-lg">
+          <div className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-[#c5a059]/10 blur-3xl" />
+          <div className="relative mx-auto max-w-3xl">
+            <span className="inline-flex items-center gap-2 rounded-full bg-[#0e5638]/10 px-3 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#0e5638]">
               <Sparkles size={13} /> A friendly message from Our Trip Africa
             </span>
-            <h2 className="mt-4 font-serif text-2xl sm:text-4xl font-bold leading-tight text-[#e4c681]">
+            <h2 className="mt-4 font-serif text-2xl sm:text-4xl font-bold leading-tight text-[#0e3022]">
               DON'T GIVE UP ON YOUR DREAM SAFARI!
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-white">
+            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-600">
               Share your budget with us. We'll help you find the perfect safari for you.
             </p>
-            <p className="mt-3 text-sm font-semibold text-emerald-100">
+            <p className="mt-3 text-sm font-semibold text-[#0e5638]">
               Every budget matters. Friendly advice. No pressure to book.
             </p>
             <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -348,12 +348,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 href={COMPANY_DETAILS.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-white/40 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-[#0e5638]/35 px-6 py-3 text-sm font-bold text-[#0e5638] transition hover:bg-[#0e5638]/5"
               >
                 CHAT WITH OUR TEAM
               </a>
             </div>
-            <p className="mt-3 text-[11px] text-emerald-100/80">Share your budget with us on WhatsApp — our Arusha-based team is ready to help.</p>
+            <p className="mt-3 text-[11px] text-slate-500">Share your budget with us on WhatsApp — our Arusha-based team is ready to help.</p>
           </div>
         </div>
       </section>
