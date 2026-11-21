@@ -828,49 +828,49 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* Payment Methods — compact expandable panel */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <details className="group mx-auto max-w-3xl overflow-hidden rounded-2xl border border-[#C99A2E]/60 bg-[#0e3022] shadow-md">
+        <details className="group mx-auto max-w-3xl overflow-hidden rounded-2xl border border-[#C99A2E]/60 bg-white shadow-md">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:px-6">
             <span>
-              <span className="block text-xs font-bold uppercase tracking-[0.18em] text-[#C99A2E]">Convenient Payment Options</span>
-              <span className="mt-1 block text-base sm:text-lg font-bold text-white">PAYMENT METHODS</span>
+              <span className="block text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Convenient Payment Options</span>
+              <span className="mt-1 block text-base sm:text-lg font-bold text-[#0e3022]">PAYMENT METHODS</span>
             </span>
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C99A2E]/50 text-[#C99A2E] transition-transform duration-200 group-open:rotate-180">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C99A2E] bg-[#0e5638] text-[#C99A2E] transition-transform duration-200 group-open:rotate-180">
               <ChevronDown size={19} />
             </span>
           </summary>
-          <div className="border-t border-[#C99A2E]/30 px-5 py-5 sm:px-6">
-            <p className="mx-auto max-w-3xl text-center text-sm sm:text-base text-slate-200">We accept Visa and Mastercard payments through CRDB Bank and NMB Bank. A USD account payment option is also available through Selcom Pesa.</p>
+          <div className="border-t border-[#C99A2E]/40 bg-white px-5 py-5 sm:px-6">
+            <p className="mx-auto max-w-3xl text-center text-sm sm:text-base text-slate-700">We accept Visa and Mastercard payments through CRDB Bank and NMB Bank. A USD account payment option is also available through Selcom Pesa.</p>
             <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
               {[
                 ['Visa & Mastercard', 'Card payments through CRDB Bank and NMB Bank'],
                 ['CRDB & NMB Banks', 'Pay using Visa or Mastercard'],
                 ['USD Account', 'Available through Selcom Pesa']
               ].map(([title, description]) => (
-                <div key={title} className="rounded-xl border border-white/15 bg-white/5 px-4 py-4 text-center">
-                  <h3 className="font-bold text-[#C99A2E]">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-200">{description}</p>
+                <div key={title} className="rounded-xl border border-[#C99A2E]/40 bg-[#f7faf7] px-4 py-4 text-center">
+                  <h3 className="font-bold text-[#0e5638]">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-700">{description}</p>
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-center text-xs text-slate-300">Our team will share the relevant payment instructions when your booking is confirmed. The website enquiry form does not process payments.</p>
-            <div className="mt-7 border-t border-[#C99A2E]/30 pt-6">
-              <h3 className="text-center text-base sm:text-lg font-bold text-[#C99A2E]">Are you ready to make a payment?</h3>
-              <div className="mt-2 text-center text-sm text-slate-200">Contact Mr James Felix or our Reservation Team:</div>
+            <p className="mt-4 text-center text-xs text-slate-600">Our team will share the relevant payment instructions when your booking is confirmed. The website enquiry form does not process payments.</p>
+            <div className="mt-7 border-t border-[#C99A2E]/40 pt-6">
+              <h3 className="text-center text-base sm:text-lg font-bold text-[#0e5638]">Are you ready to make a payment?</h3>
+              <div className="mt-2 text-center text-sm text-slate-700">Contact Mr James Felix or our Reservation Team:</div>
               <div className="mx-auto mt-4 grid max-w-2xl grid-cols-1 sm:grid-cols-2 gap-3">
-                <div className="rounded-xl border border-[#C99A2E]/40 bg-white/5 p-3">
-                  <h4 className="mb-2 text-sm font-bold text-[#C99A2E]">Mr James Felix</h4>
+                <div className="rounded-xl border border-[#C99A2E]/50 bg-[#f7faf7] p-3">
+                  <h4 className="mb-2 text-sm font-bold text-[#0e5638]">Mr James Felix</h4>
                   <div className="flex flex-wrap gap-2">
-                    <a href="mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=Booking%20enquiry%20-%20Our%20Trip%20Africa" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#C99A2E] hover:text-[#C99A2E]">
+                    <a href="mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=Booking%20enquiry%20-%20Our%20Trip%20Africa" className="inline-flex items-center gap-1.5 rounded-lg border border-[#C99A2E] bg-[#0e5638] px-2.5 py-2 text-xs font-semibold text-white hover:bg-[#0a402a]">
                       <Mail size={14}/> Email
                     </a>
-                    <a href="https://wa.me/255743661850" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#C99A2E] hover:text-[#C99A2E]">
+                    <a href="https://wa.me/255743661850" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-[#0e5638] bg-[#C99A2E] px-2.5 py-2 text-xs font-semibold text-[#0e3022] hover:bg-[#b88924]">
                       <MessageCircle size={14}/> WhatsApp
                     </a>
                   </div>
-                  <p className="mt-2 text-[11px] text-slate-300">james@ourtripafrica.com · +255 743 661 850</p>
+                  <p className="mt-2 text-[11px] text-slate-600">james@ourtripafrica.com · +255 743 661 850</p>
                 </div>
                 <div className="rounded-xl border border-[#C99A2E]/40 bg-white/5 p-3">
-                  <h4 className="mb-2 text-sm font-bold text-[#C99A2E]">Reservation Team</h4>
+                  <h4 className="mb-2 text-sm font-bold text-[#0e5638]">Reservation Team</h4>
                   <div className="flex flex-wrap gap-2">
                     <a href="mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=Booking%20enquiry%20-%20Our%20Trip%20Africa" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#C99A2E] hover:text-[#C99A2E]">
                       <Mail size={14}/> Email
