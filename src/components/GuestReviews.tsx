@@ -156,14 +156,14 @@ export const GuestReviews: React.FC = () => {
         ) : (
           <form onSubmit={submit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input required maxLength={100} value={name} onChange={e=>setName(e.target.value)} placeholder="Your name" className="rounded-xl bg-[#F7FAF7] border border-[#194A2D]/25 px-4 py-3 text-sm text-[#194A2D] placeholder:text-[#66806F]"/>
-            <input required maxLength={100} value={country} onChange={e=>setCountry(e.target.value)} placeholder="Country" className="rounded-xl bg-[#081a13] border border-white/20 px-4 py-3 text-sm text-white placeholder:text-slate-400"/>
+            <input required maxLength={100} value={country} onChange={e=>setCountry(e.target.value)} placeholder="Country" className="rounded-xl bg-[#F7FAF7] border border-[#194A2D]/25 px-4 py-3 text-sm text-[#194A2D] placeholder:text-[#66806F]"/>
             <input maxLength={200} value={packageTitle} onChange={e=>setPackageTitle(e.target.value)} placeholder="Package / destination" className="sm:col-span-2 rounded-xl bg-[#F7FAF7] border border-[#194A2D]/25 px-4 py-3 text-sm text-[#194A2D] placeholder:text-[#66806F]"/>
             <label className="sm:col-span-2 text-xs text-[#194A2D]">Your rating
               <select value={rating} onChange={e=>setRating(Number(e.target.value))} className="mt-1 block w-full rounded-xl bg-[#F7FAF7] border border-[#194A2D]/25 px-4 py-3 text-sm text-[#194A2D]">
                 {[5,4,3,2,1].map(value=><option key={value} value={value}>{value} / 5 stars</option>)}
               </select>
             </label>
-            <textarea required minLength={10} maxLength={2000} rows={4} value={review} onChange={e=>setReview(e.target.value)} placeholder="Tell future travellers about your experience..." className="sm:col-span-2 rounded-xl bg-[#081a13] border border-white/20 px-4 py-3 text-sm text-white placeholder:text-slate-400"/>
+            <textarea required minLength={10} maxLength={2000} rows={4} value={review} onChange={e=>setReview(e.target.value)} placeholder="Tell future travellers about your experience..." className="sm:col-span-2 rounded-xl bg-[#F7FAF7] border border-[#194A2D]/25 px-4 py-3 text-sm text-[#194A2D] placeholder:text-[#66806F]"/>
             {error && <p role="alert" className="sm:col-span-2 text-sm text-red-200">{error}</p>}
             <button disabled={sending} className="sm:col-span-2 inline-flex items-center justify-center gap-2 rounded-xl bg-[#C99A2E] px-5 py-3 text-sm font-bold text-[#061d14] disabled:opacity-60">
               <Send size={16}/>{sending ? 'Sending...' : 'Submit Review'}
