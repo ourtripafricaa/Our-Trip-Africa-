@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({
               className="h-14 w-14 rounded-full object-cover border-2 border-[#c5a059]/50"
             />
             <div>
-              <span className="font-serif text-2xl font-bold text-[#0e3022] tracking-tight">
+              <span className="font-serif text-2xl font-bold text-[#c5a059] tracking-tight">
                 OUR TRIP AFRICA
               </span>
               <p className="text-xs text-[#0e3022] tracking-widest font-semibold uppercase">
@@ -119,7 +119,7 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Col 2: Destinations */}
         <div className="space-y-3">
-          <p className="text-sm font-serif font-bold text-[#0e3022] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
+          <p className="text-sm font-serif font-bold text-[#c5a059] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
             Safari Destinations
           </p>
           <ul className="space-y-2 text-sm text-[#0e3022]">
@@ -192,7 +192,7 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Col 3: Company & Teams */}
         <div className="space-y-3">
-          <p className="text-sm font-serif font-bold text-[#0e3022] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
+          <p className="text-sm font-serif font-bold text-[#c5a059] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
             Company & Teams
           </p>
           <ul className="space-y-2 text-sm text-[#0e3022]">
@@ -239,12 +239,12 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Col 4: Official Contacts */}
         <div className="space-y-3">
-          <p className="text-sm font-serif font-bold text-[#0e3022] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
+          <p className="text-sm font-serif font-bold text-[#c5a059] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
             Direct Contacts
           </p>
           <div className="space-y-3 text-xs text-[#0e3022]">
             <div>
-              <p className="text-[10px] text-[#0e3022] uppercase font-semibold">Headquarters</p>
+              <p className="text-[10px] text-[#c5a059] uppercase font-semibold">Headquarters</p>
               <p className="text-[#0e3022] mt-0.5">{COMPANY_DETAILS.address}</p>
             </div>
 
@@ -299,7 +299,7 @@ export const Footer: React.FC<FooterProps> = ({
       </div>
 
       {/* Bottom Bar: Copyright & Accreditations */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#0e3022] font-serif font-bold">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#c5a059] font-serif font-bold">
         <p>
           @Ferever Our Trip Africa. All rights reserved. Registered Tour Operator, Arusha, Tanzania.
         </p>
