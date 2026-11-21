@@ -61,7 +61,7 @@ export const DualBookNow: React.FC<DualBookNowProps> = ({
       <a
         href={mailtoHref}
         aria-label={`Book ${packageName} via Email`}
-        className={`inline-flex items-center justify-center gap-2 font-semibold text-[#081a13] bg-[#c5a059] hover:bg-[#d6b36d] active:bg-[#b08b46] rounded-xl shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap shrink-0 group ${sizeClasses[size]}`}
+        className={`inline-flex items-center justify-center gap-2 font-semibold text-[#081a13] bg-[#C99A2E] hover:bg-[#C99A2E] active:bg-[#C99A2E] rounded-xl shadow-sm hover:shadow-md transition-all duration-200 whitespace-nowrap shrink-0 group ${sizeClasses[size]}`}
       >
         <Mail size={iconSizes[size]} className="transition-transform group-hover:scale-110 text-[#081a13]" />
         <span>BOOK NOW (Email)</span>
