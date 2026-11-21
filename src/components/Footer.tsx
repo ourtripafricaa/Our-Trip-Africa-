@@ -70,7 +70,7 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram @ourtripafricaa"
-                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#D4A017] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#833AB4] via-[#E1306C] to-[#FCAF45] hover:brightness-110 text-white flex items-center justify-center transition-all duration-200"
               >
                 <Instagram size={18} />
               </a>
@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook @ourtripafrica"
-                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#D4A017] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-[#1877F2] hover:brightness-110 text-white flex items-center justify-center transition-all duration-200"
               >
                 <Facebook size={18} />
               </a>
@@ -88,7 +88,7 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok @ourtripafrica"
-                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#D4A017] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-[#000000] hover:bg-[#222222] text-white flex items-center justify-center transition-all duration-200"
               >
                 <span className="font-bold text-xs">TT</span>
               </a>
@@ -97,7 +97,7 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube @ourtripafrica"
-                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#D4A017] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-[#FF0033] hover:brightness-110 text-white flex items-center justify-center transition-all duration-200"
               >
                 <Youtube size={18} />
               </a>
@@ -106,7 +106,7 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn @ourtripafrica"
-                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#D4A017] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-[#0A66C2] hover:brightness-110 text-white flex items-center justify-center transition-all duration-200"
               >
                 <Linkedin size={18} />
               </a>
