@@ -68,15 +68,15 @@ export const PackageModal: React.FC<PackageModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-fadeIn">
-      <div className="relative w-full max-w-5xl bg-[#092218] border border-[#c5a059]/40 rounded-3xl shadow-2xl overflow-hidden my-6 flex flex-col max-h-[92vh]">
+      <div className="relative w-full max-w-5xl bg-[#092218] border border-[#C99A2E]/40 rounded-3xl shadow-2xl overflow-hidden my-6 flex flex-col max-h-[92vh]">
         {/* Sticky Modal Header */}
         <div className="sticky top-0 z-20 bg-[#081a13]/95 backdrop-blur-md border-b border-[#1a4a35] px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#c5a059] bg-[#0e3022] px-3 py-1 rounded-full border border-[#c5a059]/30">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#C99A2E] bg-[#0e3022] px-3 py-1 rounded-full border border-[#C99A2E]/30">
               {packageItem.country} • {packageItem.category}
             </span>
             <span className="hidden sm:inline-flex items-center gap-1 text-xs text-[#a49a88]">
-              <Clock size={13} className="text-[#c5a059]" />
+              <Clock size={13} className="text-[#C99A2E]" />
               <span>{packageItem.durationLabel}</span>
             </span>
           </div>
@@ -102,7 +102,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                   alt={packageItem.title}
                   className="w-full h-full object-cover transition-all duration-300"
                 />
-                <div className="absolute top-3 left-3 bg-[#081a13]/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs text-[#c5a059] font-medium border border-[#c5a059]/30">
+                <div className="absolute top-3 left-3 bg-[#081a13]/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs text-[#C99A2E] font-medium border border-[#C99A2E]/30">
                   {packageItem.destination}
                 </div>
               </div>
@@ -116,7 +116,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                       onClick={() => setActiveImageIndex(idx)}
                       className={`h-16 w-24 rounded-lg overflow-hidden shrink-0 border-2 transition-all cursor-pointer ${
                         activeImageIndex === idx
-                          ? 'border-[#c5a059] scale-105'
+                          ? 'border-[#C99A2E] scale-105'
                           : 'border-transparent opacity-60 hover:opacity-100'
                       }`}
                     >
@@ -130,8 +130,8 @@ export const PackageModal: React.FC<PackageModalProps> = ({
             {/* Quick Details & Pricing Box */}
             <div className="lg:col-span-5 bg-[#0e2c20] p-6 rounded-2xl border border-[#1a4a35] space-y-6">
               <div>
-                <div className="flex items-center gap-2 text-xs text-[#c5a059] mb-1 font-medium">
-                  <Star size={13} className="fill-[#c5a059]" />
+                <div className="flex items-center gap-2 text-xs text-[#C99A2E] mb-1 font-medium">
+                  <Star size={13} className="fill-[#C99A2E]" />
                   <span>{packageItem.rating.toFixed(2)} Rating</span>
                   <span className="text-[#a49a88]">({packageItem.reviewsCount} verified reviews)</span>
                 </div>
@@ -139,7 +139,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                   {packageItem.title}
                 </h1>
                 <p className="text-xs text-[#dcd4c7] mt-2 flex items-center gap-1.5">
-                  <MapPin size={13} className="text-[#c5a059] shrink-0" />
+                  <MapPin size={13} className="text-[#C99A2E] shrink-0" />
                   <span>{packageItem.destination}</span>
                 </p>
               </div>
@@ -155,7 +155,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                     onClick={() => setSelectedTier('budget')}
                     className={`py-2 text-xs font-medium rounded-lg transition-all cursor-pointer ${
                       selectedTier === 'budget'
-                        ? 'bg-[#1a4a35] text-[#c5a059] font-bold shadow-sm'
+                        ? 'bg-[#1a4a35] text-[#C99A2E] font-bold shadow-sm'
                         : 'text-[#a49a88] hover:text-white'
                     }`}
                   >
@@ -166,7 +166,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                     onClick={() => setSelectedTier('midrange')}
                     className={`py-2 text-xs font-medium rounded-lg transition-all cursor-pointer ${
                       selectedTier === 'midrange'
-                        ? 'bg-[#1a4a35] text-[#c5a059] font-bold shadow-sm'
+                        ? 'bg-[#1a4a35] text-[#C99A2E] font-bold shadow-sm'
                         : 'text-[#a49a88] hover:text-white'
                     }`}
                   >
@@ -177,7 +177,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                     onClick={() => setSelectedTier('luxury')}
                     className={`py-2 text-xs font-medium rounded-lg transition-all cursor-pointer ${
                       selectedTier === 'luxury'
-                        ? 'bg-[#1a4a35] text-[#c5a059] font-bold shadow-sm'
+                        ? 'bg-[#1a4a35] text-[#C99A2E] font-bold shadow-sm'
                         : 'text-[#a49a88] hover:text-white'
                     }`}
                   >
@@ -197,7 +197,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                   </span>
                   <span className="text-xs text-[#a49a88]">/ person</span>
                 </div>
-                <p className="text-[11px] text-[#c5a059] mt-1.5">
+                <p className="text-[11px] text-[#C99A2E] mt-1.5">
                   Includes private 4x4 Land Cruiser, guides, park permits & meals
                 </p>
                 <p className="text-[11px] text-[#faf7f2] mt-2 font-semibold">Displayed price is per person and is based on a group of at least 6 travellers.</p>
@@ -219,11 +219,11 @@ export const PackageModal: React.FC<PackageModalProps> = ({
 
               <div className="pt-2 text-xs text-[#a49a88] space-y-1.5 border-t border-[#1a4a35]">
                 <p className="flex items-center gap-1.5">
-                  <ShieldCheck size={14} className="text-[#c5a059]" />
+                  <ShieldCheck size={14} className="text-[#C99A2E]" />
                   <span>Free date modification up to 30 days before safari</span>
                 </p>
                 <p className="flex items-center gap-1.5">
-                  <Users size={14} className="text-[#c5a059]" />
+                  <Users size={14} className="text-[#C99A2E]" />
                   <span>Private safari vehicle for you and your travel companions</span>
                 </p>
               </div>
@@ -236,7 +236,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
               onClick={() => setActiveTab('itinerary')}
               className={`py-3 text-sm font-semibold transition-colors border-b-2 cursor-pointer ${
                 activeTab === 'itinerary'
-                  ? 'border-[#c5a059] text-[#c5a059]'
+                  ? 'border-[#C99A2E] text-[#C99A2E]'
                   : 'border-transparent text-[#a49a88] hover:text-white'
               }`}
             >
@@ -246,7 +246,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
               onClick={() => setActiveTab('inclusions')}
               className={`py-3 text-sm font-semibold transition-colors border-b-2 cursor-pointer ${
                 activeTab === 'inclusions'
-                  ? 'border-[#c5a059] text-[#c5a059]'
+                  ? 'border-[#C99A2E] text-[#C99A2E]'
                   : 'border-transparent text-[#a49a88] hover:text-white'
               }`}
             >
@@ -256,7 +256,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
               onClick={() => setActiveTab('accommodation')}
               className={`py-3 text-sm font-semibold transition-colors border-b-2 cursor-pointer ${
                 activeTab === 'accommodation'
-                  ? 'border-[#c5a059] text-[#c5a059]'
+                  ? 'border-[#C99A2E] text-[#C99A2E]'
                   : 'border-transparent text-[#a49a88] hover:text-white'
               }`}
             >
@@ -272,7 +272,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#dcd4c7]">
                   {packageItem.highlights.map((h, i) => (
                     <div key={i} className="flex items-start gap-2">
-                      <CheckCircle2 size={14} className="text-[#c5a059] shrink-0 mt-0.5" />
+                      <CheckCircle2 size={14} className="text-[#C99A2E] shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </div>
                   ))}
@@ -288,7 +288,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <div className="flex items-center gap-2.5">
-                        <span className="w-8 h-8 rounded-full bg-[#1a4a35] text-[#c5a059] font-bold text-xs flex items-center justify-center shrink-0">
+                        <span className="w-8 h-8 rounded-full bg-[#1a4a35] text-[#C99A2E] font-bold text-xs flex items-center justify-center shrink-0">
                           {day.day}
                         </span>
                         <h5 className="font-serif text-base font-bold text-white">
@@ -296,7 +296,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                         </h5>
                       </div>
                       {day.meals && (
-                        <span className="text-xs text-[#c5a059] bg-[#081a13] px-2.5 py-1 rounded-md border border-[#1a4a35]">
+                        <span className="text-xs text-[#C99A2E] bg-[#081a13] px-2.5 py-1 rounded-md border border-[#1a4a35]">
                           Meals: {day.meals}
                         </span>
                       )}
@@ -306,15 +306,15 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                       <p className="text-xs sm:text-sm text-[#dcd4c7] leading-relaxed">
                         {day.description}
                       </p>
-                      <div className="rounded-xl bg-[#081a13]/80 border border-[#c5a059]/20 px-4 py-3">
-                        <p className="text-[10px] uppercase tracking-wider font-bold text-[#c5a059] mb-1.5">A little more to look forward to</p>
+                      <div className="rounded-xl bg-[#081a13]/80 border border-[#C99A2E]/20 px-4 py-3">
+                        <p className="text-[10px] uppercase tracking-wider font-bold text-[#C99A2E] mb-1.5">A little more to look forward to</p>
                         <p className="text-xs text-[#dcd4c7] leading-relaxed">{getDayExperienceNote(day.day)}</p>
                       </div>
                     </div>
 
                     {day.accommodation && (
                       <p className="text-xs text-[#a49a88] pl-10 flex items-center gap-1.5">
-                        <BedDouble size={13} className="text-[#c5a059]" />
+                        <BedDouble size={13} className="text-[#C99A2E]" />
                         <span>Stay: {day.accommodation}</span>
                       </p>
                     )}
@@ -370,11 +370,11 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                   onClick={() => setSelectedTier('budget')}
                   className={`p-6 rounded-2xl border transition-all cursor-pointer ${
                     selectedTier === 'budget'
-                      ? 'bg-[#123829] border-[#c5a059] shadow-lg'
+                      ? 'bg-[#123829] border-[#C99A2E] shadow-lg'
                       : 'bg-[#0e2c20] border-[#1a4a35]'
                   }`}
                 >
-                  <span className="text-xs uppercase font-bold text-[#c5a059]">Option A</span>
+                  <span className="text-xs uppercase font-bold text-[#C99A2E]">Option A</span>
                   <h4 className="font-serif text-xl font-bold text-white mt-1">Budget Camping</h4>
                   <div className="text-2xl font-bold font-mono text-[#faf7f2] my-2">
                     ${packageItem.tierPricing.budget.toLocaleString()} <span className="text-xs text-[#a49a88]">/ person</span>
@@ -392,15 +392,15 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                   onClick={() => setSelectedTier('midrange')}
                   className={`p-6 rounded-2xl border transition-all cursor-pointer ${
                     selectedTier === 'midrange'
-                      ? 'bg-[#123829] border-[#c5a059] shadow-lg ring-1 ring-[#c5a059]'
+                      ? 'bg-[#123829] border-[#C99A2E] shadow-lg ring-1 ring-[#C99A2E]'
                       : 'bg-[#0e2c20] border-[#1a4a35]'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-xs uppercase font-bold text-[#c5a059]">Option B (Most Popular)</span>
+                    <span className="text-xs uppercase font-bold text-[#C99A2E]">Option B (Most Popular)</span>
                   </div>
                   <h4 className="font-serif text-xl font-bold text-white mt-1">Mid-Range Lodges</h4>
-                  <div className="text-2xl font-bold font-mono text-[#c5a059] my-2">
+                  <div className="text-2xl font-bold font-mono text-[#C99A2E] my-2">
                     ${packageItem.tierPricing.midrange.toLocaleString()} <span className="text-xs text-[#a49a88]">/ person</span>
                   </div>
                   <ul className="text-xs text-[#dcd4c7] space-y-2 mt-4">
@@ -416,11 +416,11 @@ export const PackageModal: React.FC<PackageModalProps> = ({
                   onClick={() => setSelectedTier('luxury')}
                   className={`p-6 rounded-2xl border transition-all cursor-pointer ${
                     selectedTier === 'luxury'
-                      ? 'bg-[#123829] border-[#c5a059] shadow-lg'
+                      ? 'bg-[#123829] border-[#C99A2E] shadow-lg'
                       : 'bg-[#0e2c20] border-[#1a4a35]'
                   }`}
                 >
-                  <span className="text-xs uppercase font-bold text-[#c5a059]">Option C</span>
+                  <span className="text-xs uppercase font-bold text-[#C99A2E]">Option C</span>
                   <h4 className="font-serif text-xl font-bold text-white mt-1">Luxury Tented Suites</h4>
                   <div className="text-2xl font-bold font-mono text-[#faf7f2] my-2">
                     ${packageItem.tierPricing.luxury.toLocaleString()} <span className="text-xs text-[#a49a88]">/ person</span>
@@ -442,7 +442,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({
           <div className="flex items-center gap-3 text-xs text-[#a49a88]">
             <span>Selected Tier: <strong className="text-white capitalize">{selectedTier}</strong></span>
             <span>•</span>
-            <span className="text-lg font-bold font-mono text-[#c5a059]">
+            <span className="text-lg font-bold font-mono text-[#C99A2E]">
               ${currentPrice.toLocaleString()} <span className="text-xs font-normal text-[#a49a88]">/ person</span>
             </span>
           </div>
