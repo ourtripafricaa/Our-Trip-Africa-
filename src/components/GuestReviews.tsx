@@ -102,7 +102,7 @@ export const GuestReviews: React.FC = () => {
           <article key={activeReview.id} aria-live="polite" className="min-h-[280px] rounded-3xl bg-white border border-slate-200 p-7 sm:p-9 shadow-md flex flex-col">
             <div className="flex items-center justify-between gap-3 mb-5">
               {activeReview.rating > 0 ? (
-                <div className="flex items-center gap-1 text-[#c5a059]" aria-label={activeReview.rating + ' out of 5 stars'}>
+                <div className="flex items-center gap-1 text-[#C99A2E]" aria-label={activeReview.rating + ' out of 5 stars'}>
                   {Array.from({ length: 5 }, (_, index) => <Star key={index} size={19} fill={index < activeReview.rating ? 'currentColor' : 'none'} />)}
                   <span className="ml-2 text-xs text-slate-500">{activeReview.rating}/5</span>
                 </div>
@@ -125,7 +125,7 @@ export const GuestReviews: React.FC = () => {
             </button>
             <div className="flex items-center gap-2" aria-label="Choose a review">
               {allReviews.map((item, index) => (
-                <button key={item.id} type="button" aria-label={'Show review ' + (index + 1)} aria-current={index === activeIndex ? 'true' : undefined} onClick={() => setActiveIndex(index)} className={`h-2.5 rounded-full transition-all ${index === activeIndex ? 'w-7 bg-[#c5a059]' : 'w-2.5 bg-slate-300 hover:bg-slate-500'}`}/>
+                <button key={item.id} type="button" aria-label={'Show review ' + (index + 1)} aria-current={index === activeIndex ? 'true' : undefined} onClick={() => setActiveIndex(index)} className={`h-2.5 rounded-full transition-all ${index === activeIndex ? 'w-7 bg-[#C99A2E]' : 'w-2.5 bg-slate-300 hover:bg-slate-500'}`}/>
               ))}
             </div>
             <button type="button" aria-label="Next review" onClick={() => setActiveIndex(current => (current + 1) % allReviews.length)} className="rounded-full border border-[#0e3022] p-3 text-[#0e3022] hover:bg-[#0e3022] hover:text-white transition-colors">
@@ -142,14 +142,14 @@ export const GuestReviews: React.FC = () => {
         </a>
       </div>
 
-      <div className="max-w-3xl mx-auto rounded-3xl bg-[#0e3022] border border-[#c5a059]/40 p-6 sm:p-8 text-white">
+      <div className="max-w-3xl mx-auto rounded-3xl bg-[#0e3022] border border-[#C99A2E]/40 p-6 sm:p-8 text-white">
         <div className="mb-5">
           <h3 className="font-serif text-xl sm:text-2xl font-bold">Share Your Safari Experience</h3>
           <p className="text-xs text-slate-300 mt-1">Your review will be submitted privately for approval before publication.</p>
         </div>
         {sent ? (
           <div className="rounded-2xl bg-white/10 p-5 text-center">
-            <CheckCircle2 className="mx-auto text-[#c5a059]" size={32}/>
+            <CheckCircle2 className="mx-auto text-[#C99A2E]" size={32}/>
             <p className="font-bold mt-2">Thank you for your feedback!</p>
             <p className="text-xs text-slate-300 mt-1">Our team will review your submission before it appears on the website.</p>
           </div>
@@ -165,7 +165,7 @@ export const GuestReviews: React.FC = () => {
             </label>
             <textarea required minLength={10} maxLength={2000} rows={4} value={review} onChange={e=>setReview(e.target.value)} placeholder="Tell future travellers about your experience..." className="sm:col-span-2 rounded-xl bg-[#081a13] border border-white/20 px-4 py-3 text-sm text-white placeholder:text-slate-400"/>
             {error && <p role="alert" className="sm:col-span-2 text-sm text-red-200">{error}</p>}
-            <button disabled={sending} className="sm:col-span-2 inline-flex items-center justify-center gap-2 rounded-xl bg-[#c5a059] px-5 py-3 text-sm font-bold text-[#061d14] disabled:opacity-60">
+            <button disabled={sending} className="sm:col-span-2 inline-flex items-center justify-center gap-2 rounded-xl bg-[#C99A2E] px-5 py-3 text-sm font-bold text-[#061d14] disabled:opacity-60">
               <Send size={16}/>{sending ? 'Sending...' : 'Submit Review'}
             </button>
           </form>
