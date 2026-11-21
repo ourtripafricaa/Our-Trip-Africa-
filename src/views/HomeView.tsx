@@ -307,13 +307,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </span>
           </div>
         </div>
-        <div className="rounded-2xl border border-[#c5a059]/40 bg-[#0e3022] px-6 py-7 text-center text-white shadow-xl">
+        <div className="rounded-2xl border border-[#c5a059]/50 bg-white px-6 py-7 text-center text-[#0e3022] shadow-lg">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#e4c681]">Your adventure is one message away</p>
-          <h3 className="mt-2 font-serif text-2xl sm:text-3xl font-bold">Seen a place you would love to visit?</h3>
-          <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-200">Tell our travel consultants your travel dates, group size and budget. We will help you shape the right journey.</p>
+          <h3 className="mt-2 font-serif text-2xl sm:text-3xl font-bold text-[#0e3022]">Seen a place you would love to visit?</h3>
+          <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-600">Tell our travel consultants your travel dates, group size and budget. We will help you shape the right journey.</p>
           <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3">
-            <button type="button" onClick={() => onOpenBooking()} className="rounded-xl bg-[#c5a059] px-7 py-3.5 text-sm font-extrabold text-[#061d14] shadow-lg hover:bg-[#e4c681] transition-colors">Enquire & Start Booking</button>
-            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-white/40 px-7 py-3.5 text-sm font-bold text-white hover:bg-white/10 transition-colors">Book on WhatsApp</a>
+            <button type="button" onClick={() => onOpenBooking()} className="rounded-xl bg-[#D4A017] px-7 py-3.5 text-sm font-extrabold text-[#0e3022] shadow-lg hover:bg-[#e4c681] transition-colors">Enquire & Start Booking</button>
+            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-[#0e5638] bg-[#0e5638] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#0a402a] transition-colors">Book on WhatsApp</a>
           </div>
         </div>
       </section>
@@ -360,21 +360,21 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 3. DESTINATIONS SHOWCASE BENTO */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="relative overflow-hidden rounded-[2rem] border border-[#c5a059]/50 bg-[#061d14] shadow-2xl">
+        <div className="relative overflow-hidden rounded-[2rem] border border-[#c5a059]/50 bg-white shadow-lg">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[360px]">
             <div className="relative z-10 flex flex-col justify-center items-start px-7 py-10 sm:px-10 sm:py-14 lg:px-12">
-              <span className="inline-flex items-center rounded-full border border-[#c5a059]/60 bg-[#c5a059]/10 px-4 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-[0.24em] text-[#e4c681]">
+              <span className="inline-flex items-center rounded-full border border-[#c5a059]/50 bg-[#D4A017]/10 px-4 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-[0.24em] text-[#0e5638]">
                 Curated Destinations
               </span>
-              <h2 className="mt-5 font-serif text-3xl sm:text-4xl xl:text-5xl font-bold leading-tight text-white">
+              <h2 className="mt-5 font-serif text-3xl sm:text-4xl xl:text-5xl font-bold leading-tight text-[#0e3022]">
                 DISCOVER THE ICONIC DESTINATIONS IN AFRICA AND UAE
               </h2>
-              <p className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-slate-200">
+              <p className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-slate-600">
                 From the great wildlife plains of East Africa to tropical island shores, mountain adventures and the remarkable cities of the UAE, discover journeys made unforgettable.
               </p>
               <button
                 onClick={() => onNavigate('destinations')}
-                className="mt-7 inline-flex items-center justify-center gap-3 rounded-xl bg-[#c5a059] px-7 py-4 text-sm font-extrabold text-[#061d14] shadow-lg transition-all hover:-translate-y-1 hover:bg-[#e4c681] cursor-pointer"
+                className="mt-7 inline-flex items-center justify-center gap-3 rounded-xl bg-[#D4A017] px-7 py-4 text-sm font-extrabold text-[#0e3022] shadow-lg transition-all hover:-translate-y-1 hover:bg-[#e4c681] cursor-pointer"
               >
                 Explore All Destinations
                 <ArrowRight size={18} />
@@ -387,8 +387,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#061d14] via-[#061d14]/20 to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-[#061d14]/10" />
-              <div className="absolute bottom-4 right-4 rounded-lg border border-white/20 bg-[#061d14]/80 px-3 py-2 text-[10px] text-white backdrop-blur-sm">
+              <div className="absolute inset-0 bg-gradient-to-r from-white/35 via-transparent to-transparent lg:bg-gradient-to-l lg:from-transparent lg:via-transparent lg:to-white/10" />
+              <div className="absolute bottom-4 right-4 rounded-lg border border-white/50 bg-[#0e5638]/90 px-3 py-2 text-[10px] text-white backdrop-blur-sm">
                 Africa & UAE • Iconic Destinations
               </div>
             </div>
@@ -614,17 +614,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* Compact travel stories feature */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl border border-[#c5a059]/45 bg-[#0e3022] p-4 sm:p-5 shadow-lg">
+        <div className="relative overflow-hidden rounded-2xl border border-[#c5a059]/50 bg-white p-4 sm:p-5 shadow-lg">
           <div className="pointer-events-none absolute -right-12 -top-16 h-40 w-40 rounded-full bg-[#c5a059]/10 blur-2xl" />
           <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center">
             <div className="min-w-0 flex-1 flex items-start gap-3 sm:gap-4">
-              <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#c5a059]/40 bg-white/5 text-[#e4c681]">
+              <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#c5a059]/40 bg-[#D4A017]/10 text-[#0e5638]">
                 <Compass size={21} />
               </div>
               <div className="min-w-0">
-                <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#e4c681]">Explore • Learn • Get Inspired</p>
-                <h2 className="mt-1 font-serif text-lg sm:text-2xl font-bold leading-snug text-white">African Safari Stories, Wildlife, Travel Guides &amp; News</h2>
-                <p className="mt-1 max-w-2xl text-xs sm:text-sm leading-relaxed text-emerald-50/80">Discover safari inspiration, wildlife stories, destination guides and useful travel advice from across Africa.</p>
+                <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Explore • Learn • Get Inspired</p>
+                <h2 className="mt-1 font-serif text-lg sm:text-2xl font-bold leading-snug text-[#0e3022]">African Safari Stories, Wildlife, Travel Guides &amp; News</h2>
+                <p className="mt-1 max-w-2xl text-xs sm:text-sm leading-relaxed text-slate-600">Discover safari inspiration, wildlife stories, destination guides and useful travel advice from across Africa.</p>
                 <button type="button" onClick={() => onNavigate('blog')} className="mt-3 inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-[#c5a059] px-4 py-2.5 text-xs sm:text-sm font-extrabold text-[#061d14] shadow-md transition hover:bg-[#e4c681]">
                   Discover the Travel Story <ArrowRight size={16} />
                 </button>
@@ -683,25 +683,25 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* Personalised safari planning and FAQ - placed immediately below the image slideshow */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="relative overflow-hidden rounded-[2rem] border-2 border-[#c5a059] bg-[#073b29] shadow-xl">
-          <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full border border-[#c5a059]/25" />
+        <div className="relative overflow-hidden rounded-[2rem] border border-[#c5a059]/50 bg-white shadow-lg">
+          <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border border-[#c5a059]/20" />
           <div className="relative grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 p-6 sm:p-9 lg:p-11 items-center">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#c5a059]/70 bg-[#c5a059]/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#e8c77f]"><Sparkles size={14} /> Your journey, your way</span>
-              <h2 className="mt-5 text-3xl sm:text-4xl font-serif font-bold leading-tight text-white">Haven’t Found Your Perfect Safari Yet?</h2>
-              <p className="mt-4 max-w-2xl text-sm sm:text-base leading-7 text-emerald-50/90">Tell us when you would like to travel and which destinations you dream of exploring. Whether it’s a wildlife safari, a Kilimanjaro climb, a Zanzibar escape or a multi-country adventure, our Arusha-based team will help shape the right experience for you.</p>
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#c5a059]/50 bg-[#D4A017]/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#0e5638]"><Sparkles size={14} /> Your journey, your way</span>
+              <h2 className="mt-5 text-3xl sm:text-4xl font-serif font-bold leading-tight text-[#0e3022]">Haven’t Found Your Perfect Safari Yet?</h2>
+              <p className="mt-4 max-w-2xl text-sm sm:text-base leading-7 text-slate-600">Tell us when you would like to travel and which destinations you dream of exploring. Whether it’s a wildlife safari, a Kilimanjaro climb, a Zanzibar escape or a multi-country adventure, our Arusha-based team will help shape the right experience for you.</p>
               <div className="mt-5 flex flex-col sm:flex-row gap-3">
-                <div className="flex items-center gap-3 rounded-xl border border-[#c5a059]/35 bg-white/5 px-4 py-3 text-sm text-white"><CalendarDays className="text-[#e8c77f]" size={19} /><span>Share your preferred travel dates</span></div>
+                <div className="flex items-center gap-3 rounded-xl border border-[#c5a059]/35 bg-[#fbfaf6] px-4 py-3 text-sm text-[#0e3022]"><CalendarDays className="text-[#0e5638]" size={19} /><span>Share your preferred travel dates</span></div>
                 <div className="flex items-center gap-3 rounded-xl border border-[#c5a059]/35 bg-white/5 px-4 py-3 text-sm text-white"><MapPin className="text-[#e8c77f]" size={19} /><span>Choose your dream destinations</span></div>
               </div>
-              <p className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#f0d48f]"><Clock3 size={18} /> A personalised travel solution within 24 hours.</p>
+              <p className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#0e5638]"><Clock3 size={18} /> A personalised travel solution within 24 hours.</p>
             </div>
-            <div className="rounded-2xl border border-[#c5a059]/50 bg-[#0d5139] p-6 sm:p-7 shadow-lg">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#e8c77f]">Let’s plan something unforgettable</p>
-              <h3 className="mt-3 text-2xl font-serif font-bold text-white">Your dream trip starts with a message.</h3>
-              <p className="mt-3 text-sm leading-6 text-emerald-50/85">Send us your travel dates and preferred destinations. We’ll help you with an itinerary and a quotation tailored to your plans.</p>
-              <a href="https://wa.me/255624661830?text=Hello%20Our%20Trip%20Africa!%20I%20would%20like%20help%20planning%20a%20safari%20or%20holiday.%20My%20preferred%20travel%20date%20is%3A%20_____.%20The%20destinations%20I%20am%20interested%20in%20are%3A%20_____.%20Please%20help%20me%20with%20a%20suitable%20itinerary%20and%20quotation." target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#c5a059] px-5 py-4 text-sm font-extrabold text-[#073b29] shadow-md transition hover:bg-[#e3c27b]"><MessageCircle size={19} /> PLAN MY SAFARI WITH US <ArrowRight size={18} /></a>
-              <p className="mt-4 text-center text-xs text-emerald-100/75">WhatsApp: +255 624 661 830 · We’re here to help, 24/7.</p>
+            <div className="rounded-2xl border border-[#c5a059]/40 bg-[#fbfaf6] p-6 sm:p-7 shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Let’s plan something unforgettable</p>
+              <h3 className="mt-3 text-2xl font-serif font-bold text-[#0e3022]">Your dream trip starts with a message.</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">Send us your travel dates and preferred destinations. We’ll help you with an itinerary and a quotation tailored to your plans.</p>
+              <a href="https://wa.me/255624661830?text=Hello%20Our%20Trip%20Africa!%20I%20would%20like%20help%20planning%20a%20safari%20or%20holiday.%20My%20preferred%20travel%20date%20is%3A%20_____.%20The%20destinations%20I%20am%20interested%20in%20are%3A%20_____.%20Please%20help%20me%20with%20a%20suitable%20itinerary%20and%20quotation." target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#D4A017] px-5 py-4 text-sm font-extrabold text-[#0e3022] shadow-md transition hover:bg-[#e3c27b]"><MessageCircle size={19} /> PLAN MY SAFARI WITH US <ArrowRight size={18} /></a>
+              <p className="mt-4 text-center text-xs text-slate-500">WhatsApp: +255 624 661 830 · We’re here to help, 24/7.</p>
             </div>
           </div>
         </div>
@@ -799,11 +799,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* Customer Trust & Booking Confidence */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-[#c5a059]/40 bg-[#0e3022] p-7 sm:p-10 text-white">
+        <div className="rounded-3xl border border-[#c5a059]/50 bg-white p-7 sm:p-10 text-[#0e3022] shadow-lg">
           <div className="max-w-3xl mx-auto text-center space-y-3 mb-8">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#e4c681]">Travel With Confidence</span>
-            <h2 className="font-serif text-2xl sm:text-4xl font-bold">Why Plan Your Journey With Our Trip Africa?</h2>
-            <p className="text-sm text-slate-200">Clear communication, locally planned journeys and direct access to our Arusha-based team from your first enquiry to the end of your trip.</p>
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Travel With Confidence</span>
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#0e3022]">Why Plan Your Journey With Our Trip Africa?</h2>
+            <p className="text-sm text-slate-600">Clear communication, locally planned journeys and direct access to our Arusha-based team from your first enquiry to the end of your trip.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
@@ -812,16 +812,16 @@ export const HomeView: React.FC<HomeViewProps> = ({
               ['Clear Package Details', 'Review the itinerary, inclusions and exclusions before confirming.'],
               ['Direct Guest Support', 'Reach our team by WhatsApp or email for trip planning assistance.']
             ].map(([title, description]) => (
-              <div key={title} className="rounded-2xl border border-white/15 bg-white/5 p-5">
-                <ShieldCheck className="text-[#c5a059] mb-3" size={25}/>
-                <h3 className="font-bold text-white">{title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-slate-300">{description}</p>
+              <div key={title} className="rounded-2xl border border-[#c5a059]/25 bg-[#fbfaf6] p-5">
+                <ShieldCheck className="text-[#0e5638] mb-3" size={25}/>
+                <h3 className="font-bold text-[#0e3022]">{title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">{description}</p>
               </div>
             ))}
           </div>
           <div className="mt-7 flex flex-col sm:flex-row justify-center gap-3">
-            <button onClick={() => onOpenBooking()} className="rounded-xl bg-[#c5a059] px-6 py-3 text-sm font-bold text-[#061d14]">Start a Booking Enquiry</button>
-            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-white/30 px-6 py-3 text-center text-sm font-bold text-white">Chat With Our Team</a>
+            <button onClick={() => onOpenBooking()} className="rounded-xl bg-[#D4A017] px-6 py-3 text-sm font-bold text-[#0e3022]">Start a Booking Enquiry</button>
+            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl bg-[#0e5638] px-6 py-3 text-center text-sm font-bold text-white hover:bg-[#0a402a]">Chat With Our Team</a>
           </div>
         </div>
       </section>
