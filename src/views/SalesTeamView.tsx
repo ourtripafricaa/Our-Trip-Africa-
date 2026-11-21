@@ -14,7 +14,7 @@ export const SalesTeamView: React.FC<SalesTeamViewProps> = ({ onOpenBooking, onN
       {/* Page Header */}
       <div className="text-center max-w-3xl mx-auto space-y-3">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0e3022]/10 border border-[#0e3022]/20 text-[#0e3022] text-xs font-semibold uppercase tracking-widest">
-          <Sparkles size={13} className="text-[#c5a059]" />
+          <Sparkles size={13} className="text-[#C99A2E]" />
           <span>Safari Planning & Custom Expeditions</span>
         </span>
         <h1 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
@@ -28,14 +28,14 @@ export const SalesTeamView: React.FC<SalesTeamViewProps> = ({ onOpenBooking, onN
       {/* Main Direct Sales Action Banner (Deep Emerald Highlight) */}
       <div className="bg-[#0e3022] p-8 sm:p-10 rounded-3xl border border-[#1b4d38] shadow-xl text-white flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="space-y-2 text-center md:text-left">
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#c5a059]">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#C99A2E]">
             Direct Safari Planning Desk
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
             Request a Free Tailor-Made Safari Itinerary
           </h2>
           <p className="text-xs sm:text-sm text-slate-200 max-w-xl">
-            Sales Email: <a href={`mailto:${COMPANY_DETAILS.salesEmail}`} className="text-[#c5a059] font-bold hover:underline">{COMPANY_DETAILS.salesEmail}</a> • Direct WhatsApp: <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-bold hover:underline">{COMPANY_DETAILS.whatsappDisplay}</a>
+            Sales Email: <a href={`mailto:${COMPANY_DETAILS.salesEmail}`} className="text-[#C99A2E] font-bold hover:underline">{COMPANY_DETAILS.salesEmail}</a> • Direct WhatsApp: <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-bold hover:underline">{COMPANY_DETAILS.whatsappDisplay}</a>
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export const SalesTeamView: React.FC<SalesTeamViewProps> = ({ onOpenBooking, onN
           </div>
 
           <div className="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-[#c5a059]/20 text-[#c5a059] flex items-center justify-center">
+            <div className="w-12 h-12 rounded-2xl bg-[#C99A2E]/20 text-[#C99A2E] flex items-center justify-center">
               <Heart size={22} />
             </div>
             <h3 className="font-serif text-lg font-bold text-slate-900">Honeymoons & Milestones</h3>
