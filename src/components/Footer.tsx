@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenCloudflareGuide,
 }) => {
   return (
-    <footer className="ota-original-footer bg-gradient-to-r from-[#0a271c] via-[#0f382a] to-[#0a271c] text-[#dcd4c7] border-t border-[#1a4a35] pt-16 pb-12">
+    <footer className="ota-original-footer bg-gradient-to-r from-[#0a271c] via-[#0f382a] to-[#0a271c] text-[#F1F5F9] border-t border-[#1a4a35] pt-16 pb-12">
       {/* Pre-Footer Action Banner */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="rounded-3xl p-8 sm:p-12 bg-[#194A2D] border border-[#c5a059]/30 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -26,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({
             <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#faf7f2]">
               Ready to embark on an unforgettable safari?
             </h2>
-            <p className="text-sm sm:text-base text-[#dcd4c7]">
+            <p className="text-sm sm:text-base text-[#F1F5F9]">
               Speak directly with our local Tanzanian safari specialists in Arusha. Whether Budget Camping, Mid-range Lodges, or Luxury Tented Suites, we tailor every moment to you.
             </p>
           </div>
@@ -57,7 +57,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
           </div>
 
-          <p className="text-sm text-[#a49a88] leading-relaxed pr-4">
+          <p className="text-sm text-[#E2E8F0] leading-relaxed pr-4">
             Direct local tour operator based in Kisongo, Arusha – Tanzania. We specialize in authentic wildlife safaris, Mount Kilimanjaro trekking, Zanzibar beach holidays, and cultural tribal expeditions across Tanzania, Kenya, and Uganda.
           </p>
 
@@ -111,7 +111,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <Linkedin size={18} />
               </a>
             </div>
-            <p className="text-[11px] text-[#7d7465] mt-2">
+            <p className="text-[11px] text-[#C5A059] mt-2">
               Instagram: @ourtripafricaa • Other platforms: @ourtripafrica
             </p>
           </div>
@@ -122,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({
           <p className="text-sm font-serif font-bold text-white tracking-wide uppercase border-b border-[#1a4a35] pb-2">
             Safari Destinations
           </p>
-          <ul className="space-y-2 text-sm text-[#a49a88]">
+          <ul className="space-y-2 text-sm text-[#E2E8F0]">
             <li>
               <button
                 onClick={() => onNavigate('tanzania')}
@@ -195,7 +195,7 @@ export const Footer: React.FC<FooterProps> = ({
           <p className="text-sm font-serif font-bold text-white tracking-wide uppercase border-b border-[#1a4a35] pb-2">
             Company & Teams
           </p>
-          <ul className="space-y-2 text-sm text-[#a49a88]">
+          <ul className="space-y-2 text-sm text-[#E2E8F0]">
             <li>
               <button
                 onClick={() => onNavigate('about')}
@@ -242,14 +242,14 @@ export const Footer: React.FC<FooterProps> = ({
           <p className="text-sm font-serif font-bold text-white tracking-wide uppercase border-b border-[#1a4a35] pb-2">
             Direct Contacts
           </p>
-          <div className="space-y-3 text-xs text-[#a49a88]">
+          <div className="space-y-3 text-xs text-[#E2E8F0]">
             <div>
-              <p className="text-[10px] text-[#7d7465] uppercase font-semibold">Headquarters</p>
+              <p className="text-[10px] text-[#C5A059] uppercase font-semibold">Headquarters</p>
               <p className="text-[#faf7f2] mt-0.5">{COMPANY_DETAILS.address}</p>
             </div>
 
             <div>
-              <p className="text-[10px] text-[#7d7465] uppercase font-semibold">WhatsApp & Call</p>
+              <p className="text-[10px] text-[#C5A059] uppercase font-semibold">WhatsApp & Call</p>
               <a
                 href={`https://wa.me/${COMPANY_DETAILS.whatsappRaw}`}
                 target="_blank"
@@ -261,7 +261,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div>
-              <p className="text-[10px] text-[#7d7465] uppercase font-semibold">Booking Desk</p>
+              <p className="text-[10px] text-[#C5A059] uppercase font-semibold">Booking Desk</p>
               <a
                 href={`mailto:${COMPANY_DETAILS.bookingEmail}`}
                 className="text-[#c5a059] hover:underline block mt-0.5"
@@ -271,7 +271,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div>
-              <p className="text-[10px] text-[#7d7465] uppercase font-semibold">Support Desk</p>
+              <p className="text-[10px] text-[#C5A059] uppercase font-semibold">Support Desk</p>
               <a
                 href={`mailto:${COMPANY_DETAILS.supportEmail}`}
                 className="text-[#faf7f2] hover:text-[#c5a059] hover:underline block mt-0.5"
@@ -281,12 +281,12 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div>
-              <p className="text-[10px] text-[#7d7465] uppercase font-semibold">Management Team</p>
+              <p className="text-[10px] text-[#C5A059] uppercase font-semibold">Management Team</p>
               <a href="mailto:james@ourtripafrica.com" className="text-[#faf7f2] hover:text-[#c5a059] hover:underline block mt-0.5">james@ourtripafrica.com</a>
             </div>
 
             <div>
-              <p className="text-[10px] text-[#7d7465] uppercase font-semibold">Sales Desk</p>
+              <p className="text-[10px] text-[#C5A059] uppercase font-semibold">Sales Desk</p>
               <a
                 href={`mailto:${COMPANY_DETAILS.salesEmail}`}
                 className="text-[#faf7f2] hover:text-[#c5a059] hover:underline block mt-0.5"
@@ -299,21 +299,21 @@ export const Footer: React.FC<FooterProps> = ({
       </div>
 
       {/* Bottom Bar: Copyright & Accreditations */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#7d7465]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#C5A059]">
         <p>
           @Ferever Our Trip Africa. All rights reserved. Registered Tour Operator, Arusha, Tanzania.
         </p>
 
         <div className="flex flex-wrap items-center gap-6">
-          <span className="flex items-center gap-1.5 text-[#a49a88]">
+          <span className="flex items-center gap-1.5 text-[#E2E8F0]">
             <ShieldCheck size={14} className="text-[#c5a059]" />
             <span>Licensed Tanzanian Operator</span>
           </span>
-          <span className="flex items-center gap-1.5 text-[#a49a88]">
+          <span className="flex items-center gap-1.5 text-[#E2E8F0]">
             <HeartHandshake size={14} className="text-[#c5a059]" />
             <span>100% Fair Porter & Guide Wages</span>
           </span>
-          <span className="flex items-center gap-1.5 text-[#a49a88]">
+          <span className="flex items-center gap-1.5 text-[#E2E8F0]">
             <Compass size={14} className="text-[#c5a059]" />
             <span>ourtripafrica.com</span>
           </span>
