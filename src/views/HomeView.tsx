@@ -180,7 +180,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-28 space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#061d14]/85 backdrop-blur-md border border-[#c5a059]/40 text-[#c5a059] text-xs font-semibold uppercase tracking-widest shadow-lg">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#061d14]/85 backdrop-blur-md border border-[#C99A2E]/40 text-[#C99A2E] text-xs font-semibold uppercase tracking-widest shadow-lg">
             <Sparkles size={13} />
             <span>Tanzania • Kenya • Uganda • Zanzibar • South Africa • UAE</span>
           </div>
@@ -200,7 +200,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             />
             <button
               onClick={() => onNavigate('packages')}
-              className="px-6 py-3.5 text-sm font-semibold rounded-xl bg-[#0e3022] hover:bg-[#154632] text-white border border-[#c5a059]/40 hover:border-[#c5a059] transition-all cursor-pointer whitespace-nowrap shadow-md"
+              className="px-6 py-3.5 text-sm font-semibold rounded-xl bg-[#0e3022] hover:bg-[#154632] text-white border border-[#C99A2E]/40 hover:border-[#C99A2E] transition-all cursor-pointer whitespace-nowrap shadow-md"
             >
               Explore All {SAFARI_PACKAGES.length} Packages
             </button>
@@ -212,7 +212,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-[#0e3022] border border-[#1b4d38] p-6 rounded-3xl shadow-xl text-white">
           <div className="space-y-1 text-center sm:text-left">
-            <span className="font-serif text-2xl font-bold text-[#c5a059] font-mono tabular-nums">
+            <span className="font-serif text-2xl font-bold text-[#C99A2E] font-mono tabular-nums">
               15+ Years
             </span>
             <p className="text-xs font-semibold text-white">Direct Local Operator</p>
@@ -220,7 +220,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
 
           <div className="space-y-1 text-center sm:text-left">
-            <span className="font-serif text-2xl font-bold text-[#c5a059] font-mono tabular-nums">
+            <span className="font-serif text-2xl font-bold text-[#C99A2E] font-mono tabular-nums">
               100% Private
             </span>
             <p className="text-xs font-semibold text-white">Custom 4x4 Land Cruisers</p>
@@ -228,7 +228,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
 
           <div className="space-y-1 text-center sm:text-left">
-            <span className="font-serif text-2xl font-bold text-[#c5a059] font-mono tabular-nums">
+            <span className="font-serif text-2xl font-bold text-[#C99A2E] font-mono tabular-nums">
               Budget • Luxury
             </span>
             <p className="text-xs font-semibold text-white">Transparent Pricing</p>
@@ -253,7 +253,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <p className="text-sm text-slate-600">A glimpse of the wildlife, landscapes and unforgettable places waiting to be explored.</p>
         </div>
 
-        <div className="relative overflow-hidden rounded-[2rem] bg-[#061d14] border border-[#c5a059]/50 shadow-2xl">
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#061d14] border border-[#C99A2E]/50 shadow-2xl">
           <div className="relative h-[300px] sm:h-[440px] lg:h-[540px]">
             {TANZANIA_GALLERY.map((photo, index) => (
               <div
@@ -275,7 +275,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               type="button"
               onClick={() => setGalleryIndex((current) => (current - 1 + TANZANIA_GALLERY.length) % TANZANIA_GALLERY.length)}
               aria-label="Previous gallery image"
-              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#c5a059] hover:text-[#061d14] transition-colors"
+              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#C99A2E] hover:text-[#061d14] transition-colors"
             >
               ‹
             </button>
@@ -283,7 +283,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               type="button"
               onClick={() => setGalleryIndex((current) => (current + 1) % TANZANIA_GALLERY.length)}
               aria-label="Next gallery image"
-              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#c5a059] hover:text-[#061d14] transition-colors"
+              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#C99A2E] hover:text-[#061d14] transition-colors"
             >
               ›
             </button>
@@ -298,21 +298,21 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   onClick={() => setGalleryIndex(index)}
                   aria-label={`Show image ${index + 1}: ${photo.name}`}
                   aria-current={galleryIndex === index ? 'true' : undefined}
-                  className={`h-2.5 rounded-full transition-all ${galleryIndex === index ? 'w-8 bg-[#c5a059]' : 'w-2.5 bg-white/40 hover:bg-white/80'}`}
+                  className={`h-2.5 rounded-full transition-all ${galleryIndex === index ? 'w-8 bg-[#C99A2E]' : 'w-2.5 bg-white/40 hover:bg-white/80'}`}
                 />
               ))}
             </div>
-            <span className="text-[11px] sm:text-xs font-semibold tracking-wide text-[#e4c681]" aria-live="polite">
+            <span className="text-[11px] sm:text-xs font-semibold tracking-wide text-[#C99A2E]" aria-live="polite">
               {String(galleryIndex + 1).padStart(2, '0')} / {String(TANZANIA_GALLERY.length).padStart(2, '0')}
             </span>
           </div>
         </div>
-        <div className="rounded-2xl border border-[#c5a059]/50 bg-white px-6 py-7 text-center text-[#0e3022] shadow-lg">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#e4c681]">Your adventure is one message away</p>
+        <div className="rounded-2xl border border-[#C99A2E]/50 bg-white px-6 py-7 text-center text-[#0e3022] shadow-lg">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#C99A2E]">Your adventure is one message away</p>
           <h3 className="mt-2 font-serif text-2xl sm:text-3xl font-bold text-[#0e3022]">Seen a place you would love to visit?</h3>
           <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-600">Tell our travel consultants your travel dates, group size and budget. We will help you shape the right journey.</p>
           <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3">
-            <button type="button" onClick={() => onOpenBooking()} className="rounded-xl bg-[#D4A017] px-7 py-3.5 text-sm font-extrabold text-[#0e3022] shadow-lg hover:bg-[#e4c681] transition-colors">Enquire & Start Booking</button>
+            <button type="button" onClick={() => onOpenBooking()} className="rounded-xl bg-[#C99A2E] px-7 py-3.5 text-sm font-extrabold text-[#0e3022] shadow-lg hover:bg-[#C99A2E] transition-colors">Enquire & Start Booking</button>
             <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-[#0e5638] bg-[#0e5638] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#0a402a] transition-colors">Book on WhatsApp</a>
           </div>
         </div>
@@ -320,8 +320,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 2.5 DREAM TRIP PLANNER / BUDGET CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-[#c5a059]/50 bg-white p-8 sm:p-12 text-center shadow-lg">
-          <div className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-[#c5a059]/10 blur-3xl" />
+        <div className="relative overflow-hidden rounded-3xl border border-[#C99A2E]/50 bg-white p-8 sm:p-12 text-center shadow-lg">
+          <div className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-[#C99A2E]/10 blur-3xl" />
           <div className="relative mx-auto max-w-3xl">
             <span className="inline-flex items-center gap-2 rounded-full bg-[#0e5638]/10 px-3 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#0e5638]">
               <Sparkles size={13} /> A friendly message from Our Trip Africa
@@ -340,7 +340,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 href="https://wa.me/255624661830?text=Hello%20Our%20Trip%20Africa!%20I%20am%20interested%20in%20a%20safari.%20My%20estimated%20budget%20is%3A%20_____.%20Please%20help%20me%20plan%20a%20trip%20that%20fits%20my%20budget."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-[#c5a059] px-6 py-3 text-sm font-extrabold text-[#061d14] shadow-lg transition hover:bg-[#e4c681]"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-[#C99A2E] px-6 py-3 text-sm font-extrabold text-[#061d14] shadow-lg transition hover:bg-[#C99A2E]"
               >
                 <MessageCircle size={18} /> LET'S PLAN MY SAFARI <ArrowRight size={17} />
               </a>
@@ -360,10 +360,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 3. DESTINATIONS SHOWCASE BENTO */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="relative overflow-hidden rounded-[2rem] border border-[#c5a059]/50 bg-white shadow-lg">
+        <div className="relative overflow-hidden rounded-[2rem] border border-[#C99A2E]/50 bg-white shadow-lg">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[360px]">
             <div className="relative z-10 flex flex-col justify-center items-start px-7 py-10 sm:px-10 sm:py-14 lg:px-12">
-              <span className="inline-flex items-center rounded-full border border-[#c5a059]/50 bg-[#D4A017]/10 px-4 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-[0.24em] text-[#0e5638]">
+              <span className="inline-flex items-center rounded-full border border-[#C99A2E]/50 bg-[#C99A2E]/10 px-4 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-[0.24em] text-[#0e5638]">
                 Curated Destinations
               </span>
               <h2 className="mt-5 font-serif text-3xl sm:text-4xl xl:text-5xl font-bold leading-tight text-[#0e3022]">
@@ -374,7 +374,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </p>
               <button
                 onClick={() => onNavigate('destinations')}
-                className="mt-7 inline-flex items-center justify-center gap-3 rounded-xl bg-[#D4A017] px-7 py-4 text-sm font-extrabold text-[#0e3022] shadow-lg transition-all hover:-translate-y-1 hover:bg-[#e4c681] cursor-pointer"
+                className="mt-7 inline-flex items-center justify-center gap-3 rounded-xl bg-[#C99A2E] px-7 py-4 text-sm font-extrabold text-[#0e3022] shadow-lg transition-all hover:-translate-y-1 hover:bg-[#C99A2E] cursor-pointer"
               >
                 Explore All Destinations
                 <ArrowRight size={18} />
@@ -399,7 +399,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {/* Card 1: Tanzania (Large Bento) */}
           <div
             onClick={() => onNavigate('tanzania')}
-            className="md:col-span-8 group relative h-80 sm:h-96 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#c5a059] transition-all duration-300 shadow-md"
+            className="md:col-span-8 group relative h-80 sm:h-96 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#C99A2E] transition-all duration-300 shadow-md"
           >
             <img
               src={LOCAL_IMAGES.lion}
@@ -408,10 +408,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061d14] via-[#061d14]/40 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <span className="text-xs uppercase font-bold text-[#c5a059] tracking-wider">
+              <span className="text-xs uppercase font-bold text-[#C99A2E] tracking-wider">
                 Premier Wildlife Kingdom
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-[#c5a059] transition-colors">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-[#C99A2E] transition-colors">
                 Tanzania Safaris & Kilimanjaro
               </h3>
               <p className="text-xs sm:text-sm text-slate-200 max-w-xl line-clamp-2">
@@ -420,7 +420,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <button
                 type="button"
                 onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
-                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#C99A2E] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#C99A2E] transition-colors"
               >
                 Explore Tanzania Packages
               </button>
@@ -430,7 +430,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {/* Card 2: Zanzibar Beach */}
           <div
             onClick={() => onNavigate('zanzibar')}
-            className="md:col-span-4 group relative h-80 sm:h-96 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#c5a059] transition-all duration-300 shadow-md"
+            className="md:col-span-4 group relative h-80 sm:h-96 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#C99A2E] transition-all duration-300 shadow-md"
           >
             <img
               src={LOCAL_IMAGES.zanzibar}
@@ -439,10 +439,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061d14] via-[#061d14]/40 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 space-y-1.5">
-              <span className="text-xs uppercase font-bold text-[#c5a059] tracking-wider">
+              <span className="text-xs uppercase font-bold text-[#C99A2E] tracking-wider">
                 Island Escape
               </span>
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white group-hover:text-[#c5a059] transition-colors">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white group-hover:text-[#C99A2E] transition-colors">
                 Zanzibar Holidays
               </h3>
               <p className="text-xs text-slate-200 line-clamp-2">
@@ -451,7 +451,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <button
                 type="button"
                 onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
-                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#C99A2E] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#C99A2E] transition-colors"
               >
                 Explore Zanzibar Packages
               </button>
@@ -461,7 +461,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {/* Card 3: Kenya Safaris */}
           <div
             onClick={() => onNavigate('kenya')}
-            className="md:col-span-4 group relative h-72 sm:h-80 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#c5a059] transition-all duration-300 shadow-md"
+            className="md:col-span-4 group relative h-72 sm:h-80 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#C99A2E] transition-all duration-300 shadow-md"
           >
             <img
               src={LOCAL_IMAGES.hero}
@@ -470,10 +470,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061d14] via-[#061d14]/40 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 space-y-1.5">
-              <span className="text-xs uppercase font-bold text-[#c5a059] tracking-wider">
+              <span className="text-xs uppercase font-bold text-[#C99A2E] tracking-wider">
                 Big Five Territory
               </span>
-              <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#c5a059] transition-colors">
+              <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#C99A2E] transition-colors">
                 Kenya Safaris (3 Packages)
               </h3>
               <p className="text-xs text-slate-200 line-clamp-2">
@@ -482,7 +482,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <button
                 type="button"
                 onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
-                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#C99A2E] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#C99A2E] transition-colors"
               >
                 Explore Kenya Packages
               </button>
@@ -492,7 +492,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {/* Card 4: Uganda Gorillas */}
           <div
             onClick={() => onNavigate('uganda')}
-            className="md:col-span-4 group relative h-72 sm:h-80 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#c5a059] transition-all duration-300 shadow-md"
+            className="md:col-span-4 group relative h-72 sm:h-80 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#C99A2E] transition-all duration-300 shadow-md"
           >
             <img
               src={LOCAL_IMAGES.gorilla}
@@ -501,10 +501,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061d14] via-[#061d14]/40 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 space-y-1.5">
-              <span className="text-xs uppercase font-bold text-[#c5a059] tracking-wider">
+              <span className="text-xs uppercase font-bold text-[#C99A2E] tracking-wider">
                 Primate Capital
               </span>
-              <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#c5a059] transition-colors">
+              <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#C99A2E] transition-colors">
                 Uganda Mountain Gorillas
               </h3>
               <p className="text-xs text-slate-200 line-clamp-2">
@@ -513,7 +513,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <button
                 type="button"
                 onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
-                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#C99A2E] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#C99A2E] transition-colors"
               >
                 Explore Uganda Packages
               </button>
@@ -523,7 +523,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {/* Card 5: South Africa */}
           <div
             onClick={() => onNavigate('south-africa')}
-            className="md:col-span-4 group relative h-72 sm:h-80 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#c5a059] transition-all duration-300 shadow-md"
+            className="md:col-span-4 group relative h-72 sm:h-80 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#C99A2E] transition-all duration-300 shadow-md"
           >
             <img
               src={LOCAL_IMAGES.hero}
@@ -532,10 +532,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061d14] via-[#061d14]/40 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 space-y-1.5">
-              <span className="text-xs uppercase font-bold text-[#c5a059] tracking-wider">
+              <span className="text-xs uppercase font-bold text-[#C99A2E] tracking-wider">
                 Rainbow Nation
               </span>
-              <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#c5a059] transition-colors">
+              <h3 className="font-serif text-xl font-bold text-white group-hover:text-[#C99A2E] transition-colors">
                 South Africa (3 Packages)
               </h3>
               <p className="text-xs text-slate-200 line-clamp-2">
@@ -544,7 +544,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <button
                 type="button"
                 onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
-                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#C99A2E] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#C99A2E] transition-colors"
               >
                 Explore South Africa Packages
               </button>
@@ -554,7 +554,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {/* Card 6: UAE Tours (Banner Width) */}
           <div
             onClick={() => onNavigate('uae')}
-            className="md:col-span-12 group relative h-64 sm:h-72 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#c5a059] transition-all duration-300 shadow-md"
+            className="md:col-span-12 group relative h-64 sm:h-72 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#C99A2E] transition-all duration-300 shadow-md"
           >
             <img
               src={LOCAL_IMAGES.uaeDubai}
@@ -563,10 +563,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061d14] via-[#061d14]/50 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <span className="text-xs uppercase font-bold text-[#c5a059] tracking-wider">
+              <span className="text-xs uppercase font-bold text-[#C99A2E] tracking-wider">
                 Arabian Desert & Modern Marvels
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-[#c5a059] transition-colors">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-[#C99A2E] transition-colors">
                 United Arab Emirates: Dubai & Abu Dhabi (2 Packages)
               </h3>
               <p className="text-xs sm:text-sm text-slate-200 max-w-2xl">
@@ -575,7 +575,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <button
                 type="button"
                 onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
-                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#C99A2E] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#C99A2E] transition-colors"
               >
                 Explore UAE Packages
               </button>
@@ -583,7 +583,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           {/* Card 7: Hadzabe Cultural Experience */}
           <div
             onClick={() => onNavigate('hadzabe')}
-            className="md:col-span-12 group relative h-72 sm:h-80 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#c5a059] transition-all duration-300 shadow-md"
+            className="md:col-span-12 group relative h-72 sm:h-80 rounded-3xl overflow-hidden cursor-pointer border border-slate-200 hover:border-[#C99A2E] transition-all duration-300 shadow-md"
           >
             <img
               src={LOCAL_IMAGES.lakeEyasi}
@@ -592,8 +592,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061d14] via-[#061d14]/55 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 space-y-2">
-              <span className="text-xs uppercase font-bold text-[#c5a059] tracking-wider">Culture & Community • Lake Eyasi</span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-[#c5a059] transition-colors">
+              <span className="text-xs uppercase font-bold text-[#C99A2E] tracking-wider">Culture & Community • Lake Eyasi</span>
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white group-hover:text-[#C99A2E] transition-colors">
                 Hadzabe Cultural Experience
               </h3>
               <p className="text-xs sm:text-sm text-slate-200 max-w-3xl">
@@ -602,7 +602,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <button
                 type="button"
                 onClick={(event) => { event.stopPropagation(); onNavigate('packages'); }}
-                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#c5a059] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#d6b36d] transition-colors"
+                className="mt-3 inline-flex items-center justify-center rounded-xl bg-[#C99A2E] px-4 py-2.5 text-[#061d14] font-bold text-xs shadow-lg hover:bg-[#C99A2E] transition-colors"
               >
                 Explore Hadzabe Packages
               </button>
@@ -614,18 +614,18 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* Compact travel stories feature */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl border border-[#c5a059]/50 bg-white p-4 sm:p-5 shadow-lg">
-          <div className="pointer-events-none absolute -right-12 -top-16 h-40 w-40 rounded-full bg-[#c5a059]/10 blur-2xl" />
+        <div className="relative overflow-hidden rounded-2xl border border-[#C99A2E]/50 bg-white p-4 sm:p-5 shadow-lg">
+          <div className="pointer-events-none absolute -right-12 -top-16 h-40 w-40 rounded-full bg-[#C99A2E]/10 blur-2xl" />
           <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center">
             <div className="min-w-0 flex-1 flex items-start gap-3 sm:gap-4">
-              <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#c5a059]/40 bg-[#D4A017]/10 text-[#0e5638]">
+              <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#C99A2E]/40 bg-[#C99A2E]/10 text-[#0e5638]">
                 <Compass size={21} />
               </div>
               <div className="min-w-0">
                 <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Explore • Learn • Get Inspired</p>
                 <h2 className="mt-1 font-serif text-lg sm:text-2xl font-bold leading-snug text-[#0e3022]">African Safari Stories, Wildlife, Travel Guides &amp; News</h2>
                 <p className="mt-1 max-w-2xl text-xs sm:text-sm leading-relaxed text-slate-600">Discover safari inspiration, wildlife stories, destination guides and useful travel advice from across Africa.</p>
-                <button type="button" onClick={() => onNavigate('blog')} className="mt-3 inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-[#c5a059] px-4 py-2.5 text-xs sm:text-sm font-extrabold text-[#061d14] shadow-md transition hover:bg-[#e4c681]">
+                <button type="button" onClick={() => onNavigate('blog')} className="mt-3 inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-[#C99A2E] px-4 py-2.5 text-xs sm:text-sm font-extrabold text-[#061d14] shadow-md transition hover:bg-[#C99A2E]">
                   Discover the Travel Story <ArrowRight size={16} />
                 </button>
               </div>
@@ -683,30 +683,30 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* Personalised safari planning and FAQ - placed immediately below the image slideshow */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="relative overflow-hidden rounded-[2rem] border border-[#c5a059]/50 bg-white shadow-lg">
-          <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border border-[#c5a059]/20" />
+        <div className="relative overflow-hidden rounded-[2rem] border border-[#C99A2E]/50 bg-white shadow-lg">
+          <div className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border border-[#C99A2E]/20" />
           <div className="relative grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 p-6 sm:p-9 lg:p-11 items-center">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#c5a059]/50 bg-[#D4A017]/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#0e5638]"><Sparkles size={14} /> Your journey, your way</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#C99A2E]/50 bg-[#C99A2E]/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#0e5638]"><Sparkles size={14} /> Your journey, your way</span>
               <h2 className="mt-5 text-3xl sm:text-4xl font-serif font-bold leading-tight text-[#0e3022]">Haven’t Found Your Perfect Safari Yet?</h2>
               <p className="mt-4 max-w-2xl text-sm sm:text-base leading-7 text-slate-600">Tell us when you would like to travel and which destinations you dream of exploring. Whether it’s a wildlife safari, a Kilimanjaro climb, a Zanzibar escape or a multi-country adventure, our Arusha-based team will help shape the right experience for you.</p>
               <div className="mt-5 flex flex-col sm:flex-row gap-3">
-                <div className="flex items-center gap-3 rounded-xl border border-[#c5a059]/35 bg-[#fbfaf6] px-4 py-3 text-sm text-[#0e3022]"><CalendarDays className="text-[#0e5638]" size={19} /><span>Share your preferred travel dates</span></div>
-                <div className="flex items-center gap-3 rounded-xl border border-[#c5a059]/35 bg-white/5 px-4 py-3 text-sm text-white"><MapPin className="text-[#e8c77f]" size={19} /><span>Choose your dream destinations</span></div>
+                <div className="flex items-center gap-3 rounded-xl border border-[#C99A2E]/35 bg-[#fbfaf6] px-4 py-3 text-sm text-[#0e3022]"><CalendarDays className="text-[#0e5638]" size={19} /><span>Share your preferred travel dates</span></div>
+                <div className="flex items-center gap-3 rounded-xl border border-[#C99A2E]/35 bg-white/5 px-4 py-3 text-sm text-white"><MapPin className="text-[#C99A2E]" size={19} /><span>Choose your dream destinations</span></div>
               </div>
               <p className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#0e5638]"><Clock3 size={18} /> A personalised travel solution within 24 hours.</p>
             </div>
-            <div className="rounded-2xl border border-[#c5a059]/50 bg-[#0e5638] p-6 sm:p-7 shadow-sm">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#e4c681]">Let’s plan something unforgettable</p>
+            <div className="rounded-2xl border border-[#C99A2E]/50 bg-[#0e5638] p-6 sm:p-7 shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C99A2E]">Let’s plan something unforgettable</p>
               <h3 className="mt-3 text-2xl font-serif font-bold text-white">Your dream trip starts with a message.</h3>
               <p className="mt-3 text-sm leading-6 text-emerald-50">Send us your travel dates and preferred destinations. We’ll help you with an itinerary and a quotation tailored to your plans.</p>
-              <a href="https://wa.me/255624661830?text=Hello%20Our%20Trip%20Africa!%20I%20would%20like%20help%20planning%20a%20safari%20or%20holiday.%20My%20preferred%20travel%20date%20is%3A%20_____.%20The%20destinations%20I%20am%20interested%20in%20are%3A%20_____.%20Please%20help%20me%20with%20a%20suitable%20itinerary%20and%20quotation." target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#D4A017] px-5 py-4 text-sm font-extrabold text-[#0e3022] shadow-md transition hover:bg-[#e3c27b]"><MessageCircle size={19} /> PLAN MY SAFARI WITH US <ArrowRight size={18} /></a>
+              <a href="https://wa.me/255624661830?text=Hello%20Our%20Trip%20Africa!%20I%20would%20like%20help%20planning%20a%20safari%20or%20holiday.%20My%20preferred%20travel%20date%20is%3A%20_____.%20The%20destinations%20I%20am%20interested%20in%20are%3A%20_____.%20Please%20help%20me%20with%20a%20suitable%20itinerary%20and%20quotation." target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#C99A2E] px-5 py-4 text-sm font-extrabold text-[#0e3022] shadow-md transition hover:bg-[#C99A2E]"><MessageCircle size={19} /> PLAN MY SAFARI WITH US <ArrowRight size={18} /></a>
               <p className="mt-4 text-center text-xs text-emerald-100">WhatsApp: +255 624 661 830 · We’re here to help, 24/7.</p>
             </div>
           </div>
         </div>
 
-        <div className="space-y-6 rounded-[2rem] border border-[#c5a059]/50 bg-white p-5 sm:p-8 lg:p-10 shadow-lg">
+        <div className="space-y-6 rounded-[2rem] border border-[#C99A2E]/50 bg-white p-5 sm:p-8 lg:p-10 shadow-lg">
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-flex rounded-full bg-[#0e3022]/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#0e3022]">Travel with confidence</span>
             <h2 className="mt-4 font-serif text-3xl sm:text-4xl font-bold text-[#0e3022]">Safari Frequently Asked Questions</h2>
@@ -714,18 +714,18 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-3">
             {safariFaqs.map((item, index) => (
-              <details key={item.q} className="group overflow-hidden rounded-2xl border border-emerald-900/15 bg-[#fbfaf6] open:border-[#c5a059] open:bg-white">
+              <details key={item.q} className="group overflow-hidden rounded-2xl border border-emerald-900/15 bg-[#fbfaf6] open:border-[#C99A2E] open:bg-white">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 sm:px-5 text-left text-sm sm:text-base font-semibold text-[#0e3022] marker:content-none">
-                  <span className="flex items-start gap-3"><span className="mt-0.5 text-xs font-bold text-[#b18a42]">{String(index + 1).padStart(2, '0')}</span>{item.q}</span>
-                  <span className="shrink-0 text-xl leading-none text-[#b18a42] transition-transform group-open:rotate-45">+</span>
+                  <span className="flex items-start gap-3"><span className="mt-0.5 text-xs font-bold text-[#C99A2E]">{String(index + 1).padStart(2, '0')}</span>{item.q}</span>
+                  <span className="shrink-0 text-xl leading-none text-[#C99A2E] transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <div className="border-t border-[#c5a059]/25 px-4 py-4 sm:px-5 text-sm leading-7 text-slate-600">{item.a}</div>
+                <div className="border-t border-[#C99A2E]/25 px-4 py-4 sm:px-5 text-sm leading-7 text-slate-600">{item.a}</div>
               </details>
             ))}
           </div>
           <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 rounded-2xl bg-[#073b29] p-5 sm:flex-row sm:px-7">
             <div><h3 className="font-serif text-xl font-bold text-white">Still have a question?</h3><p className="mt-1 text-sm text-emerald-50/85">Talk to our Arusha-based team and let’s plan your journey.</p></div>
-            <a href="https://wa.me/255624661830" target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#c5a059] px-5 py-3 text-sm font-extrabold text-[#073b29] transition hover:bg-[#e3c27b] sm:w-auto"><MessageCircle size={18} /> ASK US ON WHATSAPP</a>
+            <a href="https://wa.me/255624661830" target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#C99A2E] px-5 py-3 text-sm font-extrabold text-[#073b29] transition hover:bg-[#C99A2E] sm:w-auto"><MessageCircle size={18} /> ASK US ON WHATSAPP</a>
           </div>
         </div>
       </section>
@@ -744,7 +744,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             { title: 'Kilimanjaro Adventures', subtitle: 'Mountain trails, breathtaking views and summit moments.', image: LOCAL_IMAGES.kilimanjaro },
             { title: 'Culture & Local Experiences', subtitle: 'Discover local communities, traditions and heritage.', image: LOCAL_IMAGES.lakeEyasi }
           ].map((item) => (
-            <div key={item.title} className="overflow-hidden rounded-3xl border border-[#c5a059]/40 bg-white shadow-lg">
+            <div key={item.title} className="overflow-hidden rounded-3xl border border-[#C99A2E]/40 bg-white shadow-lg">
               <div className="relative h-48 sm:h-56 bg-[#061d14]">
                 <img src={item.image} alt={item.title} loading="lazy" className="h-full w-full object-cover"/>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#061d14]/85 via-transparent to-transparent"/>
@@ -774,7 +774,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* TripAdvisor business profile and guest reviews */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-[#c5a059]/50 bg-white p-7 sm:p-10 text-center shadow-lg">
+        <div className="relative overflow-hidden rounded-3xl border border-[#C99A2E]/50 bg-white p-7 sm:p-10 text-center shadow-lg">
           <div className="mx-auto flex items-center justify-center" aria-label="Tripadvisor">
             <img
               src="https://commons.wikimedia.org/wiki/Special:FilePath/Tripadvisor_2025_Logo.svg"
@@ -799,7 +799,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* Customer Trust & Booking Confidence */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-[#c5a059]/50 bg-white p-7 sm:p-10 text-[#0e3022] shadow-lg">
+        <div className="rounded-3xl border border-[#C99A2E]/50 bg-white p-7 sm:p-10 text-[#0e3022] shadow-lg">
           <div className="max-w-3xl mx-auto text-center space-y-3 mb-8">
             <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Travel With Confidence</span>
             <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#0e3022]">Why Plan Your Journey With Our Trip Africa?</h2>
@@ -812,15 +812,15 @@ export const HomeView: React.FC<HomeViewProps> = ({
               ['Clear Package Details', 'Review the itinerary, inclusions and exclusions before confirming.'],
               ['Direct Guest Support', 'Reach our team by WhatsApp or email for trip planning assistance.']
             ].map(([title, description]) => (
-              <div key={title} className="rounded-2xl border border-[#c5a059]/35 bg-[#0e5638] p-5">
-                <ShieldCheck className="text-[#e4c681] mb-3" size={25}/>
+              <div key={title} className="rounded-2xl border border-[#C99A2E]/35 bg-[#0e5638] p-5">
+                <ShieldCheck className="text-[#C99A2E] mb-3" size={25}/>
                 <h3 className="font-bold text-white">{title}</h3>
                 <p className="mt-2 text-xs leading-relaxed text-emerald-50">{description}</p>
               </div>
             ))}
           </div>
           <div className="mt-7 flex flex-col sm:flex-row justify-center gap-3">
-            <button onClick={() => onOpenBooking()} className="rounded-xl bg-[#D4A017] px-6 py-3 text-sm font-bold text-[#0e3022]">Start a Booking Enquiry</button>
+            <button onClick={() => onOpenBooking()} className="rounded-xl bg-[#C99A2E] px-6 py-3 text-sm font-bold text-[#0e3022]">Start a Booking Enquiry</button>
             <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl bg-[#0e5638] px-6 py-3 text-center text-sm font-bold text-white hover:bg-[#0a402a]">Chat With Our Team</a>
           </div>
         </div>
@@ -828,17 +828,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* Payment Methods — compact expandable panel */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <details className="group mx-auto max-w-3xl overflow-hidden rounded-2xl border border-[#c5a059]/60 bg-[#0e3022] shadow-md">
+        <details className="group mx-auto max-w-3xl overflow-hidden rounded-2xl border border-[#C99A2E]/60 bg-[#0e3022] shadow-md">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:px-6">
             <span>
-              <span className="block text-xs font-bold uppercase tracking-[0.18em] text-[#e4c681]">Convenient Payment Options</span>
+              <span className="block text-xs font-bold uppercase tracking-[0.18em] text-[#C99A2E]">Convenient Payment Options</span>
               <span className="mt-1 block text-base sm:text-lg font-bold text-white">PAYMENT METHODS</span>
             </span>
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#c5a059]/50 text-[#e4c681] transition-transform duration-200 group-open:rotate-180">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C99A2E]/50 text-[#C99A2E] transition-transform duration-200 group-open:rotate-180">
               <ChevronDown size={19} />
             </span>
           </summary>
-          <div className="border-t border-[#c5a059]/30 px-5 py-5 sm:px-6">
+          <div className="border-t border-[#C99A2E]/30 px-5 py-5 sm:px-6">
             <p className="mx-auto max-w-3xl text-center text-sm sm:text-base text-slate-200">We accept Visa and Mastercard payments through CRDB Bank and NMB Bank. A USD account payment option is also available through Selcom Pesa.</p>
             <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
               {[
@@ -847,35 +847,35 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 ['USD Account', 'Available through Selcom Pesa']
               ].map(([title, description]) => (
                 <div key={title} className="rounded-xl border border-white/15 bg-white/5 px-4 py-4 text-center">
-                  <h3 className="font-bold text-[#e4c681]">{title}</h3>
+                  <h3 className="font-bold text-[#C99A2E]">{title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-200">{description}</p>
                 </div>
               ))}
             </div>
             <p className="mt-4 text-center text-xs text-slate-300">Our team will share the relevant payment instructions when your booking is confirmed. The website enquiry form does not process payments.</p>
-            <div className="mt-7 border-t border-[#c5a059]/30 pt-6">
-              <h3 className="text-center text-base sm:text-lg font-bold text-[#e4c681]">Are you ready to make a payment?</h3>
+            <div className="mt-7 border-t border-[#C99A2E]/30 pt-6">
+              <h3 className="text-center text-base sm:text-lg font-bold text-[#C99A2E]">Are you ready to make a payment?</h3>
               <div className="mt-2 text-center text-sm text-slate-200">Contact Mr James Felix or our Reservation Team:</div>
               <div className="mx-auto mt-4 grid max-w-2xl grid-cols-1 sm:grid-cols-2 gap-3">
-                <div className="rounded-xl border border-[#c5a059]/40 bg-white/5 p-3">
-                  <h4 className="mb-2 text-sm font-bold text-[#e4c681]">Mr James Felix</h4>
+                <div className="rounded-xl border border-[#C99A2E]/40 bg-white/5 p-3">
+                  <h4 className="mb-2 text-sm font-bold text-[#C99A2E]">Mr James Felix</h4>
                   <div className="flex flex-wrap gap-2">
-                    <a href="mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=Booking%20enquiry%20-%20Our%20Trip%20Africa" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
+                    <a href="mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=Booking%20enquiry%20-%20Our%20Trip%20Africa" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#C99A2E] hover:text-[#C99A2E]">
                       <Mail size={14}/> Email
                     </a>
-                    <a href="https://wa.me/255743661850" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
+                    <a href="https://wa.me/255743661850" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#C99A2E] hover:text-[#C99A2E]">
                       <MessageCircle size={14}/> WhatsApp
                     </a>
                   </div>
                   <p className="mt-2 text-[11px] text-slate-300">james@ourtripafrica.com · +255 743 661 850</p>
                 </div>
-                <div className="rounded-xl border border-[#c5a059]/40 bg-white/5 p-3">
-                  <h4 className="mb-2 text-sm font-bold text-[#e4c681]">Reservation Team</h4>
+                <div className="rounded-xl border border-[#C99A2E]/40 bg-white/5 p-3">
+                  <h4 className="mb-2 text-sm font-bold text-[#C99A2E]">Reservation Team</h4>
                   <div className="flex flex-wrap gap-2">
-                    <a href="mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=Booking%20enquiry%20-%20Our%20Trip%20Africa" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
+                    <a href="mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=Booking%20enquiry%20-%20Our%20Trip%20Africa" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#C99A2E] hover:text-[#C99A2E]">
                       <Mail size={14}/> Email
                     </a>
-                    <a href="https://wa.me/255624661830" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#e4c681] hover:text-[#e4c681]">
+                    <a href="https://wa.me/255624661830" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#C99A2E] hover:text-[#C99A2E]">
                       <MessageCircle size={14}/> WhatsApp
                     </a>
                   </div>
