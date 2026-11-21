@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenCloudflareGuide,
 }) => {
   return (
-    <footer className="bg-[#05130e] text-[#dcd4c7] border-t border-[#1a4a35] pt-16 pb-12">
+    <footer className="ota-original-footer bg-[#05130e] text-[#dcd4c7] border-t border-[#1a4a35] pt-16 pb-12">
       {/* Pre-Footer Action Banner */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-[#0a271c] via-[#0f382a] to-[#0a271c] border border-[#c5a059]/30 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
