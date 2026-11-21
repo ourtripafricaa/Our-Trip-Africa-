@@ -263,7 +263,7 @@ const upload=async(list:any[],folder:string)=>{
    <p style={{color:'#52665a'}}>Anonymous daily visitor estimates for Our Trip Africa. Times use Tanzania time (EAT).</p>
    <div style={{display:'flex',gap:10,flexWrap:'wrap',margin:'14px 0'}}>
     <div style={{background:'#e9f4ec',padding:16,borderRadius:10,minWidth:145}}><small>Visitors today</small><div style={{fontSize:30,fontWeight:800,color:green}}>{todayCount}</div></div>
-    <div style={{background:'#fff5df',padding:16,borderRadius:10,minWidth:145}}><small>Visitors in 7 days</small><div style={{fontSize:30,fontWeight:800,color:'#9a6b19'}}>{items.length}</div></div>
+    <div style={{background:'#fff5df',padding:16,borderRadius:10,minWidth:145}}><small>Visitors in 7 days</small><div style={{fontSize:30,fontWeight:800,color:'#C99A2E'}}>{items.length}</div></div>
    </div>
    <h4 style={{fontWeight:700,marginTop:18}}>Daily visitors — last 7 days</h4>
    {daily.map(d=><div key={d.date} style={{display:'grid',gridTemplateColumns:'110px 1fr 35px',gap:8,alignItems:'center',margin:'10px 0'}}>
