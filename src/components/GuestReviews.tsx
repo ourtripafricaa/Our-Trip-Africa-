@@ -142,24 +142,24 @@ export const GuestReviews: React.FC = () => {
         </a>
       </div>
 
-      <div className="max-w-3xl mx-auto rounded-3xl bg-[#0e3022] border border-[#C99A2E]/40 p-6 sm:p-8 text-white">
+      <div className="max-w-3xl mx-auto rounded-3xl bg-white border border-[#C99A2E]/50 p-6 sm:p-8 text-[#194A2D] shadow-md">
         <div className="mb-5">
-          <h3 className="font-serif text-xl sm:text-2xl font-bold">Share Your Safari Experience</h3>
-          <p className="text-xs text-slate-300 mt-1">Your review will be submitted privately for approval before publication.</p>
+          <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#194A2D]">Share Your Safari Experience</h3>
+          <p className="text-xs text-[#39704F] mt-1">Your review will be submitted privately for approval before publication.</p>
         </div>
         {sent ? (
-          <div className="rounded-2xl bg-white/10 p-5 text-center">
+          <div className="rounded-2xl bg-[#F3F8F4] border border-[#C99A2E]/30 p-5 text-center text-[#194A2D]">
             <CheckCircle2 className="mx-auto text-[#C99A2E]" size={32}/>
             <p className="font-bold mt-2">Thank you for your feedback!</p>
-            <p className="text-xs text-slate-300 mt-1">Our team will review your submission before it appears on the website.</p>
+            <p className="text-xs text-[#39704F] mt-1">Our team will review your submission before it appears on the website.</p>
           </div>
         ) : (
           <form onSubmit={submit} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input required maxLength={100} value={name} onChange={e=>setName(e.target.value)} placeholder="Your name" className="rounded-xl bg-[#081a13] border border-white/20 px-4 py-3 text-sm text-white placeholder:text-slate-400"/>
+            <input required maxLength={100} value={name} onChange={e=>setName(e.target.value)} placeholder="Your name" className="rounded-xl bg-[#F7FAF7] border border-[#194A2D]/25 px-4 py-3 text-sm text-[#194A2D] placeholder:text-[#66806F]"/>
             <input required maxLength={100} value={country} onChange={e=>setCountry(e.target.value)} placeholder="Country" className="rounded-xl bg-[#081a13] border border-white/20 px-4 py-3 text-sm text-white placeholder:text-slate-400"/>
-            <input maxLength={200} value={packageTitle} onChange={e=>setPackageTitle(e.target.value)} placeholder="Package / destination" className="sm:col-span-2 rounded-xl bg-[#081a13] border border-white/20 px-4 py-3 text-sm text-white placeholder:text-slate-400"/>
-            <label className="sm:col-span-2 text-xs text-slate-200">Your rating
-              <select value={rating} onChange={e=>setRating(Number(e.target.value))} className="mt-1 block w-full rounded-xl bg-[#081a13] border border-white/20 px-4 py-3 text-sm text-white">
+            <input maxLength={200} value={packageTitle} onChange={e=>setPackageTitle(e.target.value)} placeholder="Package / destination" className="sm:col-span-2 rounded-xl bg-[#F7FAF7] border border-[#194A2D]/25 px-4 py-3 text-sm text-[#194A2D] placeholder:text-[#66806F]"/>
+            <label className="sm:col-span-2 text-xs text-[#194A2D]">Your rating
+              <select value={rating} onChange={e=>setRating(Number(e.target.value))} className="mt-1 block w-full rounded-xl bg-[#F7FAF7] border border-[#194A2D]/25 px-4 py-3 text-sm text-[#194A2D]">
                 {[5,4,3,2,1].map(value=><option key={value} value={value}>{value} / 5 stars</option>)}
               </select>
             </label>
