@@ -48,10 +48,10 @@ export const Footer: React.FC<FooterProps> = ({
               className="h-14 w-14 rounded-full object-cover border-2 border-[#c5a059]/50"
             />
             <div>
-              <span className="font-serif text-2xl font-bold text-[#c5a059] tracking-tight">
+              <span className="font-serif text-2xl font-bold text-[#0e3022] tracking-tight">
                 OUR TRIP AFRICA
               </span>
-              <p className="text-xs text-[#0e3022] tracking-widest font-semibold uppercase">
+              <p className="text-xs text-[#c5a059] tracking-widest font-semibold uppercase">
                 Discover • Explore • Enjoy
               </p>
             </div>
@@ -249,7 +249,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div>
-              <p className="text-[10px] text-[#0e3022] uppercase font-semibold">WhatsApp & Call</p>
+              <p className="text-[10px] text-[#c5a059] uppercase font-semibold">WhatsApp & Call</p>
               <a
                 href={`https://wa.me/${COMPANY_DETAILS.whatsappRaw}`}
                 target="_blank"
@@ -261,7 +261,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div>
-              <p className="text-[10px] text-[#0e3022] uppercase font-semibold">Booking Desk</p>
+              <p className="text-[10px] text-[#c5a059] uppercase font-semibold">Booking Desk</p>
               <a
                 href={`mailto:${COMPANY_DETAILS.bookingEmail}`}
                 className="text-[#0e3022] hover:underline block mt-0.5"
@@ -271,7 +271,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div>
-              <p className="text-[10px] text-[#0e3022] uppercase font-semibold">Support Desk</p>
+              <p className="text-[10px] text-[#c5a059] uppercase font-semibold">Support Desk</p>
               <a
                 href={`mailto:${COMPANY_DETAILS.supportEmail}`}
                 className="text-[#0e3022] hover:text-[#0e3022] hover:underline block mt-0.5"
@@ -281,12 +281,12 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div>
-              <p className="text-[10px] text-[#0e3022] uppercase font-semibold">Management Team</p>
+              <p className="text-[10px] text-[#c5a059] uppercase font-semibold">Management Team</p>
               <a href="mailto:james@ourtripafrica.com" className="text-[#0e3022] hover:text-[#0e3022] hover:underline block mt-0.5">james@ourtripafrica.com</a>
             </div>
 
             <div>
-              <p className="text-[10px] text-[#0e3022] uppercase font-semibold">Sales Desk</p>
+              <p className="text-[10px] text-[#c5a059] uppercase font-semibold">Sales Desk</p>
               <a
                 href={`mailto:${COMPANY_DETAILS.salesEmail}`}
                 className="text-[#0e3022] hover:text-[#0e3022] hover:underline block mt-0.5"
