@@ -11,7 +11,7 @@ export const ContactView: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12 bg-[#faf9f5]">
       <div className="text-center max-w-3xl mx-auto space-y-3">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0e3022]/10 border border-[#0e3022]/20 text-[#0e3022] text-xs font-semibold uppercase tracking-widest">
-          <Sparkles size={13} className="text-[#c5a059]" />
+          <Sparkles size={13} className="text-[#C99A2E]" />
           <span>Get in Touch With Arusha HQ</span>
         </span>
         <h1 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">Contact Our Trip Africa</h1>
@@ -44,20 +44,20 @@ export const ContactView: React.FC = () => {
               <span>Email Our Team Directly</span>
             </h3>
             <p className="text-xs text-slate-500">Choose an email address below. Your email app will open with the recipient already filled in.</p>
-            <a href={bookingMail} className="block p-4 bg-slate-50 rounded-2xl border border-slate-200 hover:border-[#c5a059] transition-colors">
+            <a href={bookingMail} className="block p-4 bg-slate-50 rounded-2xl border border-slate-200 hover:border-[#C99A2E] transition-colors">
               <span className="text-[10px] uppercase text-slate-400 font-bold block">Bookings & Safari Quotes</span>
               <span className="font-bold text-[#0e3022] text-sm">info@ourtripafrica.com</span>
               <span className="block text-[11px] text-slate-500 mt-1">CC: ourtripafricaa@gmail.com</span>
             </a>
-            <a href={supportMail} className="block p-4 bg-slate-50 rounded-2xl border border-slate-200 hover:border-[#c5a059] transition-colors">
+            <a href={supportMail} className="block p-4 bg-slate-50 rounded-2xl border border-slate-200 hover:border-[#C99A2E] transition-colors">
               <span className="text-[10px] uppercase text-slate-400 font-bold block">24/7 Traveler Support</span>
               <span className="font-bold text-slate-800 text-sm">support@ourtripafrica.com</span>
             </a>
-            <a href="mailto:james@ourtripafrica.com" className="block p-4 bg-slate-50 rounded-2xl border border-slate-200 hover:border-[#c5a059] transition-colors">
+            <a href="mailto:james@ourtripafrica.com" className="block p-4 bg-slate-50 rounded-2xl border border-slate-200 hover:border-[#C99A2E] transition-colors">
               <span className="text-[10px] uppercase text-slate-400 font-bold block">Direct Contact</span>
               <span className="font-bold text-slate-800 text-sm">james@ourtripafrica.com</span>
             </a>
-            <a href={salesMail} className="block p-4 bg-slate-50 rounded-2xl border border-slate-200 hover:border-[#c5a059] transition-colors">
+            <a href={salesMail} className="block p-4 bg-slate-50 rounded-2xl border border-slate-200 hover:border-[#C99A2E] transition-colors">
               <span className="text-[10px] uppercase text-slate-400 font-bold block">Sales & Partnerships</span>
               <span className="font-bold text-slate-800 text-sm">sales@ourtripafrica.com</span>
             </a>
@@ -83,7 +83,7 @@ export const ContactView: React.FC = () => {
           </a>
           <a
             href={bookingMail}
-            className="w-full py-4 px-5 rounded-xl bg-[#c5a059] hover:bg-[#e3c27b] text-[#073b29] font-bold flex items-center justify-center gap-2 text-sm shadow transition-colors"
+            className="w-full py-4 px-5 rounded-xl bg-[#C99A2E] hover:bg-[#C99A2E] text-[#073b29] font-bold flex items-center justify-center gap-2 text-sm shadow transition-colors"
           >
             <Mail size={18} />
             <span>EMAIL OUR RESERVATION TEAM</span>
