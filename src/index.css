@@ -103,16 +103,16 @@ button:hover, a[role="button"]:hover, .glow-button:hover {
   --color-emerald-surface: #194A2D;
   --color-emerald-border: #194A2D;
 }
-[class~="bg-[#0e3022]"], [class~="bg-[#061d14]"], [class~="bg-[#05130e]"],
-[class~="bg-[#0e271e]"], [class~="bg-[#082116]"], [class~="bg-[#0a271c]"],
-[class~="bg-[#0f382a]"], [class~="bg-[#173f2e]"] {
+:not(.ota-original-footer *)[class~="bg-[#0e3022]"], :not(.ota-original-footer *)[class~="bg-[#061d14]"], :not(.ota-original-footer *)[class~="bg-[#05130e]"],
+:not(.ota-original-footer *)[class~="bg-[#0e271e]"], :not(.ota-original-footer *)[class~="bg-[#082116]"], :not(.ota-original-footer *)[class~="bg-[#0a271c]"],
+:not(.ota-original-footer *)[class~="bg-[#0f382a]"], :not(.ota-original-footer *)[class~="bg-[#173f2e]"] {
   background-color: #194A2D !important;
 }
-[class~="border-[#1b4d38]"], [class~="border-[#1a4a35]"],
-[class~="border-[#0f382a]"], [class~="border-[#113a2b]"] {
+:not(.ota-original-footer *)[class~="border-[#1b4d38]"], :not(.ota-original-footer *)[class~="border-[#1a4a35]"],
+:not(.ota-original-footer *)[class~="border-[#0f382a]"], :not(.ota-original-footer *)[class~="border-[#113a2b]"] {
   border-color: #194A2D !important;
 }
-[class~="from-[#0a271c]"], [class~="via-[#0f382a]"], [class~="to-[#0a271c]"] {
+:not(.ota-original-footer *)[class~="from-[#0a271c]"], :not(.ota-original-footer *)[class~="via-[#0f382a]"], :not(.ota-original-footer *)[class~="to-[#0a271c]"] {
   --tw-gradient-from: #194A2D var(--tw-gradient-from-position) !important;
   --tw-gradient-to: rgb(25 74 45 / 0) var(--tw-gradient-to-position) !important;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
