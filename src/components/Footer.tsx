@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({
       </div>
 
       {/* Main Footer Columns */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#113a2b]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#113a2b] font-serif font-bold">
         {/* Col 1: Brand & Bio */}
         <div className="lg:col-span-2 space-y-4">
           <div className="flex items-center gap-3">
@@ -48,22 +48,22 @@ export const Footer: React.FC<FooterProps> = ({
               className="h-14 w-14 rounded-full object-cover border-2 border-[#c5a059]/50"
             />
             <div>
-              <span className="font-serif text-2xl font-bold text-[#C7E8D1] tracking-tight">
+              <span className="font-serif text-2xl font-bold text-[#0e3022] tracking-tight">
                 OUR TRIP AFRICA
               </span>
-              <p className="text-xs text-[#B7E4C7] tracking-widest font-semibold uppercase">
+              <p className="text-xs text-[#0e3022] tracking-widest font-semibold uppercase">
                 Discover • Explore • Enjoy
               </p>
             </div>
           </div>
 
-          <p className="text-sm text-[#A7D7B5] leading-relaxed pr-4">
+          <p className="text-sm text-[#0e3022] leading-relaxed pr-4">
             Direct local tour operator based in Kisongo, Arusha – Tanzania. We specialize in authentic wildlife safaris, Mount Kilimanjaro trekking, Zanzibar beach holidays, and cultural tribal expeditions across Tanzania, Kenya, and Uganda.
           </p>
 
           {/* Social Links */}
           <div className="pt-2">
-            <p className="text-xs font-medium text-[#B7E4C7] mb-3">FOLLOW OUR JOURNEYS</p>
+            <p className="text-xs font-medium text-[#0e3022] mb-3">FOLLOW OUR JOURNEYS</p>
             <div className="flex items-center gap-3">
               <a
                 href={COMPANY_DETAILS.socials.instagram.url}
@@ -111,7 +111,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <Linkedin size={18} />
               </a>
             </div>
-            <p className="text-[11px] text-[#B7E4C7] mt-2">
+            <p className="text-[11px] text-[#0e3022] mt-2">
               Instagram: @ourtripafricaa • Other platforms: @ourtripafrica
             </p>
           </div>
@@ -119,14 +119,14 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Col 2: Destinations */}
         <div className="space-y-3">
-          <p className="text-sm font-serif font-bold text-[#C7E8D1] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
+          <p className="text-sm font-serif font-bold text-[#0e3022] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
             Safari Destinations
           </p>
-          <ul className="space-y-2 text-sm text-[#A7D7B5]">
+          <ul className="space-y-2 text-sm text-[#0e3022]">
             <li>
               <button
                 onClick={() => onNavigate('tanzania')}
-                className="hover:text-[#B7E4C7] transition-colors text-left"
+                className="hover:text-[#0e3022] transition-colors text-left"
               >
                 Tanzania Safaris
               </button>
@@ -134,7 +134,7 @@ export const Footer: React.FC<FooterProps> = ({
             <li>
               <button
                 onClick={() => onNavigate('kenya')}
-                className="hover:text-[#B7E4C7] transition-colors text-left"
+                className="hover:text-[#0e3022] transition-colors text-left"
               >
                 Kenya Safaris
               </button>
@@ -142,7 +142,7 @@ export const Footer: React.FC<FooterProps> = ({
             <li>
               <button
                 onClick={() => onNavigate('uganda')}
-                className="hover:text-[#B7E4C7] transition-colors text-left"
+                className="hover:text-[#0e3022] transition-colors text-left"
               >
                 Uganda Gorilla Treks
               </button>
@@ -150,7 +150,7 @@ export const Footer: React.FC<FooterProps> = ({
             <li>
               <button
                 onClick={() => onNavigate('zanzibar')}
-                className="hover:text-[#B7E4C7] transition-colors text-left"
+                className="hover:text-[#0e3022] transition-colors text-left"
               >
                 Zanzibar Beach Holidays
               </button>
@@ -158,7 +158,7 @@ export const Footer: React.FC<FooterProps> = ({
             <li>
               <button
                 onClick={() => onNavigate('south-africa')}
-                className="hover:text-[#B7E4C7] transition-colors text-left"
+                className="hover:text-[#0e3022] transition-colors text-left"
               >
                 South Africa Safaris (3 Packages)
               </button>
@@ -166,7 +166,7 @@ export const Footer: React.FC<FooterProps> = ({
             <li>
               <button
                 onClick={() => onNavigate('uae')}
-                className="hover:text-[#B7E4C7] transition-colors text-left"
+                className="hover:text-[#0e3022] transition-colors text-left"
               >
                 UAE Dubai & Desert Dunes (2 Packages)
               </button>
@@ -174,7 +174,7 @@ export const Footer: React.FC<FooterProps> = ({
             <li>
               <button
                 onClick={() => onNavigate('packages', 'Mountain Trek')}
-                className="hover:text-[#B7E4C7] transition-colors text-left"
+                className="hover:text-[#0e3022] transition-colors text-left"
               >
                 Kilimanjaro Expeditions
               </button>
@@ -182,7 +182,7 @@ export const Footer: React.FC<FooterProps> = ({
             <li>
               <button
                 onClick={() => onNavigate('packages', 'Cultural Safari')}
-                className="hover:text-[#B7E4C7] transition-colors text-left"
+                className="hover:text-[#0e3022] transition-colors text-left"
               >
                 Cultural & Tribal Tours
               </button>
@@ -192,28 +192,28 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Col 3: Company & Teams */}
         <div className="space-y-3">
-          <p className="text-sm font-serif font-bold text-[#C7E8D1] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
+          <p className="text-sm font-serif font-bold text-[#0e3022] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
             Company & Teams
           </p>
-          <ul className="space-y-2 text-sm text-[#A7D7B5]">
+          <ul className="space-y-2 text-sm text-[#0e3022]">
             <li>
               <button
                 onClick={() => onNavigate('about')}
-                className="hover:text-[#B7E4C7] transition-colors text-left"
+                className="hover:text-[#0e3022] transition-colors text-left"
               >
                 About Our Trip Africa
               </button>
             </li>
             <li>
-              <button onClick={() => onNavigate('services')} className="hover:text-[#B7E4C7] transition-colors text-left">Our Services</button>
+              <button onClick={() => onNavigate('services')} className="hover:text-[#0e3022] transition-colors text-left">Our Services</button>
             </li>
             <li>
-              <button onClick={() => onNavigate('team')} className="hover:text-[#B7E4C7] transition-colors text-left">Meet Our Team</button>
+              <button onClick={() => onNavigate('team')} className="hover:text-[#0e3022] transition-colors text-left">Meet Our Team</button>
             </li>
             <li>
               <button
                 onClick={() => onNavigate('compare')}
-                className="hover:text-[#B7E4C7] transition-colors text-left"
+                className="hover:text-[#0e3022] transition-colors text-left"
               >
                 Package Price Comparison
               </button>
@@ -221,7 +221,7 @@ export const Footer: React.FC<FooterProps> = ({
             <li>
               <button
                 onClick={() => onNavigate('blog')}
-                className="hover:text-[#B7E4C7] transition-colors text-left"
+                className="hover:text-[#0e3022] transition-colors text-left"
               >
                 Travel Guides & News
               </button>
@@ -229,7 +229,7 @@ export const Footer: React.FC<FooterProps> = ({
             <li>
               <button
                 onClick={onOpenCloudflareGuide}
-                className="hover:text-[#B7E4C7] text-[#B7E4C7] transition-colors text-left font-medium"
+                className="hover:text-[#0e3022] text-[#0e3022] transition-colors text-left font-medium"
               >
                 Cloudflare Pages Setup
               </button>
@@ -239,17 +239,17 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Col 4: Official Contacts */}
         <div className="space-y-3">
-          <p className="text-sm font-serif font-bold text-[#C7E8D1] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
+          <p className="text-sm font-serif font-bold text-[#0e3022] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
             Direct Contacts
           </p>
-          <div className="space-y-3 text-xs text-[#A7D7B5]">
+          <div className="space-y-3 text-xs text-[#0e3022]">
             <div>
-              <p className="text-[10px] text-[#B7E4C7] uppercase font-semibold">Headquarters</p>
-              <p className="text-[#B7E4C7] mt-0.5">{COMPANY_DETAILS.address}</p>
+              <p className="text-[10px] text-[#0e3022] uppercase font-semibold">Headquarters</p>
+              <p className="text-[#0e3022] mt-0.5">{COMPANY_DETAILS.address}</p>
             </div>
 
             <div>
-              <p className="text-[10px] text-[#B7E4C7] uppercase font-semibold">WhatsApp & Call</p>
+              <p className="text-[10px] text-[#0e3022] uppercase font-semibold">WhatsApp & Call</p>
               <a
                 href={`https://wa.me/${COMPANY_DETAILS.whatsappRaw}`}
                 target="_blank"
@@ -261,35 +261,35 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div>
-              <p className="text-[10px] text-[#B7E4C7] uppercase font-semibold">Booking Desk</p>
+              <p className="text-[10px] text-[#0e3022] uppercase font-semibold">Booking Desk</p>
               <a
                 href={`mailto:${COMPANY_DETAILS.bookingEmail}`}
-                className="text-[#B7E4C7] hover:underline block mt-0.5"
+                className="text-[#0e3022] hover:underline block mt-0.5"
               >
                 {COMPANY_DETAILS.bookingEmail}
               </a>
             </div>
 
             <div>
-              <p className="text-[10px] text-[#B7E4C7] uppercase font-semibold">Support Desk</p>
+              <p className="text-[10px] text-[#0e3022] uppercase font-semibold">Support Desk</p>
               <a
                 href={`mailto:${COMPANY_DETAILS.supportEmail}`}
-                className="text-[#B7E4C7] hover:text-[#B7E4C7] hover:underline block mt-0.5"
+                className="text-[#0e3022] hover:text-[#0e3022] hover:underline block mt-0.5"
               >
                 {COMPANY_DETAILS.supportEmail}
               </a>
             </div>
 
             <div>
-              <p className="text-[10px] text-[#B7E4C7] uppercase font-semibold">Management Team</p>
-              <a href="mailto:james@ourtripafrica.com" className="text-[#B7E4C7] hover:text-[#B7E4C7] hover:underline block mt-0.5">james@ourtripafrica.com</a>
+              <p className="text-[10px] text-[#0e3022] uppercase font-semibold">Management Team</p>
+              <a href="mailto:james@ourtripafrica.com" className="text-[#0e3022] hover:text-[#0e3022] hover:underline block mt-0.5">james@ourtripafrica.com</a>
             </div>
 
             <div>
-              <p className="text-[10px] text-[#B7E4C7] uppercase font-semibold">Sales Desk</p>
+              <p className="text-[10px] text-[#0e3022] uppercase font-semibold">Sales Desk</p>
               <a
                 href={`mailto:${COMPANY_DETAILS.salesEmail}`}
-                className="text-[#B7E4C7] hover:text-[#B7E4C7] hover:underline block mt-0.5"
+                className="text-[#0e3022] hover:text-[#0e3022] hover:underline block mt-0.5"
               >
                 {COMPANY_DETAILS.salesEmail}
               </a>
@@ -299,22 +299,22 @@ export const Footer: React.FC<FooterProps> = ({
       </div>
 
       {/* Bottom Bar: Copyright & Accreditations */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#B7E4C7]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#0e3022] font-serif font-bold">
         <p>
           @Ferever Our Trip Africa. All rights reserved. Registered Tour Operator, Arusha, Tanzania.
         </p>
 
         <div className="flex flex-wrap items-center gap-6">
-          <span className="flex items-center gap-1.5 text-[#A7D7B5]">
-            <ShieldCheck size={14} className="text-[#B7E4C7]" />
+          <span className="flex items-center gap-1.5 text-[#0e3022]">
+            <ShieldCheck size={14} className="text-[#0e3022]" />
             <span>Licensed Tanzanian Operator</span>
           </span>
-          <span className="flex items-center gap-1.5 text-[#A7D7B5]">
-            <HeartHandshake size={14} className="text-[#B7E4C7]" />
+          <span className="flex items-center gap-1.5 text-[#0e3022]">
+            <HeartHandshake size={14} className="text-[#0e3022]" />
             <span>100% Fair Porter & Guide Wages</span>
           </span>
-          <span className="flex items-center gap-1.5 text-[#A7D7B5]">
-            <Compass size={14} className="text-[#B7E4C7]" />
+          <span className="flex items-center gap-1.5 text-[#0e3022]">
+            <Compass size={14} className="text-[#0e3022]" />
             <span>ourtripafrica.com</span>
           </span>
         </div>
