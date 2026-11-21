@@ -112,7 +112,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking, initialSlug }
           {/* Back button */}
           <button
             onClick={() => { setActivePost(null); window.history.pushState({}, '', '/blog'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-            className="inline-flex items-center gap-2 text-xs font-semibold text-[#0e3022] hover:text-[#c5a059] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-[#0e3022] hover:text-[#C99A2E] transition-colors cursor-pointer"
           >
             <ArrowLeft size={16} />
             <span>Back to All Travel Guides & News</span>
@@ -133,7 +133,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking, initialSlug }
                 <img
                   src={activePost.author.avatar}
                   alt={activePost.author.name}
-                  className="w-7 h-7 rounded-full object-cover border border-[#c5a059]"
+                  className="w-7 h-7 rounded-full object-cover border border-[#C99A2E]"
                 />
                 <span className="text-slate-900 font-semibold">{activePost.author.name}</span>
                 <span className="text-[#0e3022]">({activePost.author.role})</span>
@@ -224,7 +224,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking, initialSlug }
           {/* CTA Box inside post (Deep Emerald Luxury Highlight) */}
           <div className="bg-[#0e3022] p-8 sm:p-10 rounded-3xl border border-[#1b4d38] shadow-xl text-white space-y-4">
             <div className="space-y-1">
-              <span className="text-xs font-semibold text-[#c5a059] uppercase tracking-wider">
+              <span className="text-xs font-semibold text-[#C99A2E] uppercase tracking-wider">
                 Plan Your Safari With Us
               </span>
               <h3 className="font-serif text-2xl font-bold text-white">
@@ -314,7 +314,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking, initialSlug }
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0e3022]/10 border border-[#0e3022]/20 text-[#0e3022] text-xs font-semibold uppercase tracking-widest">
-              <Sparkles size={13} className="text-[#c5a059]" />
+              <Sparkles size={13} className="text-[#C99A2E]" />
               <span>African Safari Knowledge Hub</span>
             </span>
             <h1 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
@@ -348,7 +348,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking, initialSlug }
               <article
                 key={post.id}
                 onClick={() => { setActivePost(post); window.history.pushState({}, '', `/blog/${post.slug}`); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                className="group bg-white rounded-3xl border border-slate-200 overflow-hidden flex flex-col hover:border-[#c5a059] hover:shadow-xl transition-all duration-300 cursor-pointer shadow-sm"
+                className="group bg-white rounded-3xl border border-slate-200 overflow-hidden flex flex-col hover:border-[#C99A2E] hover:shadow-xl transition-all duration-300 cursor-pointer shadow-sm"
               >
                 <div className="relative h-56 w-full overflow-hidden bg-slate-100">
                   <img
@@ -356,7 +356,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking, initialSlug }
                     alt={post.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute top-3 left-3 bg-[#0e3022]/90 backdrop-blur-md px-3 py-1 rounded-full text-xs text-[#c5a059] font-semibold border border-[#c5a059]/30">
+                  <div className="absolute top-3 left-3 bg-[#0e3022]/90 backdrop-blur-md px-3 py-1 rounded-full text-xs text-[#C99A2E] font-semibold border border-[#C99A2E]/30">
                     {post.category}
                   </div>
                 </div>
@@ -383,7 +383,7 @@ export const BlogView: React.FC<BlogViewProps> = ({ onOpenBooking, initialSlug }
                       <img
                         src={post.author.avatar}
                         alt={post.author.name}
-                        className="w-6 h-6 rounded-full object-cover border border-[#c5a059]"
+                        className="w-6 h-6 rounded-full object-cover border border-[#C99A2E]"
                       />
                       <span className="truncate max-w-[130px] font-medium">{post.author.name}</span>
                     </div>
