@@ -108,7 +108,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#faf9f5] text-slate-800 selection:bg-[#c5a059] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#faf9f5] text-slate-800 selection:bg-[#C99A2E] selection:text-white">
 
       <Navbar
         currentView={currentView}
