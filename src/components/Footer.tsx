@@ -18,9 +18,9 @@ export const Footer: React.FC<FooterProps> = ({
     <footer className="ota-original-footer bg-gradient-to-r from-[#0a271c] via-[#0f382a] to-[#0a271c] text-[#F1F5F9] border-t border-[#1a4a35] pt-16 pb-12">
       {/* Pre-Footer Action Banner */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="rounded-3xl p-8 sm:p-12 bg-[#194A2D] border border-[#c5a059]/30 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="rounded-3xl p-8 sm:p-12 bg-[#194A2D] border border-[#D4A017]/30 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="space-y-3 text-center lg:text-left max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#c5a059]">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#D4A017]">
               Your African Dream Begins Here
             </span>
             <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#faf7f2]">
@@ -45,13 +45,13 @@ export const Footer: React.FC<FooterProps> = ({
             <img
               src={COMPANY_DETAILS.logo}
               alt="Our Trip Africa"
-              className="h-14 w-14 rounded-full object-cover border-2 border-[#c5a059]/50"
+              className="h-14 w-14 rounded-full object-cover border-2 border-[#D4A017]/50"
             />
             <div>
               <span className="font-serif text-2xl font-bold text-[#0e3022] tracking-tight">
                 OUR TRIP AFRICA
               </span>
-              <p className="text-xs text-[#c5a059] tracking-widest font-semibold uppercase">
+              <p className="text-xs text-[#D4A017] tracking-widest font-semibold uppercase">
                 Discover • Explore • Enjoy
               </p>
             </div>
@@ -70,7 +70,7 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram @ourtripafricaa"
-                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#c5a059] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#D4A017] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
               >
                 <Instagram size={18} />
               </a>
@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook @ourtripafrica"
-                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#c5a059] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#D4A017] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
               >
                 <Facebook size={18} />
               </a>
@@ -88,7 +88,7 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok @ourtripafrica"
-                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#c5a059] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#D4A017] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
               >
                 <span className="font-bold text-xs">TT</span>
               </a>
@@ -97,7 +97,7 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube @ourtripafrica"
-                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#c5a059] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#D4A017] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
               >
                 <Youtube size={18} />
               </a>
@@ -106,7 +106,7 @@ export const Footer: React.FC<FooterProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn @ourtripafrica"
-                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#c5a059] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-[#0e3022] hover:bg-[#D4A017] text-[#C7E8D1] hover:text-[#081a13] flex items-center justify-center transition-all duration-200"
               >
                 <Linkedin size={18} />
               </a>
@@ -119,7 +119,7 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Col 2: Destinations */}
         <div className="space-y-3">
-          <p className="text-sm font-serif font-bold text-[#c5a059] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
+          <p className="text-sm font-serif font-bold text-[#D4A017] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
             Safari Destinations
           </p>
           <ul className="space-y-2 text-sm text-[#0e3022]">
@@ -192,7 +192,7 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Col 3: Company & Teams */}
         <div className="space-y-3">
-          <p className="text-sm font-serif font-bold text-[#c5a059] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
+          <p className="text-sm font-serif font-bold text-[#D4A017] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
             Company & Teams
           </p>
           <ul className="space-y-2 text-sm text-[#0e3022]">
@@ -239,17 +239,17 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Col 4: Official Contacts */}
         <div className="space-y-3">
-          <p className="text-sm font-serif font-bold text-[#c5a059] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
+          <p className="text-sm font-serif font-bold text-[#D4A017] tracking-wide uppercase border-b border-[#1a4a35] pb-2">
             Direct Contacts
           </p>
           <div className="space-y-3 text-xs text-[#0e3022]">
             <div>
-              <p className="text-[10px] text-[#c5a059] uppercase font-semibold">Headquarters</p>
+              <p className="text-[10px] text-[#D4A017] uppercase font-semibold">Headquarters</p>
               <p className="text-[#0e3022] mt-0.5">{COMPANY_DETAILS.address}</p>
             </div>
 
             <div>
-              <p className="text-[10px] text-[#c5a059] uppercase font-semibold">WhatsApp & Call</p>
+              <p className="text-[10px] text-[#D4A017] uppercase font-semibold">WhatsApp & Call</p>
               <a
                 href={`https://wa.me/${COMPANY_DETAILS.whatsappRaw}`}
                 target="_blank"
@@ -261,7 +261,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div>
-              <p className="text-[10px] text-[#c5a059] uppercase font-semibold">Booking Desk</p>
+              <p className="text-[10px] text-[#D4A017] uppercase font-semibold">Booking Desk</p>
               <a
                 href={`mailto:${COMPANY_DETAILS.bookingEmail}`}
                 className="text-[#0e3022] hover:underline block mt-0.5"
@@ -271,7 +271,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div>
-              <p className="text-[10px] text-[#c5a059] uppercase font-semibold">Support Desk</p>
+              <p className="text-[10px] text-[#D4A017] uppercase font-semibold">Support Desk</p>
               <a
                 href={`mailto:${COMPANY_DETAILS.supportEmail}`}
                 className="text-[#0e3022] hover:text-[#0e3022] hover:underline block mt-0.5"
@@ -281,12 +281,12 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <div>
-              <p className="text-[10px] text-[#c5a059] uppercase font-semibold">Management Team</p>
+              <p className="text-[10px] text-[#D4A017] uppercase font-semibold">Management Team</p>
               <a href="mailto:james@ourtripafrica.com" className="text-[#0e3022] hover:text-[#0e3022] hover:underline block mt-0.5">james@ourtripafrica.com</a>
             </div>
 
             <div>
-              <p className="text-[10px] text-[#c5a059] uppercase font-semibold">Sales Desk</p>
+              <p className="text-[10px] text-[#D4A017] uppercase font-semibold">Sales Desk</p>
               <a
                 href={`mailto:${COMPANY_DETAILS.salesEmail}`}
                 className="text-[#0e3022] hover:text-[#0e3022] hover:underline block mt-0.5"
@@ -299,7 +299,7 @@ export const Footer: React.FC<FooterProps> = ({
       </div>
 
       {/* Bottom Bar: Copyright & Accreditations */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#c5a059] font-serif font-bold">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#D4A017] font-serif font-bold">
         <p>
           @Ferever Our Trip Africa. All rights reserved. Registered Tour Operator, Arusha, Tanzania.
         </p>
