@@ -696,12 +696,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </div>
               <p className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#0e5638]"><Clock3 size={18} /> A personalised travel solution within 24 hours.</p>
             </div>
-            <div className="rounded-2xl border border-[#c5a059]/40 bg-[#fbfaf6] p-6 sm:p-7 shadow-sm">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Let’s plan something unforgettable</p>
-              <h3 className="mt-3 text-2xl font-serif font-bold text-[#0e3022]">Your dream trip starts with a message.</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600">Send us your travel dates and preferred destinations. We’ll help you with an itinerary and a quotation tailored to your plans.</p>
+            <div className="rounded-2xl border border-[#c5a059]/50 bg-[#0e5638] p-6 sm:p-7 shadow-sm">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#e4c681]">Let’s plan something unforgettable</p>
+              <h3 className="mt-3 text-2xl font-serif font-bold text-white">Your dream trip starts with a message.</h3>
+              <p className="mt-3 text-sm leading-6 text-emerald-50">Send us your travel dates and preferred destinations. We’ll help you with an itinerary and a quotation tailored to your plans.</p>
               <a href="https://wa.me/255624661830?text=Hello%20Our%20Trip%20Africa!%20I%20would%20like%20help%20planning%20a%20safari%20or%20holiday.%20My%20preferred%20travel%20date%20is%3A%20_____.%20The%20destinations%20I%20am%20interested%20in%20are%3A%20_____.%20Please%20help%20me%20with%20a%20suitable%20itinerary%20and%20quotation." target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#D4A017] px-5 py-4 text-sm font-extrabold text-[#0e3022] shadow-md transition hover:bg-[#e3c27b]"><MessageCircle size={19} /> PLAN MY SAFARI WITH US <ArrowRight size={18} /></a>
-              <p className="mt-4 text-center text-xs text-slate-500">WhatsApp: +255 624 661 830 · We’re here to help, 24/7.</p>
+              <p className="mt-4 text-center text-xs text-emerald-100">WhatsApp: +255 624 661 830 · We’re here to help, 24/7.</p>
             </div>
           </div>
         </div>
@@ -812,10 +812,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
               ['Clear Package Details', 'Review the itinerary, inclusions and exclusions before confirming.'],
               ['Direct Guest Support', 'Reach our team by WhatsApp or email for trip planning assistance.']
             ].map(([title, description]) => (
-              <div key={title} className="rounded-2xl border border-[#c5a059]/25 bg-[#fbfaf6] p-5">
-                <ShieldCheck className="text-[#0e5638] mb-3" size={25}/>
-                <h3 className="font-bold text-[#0e3022]">{title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-slate-600">{description}</p>
+              <div key={title} className="rounded-2xl border border-[#c5a059]/35 bg-[#0e5638] p-5">
+                <ShieldCheck className="text-[#e4c681] mb-3" size={25}/>
+                <h3 className="font-bold text-white">{title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-emerald-50">{description}</p>
               </div>
             ))}
           </div>
