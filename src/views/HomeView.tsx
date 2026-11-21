@@ -860,26 +860,26 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <div className="rounded-xl border border-[#C99A2E]/50 bg-[#f7faf7] p-3">
                   <h4 className="mb-2 text-sm font-bold text-[#0e5638]">Mr James Felix</h4>
                   <div className="flex flex-wrap gap-2">
-                    <a href="mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=Booking%20enquiry%20-%20Our%20Trip%20Africa" className="inline-flex items-center gap-1.5 rounded-lg border border-[#C99A2E] bg-[#0e5638] px-2.5 py-2 text-xs font-semibold text-white hover:bg-[#0a402a]">
+                    <a href="mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=Booking%20enquiry%20-%20Our%20Trip%20Africa" className="inline-flex items-center gap-1.5 rounded-lg border border-[#C99A2E] bg-[#C99A2E] px-2.5 py-2 text-xs font-semibold text-[#194A2D] hover:bg-[#b88924]">
                       <Mail size={14}/> Email
                     </a>
-                    <a href="https://wa.me/255743661850" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-[#0e5638] bg-[#C99A2E] px-2.5 py-2 text-xs font-semibold text-[#0e3022] hover:bg-[#b88924]">
+                    <a href="https://wa.me/255743661850" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-[#25D366] bg-[#25D366] px-2.5 py-2 text-xs font-semibold text-[#073B20] hover:bg-[#20bd5a]">
                       <MessageCircle size={14}/> WhatsApp
                     </a>
                   </div>
                   <p className="mt-2 text-[11px] text-slate-600">james@ourtripafrica.com · +255 743 661 850</p>
                 </div>
-                <div className="rounded-xl border border-[#C99A2E]/40 bg-white/5 p-3">
+                <div className="rounded-xl border border-[#C99A2E]/50 bg-[#f7faf7] p-3">
                   <h4 className="mb-2 text-sm font-bold text-[#0e5638]">Reservation Team</h4>
                   <div className="flex flex-wrap gap-2">
-                    <a href="mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=Booking%20enquiry%20-%20Our%20Trip%20Africa" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#C99A2E] hover:text-[#C99A2E]">
+                    <a href="mailto:info@ourtripafrica.com?cc=ourtripafricaa@gmail.com&subject=Booking%20enquiry%20-%20Our%20Trip%20Africa" className="inline-flex items-center gap-1.5 rounded-lg border border-[#C99A2E] bg-[#C99A2E] px-2.5 py-2 text-xs font-semibold text-[#194A2D] hover:bg-[#b88924]">
                       <Mail size={14}/> Email
                     </a>
-                    <a href="https://wa.me/255624661830" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 px-2.5 py-2 text-xs font-semibold text-white hover:border-[#C99A2E] hover:text-[#C99A2E]">
+                    <a href="https://wa.me/255624661830" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg border border-[#25D366] bg-[#25D366] px-2.5 py-2 text-xs font-semibold text-[#073B20] hover:bg-[#20bd5a]">
                       <MessageCircle size={14}/> WhatsApp
                     </a>
                   </div>
-                  <p className="mt-2 text-[11px] text-slate-300">info@ourtripafrica.com · +255 624 661 830</p>
+                  <p className="mt-2 text-[11px] text-slate-600">info@ourtripafrica.com · +255 624 661 830</p>
                 </div>
               </div>
             </div>
