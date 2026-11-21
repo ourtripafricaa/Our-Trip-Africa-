@@ -124,19 +124,19 @@ export const SafariChatbot: React.FC = () => {
           <button
             onClick={() => setIsOpen(true)}
             aria-label="Open Safari Concierge Chat"
-            className="group relative flex items-center gap-3 px-4 py-3 rounded-full bg-gradient-to-r from-[#0f382a] to-[#081a13] border-2 border-[#c5a059] shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer"
+            className="group relative flex items-center gap-3 px-4 py-3 rounded-full bg-gradient-to-r from-[#0f382a] to-[#081a13] border-2 border-[#C99A2E] shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer"
           >
             <div className="relative">
               <img
                 src={COMPANY_DETAILS.logo}
                 alt="Our Trip Africa"
-                className="w-9 h-9 rounded-full object-cover border border-[#c5a059]"
+                className="w-9 h-9 rounded-full object-cover border border-[#C99A2E]"
               />
               <span className="absolute -top-1 -right-1 w-3 h-3 bg-[#25D366] rounded-full border-2 border-[#081a13]" />
             </div>
             <div className="text-left hidden sm:block">
               <span className="text-xs font-bold text-white block">Safari AI Assistant</span>
-              <span className="text-[10px] text-[#c5a059]">Ask a question or book</span>
+              <span className="text-[10px] text-[#C99A2E]">Ask a question or book</span>
             </div>
           </button>
         )}
@@ -144,14 +144,14 @@ export const SafariChatbot: React.FC = () => {
 
       {/* Chat Window Panel */}
       {isOpen && (
-        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[95vw] sm:w-[420px] h-[580px] max-h-[85vh] bg-[#081a13] border-2 border-[#c5a059]/50 rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-fadeIn">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[95vw] sm:w-[420px] h-[580px] max-h-[85vh] bg-[#081a13] border-2 border-[#C99A2E]/50 rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-fadeIn">
           {/* Header */}
           <div className="bg-[#0e271e] p-4 border-b border-[#1a4a35] flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img
                 src={COMPANY_DETAILS.logo}
                 alt="Our Trip Africa"
-                className="w-10 h-10 rounded-full object-cover border border-[#c5a059]"
+                className="w-10 h-10 rounded-full object-cover border border-[#C99A2E]"
               />
               <div>
                 <div className="flex items-center gap-2">
@@ -181,7 +181,7 @@ export const SafariChatbot: React.FC = () => {
                 className={`flex gap-2.5 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 {msg.sender === 'bot' && (
-                  <div className="w-7 h-7 rounded-full bg-[#0e3022] border border-[#c5a059]/40 flex items-center justify-center shrink-0 text-[#c5a059] mt-1">
+                  <div className="w-7 h-7 rounded-full bg-[#0e3022] border border-[#C99A2E]/40 flex items-center justify-center shrink-0 text-[#C99A2E] mt-1">
                     <Bot size={15} />
                   </div>
                 )}
@@ -189,7 +189,7 @@ export const SafariChatbot: React.FC = () => {
                 <div
                   className={`max-w-[85%] rounded-2xl p-3.5 text-xs leading-relaxed space-y-2 ${
                     msg.sender === 'user'
-                      ? 'bg-[#c5a059] text-[#081a13] font-medium rounded-br-none'
+                      ? 'bg-[#C99A2E] text-[#081a13] font-medium rounded-br-none'
                       : 'bg-[#0e271e] text-[#faf7f2] border border-[#1a4a35] rounded-bl-none'
                   }`}
                 >
@@ -209,7 +209,7 @@ export const SafariChatbot: React.FC = () => {
                       </a>
                       <a
                         href={`mailto:${COMPANY_DETAILS.bookingEmail}`}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#1a4a35] text-[#c5a059] rounded-lg text-[11px] font-semibold hover:bg-[#225d43] transition-colors"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#1a4a35] text-[#C99A2E] rounded-lg text-[11px] font-semibold hover:bg-[#225d43] transition-colors"
                       >
                         <Mail size={13} />
                         <span>Email Us</span>
@@ -223,7 +223,7 @@ export const SafariChatbot: React.FC = () => {
                 </div>
 
                 {msg.sender === 'user' && (
-                  <div className="w-7 h-7 rounded-full bg-[#c5a059] flex items-center justify-center shrink-0 text-[#081a13] mt-1">
+                  <div className="w-7 h-7 rounded-full bg-[#C99A2E] flex items-center justify-center shrink-0 text-[#081a13] mt-1">
                     <User size={15} />
                   </div>
                 )}
@@ -232,7 +232,7 @@ export const SafariChatbot: React.FC = () => {
 
             {isTyping && (
               <div className="flex items-center gap-2 text-xs text-[#a49a88] bg-[#0e271e] p-3 rounded-2xl w-32 border border-[#1a4a35]">
-                <Bot size={14} className="text-[#c5a059]" />
+                <Bot size={14} className="text-[#C99A2E]" />
                 <span>Typing...</span>
               </div>
             )}
@@ -265,13 +265,13 @@ export const SafariChatbot: React.FC = () => {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Ask anything about our safaris..."
-              className="flex-1 bg-[#081a13] text-white text-xs px-3.5 py-2.5 rounded-xl border border-[#1a4a35] focus:outline-none focus:border-[#c5a059]"
+              className="flex-1 bg-[#081a13] text-white text-xs px-3.5 py-2.5 rounded-xl border border-[#1a4a35] focus:outline-none focus:border-[#C99A2E]"
             />
             <button
               type="submit"
               disabled={!inputValue.trim()}
               aria-label="Send message"
-              className="p-2.5 rounded-xl bg-[#c5a059] text-[#081a13] hover:bg-[#d6b36d] disabled:opacity-40 disabled:cursor-not-allowed transition-all cursor-pointer"
+              className="p-2.5 rounded-xl bg-[#C99A2E] text-[#081a13] hover:bg-[#C99A2E] disabled:opacity-40 disabled:cursor-not-allowed transition-all cursor-pointer"
             >
               <Send size={15} />
             </button>
