@@ -64,11 +64,11 @@ export const ContactView: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-[#0e3022] p-8 sm:p-10 rounded-3xl border border-[#1b4d38] shadow-lg text-white space-y-6">
+        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#C99A2E] shadow-sm text-[#194A2D] space-y-6">
           <div className="space-y-3">
             <MessageSquare size={28} className="text-[#25D366]" />
             <h3 className="font-serif text-2xl font-bold text-white">Talk to Our Team on WhatsApp</h3>
-            <p className="text-sm text-slate-200 leading-relaxed">
+            <p className="text-sm text-[#194A2D] leading-relaxed">
               For quick questions, safari planning, availability and prices, message our reservation team directly. WhatsApp will open with your chat ready.
             </p>
           </div>
@@ -88,7 +88,7 @@ export const ContactView: React.FC = () => {
             <Mail size={18} />
             <span>EMAIL OUR RESERVATION TEAM</span>
           </a>
-          <p className="text-[11px] text-slate-300 text-center">No website form. Contact us directly using WhatsApp or your email app.</p>
+          <p className="text-[11px] text-[#66806F] text-center">No website form. Contact us directly using WhatsApp or your email app.</p>
         </div>
       </div>
     </div>
