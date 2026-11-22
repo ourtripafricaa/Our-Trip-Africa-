@@ -289,7 +289,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </button>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-[#081a13] px-4 py-4 sm:px-7">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/15 bg-[#06251D] px-4 py-4 sm:px-7">
             <div className="flex items-center gap-2" aria-label="Choose gallery image">
               {TANZANIA_GALLERY.map((photo, index) => (
                 <button
@@ -298,7 +298,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   onClick={() => setGalleryIndex(index)}
                   aria-label={`Show image ${index + 1}: ${photo.name}`}
                   aria-current={galleryIndex === index ? 'true' : undefined}
-                  className={`h-2.5 rounded-full transition-all ${galleryIndex === index ? 'w-8 bg-[#C99A2E]' : 'w-2.5 bg-white/40 hover:bg-white/80'}`}
+                  className={`h-3 rounded-full border border-white/60 transition-all focus:outline-none focus:ring-2 focus:ring-[#C99A2E] focus:ring-offset-2 focus:ring-offset-[#06251D] ${galleryIndex === index ? 'w-8 bg-[#C99A2E]' : 'w-2.5 bg-white/40 hover:bg-white/80'}`}
                 />
               ))}
             </div>
@@ -320,19 +320,19 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 2.5 DREAM TRIP PLANNER / BUDGET CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-[#C99A2E]/50 bg-white p-8 sm:p-12 text-center shadow-lg">
+        <div className="relative overflow-hidden rounded-3xl border border-[#C99A2E]/60 bg-[#06251D] p-8 sm:p-12 text-center text-white shadow-lg">
           <div className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-[#C99A2E]/10 blur-3xl" />
           <div className="relative mx-auto max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#0e5638]/10 px-3 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#0e5638]">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-white">
               <Sparkles size={13} /> A friendly message from Our Trip Africa
             </span>
-            <h2 className="mt-4 font-serif text-2xl sm:text-4xl font-bold leading-tight text-[#0e3022]">
+            <h2 className="mt-4 font-serif text-2xl sm:text-4xl font-bold leading-tight text-white">
               DON'T GIVE UP ON YOUR DREAM SAFARI!
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-600">
+            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-white/90">
               Share your budget with us. We'll help you find the perfect safari for you.
             </p>
-            <p className="mt-3 text-sm font-semibold text-[#0e5638]">
+            <p className="mt-3 text-sm font-semibold text-white">
               Every budget matters. Friendly advice. No pressure to book.
             </p>
             <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -348,12 +348,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 href={COMPANY_DETAILS.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-[#0e5638]/35 px-6 py-3 text-sm font-bold text-[#0e5638] transition hover:bg-[#0e5638]/5"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-[#25D366] bg-[#25D366] px-6 py-3 text-sm font-extrabold text-white shadow-md transition hover:bg-[#20bd5a]"
               >
                 CHAT WITH OUR TEAM
               </a>
             </div>
-            <p className="mt-3 text-[11px] text-slate-500">Share your budget with us on WhatsApp — our Arusha-based team is ready to help.</p>
+            <p className="mt-3 text-[11px] text-white/80">Share your budget with us on WhatsApp — our Arusha-based team is ready to help.</p>
           </div>
         </div>
       </section>
