@@ -210,7 +210,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 2. VALUE PROPOSITION STRIP */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-20">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-[#0e3022] border border-[#1b4d38] p-6 rounded-3xl shadow-xl text-white">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-[#06251D] border border-[#C99A2E]/50 p-6 rounded-3xl shadow-xl text-white">
           <div className="space-y-1 text-center sm:text-left">
             <span className="font-serif text-2xl font-bold text-[#C99A2E] font-mono tabular-nums">
               15+ Years
