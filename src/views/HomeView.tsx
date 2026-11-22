@@ -244,116 +244,73 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
-            {/* 5.6 SLIDE GALLERY */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#0e3022]">Visual Journey</span>
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Experience Africa Through Our Gallery</h2>
-          <p className="text-sm text-slate-600">A glimpse of the wildlife, landscapes and unforgettable places waiting to be explored.</p>
-        </div>
-
-        <div className="relative overflow-hidden rounded-[2rem] bg-[#061d14] border border-[#C99A2E]/50 shadow-2xl">
-          <div className="relative h-[300px] sm:h-[440px] lg:h-[540px]">
-            {TANZANIA_GALLERY.map((photo, index) => (
-              <div
-                key={photo.name}
-                className={`absolute inset-0 transition-opacity duration-700 ${galleryIndex === index ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-                aria-hidden={galleryIndex !== index}
-              >
-                <img
-                  src={photo.url}
-                  alt={photo.name}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  className="h-full w-full object-cover"
-                />
-
+            {/* Customer Trust & Booking Confidence */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-[#C99A2E]/50 bg-white p-7 sm:p-10 text-[#0e3022] shadow-lg">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8">
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Travel With Confidence</span>
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#0e3022]">Why Plan Your Journey With Our Trip Africa?</h2>
+            <p className="text-sm text-slate-600">Clear communication, locally planned journeys and direct access to our Arusha-based team from your first enquiry to the end of your trip.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              ['Local Arusha Team', 'Plan directly with a Tanzania-based safari operator.'],
+              ['Tailor-Made Itineraries', 'Choose your dates, destinations, travel style and budget.'],
+              ['Clear Package Details', 'Review the itinerary, inclusions and exclusions before confirming.'],
+              ['Direct Guest Support', 'Reach our team by WhatsApp or email for trip planning assistance.']
+            ].map(([title, description]) => (
+              <div key={title} className="rounded-2xl border border-[#C99A2E]/35 bg-white p-5 shadow-sm">
+                <ShieldCheck className="text-[#C99A2E] mb-3" size={25}/>
+                <h3 className="font-bold text-[#0B3023]">{title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">{description}</p>
               </div>
             ))}
-
-            <button
-              type="button"
-              onClick={() => setGalleryIndex((current) => (current - 1 + TANZANIA_GALLERY.length) % TANZANIA_GALLERY.length)}
-              aria-label="Previous gallery image"
-              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-white bg-[#0B3023] text-white text-3xl font-black leading-none shadow-xl"
-            >
-              &lt;
-            </button>
-            <button
-              type="button"
-              onClick={() => setGalleryIndex((current) => (current + 1) % TANZANIA_GALLERY.length)}
-              aria-label="Next gallery image"
-              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-white bg-[#0B3023] text-white text-3xl font-black leading-none shadow-xl"
-            >
-              &gt;
-            </button>
           </div>
-
-          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/15 bg-[#06251D] px-4 py-4 sm:px-7">
-            <div className="flex min-w-0 max-w-full flex-nowrap items-center gap-2.5 overflow-x-auto whitespace-nowrap pb-1" aria-label="Choose gallery image">
-              {TANZANIA_GALLERY.map((photo, index) => (
-                <button
-                  key={photo.name}
-                  type="button"
-                  onClick={() => setGalleryIndex(index)}
-                  aria-label={`Show image ${index + 1}: ${photo.name}`}
-                  aria-current={galleryIndex === index ? 'true' : undefined}
-                  className={`h-3 rounded-full border border-white/60 transition-all focus:outline-none focus:ring-2 focus:ring-[#C99A2E] focus:ring-offset-2 focus:ring-offset-[#06251D] ${galleryIndex === index ? 'w-8 bg-[#C99A2E]' : 'w-2.5 bg-white/40 hover:bg-white/80'}`}
-                />
-              ))}
-            </div>
-            <span className="text-[11px] sm:text-xs font-semibold tracking-wide text-[#C99A2E]" aria-live="polite">
-              {String(galleryIndex + 1).padStart(2, '0')} / {String(TANZANIA_GALLERY.length).padStart(2, '0')}
-            </span>
-          </div>
-        </div>
-        <div className="rounded-2xl border border-[#C99A2E]/50 bg-white px-6 py-7 text-center text-[#0e3022] shadow-lg">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#C99A2E]">Your adventure is one message away</p>
-          <h3 className="mt-2 font-serif text-2xl sm:text-3xl font-bold text-[#0e3022]">Seen a place you would love to visit?</h3>
-          <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-600">Tell our travel consultants your travel dates, group size and budget. We will help you shape the right journey.</p>
-          <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3">
-            <button type="button" onClick={() => onOpenBooking()} className="rounded-xl bg-[#C99A2E] px-7 py-3.5 text-sm font-extrabold text-[#0e3022] shadow-lg hover:bg-[#C99A2E] transition-colors">Enquire & Start Booking</button>
-            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-[#25D366] bg-[#25D366] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#1faa4f] transition-colors">Book on WhatsApp</a>
+          <div className="mt-7 flex flex-col sm:flex-row justify-center gap-3">
+            <button onClick={() => onOpenBooking()} className="rounded-xl bg-[#C99A2E] px-6 py-3 text-sm font-bold text-[#0e3022]">Start a Booking Enquiry</button>
+            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl bg-[#25D366] px-6 py-3 text-center text-sm font-bold text-white hover:bg-[#1faa4f]">Chat With Our Team</a>
           </div>
         </div>
       </section>
 
-      {/* 2.5 DREAM TRIP PLANNER / BUDGET CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-[#C99A2E]/60 bg-white p-8 sm:p-12 text-center text-[#0e3022] shadow-lg">
-          <div className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-[#C99A2E]/10 blur-3xl" />
-          <div className="relative mx-auto max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#C99A2E]/50 bg-[#C99A2E]/10 px-3 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#C99A2E]">
-              <Sparkles size={13} /> A FRIENDLY MESSAGE FROM OUR TRIP AFRICA
+      {/* 4. FEATURED PACKAGES SHOWCASE */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#0e3022]">
+              Verified Itineraries
             </span>
-            <h2 className="mt-4 font-serif text-2xl sm:text-4xl font-bold leading-tight text-[#0e3022]">
-              DON'T GIVE UP ON YOUR DREAM SAFARI!
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900 mt-1">
+              Featured Safari & Holiday Packages
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-700">
-              Share your budget with us. We'll help you find the perfect safari for you.
-            </p>
-            <p className="mt-3 text-sm font-semibold text-[#0e3022]">
-              Every budget matters. Friendly advice. No pressure to book.
-            </p>
-            <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href="https://wa.me/255624661830?text=Hello%20Our%20Trip%20Africa!%20I%20am%20interested%20in%20a%20safari.%20My%20estimated%20budget%20is%3A%20_____.%20Please%20help%20me%20plan%20a%20trip%20that%20fits%20my%20budget."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-extrabold text-white shadow-lg transition hover:bg-[#1faa4f]"
-              >
-                <MessageCircle size={18} /> LET'S PLAN MY SAFARI <ArrowRight size={17} />
-              </a>
-              <a
-                href={COMPANY_DETAILS.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-[#25D366] bg-[#25D366] px-6 py-3 text-sm font-extrabold text-white shadow-md transition hover:bg-[#20bd5a]"
-              >
-                CHAT WITH OUR TEAM
-              </a>
-            </div>
-            <p className="mt-3 text-[11px] text-slate-600">Share your budget with us on WhatsApp — our Arusha-based team is ready to help.</p>
           </div>
+
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => onNavigate('compare')}
+              className="px-4 py-2 text-xs font-semibold rounded-xl bg-white hover:bg-slate-50 text-[#0e3022] border border-slate-300 shadow-sm cursor-pointer transition-colors"
+            >
+              Compare All Prices
+            </button>
+            <button
+              onClick={() => onNavigate('packages')}
+              className="px-4 py-2 text-xs font-semibold rounded-xl bg-[#0e3022] hover:bg-[#154632] text-white cursor-pointer font-bold shadow-sm transition-colors"
+            >
+              View All {SAFARI_PACKAGES.length} Packages
+            </button>
+          </div>
+        </div>
+
+        {/* Packages Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredPackages.map((pkg) => (
+            <PackageCard
+              key={pkg.id}
+              packageItem={pkg}
+              onSelect={onSelectPackage}
+              onOpenBooking={onOpenBooking}
+            />
+          ))}
         </div>
       </section>
 
@@ -611,6 +568,104 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
+      {/* 5.6 SLIDE GALLERY */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="text-center max-w-2xl mx-auto space-y-2">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#0e3022]">Visual Journey</span>
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Experience Africa Through Our Gallery</h2>
+          <p className="text-sm text-slate-600">A glimpse of the wildlife, landscapes and unforgettable places waiting to be explored.</p>
+        </div>
+
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#061d14] border border-[#C99A2E]/50 shadow-2xl">
+          <div className="relative h-[300px] sm:h-[440px] lg:h-[540px]">
+            {TANZANIA_GALLERY.map((photo, index) => (
+              <div
+                key={photo.name}
+                className={`absolute inset-0 transition-opacity duration-700 ${galleryIndex === index ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                aria-hidden={galleryIndex !== index}
+              >
+                <img
+                  src={photo.url}
+                  alt={photo.name}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  className="h-full w-full object-cover"
+                />
+
+              </div>
+            ))}
+
+            <button
+              type="button"
+              onClick={() => setGalleryIndex((current) => (current - 1 + TANZANIA_GALLERY.length) % TANZANIA_GALLERY.length)}
+              aria-label="Previous gallery image"
+              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-white bg-[#0B3023] text-white text-3xl font-black leading-none shadow-xl"
+            >
+              &lt;
+            </button>
+            <button
+              type="button"
+              onClick={() => setGalleryIndex((current) => (current + 1) % TANZANIA_GALLERY.length)}
+              aria-label="Next gallery image"
+              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-white bg-[#0B3023] text-white text-3xl font-black leading-none shadow-xl"
+            >
+              &gt;
+            </button>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/15 bg-[#06251D] px-4 py-4 sm:px-7">
+            <div className="flex min-w-0 max-w-full flex-nowrap items-center gap-2.5 overflow-x-auto whitespace-nowrap pb-1" aria-label="Choose gallery image">
+              {TANZANIA_GALLERY.map((photo, index) => (
+                <button
+                  key={photo.name}
+                  type="button"
+                  onClick={() => setGalleryIndex(index)}
+                  aria-label={`Show image ${index + 1}: ${photo.name}`}
+                  aria-current={galleryIndex === index ? 'true' : undefined}
+                  className={`h-3 rounded-full border border-white/60 transition-all focus:outline-none focus:ring-2 focus:ring-[#C99A2E] focus:ring-offset-2 focus:ring-offset-[#06251D] ${galleryIndex === index ? 'w-8 bg-[#C99A2E]' : 'w-2.5 bg-white/40 hover:bg-white/80'}`}
+                />
+              ))}
+            </div>
+            <span className="text-[11px] sm:text-xs font-semibold tracking-wide text-[#C99A2E]" aria-live="polite">
+              {String(galleryIndex + 1).padStart(2, '0')} / {String(TANZANIA_GALLERY.length).padStart(2, '0')}
+            </span>
+          </div>
+        </div>
+        <div className="rounded-2xl border border-[#C99A2E]/50 bg-white px-6 py-7 text-center text-[#0e3022] shadow-lg">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#C99A2E]">Your adventure is one message away</p>
+          <h3 className="mt-2 font-serif text-2xl sm:text-3xl font-bold text-[#0e3022]">Seen a place you would love to visit?</h3>
+          <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-600">Tell our travel consultants your travel dates, group size and budget. We will help you shape the right journey.</p>
+          <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3">
+            <button type="button" onClick={() => onOpenBooking()} className="rounded-xl bg-[#C99A2E] px-7 py-3.5 text-sm font-extrabold text-[#0e3022] shadow-lg hover:bg-[#C99A2E] transition-colors">Enquire & Start Booking</button>
+            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-[#25D366] bg-[#25D366] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#1faa4f] transition-colors">Book on WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <GuestReviews />
+
+      {/* TripAdvisor business profile and guest reviews */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl border border-[#C99A2E]/50 bg-white p-7 sm:p-10 text-center shadow-lg">
+          <div className="mx-auto flex items-center justify-center" aria-label="Tripadvisor">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Tripadvisor_2025_Logo.svg"
+              alt="Tripadvisor"
+              width="150"
+              height="23"
+              loading="lazy"
+              className="h-6 w-auto object-contain"
+            />
+          </div>
+          <span className="mt-4 inline-block text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Guest feedback matters</span>
+          <h2 className="mt-2 font-serif text-2xl sm:text-4xl font-bold text-[#0e3022]">Share Your Experience on TripAdvisor</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-7 text-slate-600">Planning a trip with Our Trip Africa? Read traveller feedback or share your own experience on our TripAdvisor business page.</p>
+          <a href="https://www.tripadvisor.co.uk/Attraction_Review-g297913-d34728923-Reviews-Our_Trip_Africa-Arusha_Arusha_Region.html" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#00AA6C] px-7 py-3.5 text-sm font-extrabold text-white shadow-md transition hover:bg-[#008f5b]">
+            <Star size={17} fill="currentColor" /> View Us on TripAdvisor <ArrowRight size={17} />
+          </a>
+          <p className="mt-3 text-xs text-slate-500">Opens our TripAdvisor profile in a new tab.</p>
+        </div>
+      </section>
+
       {/* Compact travel stories feature */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-2xl border border-[#C99A2E]/50 bg-white p-4 sm:p-5 shadow-lg">
@@ -639,45 +694,46 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
-      {/* 4. FEATURED PACKAGES SHOWCASE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div>
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#0e3022]">
-              Verified Itineraries
-            </span>
-            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900 mt-1">
-              Featured Safari & Holiday Packages
-            </h2>
-          </div>
+      <SpecialOffers onOpenBooking={() => onOpenBooking()} />
 
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => onNavigate('compare')}
-              className="px-4 py-2 text-xs font-semibold rounded-xl bg-white hover:bg-slate-50 text-[#0e3022] border border-slate-300 shadow-sm cursor-pointer transition-colors"
-            >
-              Compare All Prices
-            </button>
-            <button
-              onClick={() => onNavigate('packages')}
-              className="px-4 py-2 text-xs font-semibold rounded-xl bg-[#0e3022] hover:bg-[#154632] text-white cursor-pointer font-bold shadow-sm transition-colors"
-            >
-              View All {SAFARI_PACKAGES.length} Packages
-            </button>
-          </div>
+      {/* SOCIAL VIDEO LINKS ON EVERY VIDEO CATEGORY */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#0e3022]"><Video size={15}/> Watch • Follow • Explore</span>
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Watch Our Trip Africa in Action</h2>
+          <p className="text-sm text-slate-600">Choose a video category, then select your favourite social platform to watch more from Our Trip Africa.</p>
         </div>
-
-        {/* Packages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredPackages.map((pkg) => (
-            <PackageCard
-              key={pkg.id}
-              packageItem={pkg}
-              onSelect={onSelectPackage}
-              onOpenBooking={onOpenBooking}
-            />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {[
+            { title: 'Wildlife & Big Five Safaris', subtitle: 'Lions, elephants and the endless plains of Africa.', image: TANZANIA_GALLERY[0].url },
+            { title: 'Zanzibar Island Escapes', subtitle: 'Turquoise water, white-sand beaches and island life.', image: LOCAL_IMAGES.zanzibar },
+            { title: 'Kilimanjaro Adventures', subtitle: 'Mountain trails, breathtaking views and summit moments.', image: LOCAL_IMAGES.kilimanjaro },
+            { title: 'Culture & Local Experiences', subtitle: 'Discover local communities, traditions and heritage.', image: LOCAL_IMAGES.lakeEyasi }
+          ].map((item) => (
+            <div key={item.title} className="overflow-hidden rounded-3xl border border-[#C99A2E]/40 bg-white shadow-lg">
+              <div className="relative h-48 sm:h-56 bg-[#061d14]">
+                <img src={item.image} alt={item.title} loading="lazy" className="h-full w-full object-cover"/>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#061d14]/85 via-transparent to-transparent"/>
+                <div className="absolute bottom-4 left-5 right-5">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">{item.title}</h3>
+                  <p className="mt-1 text-xs text-slate-200">{item.subtitle}</p>
+                </div>
+              </div>
+              <div className="p-4 sm:p-5">
+                <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-600">Choose where to watch</p>
+                <div className="grid grid-cols-2 gap-2">
+                  <a href="https://www.facebook.com/ourtripafrica" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#1877F2] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on Facebook</a>
+                  <a href="https://www.instagram.com/ourtripafricaa/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#FCAF45] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on Instagram</a>
+                  <a href="https://www.tiktok.com/@ourtripafrica" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#111111] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:bg-black">Watch on TikTok</a>
+                  <a href="https://www.youtube.com/@ourtripafrica" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#FF0033] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on YouTube</a>
+                  <a href="https://www.linkedin.com/in/our-trip-africa-13ab08222" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#0A66C2] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on LinkedIn</a>
+                  <a href="https://www.threads.net/@ourtripafricaa" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#111111] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:bg-black">Watch on Threads</a>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
+        <p className="text-center text-xs text-slate-500">Each video category offers six official social links, so visitors can choose where they prefer to watch.</p>
       </section>
 
       {/* Personalised safari planning and FAQ - placed immediately below the image slideshow */}
@@ -729,98 +785,42 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
-      {/* SOCIAL VIDEO LINKS ON EVERY VIDEO CATEGORY */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#0e3022]"><Video size={15}/> Watch • Follow • Explore</span>
-          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-slate-900">Watch Our Trip Africa in Action</h2>
-          <p className="text-sm text-slate-600">Choose a video category, then select your favourite social platform to watch more from Our Trip Africa.</p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {[
-            { title: 'Wildlife & Big Five Safaris', subtitle: 'Lions, elephants and the endless plains of Africa.', image: TANZANIA_GALLERY[0].url },
-            { title: 'Zanzibar Island Escapes', subtitle: 'Turquoise water, white-sand beaches and island life.', image: LOCAL_IMAGES.zanzibar },
-            { title: 'Kilimanjaro Adventures', subtitle: 'Mountain trails, breathtaking views and summit moments.', image: LOCAL_IMAGES.kilimanjaro },
-            { title: 'Culture & Local Experiences', subtitle: 'Discover local communities, traditions and heritage.', image: LOCAL_IMAGES.lakeEyasi }
-          ].map((item) => (
-            <div key={item.title} className="overflow-hidden rounded-3xl border border-[#C99A2E]/40 bg-white shadow-lg">
-              <div className="relative h-48 sm:h-56 bg-[#061d14]">
-                <img src={item.image} alt={item.title} loading="lazy" className="h-full w-full object-cover"/>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#061d14]/85 via-transparent to-transparent"/>
-                <div className="absolute bottom-4 left-5 right-5">
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">{item.title}</h3>
-                  <p className="mt-1 text-xs text-slate-200">{item.subtitle}</p>
-                </div>
-              </div>
-              <div className="p-4 sm:p-5">
-                <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-600">Choose where to watch</p>
-                <div className="grid grid-cols-2 gap-2">
-                  <a href="https://www.facebook.com/ourtripafrica" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#1877F2] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on Facebook</a>
-                  <a href="https://www.instagram.com/ourtripafricaa/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#FCAF45] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on Instagram</a>
-                  <a href="https://www.tiktok.com/@ourtripafrica" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#111111] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:bg-black">Watch on TikTok</a>
-                  <a href="https://www.youtube.com/@ourtripafrica" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#FF0033] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on YouTube</a>
-                  <a href="https://www.linkedin.com/in/our-trip-africa-13ab08222" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#0A66C2] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:brightness-110">Watch on LinkedIn</a>
-                  <a href="https://www.threads.net/@ourtripafricaa" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-xl bg-[#111111] px-3 py-3 text-xs font-extrabold text-white shadow-sm transition hover:bg-black">Watch on Threads</a>
-                </div>
-              </div>
+      {/* 2.5 DREAM TRIP PLANNER / BUDGET CTA */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl border border-[#C99A2E]/60 bg-white p-8 sm:p-12 text-center text-[#0e3022] shadow-lg">
+          <div className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-[#C99A2E]/10 blur-3xl" />
+          <div className="relative mx-auto max-w-3xl">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#C99A2E]/50 bg-[#C99A2E]/10 px-3 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#C99A2E]">
+              <Sparkles size={13} /> A FRIENDLY MESSAGE FROM OUR TRIP AFRICA
+            </span>
+            <h2 className="mt-4 font-serif text-2xl sm:text-4xl font-bold leading-tight text-[#0e3022]">
+              DON'T GIVE UP ON YOUR DREAM SAFARI!
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-700">
+              Share your budget with us. We'll help you find the perfect safari for you.
+            </p>
+            <p className="mt-3 text-sm font-semibold text-[#0e3022]">
+              Every budget matters. Friendly advice. No pressure to book.
+            </p>
+            <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a
+                href="https://wa.me/255624661830?text=Hello%20Our%20Trip%20Africa!%20I%20am%20interested%20in%20a%20safari.%20My%20estimated%20budget%20is%3A%20_____.%20Please%20help%20me%20plan%20a%20trip%20that%20fits%20my%20budget."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-extrabold text-white shadow-lg transition hover:bg-[#1faa4f]"
+              >
+                <MessageCircle size={18} /> LET'S PLAN MY SAFARI <ArrowRight size={17} />
+              </a>
+              <a
+                href={COMPANY_DETAILS.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-[#25D366] bg-[#25D366] px-6 py-3 text-sm font-extrabold text-white shadow-md transition hover:bg-[#20bd5a]"
+              >
+                CHAT WITH OUR TEAM
+              </a>
             </div>
-          ))}
-        </div>
-        <p className="text-center text-xs text-slate-500">Each video category offers six official social links, so visitors can choose where they prefer to watch.</p>
-      </section>
-
-      <SpecialOffers onOpenBooking={() => onOpenBooking()} />
-
-      {/* TripAdvisor business profile and guest reviews */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-[#C99A2E]/50 bg-white p-7 sm:p-10 text-center shadow-lg">
-          <div className="mx-auto flex items-center justify-center" aria-label="Tripadvisor">
-            <img
-              src="https://commons.wikimedia.org/wiki/Special:FilePath/Tripadvisor_2025_Logo.svg"
-              alt="Tripadvisor"
-              width="150"
-              height="23"
-              loading="lazy"
-              className="h-6 w-auto object-contain"
-            />
-          </div>
-          <span className="mt-4 inline-block text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Guest feedback matters</span>
-          <h2 className="mt-2 font-serif text-2xl sm:text-4xl font-bold text-[#0e3022]">Share Your Experience on TripAdvisor</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-7 text-slate-600">Planning a trip with Our Trip Africa? Read traveller feedback or share your own experience on our TripAdvisor business page.</p>
-          <a href="https://www.tripadvisor.co.uk/Attraction_Review-g297913-d34728923-Reviews-Our_Trip_Africa-Arusha_Arusha_Region.html" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#00AA6C] px-7 py-3.5 text-sm font-extrabold text-white shadow-md transition hover:bg-[#008f5b]">
-            <Star size={17} fill="currentColor" /> View Us on TripAdvisor <ArrowRight size={17} />
-          </a>
-          <p className="mt-3 text-xs text-slate-500">Opens our TripAdvisor profile in a new tab.</p>
-        </div>
-      </section>
-
-      <GuestReviews />
-
-      {/* Customer Trust & Booking Confidence */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-[#C99A2E]/50 bg-white p-7 sm:p-10 text-[#0e3022] shadow-lg">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Travel With Confidence</span>
-            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#0e3022]">Why Plan Your Journey With Our Trip Africa?</h2>
-            <p className="text-sm text-slate-600">Clear communication, locally planned journeys and direct access to our Arusha-based team from your first enquiry to the end of your trip.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              ['Local Arusha Team', 'Plan directly with a Tanzania-based safari operator.'],
-              ['Tailor-Made Itineraries', 'Choose your dates, destinations, travel style and budget.'],
-              ['Clear Package Details', 'Review the itinerary, inclusions and exclusions before confirming.'],
-              ['Direct Guest Support', 'Reach our team by WhatsApp or email for trip planning assistance.']
-            ].map(([title, description]) => (
-              <div key={title} className="rounded-2xl border border-[#C99A2E]/35 bg-white p-5 shadow-sm">
-                <ShieldCheck className="text-[#C99A2E] mb-3" size={25}/>
-                <h3 className="font-bold text-[#0B3023]">{title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-slate-600">{description}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-7 flex flex-col sm:flex-row justify-center gap-3">
-            <button onClick={() => onOpenBooking()} className="rounded-xl bg-[#C99A2E] px-6 py-3 text-sm font-bold text-[#0e3022]">Start a Booking Enquiry</button>
-            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl bg-[#25D366] px-6 py-3 text-center text-sm font-bold text-white hover:bg-[#1faa4f]">Chat With Our Team</a>
+            <p className="mt-3 text-[11px] text-slate-600">Share your budget with us on WhatsApp — our Arusha-based team is ready to help.</p>
           </div>
         </div>
       </section>
