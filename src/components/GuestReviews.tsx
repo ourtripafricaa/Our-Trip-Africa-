@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { addDoc, collection, onSnapshot, query, serverTimestamp, where } from 'firebase/firestore';
-import { Star, Send, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, Send, CheckCircle2 } from 'lucide-react';
 import { db } from '../lib/firebase';
 
 type GuestReview = {
@@ -121,7 +121,7 @@ export const GuestReviews: React.FC = () => {
           </article>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-4">
             <button type="button" aria-label="Previous review" onClick={() => setActiveIndex(current => (current - 1 + allReviews.length) % allReviews.length)} className="h-12 w-12 rounded-full border-2 border-[#C99A2E] bg-[#06251D] p-3 text-white shadow-md hover:bg-[#C99A2E] hover:text-[#06251D] transition-colors">
-              <ChevronLeft size={20}/>
+              <span className="text-2xl font-bold leading-none">&lt;</span>
             </button>
             <div className="flex max-w-full flex-wrap items-center justify-center gap-2.5" aria-label="Choose a review">
               {allReviews.map((item, index) => (
@@ -129,7 +129,7 @@ export const GuestReviews: React.FC = () => {
               ))}
             </div>
             <button type="button" aria-label="Next review" onClick={() => setActiveIndex(current => (current + 1) % allReviews.length)} className="h-12 w-12 rounded-full border-2 border-[#C99A2E] bg-[#06251D] p-3 text-white shadow-md hover:bg-[#C99A2E] hover:text-[#06251D] transition-colors">
-              <ChevronRight size={20}/>
+              <span className="text-2xl font-bold leading-none">&gt;</span>
             </button>
           </div>
           <p className="mt-3 text-center text-xs text-slate-500">Reviews change automatically. Use the arrows to browse.</p>
