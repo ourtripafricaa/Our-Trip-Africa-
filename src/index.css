@@ -132,3 +132,30 @@ button:hover, a[role="button"]:hover, .glow-button:hover {
   background-image: linear-gradient(to right, #06251D, #0A4030, #06251D) !important;
   background-color: #0A4030 !important;
 }
+
+
+/* Unified site-wide green palette: use the same deep forest green as the footer.
+   WhatsApp (#25D366) and official social-platform brand colors are intentionally preserved. */
+[class*="bg-[#194A2D]"], [class*="bg-[#0e5638]"], [class*="bg-[#0e3022]"],
+[class*="bg-[#0f382a]"], [class*="bg-[#0a271c]"], [class*="bg-[#0e271e]"],
+[class*="bg-[#082116]"], [class*="bg-[#061d14]"], [class*="bg-[#05130e]"],
+[class*="bg-[#173f2e]"], [class*="bg-[#39704F]"] {
+  background-color: #06251D !important;
+}
+[class*="text-[#194A2D]"], [class*="text-[#0e5638]"], [class*="text-[#0e3022]"],
+[class*="text-[#39704F]"], [class*="text-[#0f382a]"] {
+  color: #06251D !important;
+}
+[class*="border-[#194A2D]"], [class*="border-[#0e5638]"], [class*="border-[#0e3022]"],
+[class*="border-[#0f382a]"], [class*="border-[#1a4a35]"], [class*="border-[#113a2b]"] {
+  border-color: #06251D !important;
+}
+[class*="from-[#194A2D]"], [class*="from-[#0a271c]"], [class*="from-[#0e3022]"] {
+  --tw-gradient-from: #06251D var(--tw-gradient-from-position) !important;
+}
+[class*="via-[#194A2D]"], [class*="via-[#0f382a]"] {
+  --tw-gradient-stops: var(--tw-gradient-from), #06251D var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+[class*="to-[#194A2D]"], [class*="to-[#0a271c]"], [class*="to-[#0e3022]"] {
+  --tw-gradient-to: #06251D var(--tw-gradient-to-position) !important;
+}
