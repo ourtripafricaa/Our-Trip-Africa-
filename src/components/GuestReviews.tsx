@@ -120,7 +120,7 @@ export const GuestReviews: React.FC = () => {
             </div>
           </article>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-4">
-            <button type="button" aria-label="Previous review" onClick={() => setActiveIndex(current => (current - 1 + allReviews.length) % allReviews.length)} className="h-12 w-12 rounded-full border-2 border-[#C99A2E] bg-[#06251D] p-3 text-white shadow-md hover:bg-[#C99A2E] hover:text-[#06251D] transition-colors">
+            <button type="button" aria-label="Previous review" onClick={() => setActiveIndex(current => (current - 1 + allReviews.length) % allReviews.length)} className="inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#C99A2E] bg-[#0B3023] text-white text-3xl font-black leading-none shadow-xl">
               <span className="text-2xl font-bold leading-none">&lt;</span>
             </button>
             <div className="flex max-w-full flex-wrap items-center justify-center gap-2.5" aria-label="Choose a review">
@@ -128,7 +128,7 @@ export const GuestReviews: React.FC = () => {
                 <button key={item.id} type="button" aria-label={'Show review ' + (index + 1)} aria-current={index === activeIndex ? 'true' : undefined} onClick={() => setActiveIndex(index)} className={`h-3 rounded-full border border-[#06251D]/30 transition-all focus:outline-none focus:ring-2 focus:ring-[#C99A2E] ${index === activeIndex ? 'w-9 bg-[#C99A2E]' : 'w-3 bg-[#06251D]/30 hover:bg-[#06251D]/60'}`}/>
               ))}
             </div>
-            <button type="button" aria-label="Next review" onClick={() => setActiveIndex(current => (current + 1) % allReviews.length)} className="h-12 w-12 rounded-full border-2 border-[#C99A2E] bg-[#06251D] p-3 text-white shadow-md hover:bg-[#C99A2E] hover:text-[#06251D] transition-colors">
+            <button type="button" aria-label="Next review" onClick={() => setActiveIndex(current => (current + 1) % allReviews.length)} className="inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#C99A2E] bg-[#0B3023] text-white text-3xl font-black leading-none shadow-xl">
               <span className="text-2xl font-bold leading-none">&gt;</span>
             </button>
           </div>
