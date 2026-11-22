@@ -165,17 +165,15 @@ export const HomeView: React.FC<HomeViewProps> = ({
               alt={photo.name}
               aria-hidden={heroSlideIndex !== index}
               loading={index === 0 ? 'eager' : 'lazy'}
-              className={`absolute inset-0 h-full w-full object-cover object-center filter brightness-90 transition-opacity duration-1000 ${heroSlideIndex === index ? 'opacity-100' : 'opacity-0'}`}
+              className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000 ${heroSlideIndex === index ? 'opacity-100' : 'opacity-0'}`}
             />
           )) : (
             <img
               src={LOCAL_IMAGES.hero}
               alt="African Safari Serengeti"
-              className="w-full h-full object-cover object-center filter brightness-90"
+              className="w-full h-full object-cover object-center"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#061d14] via-[#061d14]/65 to-[#061d14]/35" />
-          <div className="absolute inset-0 bg-radial from-transparent via-[#061d14]/40 to-[#061d14]" />
         </div>
 
         {/* Hero Content */}
