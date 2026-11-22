@@ -99,22 +99,22 @@ export const GuestReviews: React.FC = () => {
 
       {activeReview && (
         <div className="max-w-3xl mx-auto">
-          <article key={activeReview.id} aria-live="polite" className="min-h-[280px] overflow-hidden rounded-3xl bg-[#06251D] border border-[#C99A2E]/60 shadow-xl"><div className="flex flex-col p-6 sm:p-8"><div className="flex items-center justify-between gap-3 mb-5">
+          <article key={activeReview.id} aria-live="polite" className="min-h-[280px] overflow-hidden rounded-3xl bg-white border border-[#C99A2E]/60 shadow-xl"><div className="flex flex-col p-6 sm:p-8"><div className="flex items-center justify-between gap-3 mb-5">
               {activeReview.rating > 0 ? (
                 <div className="flex items-center gap-1 text-[#C99A2E]" aria-label={activeReview.rating + ' out of 5 stars'}>
                   {Array.from({ length: 5 }, (_, index) => <Star key={index} size={19} fill={index < activeReview.rating ? 'currentColor' : 'none'} />)}
-                  <span className="ml-2 text-xs text-slate-500">{activeReview.rating}/5</span>
+                  <span className="ml-2 text-xs text-[#194A2D]">{activeReview.rating}/5</span>
                 </div>
               ) : (
-                <p className="text-xs font-semibold text-white/80">Guest feedback</p>
+                <p className="text-xs font-semibold text-[#194A2D]">Guest feedback</p>
               )}
-              <span className="text-xs font-semibold text-white/75">{activeIndex + 1} / {allReviews.length}</span>
+              <span className="text-xs font-semibold text-[#194A2D]/70">{activeIndex + 1} / {allReviews.length}</span>
             </div>
-            <p className="text-base sm:text-lg leading-relaxed text-white flex-1">“{activeReview.review}”</p>
-            <div className="mt-6 border-t border-white/20 pt-5">
-              <p className="font-bold text-white">{activeReview.name}</p>
+            <p className="text-base sm:text-lg leading-relaxed text-[#194A2D] flex-1">“{activeReview.review}”</p>
+            <div className="mt-6 border-t border-[#194A2D]/15 pt-5">
+              <p className="font-bold text-[#194A2D]">{activeReview.name}</p>
               {(activeReview.country || activeReview.packageTitle) && (
-                <p className="text-xs text-white/70 mt-1">{[activeReview.country, activeReview.packageTitle].filter(Boolean).join(' • ')}</p>
+                <p className="text-xs text-[#39704F] mt-1">{[activeReview.country, activeReview.packageTitle].filter(Boolean).join(' • ')}</p>
               )}
             </div>
             </div>
