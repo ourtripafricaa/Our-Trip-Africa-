@@ -833,6 +833,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <span className="block text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Convenient Payment Options</span>
               <span className="mt-1 block text-base sm:text-lg font-bold text-[#0e3022]">PAYMENT METHODS</span>
             </span>
+          </div>
 
           <div className="border-t border-[#C99A2E]/40 bg-white px-5 py-5 sm:px-6">
             <p className="mx-auto max-w-3xl text-center text-sm sm:text-base text-slate-700">We accept Visa and Mastercard payments through CRDB Bank and NMB Bank. A USD account payment option is also available through Selcom Pesa.</p>
