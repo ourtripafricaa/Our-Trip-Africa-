@@ -125,3 +125,10 @@ button:hover, a[role="button"]:hover, .glow-button:hover {
 .text-gray-800, .text-slate-800, .text-zinc-800, .text-neutral-800 {
   color: #194A2D !important;
 }
+
+
+/* Keep the main footer green while allowing its white CTA card to stay white. */
+.ota-original-footer {
+  background-image: linear-gradient(to right, #0a271c, #0f382a, #0a271c) !important;
+  background-color: #0f382a !important;
+}
