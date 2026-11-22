@@ -159,3 +159,10 @@ button:hover, a[role="button"]:hover, .glow-button:hover {
 [class*="to-[#194A2D]"], [class*="to-[#0a271c]"], [class*="to-[#0e3022]"] {
   --tw-gradient-to: #06251D var(--tw-gradient-to-position) !important;
 }
+
+
+/* Preserve the footer's two-tone deep-green gradient after the site-wide palette rules. */
+.ota-original-footer {
+  background-image: linear-gradient(to right, #06251D, #0A4030, #06251D) !important;
+  background-color: #0A4030 !important;
+}
