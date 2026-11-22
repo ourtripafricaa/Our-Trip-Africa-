@@ -763,7 +763,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
         <div className="space-y-6 rounded-[2rem] border border-[#C99A2E]/50 bg-white p-5 sm:p-8 lg:p-10 shadow-lg">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex rounded-full bg-[#0e3022]/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#0e3022]">Travel with confidence</span>
+            <span className="inline-flex rounded-full border border-[#C99A2E] bg-[#C99A2E]/10 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#C99A2E]">TRAVEL WITH CONFIDENCE</span>
             <h2 className="mt-4 font-serif text-3xl sm:text-4xl font-bold text-[#0e3022]">Safari Frequently Asked Questions</h2>
             <p className="mt-3 text-sm sm:text-base leading-7 text-slate-600">Find clear answers to common questions about safari prices, booking, travel seasons, accommodation and your journey with Our Trip Africa.</p>
           </div>
