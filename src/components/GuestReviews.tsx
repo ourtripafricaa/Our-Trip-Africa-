@@ -99,8 +99,7 @@ export const GuestReviews: React.FC = () => {
 
       {activeReview && (
         <div className="max-w-3xl mx-auto">
-          <article key={activeReview.id} aria-live="polite" className="min-h-[280px] rounded-3xl bg-white border border-slate-200 p-7 sm:p-9 shadow-md flex flex-col">
-            <div className="flex items-center justify-between gap-3 mb-5">
+          <article key={activeReview.id} aria-live="polite" className="min-h-[320px] overflow-hidden rounded-3xl bg-[#06251D] border border-[#C99A2E]/60 shadow-xl grid grid-cols-1 sm:grid-cols-[minmax(180px,0.8fr)_1.2fr]"><div className="relative min-h-[190px] sm:min-h-full"><img src={["/assets/aistudio/1776627302280_aeeffdfe.jpg","/assets/aistudio/1788252043526_202ccf55.jpg","/assets/aistudio/1792217020181.jpg","/assets/aistudio/1793428227163_297558c5.jpg","/assets/aistudio/1793450997914_ae622466.jpg","/assets/aistudio/1794279343986.jpg"][activeIndex % 6]} alt="Our Trip Africa safari experience" loading="lazy" className="absolute inset-0 h-full w-full object-cover"/><div className="absolute inset-0 bg-gradient-to-t from-[#06251D]/55 to-transparent"/><span className="absolute bottom-4 left-4 rounded-full border border-white/40 bg-[#06251D]/75 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">Guest story</span></div><div className="flex flex-col p-6 sm:p-8"><div className="flex items-center justify-between gap-3 mb-5">
               {activeReview.rating > 0 ? (
                 <div className="flex items-center gap-1 text-[#C99A2E]" aria-label={activeReview.rating + ' out of 5 stars'}>
                   {Array.from({ length: 5 }, (_, index) => <Star key={index} size={19} fill={index < activeReview.rating ? 'currentColor' : 'none'} />)}
@@ -118,14 +117,15 @@ export const GuestReviews: React.FC = () => {
                 <p className="text-xs text-slate-500 mt-1">{[activeReview.country, activeReview.packageTitle].filter(Boolean).join(' • ')}</p>
               )}
             </div>
+            </div>
           </article>
-          <div className="mt-5 flex items-center justify-center gap-5">
-            <button type="button" aria-label="Previous review" onClick={() => setActiveIndex(current => (current - 1 + allReviews.length) % allReviews.length)} className="rounded-full border border-[#0e3022] p-3 text-[#0e3022] hover:bg-[#0e3022] hover:text-white transition-colors">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-4">
+            <button type="button" aria-label="Previous review" onClick={() => setActiveIndex(current => (current - 1 + allReviews.length) % allReviews.length)} className="h-12 w-12 rounded-full border-2 border-[#C99A2E] bg-[#06251D] p-3 text-white shadow-md hover:bg-[#C99A2E] hover:text-[#06251D] transition-colors">
               <ChevronLeft size={20}/>
             </button>
             <div className="flex items-center gap-2" aria-label="Choose a review">
               {allReviews.map((item, index) => (
-                <button key={item.id} type="button" aria-label={'Show review ' + (index + 1)} aria-current={index === activeIndex ? 'true' : undefined} onClick={() => setActiveIndex(index)} className={`h-2.5 rounded-full transition-all ${index === activeIndex ? 'w-7 bg-[#C99A2E]' : 'w-2.5 bg-slate-300 hover:bg-slate-500'}`}/>
+                <button key={item.id} type="button" aria-label={'Show review ' + (index + 1)} aria-current={index === activeIndex ? 'true' : undefined} onClick={() => setActiveIndex(index)} className={`h-3 rounded-full border border-[#06251D]/30 transition-all focus:outline-none focus:ring-2 focus:ring-[#C99A2E] ${index === activeIndex ? 'w-9 bg-[#C99A2E]' : 'w-3 bg-[#06251D]/30 hover:bg-[#06251D]/60'}`}/>
               ))}
             </div>
             <button type="button" aria-label="Next review" onClick={() => setActiveIndex(current => (current + 1) % allReviews.length)} className="rounded-full border border-[#0e3022] p-3 text-[#0e3022] hover:bg-[#0e3022] hover:text-white transition-colors">
@@ -137,7 +137,7 @@ export const GuestReviews: React.FC = () => {
       )}
 
       <div className="text-center">
-        <a href="https://maps.app.goo.gl/V8ABAVgJC64W57Pz7" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full border border-[#0e3022] px-6 py-3 text-sm font-bold text-[#0e3022] hover:bg-[#0e3022] hover:text-white transition-colors">
+        <a href="https://maps.app.goo.gl/V8ABAVgJC64W57Pz7" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full border-2 border-[#06251D] bg-[#06251D] px-6 py-3 text-sm font-extrabold text-white shadow-md hover:bg-[#0A4030] hover:text-white transition-colors">
           Read All Google Reviews
         </a>
       </div>
