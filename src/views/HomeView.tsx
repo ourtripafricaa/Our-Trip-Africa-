@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Star, ShieldCheck, Compass, Heart, Users, MapPin, Sparkles, ChevronDown, CheckCircle2, MessageSquare, Mail, Globe, PlayCircle, Video, CalendarDays, Clock3, MessageCircle } from 'lucide-react';
+import { ArrowRight, Star, ShieldCheck, Compass, Heart, Users, MapPin, Sparkles, ChevronDown, CheckCircle2, MessageSquare, Mail, Globe, PlayCircle, Video, CalendarDays, Clock3, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { COMPANY_DETAILS, LOCAL_IMAGES, SAFARI_PACKAGES, TESTIMONIALS, SAFARI_FAQS, SafariPackage } from '../data/safariData';
 import { PackageCard } from '../components/PackageCard';
 import { DualBookNow } from '../components/DualBookNow';
@@ -276,7 +276,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               aria-label="Previous gallery image"
               className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#C99A2E] hover:text-[#061d14] transition-colors"
             >
-              ‹
+              <ChevronLeft size={25} strokeWidth={3} />
             </button>
             <button
               type="button"
@@ -284,7 +284,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               aria-label="Next gallery image"
               className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#C99A2E] hover:text-[#061d14] transition-colors"
             >
-              ›
+              <ChevronRight size={25} strokeWidth={3} />
             </button>
           </div>
 
