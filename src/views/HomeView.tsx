@@ -812,7 +812,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               ['Clear Package Details', 'Review the itinerary, inclusions and exclusions before confirming.'],
               ['Direct Guest Support', 'Reach our team by WhatsApp or email for trip planning assistance.']
             ].map(([title, description]) => (
-              <div key={title} className="rounded-2xl border border-[#C99A2E]/35 bg-[#0e5638] p-5">
+              <div key={title} className="rounded-2xl border border-[#C99A2E]/35 bg-[#194A2D] p-5">
                 <ShieldCheck className="text-[#C99A2E] mb-3" size={25}/>
                 <h3 className="font-bold text-white">{title}</h3>
                 <p className="mt-2 text-xs leading-relaxed text-emerald-50">{description}</p>
