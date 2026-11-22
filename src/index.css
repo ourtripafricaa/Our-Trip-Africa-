@@ -2,9 +2,9 @@
 
 @layer base {
   :root {
-    --color-emerald-deep: #194A2D;
-    --color-emerald-surface: #194A2D;
-    --color-emerald-border: #194A2D;
+    --color-emerald-deep: #002C08;
+    --color-emerald-surface: #002C08;
+    --color-emerald-border: #002C08;
     --color-gold-primary: #C99A2E;
     --color-gold-hover: #C99A2E;
     --color-gold-dim: #C99A2E;
@@ -15,7 +15,7 @@
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: #faf9f5;
-    color: #194A2D;
+    color: #002C08;
   }
 
   h1, h2, h3, .font-serif {
@@ -29,10 +29,10 @@
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #194A2D;
+  background: #002C08;
 }
 ::-webkit-scrollbar-thumb {
-  background: #194A2D;
+  background: #002C08;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -67,12 +67,12 @@ html, body, #root { width: 100%; max-width: 100%; overflow-x: clip; }
 
 /* Our Trip Africa: subtle emerald-and-gold ambient glow */
 :root {
-  --ota-glow-emerald: rgba(16, 185, 129, 0.28);
+  --ota-glow-emerald: rgba(0, 44, 8, 0.28);
   --ota-glow-gold: rgba(201, 154, 46, 0.32);
 }
 body {
   background-image:
-    radial-gradient(ellipse at 8% 12%, rgba(16, 185, 129, 0.055), transparent 34%),
+    radial-gradient(ellipse at 8% 12%, rgba(0, 44, 8, 0.055), transparent 34%),
     radial-gradient(ellipse at 92% 82%, rgba(201, 154, 46, 0.06), transparent 32%);
   background-attachment: fixed;
 }
@@ -84,8 +84,8 @@ button:hover, a[role="button"]:hover, .glow-button:hover {
   filter: brightness(1.06);
 }
 @keyframes ota-soft-light {
-  0%, 100% { box-shadow: 0 0 5px rgba(201, 154, 46, 0.12), 0 0 12px rgba(16, 185, 129, 0.08); }
-  50% { box-shadow: 0 0 10px rgba(201, 154, 46, 0.25), 0 0 20px rgba(16, 185, 129, 0.16); }
+  0%, 100% { box-shadow: 0 0 5px rgba(201, 154, 46, 0.12), 0 0 12px rgba(0, 44, 8, 0.08); }
+  50% { box-shadow: 0 0 10px rgba(201, 154, 46, 0.25), 0 0 20px rgba(0, 44, 8, 0.16); }
 }
 .glow-accent {
   animation: ota-soft-light 3.8s ease-in-out infinite;
@@ -99,21 +99,21 @@ button:hover, a[role="button"]:hover, .glow-button:hover {
 
 /* Updated Our Trip Africa brand green. WhatsApp's official green is intentionally preserved. */
 :root {
-  --color-emerald-deep: #194A2D;
-  --color-emerald-surface: #194A2D;
-  --color-emerald-border: #194A2D;
+  --color-emerald-deep: #002C08;
+  --color-emerald-surface: #002C08;
+  --color-emerald-border: #002C08;
 }
-:not(.ota-original-footer *)[class~="bg-[#0e3022]"], :not(.ota-original-footer *)[class~="bg-[#061d14]"], :not(.ota-original-footer *)[class~="bg-[#05130e]"],
-:not(.ota-original-footer *)[class~="bg-[#0e271e]"], :not(.ota-original-footer *)[class~="bg-[#082116]"], :not(.ota-original-footer *)[class~="bg-[#0a271c]"],
-:not(.ota-original-footer *)[class~="bg-[#0f382a]"], :not(.ota-original-footer *)[class~="bg-[#173f2e]"] {
-  background-color: #194A2D !important;
+:not(.ota-original-footer *)[class~="bg-[#002C08]"], :not(.ota-original-footer *)[class~="bg-[#002C08]"], :not(.ota-original-footer *)[class~="bg-[#002C08]"],
+:not(.ota-original-footer *)[class~="bg-[#002C08]"], :not(.ota-original-footer *)[class~="bg-[#002C08]"], :not(.ota-original-footer *)[class~="bg-[#002C08]"],
+:not(.ota-original-footer *)[class~="bg-[#002C08]"], :not(.ota-original-footer *)[class~="bg-[#002C08]"] {
+  background-color: #002C08 !important;
 }
-:not(.ota-original-footer *)[class~="border-[#1b4d38]"], :not(.ota-original-footer *)[class~="border-[#1a4a35]"],
-:not(.ota-original-footer *)[class~="border-[#0f382a]"], :not(.ota-original-footer *)[class~="border-[#113a2b]"] {
-  border-color: #194A2D !important;
+:not(.ota-original-footer *)[class~="border-[#002C08]"], :not(.ota-original-footer *)[class~="border-[#002C08]"],
+:not(.ota-original-footer *)[class~="border-[#002C08]"], :not(.ota-original-footer *)[class~="border-[#002C08]"] {
+  border-color: #002C08 !important;
 }
-:not(.ota-original-footer *)[class~="from-[#0a271c]"], :not(.ota-original-footer *)[class~="via-[#0f382a]"], :not(.ota-original-footer *)[class~="to-[#0a271c]"] {
-  --tw-gradient-from: #194A2D var(--tw-gradient-from-position) !important;
+:not(.ota-original-footer *)[class~="from-[#002C08]"], :not(.ota-original-footer *)[class~="via-[#002C08]"], :not(.ota-original-footer *)[class~="to-[#002C08]"] {
+  --tw-gradient-from: #002C08 var(--tw-gradient-from-position) !important;
   --tw-gradient-to: rgb(25 74 45 / 0) var(--tw-gradient-to-position) !important;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
 }
@@ -123,46 +123,46 @@ button:hover, a[role="button"]:hover, .glow-button:hover {
 /* Brand-wide text rule: replace near-black utility text with Our Trip Africa green. */
 .text-black, .text-gray-900, .text-slate-900, .text-zinc-900, .text-neutral-900,
 .text-gray-800, .text-slate-800, .text-zinc-800, .text-neutral-800 {
-  color: #194A2D !important;
+  color: #002C08 !important;
 }
 
 
 /* Give the footer its own deeper forest-green shade, distinct from the main brand green. */
 .ota-original-footer {
-  background-image: linear-gradient(to right, #06251D, #0A4030, #06251D) !important;
-  background-color: #0A4030 !important;
+  background-image: linear-gradient(to right, #002C08, #002C08, #002C08) !important;
+  background-color: #002C08 !important;
 }
 
 
 /* Unified site-wide green palette: use the same deep forest green as the footer.
    WhatsApp (#25D366) and official social-platform brand colors are intentionally preserved. */
-[class*="bg-[#194A2D]"], [class*="bg-[#0e5638]"], [class*="bg-[#0e3022]"],
-[class*="bg-[#0f382a]"], [class*="bg-[#0a271c]"], [class*="bg-[#0e271e]"],
-[class*="bg-[#082116]"], [class*="bg-[#061d14]"], [class*="bg-[#05130e]"],
-[class*="bg-[#173f2e]"], [class*="bg-[#39704F]"] {
-  background-color: #06251D !important;
+[class*="bg-[#002C08]"], [class*="bg-[#002C08]"], [class*="bg-[#002C08]"],
+[class*="bg-[#002C08]"], [class*="bg-[#002C08]"], [class*="bg-[#002C08]"],
+[class*="bg-[#002C08]"], [class*="bg-[#002C08]"], [class*="bg-[#002C08]"],
+[class*="bg-[#002C08]"], [class*="bg-[#002C08]"] {
+  background-color: #002C08 !important;
 }
-[class*="text-[#194A2D]"], [class*="text-[#0e5638]"], [class*="text-[#0e3022]"],
-[class*="text-[#39704F]"], [class*="text-[#0f382a]"] {
-  color: #06251D !important;
+[class*="text-[#002C08]"], [class*="text-[#002C08]"], [class*="text-[#002C08]"],
+[class*="text-[#002C08]"], [class*="text-[#002C08]"] {
+  color: #002C08 !important;
 }
-[class*="border-[#194A2D]"], [class*="border-[#0e5638]"], [class*="border-[#0e3022]"],
-[class*="border-[#0f382a]"], [class*="border-[#1a4a35]"], [class*="border-[#113a2b]"] {
-  border-color: #06251D !important;
+[class*="border-[#002C08]"], [class*="border-[#002C08]"], [class*="border-[#002C08]"],
+[class*="border-[#002C08]"], [class*="border-[#002C08]"], [class*="border-[#002C08]"] {
+  border-color: #002C08 !important;
 }
-[class*="from-[#194A2D]"], [class*="from-[#0a271c]"], [class*="from-[#0e3022]"] {
-  --tw-gradient-from: #06251D var(--tw-gradient-from-position) !important;
+[class*="from-[#002C08]"], [class*="from-[#002C08]"], [class*="from-[#002C08]"] {
+  --tw-gradient-from: #002C08 var(--tw-gradient-from-position) !important;
 }
-[class*="via-[#194A2D]"], [class*="via-[#0f382a]"] {
-  --tw-gradient-stops: var(--tw-gradient-from), #06251D var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+[class*="via-[#002C08]"], [class*="via-[#002C08]"] {
+  --tw-gradient-stops: var(--tw-gradient-from), #002C08 var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
 }
-[class*="to-[#194A2D]"], [class*="to-[#0a271c]"], [class*="to-[#0e3022]"] {
-  --tw-gradient-to: #06251D var(--tw-gradient-to-position) !important;
+[class*="to-[#002C08]"], [class*="to-[#002C08]"], [class*="to-[#002C08]"] {
+  --tw-gradient-to: #002C08 var(--tw-gradient-to-position) !important;
 }
 
 
 /* Preserve the footer's two-tone deep-green gradient after the site-wide palette rules. */
 .ota-original-footer {
-  background-image: linear-gradient(to right, #06251D, #0A4030, #06251D) !important;
-  background-color: #0A4030 !important;
+  background-image: linear-gradient(to right, #002C08, #002C08, #002C08) !important;
+  background-color: #002C08 !important;
 }
