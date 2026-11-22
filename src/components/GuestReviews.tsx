@@ -99,22 +99,22 @@ export const GuestReviews: React.FC = () => {
 
       {activeReview && (
         <div className="max-w-3xl mx-auto">
-          <article key={activeReview.id} aria-live="polite" className="min-h-[320px] overflow-hidden rounded-3xl bg-[#06251D] border border-[#C99A2E]/60 shadow-xl grid grid-cols-1 sm:grid-cols-[minmax(180px,0.8fr)_1.2fr]"><div className="relative min-h-[190px] sm:min-h-full"><img src={["/assets/aistudio/1776627302280_aeeffdfe.jpg","/assets/aistudio/1788252043526_202ccf55.jpg","/assets/aistudio/1792217020181.jpg","/assets/aistudio/1793428227163_297558c5.jpg","/assets/aistudio/1793450997914_ae622466.jpg","/assets/aistudio/1794279343986.jpg"][activeIndex % 6]} alt="Our Trip Africa safari experience" loading="lazy" className="absolute inset-0 h-full w-full object-cover"/><div className="absolute inset-0 bg-gradient-to-t from-[#06251D]/55 to-transparent"/><span className="absolute bottom-4 left-4 rounded-full border border-white/40 bg-[#06251D]/75 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">Guest story</span></div><div className="flex flex-col p-6 sm:p-8"><div className="flex items-center justify-between gap-3 mb-5">
+          <article key={activeReview.id} aria-live="polite" className="min-h-[280px] overflow-hidden rounded-3xl bg-[#06251D] border border-[#C99A2E]/60 shadow-xl"><div className="flex flex-col p-6 sm:p-8"><div className="flex items-center justify-between gap-3 mb-5">
               {activeReview.rating > 0 ? (
                 <div className="flex items-center gap-1 text-[#C99A2E]" aria-label={activeReview.rating + ' out of 5 stars'}>
                   {Array.from({ length: 5 }, (_, index) => <Star key={index} size={19} fill={index < activeReview.rating ? 'currentColor' : 'none'} />)}
                   <span className="ml-2 text-xs text-slate-500">{activeReview.rating}/5</span>
                 </div>
               ) : (
-                <p className="text-xs font-semibold text-slate-500">Guest feedback</p>
+                <p className="text-xs font-semibold text-white/80">Guest feedback</p>
               )}
-              <span className="text-xs font-semibold text-slate-400">{activeIndex + 1} / {allReviews.length}</span>
+              <span className="text-xs font-semibold text-white/75">{activeIndex + 1} / {allReviews.length}</span>
             </div>
-            <p className="text-base sm:text-lg leading-relaxed text-slate-700 flex-1">“{activeReview.review}”</p>
-            <div className="mt-6 border-t border-slate-100 pt-5">
-              <p className="font-bold text-slate-900">{activeReview.name}</p>
+            <p className="text-base sm:text-lg leading-relaxed text-white flex-1">“{activeReview.review}”</p>
+            <div className="mt-6 border-t border-white/20 pt-5">
+              <p className="font-bold text-white">{activeReview.name}</p>
               {(activeReview.country || activeReview.packageTitle) && (
-                <p className="text-xs text-slate-500 mt-1">{[activeReview.country, activeReview.packageTitle].filter(Boolean).join(' • ')}</p>
+                <p className="text-xs text-white/70 mt-1">{[activeReview.country, activeReview.packageTitle].filter(Boolean).join(' • ')}</p>
               )}
             </div>
             </div>
