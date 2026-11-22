@@ -696,7 +696,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </div>
               <p className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#0e5638]"><Clock3 size={18} /> A personalised travel solution within 24 hours.</p>
             </div>
-            <div className="rounded-2xl border border-[#C99A2E]/50 bg-[#0e5638] p-6 sm:p-7 shadow-sm">
+            <div className="rounded-2xl border border-[#C99A2E]/50 bg-[#194A2D] p-6 sm:p-7 shadow-sm">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C99A2E]">Let’s plan something unforgettable</p>
               <h3 className="mt-3 text-2xl font-serif font-bold text-white">Your dream trip starts with a message.</h3>
               <p className="mt-3 text-sm leading-6 text-emerald-50">Send us your travel dates and preferred destinations. We’ll help you with an itinerary and a quotation tailored to your plans.</p>
