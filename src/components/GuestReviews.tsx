@@ -123,12 +123,12 @@ export const GuestReviews: React.FC = () => {
             <button type="button" aria-label="Previous review" onClick={() => setActiveIndex(current => (current - 1 + allReviews.length) % allReviews.length)} className="h-12 w-12 rounded-full border-2 border-[#C99A2E] bg-[#06251D] p-3 text-white shadow-md hover:bg-[#C99A2E] hover:text-[#06251D] transition-colors">
               <ChevronLeft size={20}/>
             </button>
-            <div className="flex items-center gap-2" aria-label="Choose a review">
+            <div className="flex max-w-full flex-wrap items-center justify-center gap-2.5" aria-label="Choose a review">
               {allReviews.map((item, index) => (
                 <button key={item.id} type="button" aria-label={'Show review ' + (index + 1)} aria-current={index === activeIndex ? 'true' : undefined} onClick={() => setActiveIndex(index)} className={`h-3 rounded-full border border-[#06251D]/30 transition-all focus:outline-none focus:ring-2 focus:ring-[#C99A2E] ${index === activeIndex ? 'w-9 bg-[#C99A2E]' : 'w-3 bg-[#06251D]/30 hover:bg-[#06251D]/60'}`}/>
               ))}
             </div>
-            <button type="button" aria-label="Next review" onClick={() => setActiveIndex(current => (current + 1) % allReviews.length)} className="rounded-full border border-[#0e3022] p-3 text-[#0e3022] hover:bg-[#0e3022] hover:text-white transition-colors">
+            <button type="button" aria-label="Next review" onClick={() => setActiveIndex(current => (current + 1) % allReviews.length)} className="h-12 w-12 rounded-full border-2 border-[#C99A2E] bg-[#06251D] p-3 text-white shadow-md hover:bg-[#C99A2E] hover:text-[#06251D] transition-colors">
               <ChevronRight size={20}/>
             </button>
           </div>
