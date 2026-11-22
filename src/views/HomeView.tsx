@@ -290,7 +290,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/15 bg-[#06251D] px-4 py-4 sm:px-7">
-            <div className="flex items-center gap-2" aria-label="Choose gallery image">
+            <div className="flex max-w-full flex-wrap items-center gap-2.5" aria-label="Choose gallery image">
               {TANZANIA_GALLERY.map((photo, index) => (
                 <button
                   key={photo.name}
