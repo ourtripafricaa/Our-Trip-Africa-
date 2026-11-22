@@ -33,7 +33,7 @@ export const DestinationView: React.FC<DestinationViewProps> = ({ country, onSel
               <button onClick={() => onOpenBooking()} className="inline-flex items-center gap-2 rounded-xl bg-[#C99A2E] px-6 py-3 text-sm font-bold text-[#061d14] hover:bg-[#C99A2E] transition-colors">
                 Plan Your Journey <ArrowRight size={16} />
               </button>
-              <a href="https://wa.me/255624661830" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/60 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10">
+              <a href="https://wa.me/255624661830" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-[#25D366] bg-[#25D366] px-6 py-3 text-sm font-semibold text-white hover:bg-[#1faa4f]">
                 Talk to Our Team
               </a>
             </div>
