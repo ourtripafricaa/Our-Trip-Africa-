@@ -192,7 +192,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             Bespoke wildlife safaris, Mount Kilimanjaro expeditions, Zanzibar beach getaways, South Africa tours, and UAE desert adventures. Tailored for budget, mid-range, and luxury travelers by local specialists based in Arusha, Tanzania.
           </p>
 
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="pt-4 mt-5 sm:mt-7 translate-y-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <DualBookNow
               size="md"
               onOpenBookingModal={() => onOpenBooking()}
@@ -289,7 +289,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/15 bg-[#06251D] px-4 py-4 sm:px-7">
-            <div className="flex max-w-full flex-wrap items-center gap-2.5" aria-label="Choose gallery image">
+            <div className="flex min-w-0 max-w-full flex-nowrap items-center gap-2.5 overflow-x-auto whitespace-nowrap pb-1" aria-label="Choose gallery image">
               {TANZANIA_GALLERY.map((photo, index) => (
                 <button
                   key={photo.name}
@@ -695,12 +695,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </div>
               <p className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#0e5638]"><Clock3 size={18} /> A personalised travel solution within 24 hours.</p>
             </div>
-            <div className="rounded-2xl border border-[#C99A2E]/50 bg-[#194A2D] p-6 sm:p-7 shadow-sm">
+            <div className="rounded-2xl border border-[#C99A2E]/50 bg-white p-6 sm:p-7 text-[#0B3023] shadow-sm">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C99A2E]">Let’s plan something unforgettable</p>
-              <h3 className="mt-3 text-2xl font-serif font-bold text-white">Your dream trip starts with a message.</h3>
-              <p className="mt-3 text-sm leading-6 text-emerald-50">Send us your travel dates and preferred destinations. We’ll help you with an itinerary and a quotation tailored to your plans.</p>
+              <h3 className="mt-3 text-2xl font-serif font-bold text-[#0B3023]">Your dream trip starts with a message.</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">Send us your travel dates and preferred destinations. We’ll help you with an itinerary and a quotation tailored to your plans.</p>
               <a href="https://wa.me/255624661830?text=Hello%20Our%20Trip%20Africa!%20I%20would%20like%20help%20planning%20a%20safari%20or%20holiday.%20My%20preferred%20travel%20date%20is%3A%20_____.%20The%20destinations%20I%20am%20interested%20in%20are%3A%20_____.%20Please%20help%20me%20with%20a%20suitable%20itinerary%20and%20quotation." target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#25D366] px-5 py-4 text-sm font-extrabold text-white shadow-md transition hover:bg-[#1faa4f]"><MessageCircle size={19} /> PLAN MY SAFARI WITH US <ArrowRight size={18} /></a>
-              <p className="mt-4 text-center text-xs text-emerald-100">WhatsApp: +255 624 661 830 · We’re here to help, 24/7.</p>
+              <p className="mt-4 text-center text-xs text-slate-600">WhatsApp: +255 624 661 830 · We’re here to help, 24/7.</p>
             </div>
           </div>
         </div>
@@ -811,10 +811,10 @@ export const HomeView: React.FC<HomeViewProps> = ({
               ['Clear Package Details', 'Review the itinerary, inclusions and exclusions before confirming.'],
               ['Direct Guest Support', 'Reach our team by WhatsApp or email for trip planning assistance.']
             ].map(([title, description]) => (
-              <div key={title} className="rounded-2xl border border-[#C99A2E]/35 bg-[#194A2D] p-5">
+              <div key={title} className="rounded-2xl border border-[#C99A2E]/35 bg-white p-5 shadow-sm">
                 <ShieldCheck className="text-[#C99A2E] mb-3" size={25}/>
-                <h3 className="font-bold text-white">{title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-emerald-50">{description}</p>
+                <h3 className="font-bold text-[#0B3023]">{title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">{description}</p>
               </div>
             ))}
           </div>
