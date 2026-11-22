@@ -313,7 +313,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <p className="mx-auto mt-2 max-w-2xl text-sm text-slate-600">Tell our travel consultants your travel dates, group size and budget. We will help you shape the right journey.</p>
           <div className="mt-5 flex flex-col sm:flex-row justify-center gap-3">
             <button type="button" onClick={() => onOpenBooking()} className="rounded-xl bg-[#C99A2E] px-7 py-3.5 text-sm font-extrabold text-[#0e3022] shadow-lg hover:bg-[#C99A2E] transition-colors">Enquire & Start Booking</button>
-            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-[#0e5638] bg-[#0e5638] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#0a402a] transition-colors">Book on WhatsApp</a>
+            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl border border-[#25D366] bg-[#25D366] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#1faa4f] transition-colors">Book on WhatsApp</a>
           </div>
         </div>
       </section>
@@ -340,7 +340,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 href="https://wa.me/255624661830?text=Hello%20Our%20Trip%20Africa!%20I%20am%20interested%20in%20a%20safari.%20My%20estimated%20budget%20is%3A%20_____.%20Please%20help%20me%20plan%20a%20trip%20that%20fits%20my%20budget."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-[#C99A2E] px-6 py-3 text-sm font-extrabold text-[#061d14] shadow-lg transition hover:bg-[#C99A2E]"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-extrabold text-white shadow-lg transition hover:bg-[#1faa4f]"
               >
                 <MessageCircle size={18} /> LET'S PLAN MY SAFARI <ArrowRight size={17} />
               </a>
@@ -700,7 +700,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#C99A2E]">Let’s plan something unforgettable</p>
               <h3 className="mt-3 text-2xl font-serif font-bold text-white">Your dream trip starts with a message.</h3>
               <p className="mt-3 text-sm leading-6 text-emerald-50">Send us your travel dates and preferred destinations. We’ll help you with an itinerary and a quotation tailored to your plans.</p>
-              <a href="https://wa.me/255624661830?text=Hello%20Our%20Trip%20Africa!%20I%20would%20like%20help%20planning%20a%20safari%20or%20holiday.%20My%20preferred%20travel%20date%20is%3A%20_____.%20The%20destinations%20I%20am%20interested%20in%20are%3A%20_____.%20Please%20help%20me%20with%20a%20suitable%20itinerary%20and%20quotation." target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#C99A2E] px-5 py-4 text-sm font-extrabold text-[#0e3022] shadow-md transition hover:bg-[#C99A2E]"><MessageCircle size={19} /> PLAN MY SAFARI WITH US <ArrowRight size={18} /></a>
+              <a href="https://wa.me/255624661830?text=Hello%20Our%20Trip%20Africa!%20I%20would%20like%20help%20planning%20a%20safari%20or%20holiday.%20My%20preferred%20travel%20date%20is%3A%20_____.%20The%20destinations%20I%20am%20interested%20in%20are%3A%20_____.%20Please%20help%20me%20with%20a%20suitable%20itinerary%20and%20quotation." target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#25D366] px-5 py-4 text-sm font-extrabold text-white shadow-md transition hover:bg-[#1faa4f]"><MessageCircle size={19} /> PLAN MY SAFARI WITH US <ArrowRight size={18} /></a>
               <p className="mt-4 text-center text-xs text-emerald-100">WhatsApp: +255 624 661 830 · We’re here to help, 24/7.</p>
             </div>
           </div>
@@ -725,7 +725,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
           <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 rounded-2xl bg-[#073b29] p-5 sm:flex-row sm:px-7">
             <div><h3 className="font-serif text-xl font-bold text-white">Still have a question?</h3><p className="mt-1 text-sm text-emerald-50/85">Talk to our Arusha-based team and let’s plan your journey.</p></div>
-            <a href="https://wa.me/255624661830" target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#C99A2E] px-5 py-3 text-sm font-extrabold text-[#073b29] transition hover:bg-[#C99A2E] sm:w-auto"><MessageCircle size={18} /> ASK US ON WHATSAPP</a>
+            <a href="https://wa.me/255624661830" target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 text-sm font-extrabold text-white transition hover:bg-[#1faa4f] sm:w-auto"><MessageCircle size={18} /> ASK US ON WHATSAPP</a>
           </div>
         </div>
       </section>
@@ -821,7 +821,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
           <div className="mt-7 flex flex-col sm:flex-row justify-center gap-3">
             <button onClick={() => onOpenBooking()} className="rounded-xl bg-[#C99A2E] px-6 py-3 text-sm font-bold text-[#0e3022]">Start a Booking Enquiry</button>
-            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl bg-[#0e5638] px-6 py-3 text-center text-sm font-bold text-white hover:bg-[#0a402a]">Chat With Our Team</a>
+            <a href={COMPANY_DETAILS.whatsappUrl} target="_blank" rel="noopener noreferrer" className="rounded-xl bg-[#25D366] px-6 py-3 text-center text-sm font-bold text-white hover:bg-[#1faa4f]">Chat With Our Team</a>
           </div>
         </div>
       </section>
