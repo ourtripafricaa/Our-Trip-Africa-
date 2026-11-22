@@ -274,17 +274,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
               type="button"
               onClick={() => setGalleryIndex((current) => (current - 1 + TANZANIA_GALLERY.length) % TANZANIA_GALLERY.length)}
               aria-label="Previous gallery image"
-              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#C99A2E] hover:text-[#061d14] transition-colors"
+              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-white bg-[#0B3023] text-white text-3xl font-black leading-none shadow-xl"
             >
-              <ChevronLeft size={25} strokeWidth={3} />
+              &lt;
             </button>
             <button
               type="button"
               onClick={() => setGalleryIndex((current) => (current + 1) % TANZANIA_GALLERY.length)}
               aria-label="Next gallery image"
-              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-12 sm:w-12 rounded-full border border-white/40 bg-[#061d14]/70 text-white text-2xl backdrop-blur hover:bg-[#C99A2E] hover:text-[#061d14] transition-colors"
+              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border-2 border-white bg-[#0B3023] text-white text-3xl font-black leading-none shadow-xl"
             >
-              <ChevronRight size={25} strokeWidth={3} />
+              &gt;
             </button>
           </div>
 
