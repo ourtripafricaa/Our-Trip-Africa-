@@ -37,9 +37,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   const isDestinationActive = ['destinations', 'tanzania', 'kenya', 'uganda', 'zanzibar', 'south-africa', 'uae', 'hadzabe'].includes(currentView);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#0e3022] backdrop-blur-md border-b border-[#1b4d38] shadow-md">
+    <header className="sticky top-0 z-40 w-full bg-[#06251D] backdrop-blur-md border-b border-[#06251D] shadow-md">
       {/* Top Utility Ribbon (Deep Emerald Contrast) */}
-      <div className="hidden lg:block bg-[#061d14] text-slate-300 border-b border-[#0f382a] text-xs py-2 px-6">
+      <div className="hidden lg:block bg-[#06251D] text-slate-300 border-b border-[#06251D] text-xs py-2 px-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5 text-slate-200">
