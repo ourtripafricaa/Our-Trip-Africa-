@@ -320,19 +320,19 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* 2.5 DREAM TRIP PLANNER / BUDGET CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-[#C99A2E]/60 bg-[#06251D] p-8 sm:p-12 text-center text-white shadow-lg">
+        <div className="relative overflow-hidden rounded-3xl border border-[#C99A2E]/60 bg-white p-8 sm:p-12 text-center text-[#0e3022] shadow-lg">
           <div className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-[#C99A2E]/10 blur-3xl" />
           <div className="relative mx-auto max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-3 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-white">
-              <Sparkles size={13} /> A friendly message from Our Trip Africa
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#C99A2E]/50 bg-[#C99A2E]/10 px-3 py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-[0.16em] text-[#C99A2E]">
+              <Sparkles size={13} /> A FRIENDLY MESSAGE FROM OUR TRIP AFRICA
             </span>
-            <h2 className="mt-4 font-serif text-2xl sm:text-4xl font-bold leading-tight text-white">
+            <h2 className="mt-4 font-serif text-2xl sm:text-4xl font-bold leading-tight text-[#0e3022]">
               DON'T GIVE UP ON YOUR DREAM SAFARI!
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-white/90">
+            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-slate-700">
               Share your budget with us. We'll help you find the perfect safari for you.
             </p>
-            <p className="mt-3 text-sm font-semibold text-white">
+            <p className="mt-3 text-sm font-semibold text-[#0e3022]">
               Every budget matters. Friendly advice. No pressure to book.
             </p>
             <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -353,7 +353,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 CHAT WITH OUR TEAM
               </a>
             </div>
-            <p className="mt-3 text-[11px] text-white/80">Share your budget with us on WhatsApp — our Arusha-based team is ready to help.</p>
+            <p className="mt-3 text-[11px] text-slate-600">Share your budget with us on WhatsApp — our Arusha-based team is ready to help.</p>
           </div>
         </div>
       </section>
