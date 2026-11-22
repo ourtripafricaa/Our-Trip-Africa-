@@ -248,7 +248,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl border border-[#C99A2E]/50 bg-white p-7 sm:p-10 text-[#0e3022] shadow-lg">
           <div className="max-w-3xl mx-auto text-center space-y-3 mb-8">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Travel With Confidence</span>
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#C99A2E]">Travel With Confidence</span>
             <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#0e3022]">Why Plan Your Journey With Our Trip Africa?</h2>
             <p className="text-sm text-slate-600">Clear communication, locally planned journeys and direct access to our Arusha-based team from your first enquiry to the end of your trip.</p>
           </div>
@@ -827,16 +827,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* Payment Methods — compact expandable panel */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <details className="group mx-auto max-w-3xl overflow-hidden rounded-2xl border border-[#C99A2E]/60 bg-white shadow-md">
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 sm:px-6">
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl border border-[#C99A2E]/60 bg-white shadow-md">
+          <div className="flex items-center justify-between gap-4 px-5 py-4 sm:px-6">
             <span>
               <span className="block text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Convenient Payment Options</span>
               <span className="mt-1 block text-base sm:text-lg font-bold text-[#0e3022]">PAYMENT METHODS</span>
             </span>
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#C99A2E] bg-[#0e5638] text-[#C99A2E] transition-transform duration-200 group-open:rotate-180">
-              <ChevronDown size={19} />
-            </span>
-          </summary>
+
           <div className="border-t border-[#C99A2E]/40 bg-white px-5 py-5 sm:px-6">
             <p className="mx-auto max-w-3xl text-center text-sm sm:text-base text-slate-700">We accept Visa and Mastercard payments through CRDB Bank and NMB Bank. A USD account payment option is also available through Selcom Pesa.</p>
             <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -883,7 +880,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </div>
             </div>
           </div>
-        </details>
+        </div>
       </section>
 
     </div>
