@@ -127,8 +127,8 @@ button:hover, a[role="button"]:hover, .glow-button:hover {
 }
 
 
-/* Keep the main footer green while allowing its white CTA card to stay white. */
+/* Give the footer its own deeper forest-green shade, distinct from the main brand green. */
 .ota-original-footer {
-  background-image: linear-gradient(to right, #0a271c, #0f382a, #0a271c) !important;
-  background-color: #0f382a !important;
+  background-image: linear-gradient(to right, #06251D, #0A4030, #06251D) !important;
+  background-color: #0A4030 !important;
 }
