@@ -103,8 +103,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           />
           <div className="min-w-0 flex-1 overflow-hidden leading-tight">
             <div className="inline-flex min-w-0 w-max max-w-full flex-col justify-center font-serif font-bold leading-tight whitespace-nowrap">
-              <span className="flex w-full items-center justify-between gap-1 text-white text-xs sm:text-xl tracking-tight">
-                <span>OUR</span><span>TRIP</span><span>AFRICA</span>
+              <span className="block w-full text-center text-white text-xs sm:text-xl tracking-[0.08em]">
+                OUR TRIP AFRICA
               </span>
               <span className="flex w-full items-center justify-between gap-1 text-[#C99A2E] text-[8px] sm:text-[11px] font-semibold tracking-widest">
                 <span>Discover</span><span>•</span><span>Explore</span><span>•</span><span>Enjoy</span>
