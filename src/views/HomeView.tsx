@@ -127,6 +127,20 @@ export const HomeView: React.FC<HomeViewProps> = ({
     return () => window.clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.jscache.com/wejs?wtype=rated&uniq=35&locationId=34728923&lang=en_UK&display_version=2';
+    script.setAttribute('data-loadtrk', '');
+    script.onload = () => { (script as HTMLScriptElement & { loadtrk?: boolean }).loadtrk = true; };
+    document.body.appendChild(script);
+    return () => {
+      script.remove();
+      const widget = document.getElementById('TA_rated35');
+      if (widget) widget.innerHTML = '';
+    };
+  }, []);
+
   const featuredPackages = SAFARI_PACKAGES.filter((p) => p.featured).slice(0, 6);
 
   const safariFaqs = [
@@ -659,6 +673,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <span className="mt-4 inline-block text-xs font-bold uppercase tracking-[0.18em] text-[#0e5638]">Guest feedback matters</span>
           <h2 className="mt-2 font-serif text-2xl sm:text-4xl font-bold text-[#0e3022]">Share Your Experience on TripAdvisor</h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-7 text-slate-600">Planning a trip with Our Trip Africa? Read traveller feedback or share your own experience on our TripAdvisor business page.</p>
+          <div className="my-5 flex justify-center" aria-label="Our Trip Africa TripAdvisor rating badge">
+            <div id="TA_rated35" className="TA_rated">
+              <ul id="UDknhJTU" className="TA_links yCkXt1N7t85">
+                <li id="Ds5K7A" className="PgB2gDmPLjd">
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.tripadvisor.co.uk/Attraction_Review-g297913-d34728923-Reviews-Our_Trip_Africa-Arusha_Arusha_Region.html">
+                    <img src="https://www.tripadvisor.co.uk/img/cdsi/img2/badges/ollie-11424-2.gif" alt="TripAdvisor" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
           <a href="https://www.tripadvisor.co.uk/Attraction_Review-g297913-d34728923-Reviews-Our_Trip_Africa-Arusha_Arusha_Region.html" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#00AA6C] px-7 py-3.5 text-sm font-extrabold text-white shadow-md transition hover:bg-[#008f5b]">
             <Star size={17} fill="currentColor" /> View Us on TripAdvisor <ArrowRight size={17} />
           </a>
