@@ -188,7 +188,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
               className="w-full h-full object-cover object-center"
             />
           )}
-          <div className="absolute inset-0 bg-black/20" />
+          {/* Gentle atmospheric overlay: keeps the safari photos clear while helping white text stand out. */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-[#0B3023]/20 to-black/35" />
         </div>
 
         {/* Hero Content */}
