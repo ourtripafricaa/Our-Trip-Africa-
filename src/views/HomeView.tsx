@@ -188,8 +188,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
               className="w-full h-full object-cover object-center"
             />
           )}
-          <div className="absolute inset-0 bg-black/35 backdrop-blur-[2px]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#061d14]/55 via-[#0B3023]/25 to-black/20" />
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#061d14]/35 via-[#0B3023]/15 to-black/15" />
         </div>
 
         {/* Hero Content */}
