@@ -102,12 +102,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="h-10 w-10 sm:h-12 sm:w-12 shrink-0 rounded-full object-cover border border-[#C99A2E]/40 shadow-sm transition-transform group-hover:scale-105"
           />
           <div className="min-w-0 flex-1 overflow-hidden leading-tight">
-            <div className="inline-flex min-w-0 w-max max-w-full flex-col justify-center font-serif font-bold leading-tight whitespace-nowrap">
+            <div className="inline-grid min-w-0 w-max max-w-full grid-cols-1 justify-center font-serif font-bold leading-tight whitespace-nowrap">
               <span className="block w-full text-center text-white text-xs sm:text-xl tracking-[0.08em]">
                 OUR TRIP AFRICA
               </span>
-              <span className="flex w-full items-center justify-between gap-1 text-[#C99A2E] text-[8px] sm:text-[11px] font-semibold tracking-widest">
-                <span>Discover</span><span>•</span><span>Explore</span><span>•</span><span>Enjoy</span>
+              <span className="grid w-full grid-cols-[1fr_auto_1fr_auto_1fr] items-center text-[#C99A2E] text-[8px] sm:text-[11px] font-semibold tracking-widest">
+                <span className="text-left">Discover</span>
+                <span className="text-center">•</span>
+                <span className="text-center">Explore</span>
+                <span className="text-center">•</span>
+                <span className="text-right">Enjoy</span>
               </span>
             </div>
           </div>
