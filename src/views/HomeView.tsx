@@ -191,18 +191,22 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <div className="absolute inset-0 bg-black/20" />
         </div>
 
-        {/* Hero Brand Identity */}
-        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center pt-20 pb-28 space-y-7">
-          <div className="space-y-3">
-            <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[0.06em] leading-tight text-white drop-shadow-lg">
-              OUR TRIP AFRICA
-            </h1>
-            <p className="text-sm sm:text-lg font-bold uppercase tracking-[0.22em] text-[#C99A2E] drop-shadow-md">
-              EXPLORE. DISCOVER. ENJOY.
-            </p>
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-28 space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#061d14]/85 backdrop-blur-md border border-[#C99A2E]/40 text-[#C99A2E] text-xs font-semibold uppercase tracking-widest shadow-lg">
+            <Sparkles size={13} />
+            <span>Tanzania • Kenya • Uganda • Zanzibar • South Africa • UAE</span>
           </div>
 
-          <div className="pt-5 mt-5 sm:mt-7 translate-y-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15] text-balance">
+            Discover the Untamed Wonder of East Africa
+          </h1>
+
+          <p className="text-base sm:text-lg text-slate-200 max-w-3xl mx-auto leading-relaxed text-balance">
+            Bespoke wildlife safaris, Mount Kilimanjaro expeditions, Zanzibar beach getaways, South Africa tours, and UAE desert adventures. Tailored for budget, mid-range, and luxury travelers by local specialists based in Arusha, Tanzania.
+          </p>
+
+          <div className="pt-4 mt-5 sm:mt-7 translate-y-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <DualBookNow
               size="md"
               onOpenBookingModal={() => onOpenBooking()}
