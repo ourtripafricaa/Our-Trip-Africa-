@@ -102,15 +102,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="h-10 w-10 sm:h-12 sm:w-12 shrink-0 rounded-full object-cover border border-[#C99A2E]/40 shadow-sm transition-transform group-hover:scale-105"
           />
           <div className="min-w-0 flex-1 overflow-hidden leading-tight">
-            <div className="brand-marquee-track font-serif font-bold tracking-tight whitespace-nowrap">
-              <span className="inline-flex flex-col justify-center leading-tight">
-                <span className="text-white text-xs sm:text-xl">OUR TRIP AFRICA</span>
-                <span className="text-[#C99A2E] text-[8px] sm:text-[11px] font-semibold tracking-widest">Discover • Explore • Enjoy</span>
-              </span>
-              <span aria-hidden="true" className="inline-flex flex-col justify-center leading-tight">
-                <span className="text-white text-xs sm:text-xl">OUR TRIP AFRICA</span>
-                <span className="text-[#C99A2E] text-[8px] sm:text-[11px] font-semibold tracking-widest">Discover • Explore • Enjoy</span>
-              </span>
+            <div className="flex min-w-0 flex-col justify-center font-serif font-bold tracking-tight leading-tight whitespace-nowrap">
+              <span className="text-white text-xs sm:text-xl">OUR TRIP AFRICA</span>
+              <span className="text-[#C99A2E] text-[8px] sm:text-[11px] font-semibold tracking-widest">Discover • Explore • Enjoy</span>
             </div>
           </div>
         </button>
